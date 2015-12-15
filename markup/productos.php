@@ -4,13 +4,14 @@
 
         <section class="productos">
 
-            <div class="container">
-
-                <div class="title">
+            <div class="title">
+                <div class="container">
                     <h2>Disfruta la variedad que <br><span>French’s</span> tiene para ti.</h2>
                 </div>
+            </div>
 
-                <div class="categorias">
+            <div class="categorias">
+                <div class="container">
                     <h4>Mostazas</h4>
 
                     <div class="grid-productos">
@@ -47,10 +48,9 @@
                             <div class="gramos">387g</div>
                         </div>
                     </div>
-                </div> 
+                </div>
+            </div> 
                   
-            </div>
-
         </section>
 
 <?php include('footer.php'); ?>

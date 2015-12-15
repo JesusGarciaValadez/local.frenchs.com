@@ -43,8 +43,14 @@ init = function(){
 	});
 
 	$('.hamburguesa').on('click',function(){
-		$('.head .menu').slideToggle( "slow" );
+		$('.head .menu ul').slideToggle( "slow" );
 		$('.hamburguesa').toggleClass('activo');
+		$('.head .menu ul .redes ul').fadeIn( "slow" );
+	});
+
+	$('.btn-share').on('click',function(){
+		$('.detalle-receta .redes ul').fadeIn();
+		$('.btn-share').hide();
 	});
 
 	$('.subir-receta .container a').on('click',function(e){
@@ -125,18 +131,49 @@ init = function(){
 		$("#tinderslide").jTinder($(this).attr('class'));
 	});
 
+	(function ($) { 
+		$('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+		
+		$('.tab ul.tabs li a').click(function (g) { 
+			var tab = $(this).closest('.tab'), 
+				index = $(this).closest('li').index();
+			
+			tab.find('ul.tabs > li').removeClass('current');
+			$(this).closest('li').addClass('current');
+			
+			tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+			tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+			
+			g.preventDefault();
+		} );
+	})(jQuery);
+	
+
 };
 
 $(document).on('ready',init);
 
 $(window).on('load',function(){
-	if(/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
 		$( "header .head .facebook" ).appendTo( ".menu " );
 		$( "header .head .busqueda" ).appendTo( ".menu " );
 
 		$( ".detalle-inspiracion .descripcion .right").prependTo( ".descripcion" );
+
 	}
-});
+	else{
+		if(! /iPad/i.test(navigator.userAgent) ) {
+
+			$( ".head .redes " ).appendTo( ".menu ul" );
+			$('.head .menu ul .redes ul').fadeOut( "slow" );
+
+		}
+		else{
+
+		}
+	}
+})
 
 $(window).on('mousemove', function(e) {
         var w = $(window).width();

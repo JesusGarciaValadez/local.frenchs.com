@@ -1,12 +1,16 @@
-<?php include('header.php'); ?>
+<?php include('header.php'); ?> 
             
-            <div class="cover-interior-a">
+        <div class="cover-interior-a"></div>
+
+        <section class="acerca">
+
+            <div class="header">
                 <div class="container">
                     <img src="images/cover/img-cover-acerca.png">
                 </div>
             </div>
 
-            <div class="acerca">
+            <div class="info">
                 <div class="container">
                     <h2>Descúbre porque<br><span>French’s</span> es la compañía<br>perfecta para tu mesa.</h2>
                     <p>

@@ -85,5 +85,49 @@
                 </div>
             </div>
         </section>
-
+        <section class="grid">
+            <div class="container">
+                <h2>Recetas</h2>
+                <p>que podrías preparar con Mostaza Dijon SQ</p>
+                <div class="content-grid">
+                    <a href="" class="receta">
+                        <p class="categoria b2">Platillos</p>
+                        <div class="image">
+                            <img src="images/recetas/receta2.jpg" alt=""/>          
+                        </div>
+                        <p class="nombre">Tiras de pollo con mostaza</p>
+                        <p class="porciones">12 porciones</p>
+                        <p class="tiempo">Timepo de preparación: 15 min.</p>
+                        <div class="ranking">
+                            <span class="stars s4"></span>
+                        </div>
+                    </a>
+                    <a href="" class="receta">
+                        <p class="categoria b2">Platillos</p>
+                        <div class="image">
+                            <img src="images/recetas/receta2.jpg" alt=""/>          
+                        </div>
+                        <p class="nombre">Tiras de pollo con mostaza</p>
+                        <p class="porciones">12 porciones</p>
+                        <p class="tiempo">Timepo de preparación: 15 min.</p>
+                        <div class="ranking">
+                            <span class="stars s4"></span>
+                        </div>
+                    </a>
+                    <a href="" class="receta">
+                        <p class="categoria b2">Platillos</p>
+                        <div class="image">
+                            <img src="images/recetas/receta2.jpg" alt=""/>          
+                        </div>
+                        <p class="nombre">Tiras de pollo con mostaza</p>
+                        <p class="porciones">12 porciones</p>
+                        <p class="tiempo">Timepo de preparación: 15 min.</p>
+                        <div class="ranking">
+                            <span class="stars s4"></span>
+                        </div>
+                    </a>
+                </div>
+                <a id="" href="#" class="btn-mas">Ver más recetas</a>
+            </div>
+        </section>
 <?php include('footer.php'); ?>

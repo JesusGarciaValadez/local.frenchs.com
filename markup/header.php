@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="plugins/bxslider/jquery.bxslider.css">
+        <link rel="stylesheet" href="plugins/drag-and-drop/jquery.ezdz.min.css">
         <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 
         <!--[if lt IE 9]>
@@ -22,11 +23,12 @@
         <header>
             <div class="head">
                 <div class="hamburguesa"></div>
-                <h1 class="logo"><span>French´s</span></h1>
+                <div class="btn-close-menu"></div>
+                <a href="index.php"><h1 class="logo"><span>French´s</span></h1></a>
                                 
                 <nav class="menu">
                     <ul>
-                        <li><a href="acerca.php">ACERCA De</a></li>
+                        <li><a href="acerca.php">ACERCA DE</a></li>
                         <li><a href="productos.php">PRODUCTOS</a></li>
                         <li><a href="recetas.php">RECETAS</a></li>
                         <li><a href="contacto.php">CONTACTO</a></li>

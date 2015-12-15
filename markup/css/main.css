@@ -157,6 +157,10 @@ input {
   font-family: "Montserrat", sans-serif;
 }
 
+textarea {
+  resize: none;
+}
+
 p {
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
@@ -332,11 +336,12 @@ footer a.scroll:after {
   transform: translateY(-50%);
   top: 50%;
   display: none;
-  margin: 0px 1em;
+  margin: 0px 2rem;
   padding: 0;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 50%;
+  z-index: 99;
 }
 .hamburguesa:before {
   content: "";
@@ -347,8 +352,12 @@ footer a.scroll:after {
   width: 23px;
 }
 .hamburguesa.activo:before {
-  background: url(img/@2x-icn-mb-close.jpg) no-repeat;
+  content: "";
+  font-family: "FontAwesome";
   background-size: cover;
+  width: 20px;
+  height: 10px;
+  z-index: 999;
 }
 
 .head {
@@ -517,6 +526,7 @@ footer a.scroll:after {
   top: 50%;
   left: 62%;
   top: 58%;
+  z-index: 99;
 }
 .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .txt h2 {
   font-weight: 400;
@@ -557,7 +567,7 @@ footer a.scroll:after {
   transform: translateX(-50%);
   left: 50%;
   left: 60%;
-  top: -190px;
+  top: -160px;
 }
 .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .elemento3 {
   position: absolute;
@@ -565,7 +575,6 @@ footer a.scroll:after {
   bottom: 0%;
 }
 .cover .slider .container .bx-wrapper .bx-controls {
-  background-color: red;
   display: block;
   height: auto;
   position: absolute;
@@ -598,6 +607,7 @@ footer a.scroll:after {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   height: 18px;
+  line-height: 18px;
   margin: auto;
   text-decoration: none;
   width: 18px;
@@ -622,6 +632,7 @@ footer a.scroll:after {
 }
 
 .descubre {
+  position: relative;
   /* jTinder status text */
 }
 .descubre .img-back1 {
@@ -635,6 +646,7 @@ footer a.scroll:after {
 .descubre .img-back2 {
   background: url(img/element-img-back2.png) no-repeat;
   background-position: 70px;
+  bottom: 0;
   height: 368px;
   right: 0px;
   position: absolute;
@@ -1043,19 +1055,37 @@ footer a.scroll:after {
 .acerca {
   overflow: hidden;
 }
-.acerca .container {
+.acerca .header .container {
+  margin: 8em auto 0;
+  width: 600px;
+}
+.acerca .header .container img {
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  left: 50%;
+  margin-top: 60px;
+  position: relative;
+  width: 100%;
+}
+.acerca .info {
+  overflow: hidden;
+}
+.acerca .info .container {
   margin: 6em auto;
   width: 768px;
 }
-.acerca .container h2 {
+.acerca .info .container h2 {
   color: #676767;
   font-weight: 400;
 }
-.acerca .container h2 span {
+.acerca .info .container h2 span {
   color: #fbcb22;
   font-weight: 700;
 }
-.acerca .container p {
+.acerca .info .container p {
   color: #676767;
   font-size: 1.429rem;
   line-height: 2rem;
@@ -1149,43 +1179,33 @@ footer a.scroll:after {
 .recetas {
   overflow: hidden;
 }
-.recetas .container {
-  margin: 6em auto 2em;
+.recetas .title {
+  overflow: hidden;
 }
-.recetas .container .title {
-  display: table;
+.recetas .title .container {
+  margin: 8em auto 4.75em;
 }
-.recetas .container .title h2 {
+.recetas .title .container h2 {
   color: #ffffff;
   font-weight: 400;
   line-height: 5rem;
-  margin: 2.286em 0;
+  margin: 2em 0;
 }
-.recetas .container .title h2 span {
+.recetas .title .container span {
   color: #fbcb22;
   font-weight: 700;
 }
-
-.filtro .container {
-  margin: 6em auto 3em;
+.recetas .filtro {
+  overflow: hidden;
 }
-.filtro .container h2 {
-  color: #eb1a3a;
-  margin: 0px;
-  white-space: pre-line;
-  text-align: center;
+.recetas .filtro .container {
+  margin: 6em auto;
 }
-.filtro .container p {
-  color: #ff740f;
-  font-size: 1.857rem;
-  text-align: center;
-  margin: 1rem 0px;
-}
-.filtro .container .buscar {
+.recetas .filtro .container .buscar {
   margin: 1em auto;
   display: table;
 }
-.filtro .container .buscar a {
+.recetas .filtro .container .buscar a {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -1196,7 +1216,7 @@ footer a.scroll:after {
   margin-left: -3px;
   text-decoration: none;
 }
-.filtro .container .buscar a:after {
+.recetas .filtro .container .buscar a:after {
   content: "";
   font-family: "FontAwesome";
   display: block;
@@ -1204,29 +1224,40 @@ footer a.scroll:after {
   line-height: 1.286rem;
   padding: 16px 52px;
 }
-.filtro .container .buscar a:hover {
+.recetas .filtro .container .buscar a:hover {
   background: #ff995e;
 }
-.filtro .container .buscar input {
-  color: #ff995e;
+.recetas .filtro .container .buscar input {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #ffffff;
+  border: 1px solid #d6d6d6;
+  box-sizing: border-box;
+  color: #676767;
   height: auto;
   font-size: 1rem;
-  padding: 14px 10px;
-  width: 590px;
+  margin: 0;
+  outline: none;
+  padding: 16px 10px;
+  width: 614px;
 }
-.filtro .container .buscar input:focus {
-  border: 1px solid #ff995e;
+.recetas .filtro .container .buscar input:focus {
+  border: 1px solid #fb8303;
+  box-shadow: 0 0 5px #fb8303;
+  margin: 0;
   outline: 0px;
 }
-.filtro .container .content-filtro {
+.recetas .filtro .container .content-filtro {
   margin: 1em auto;
   display: table;
 }
-.filtro .container .content-filtro label {
+.recetas .filtro .container .content-filtro label {
   float: left;
   position: relative;
 }
-.filtro .container .content-filtro label:before {
+.recetas .filtro .container .content-filtro label:before {
   position: absolute;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -1239,14 +1270,14 @@ footer a.scroll:after {
   position: absolute;
   width: 30px;
 }
-.filtro .container .content-filtro select {
+.recetas .filtro .container .content-filtro select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: #fff url(img/arrow-select-gray.png) no-repeat 97% 50%;
-  border: 1px solid #cccccc;
+  background: #fff url(img/arrow-select.png) no-repeat 90% 50%;
+  border: 1px solid #d6d6d6;
   border-radius: 0px;
-  color: #555555;
+  color: #676767;
   cursor: pointer;
   height: 46px;
   font-family: "Montserrat", sans-serif;
@@ -1257,7 +1288,7 @@ footer a.scroll:after {
   text-transform: uppercase;
   width: 168px;
 }
-.filtro .container .content-filtro a {
+.recetas .filtro .container .content-filtro a {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -1273,8 +1304,335 @@ footer a.scroll:after {
   text-decoration: none;
   width: 140px;
 }
-.filtro .container .content-filtro a:hover {
+.recetas .filtro .container .content-filtro a:hover {
   background: #c7162e;
+}
+
+.detalle-receta {
+  overflow: hidden;
+}
+.detalle-receta .header .container {
+  margin: 7em auto 0;
+}
+.detalle-receta .header .container .info {
+  display: table;
+  margin: 2.571rem 0;
+  width: 50%;
+}
+.detalle-receta .header .container .info h3 {
+  color: #ffffff;
+  font-weight: 400;
+  line-height: 3rem;
+  margin: 3rem 0;
+}
+.detalle-receta .header .container .info h3 span {
+  color: #fbcb22;
+  font-weight: 700;
+}
+.detalle-receta .header .container .info .ranking {
+  background: url(img/stars-fill.png) no-repeat;
+  float: left;
+  height: 26px;
+  margin: 20px 0px;
+  width: 150px;
+}
+.detalle-receta .header .container .info .ranking .stars {
+  background: url(img/stars.png) no-repeat;
+  display: block;
+  height: 26px;
+}
+.detalle-receta .header .container .info .ranking .stars.s1 {
+  width: 30px;
+}
+.detalle-receta .header .container .info .ranking .stars.s2 {
+  width: 60px;
+}
+.detalle-receta .header .container .info .ranking .stars.s3 {
+  width: 90px;
+}
+.detalle-receta .header .container .info .ranking .stars.s4 {
+  width: 120px;
+}
+.detalle-receta .header .container .info .share {
+  color: #ffffff;
+  float: right;
+  font-size: 0.8571rem;
+  margin: 10px 0px;
+  width: auto;
+}
+.detalle-receta .header .container .info .share .btn-share {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  color: #ffffff;
+  display: inline-block;
+  text-decoration: none;
+}
+.detalle-receta .header .container .info .share .btn-share:after {
+  content: "";
+  font-family: "FontAwesome";
+  font-size: 1.143rem;
+  line-height: 26px;
+  margin-left: 6px;
+}
+.detalle-receta .header .container .info .share .btn-share:hover {
+  color: #fbcb22;
+}
+.detalle-receta .header .container .info .share .redes {
+  height: 26px;
+  overflow: hidden;
+  display: inline-table;
+}
+.detalle-receta .header .container .info .share .redes ul {
+  margin: 10px;
+  padding: 0px;
+  width: 100%;
+  display: none;
+}
+.detalle-receta .header .container .info .share .redes ul li {
+  display: inline-block;
+  overflow: hidden;
+  padding: 0 14px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+.detalle-receta .header .container .info .share .redes ul li a {
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  transition: all 0.4s;
+  color: #ffffff;
+  display: block;
+  font-size: 1.286rem;
+  height: 100%;
+  line-height: 30px;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+}
+.detalle-receta .header .container .info .share .redes ul li a.activo {
+  color: #fbcb22;
+}
+.detalle-receta .header .container .info .share .redes ul li a:hover {
+  color: #fbcb22;
+}
+.detalle-receta .header .container .info .detalles {
+  display: table;
+  margin: 3em 0;
+  width: 100%;
+  float: left;
+}
+.detalle-receta .header .container .info .detalles div {
+  display: table-cell;
+  background: #361902;
+  border-right: 2px solid #402108;
+  font-size: 0.7857rem;
+  padding: 12px 8px;
+  vertical-align: middle;
+  width: 33.3%;
+}
+.detalle-receta .header .container .info .detalles div .left {
+  border: 0;
+  color: #fbcb22;
+  width: 60%;
+}
+.detalle-receta .header .container .info .detalles div .right {
+  border: 0;
+  color: #ffffff;
+  width: 40%;
+}
+.detalle-receta .header .container .image {
+  display: table;
+  margin: 2.571rem 0;
+  width: 50%;
+}
+.detalle-receta .header .container .image img {
+  width: 100%;
+}
+.detalle-receta .detalle {
+  overflow: hidden;
+}
+.detalle-receta .detalle .container {
+  margin: 8em auto;
+}
+.detalle-receta .detalle .container .columnas {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 80%;
+}
+.detalle-receta .detalle .container .columnas .left, .detalle-receta .detalle .container .columnas .right {
+  width: 50%;
+}
+.detalle-receta .detalle .container .columnas .ingredientes .icono-ingredientes {
+  background: url(img/ingredientes.png) no-repeat center;
+  height: 50px;
+  margin: 0;
+  width: 50px;
+}
+.detalle-receta .detalle .container .columnas .ingredientes h3 {
+  color: #ff740f;
+}
+.detalle-receta .detalle .container .columnas .ingredientes ul {
+  margin: 0px;
+  padding: 0px;
+}
+.detalle-receta .detalle .container .columnas .ingredientes ul li {
+  color: #676767;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 28px 0px;
+  padding: 0px;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.detalle-receta .detalle .container .columnas .ingredientes ul li .medida {
+  font-size: 2.286rem;
+}
+.detalle-receta .detalle .container .columnas .ingredientes ul li .marca {
+  color: #ff740f;
+  font-weight: 700;
+}
+.detalle-receta .detalle .container .columnas .preparacion .icono-preparacion {
+  background: url(img/preparacion.png) no-repeat center;
+  height: 50px;
+  margin: 0;
+  width: 50px;
+}
+.detalle-receta .detalle .container .columnas .preparacion h3 {
+  color: #ff740f;
+}
+.detalle-receta .detalle .container .columnas .preparacion p {
+  color: #676767;
+  font-size: 1rem;
+  line-height: 1.286rem;
+  margin: 2.143rem 0;
+}
+.detalle-receta .detalle .container .columnas .preparacion .paso {
+  display: block;
+  font-size: 1.429rem;
+}
+.detalle-receta .detalle .container .columnas .preparacion .marca {
+  color: #ff740f;
+  font-size: 1rem;
+}
+.detalle-receta .detalle .container .tab {
+  padding-top: 50px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  width: 300px;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  color: #676767;
+}
+.detalle-receta .detalle .container .tab .tabs {
+  display: table;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+}
+.detalle-receta .detalle .container .tab .tabs li {
+  float: left;
+  line-height: 38px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 50%;
+}
+.detalle-receta .detalle .container .tab .tabs li a {
+  border-bottom: 2px solid #d6d6d6;
+  color: #676767;
+  font-weight: 500;
+  display: block;
+  letter-spacing: 0;
+  outline: none;
+  padding: 0 20px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.detalle-receta .detalle .container .tab .tabs .current a {
+  color: #fb8303;
+  border: 1px solid #fb8303;
+  box-sizing: border-box;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item {
+  display: none;
+  padding: 30px 0;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item h4 {
+  font-weight: bold;
+  color: #444;
+  font-size: 20px;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item img {
+  width: 200px;
+  float: left;
+  margin-right: 30px;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item p {
+  color: #676767;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item:first-child {
+  display: block;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item .ingredientes .icono-ingredientes {
+  background: url(img/ingredientes.png) no-repeat center;
+  height: 50px;
+  margin: 0;
+  width: 50px;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item .ingredientes h3 {
+  color: #ff740f;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item .ingredientes ul {
+  margin: 0px;
+  padding: 0px;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item .ingredientes ul li {
+  color: #676767;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 28px 0px;
+  padding: 0px;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item .ingredientes ul li .medida {
+  font-size: 2.286rem;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item .ingredientes ul li .marca {
+  color: #ff740f;
+  font-weight: 700;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item .preparacion .icono-preparacion {
+  background: url(img/preparacion.png) no-repeat center;
+  height: 50px;
+  margin: 0;
+  width: 50px;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item .preparacion h3 {
+  color: #ff740f;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item .preparacion p {
+  color: #676767;
+  font-size: 1rem;
+  line-height: 1.286rem;
+  margin: 2.143rem 0;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item .preparacion .paso {
+  display: block;
+  font-size: 1.429rem;
+}
+.detalle-receta .detalle .container .tab .tab_content .tabs_item .preparacion .marca {
+  color: #ff740f;
+  font-size: 1rem;
 }
 
 .grid {
@@ -1285,13 +1643,13 @@ footer a.scroll:after {
   margin: 6em auto;
 }
 .grid .container h2 {
-  color: #eb1a3a;
+  color: #ff740f;
   margin: 0px;
   white-space: pre-line;
   text-align: center;
 }
 .grid .container p {
-  color: #ff740f;
+  color: #676767;
   font-size: 1.857rem;
   text-align: center;
   margin: 1rem 0px;
@@ -1303,7 +1661,7 @@ footer a.scroll:after {
   transition: all 0.5s;
   color: #676767;
   display: block;
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.143rem;
   font-weight: 400;
   height: auto;
@@ -1332,7 +1690,7 @@ footer a.scroll:after {
   display: inline-flex;
   -webkit-flex-flow: row wrap;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   list-style: none;
   padding: 0;
   width: 100%;
@@ -1453,7 +1811,7 @@ footer a.scroll:after {
 .grid .container .content-grid .receta .categoria {
   color: #ffffff;
   margin: 0px 0px;
-  font-family: Lato;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   padding: 8px 18px;
   position: absolute;
@@ -1476,31 +1834,41 @@ footer a.scroll:after {
 .productos {
   overflow: hidden;
 }
-.productos .container {
-  margin: 6em auto;
-  width: 980px;
+.productos .title {
+  overflow: hidden;
 }
-.productos .container .title h2 {
+.productos .title .container {
+  margin: 8em auto 4.75em;
+}
+.productos .title .container h2 {
   color: #ffffff;
   font-weight: 400;
   line-height: 5rem;
-  margin: 2.286em 0;
+  margin: 2em 0;
 }
-.productos .container .title h2 span {
+.productos .title .container span {
   color: #fbcb22;
   font-weight: 700;
 }
-.productos .container .categorias {
-  display: table;
+.productos .title .container p {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 1rem 0 6rem;
+}
+.productos .categorias {
+  overflow: hidden;
   width: 100%;
 }
-.productos .container .categorias h4 {
+.productos .categorias .container {
+  margin: 6em auto;
+}
+.productos .categorias .container h4 {
   color: #676767;
   font-weight: 400;
   line-height: 2rem;
-  margin: 2.286em 0;
+  margin: 2rem 0;
 }
-.productos .container .categorias .grid-productos {
+.productos .categorias .container .grid-productos {
   display: -webkit-box;
   display: -moz-box !important;
   display: -ms-flexbox !important;
@@ -1515,17 +1883,17 @@ footer a.scroll:after {
   padding: 0;
   width: 100%;
 }
-.productos .container .categorias .grid-productos .producto {
+.productos .categorias .container .grid-productos .producto {
   height: auto;
-  margin: 15px;
+  margin: 16px 44px;
   padding: 0px;
   text-align: center;
   width: 280px;
 }
-.productos .container .categorias .grid-productos .producto a {
+.productos .categorias .container .grid-productos .producto a {
   display: block;
 }
-.productos .container .categorias .grid-productos .producto a img {
+.productos .categorias .container .grid-productos .producto a img {
   -webkit-transition: all 0.6s;
   -moz-transition: all 0.6s;
   -ms-transition: all 0.6s;
@@ -1535,14 +1903,14 @@ footer a.scroll:after {
   margin: 0;
   width: 100%;
 }
-.productos .container .categorias .grid-productos .producto a:hover {
+.productos .categorias .container .grid-productos .producto a:hover {
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-.productos .container .categorias .grid-productos .producto a:hover img {
+.productos .categorias .container .grid-productos .producto a:hover img {
   opacity: 0.6;
 }
-.productos .container .categorias .grid-productos .producto a:hover:before {
+.productos .categorias .container .grid-productos .producto a:hover:before {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -1561,15 +1929,15 @@ footer a.scroll:after {
   position: absolute;
   z-index: 999;
 }
-.productos .container .categorias .grid-productos .producto .nombre {
+.productos .categorias .container .grid-productos .producto .nombre {
   color: #676767;
   font-size: 1.429rem;
   line-height: 1.714rem;
-  text-align: left;
+  text-align: center;
   margin: 1.714rem auto;
   width: 120px;
 }
-.productos .container .categorias .grid-productos .producto .gramos {
+.productos .categorias .container .grid-productos .producto .gramos {
   background: #ff740f;
   border-radius: 30px 30px;
   -moz-border-radius: 30px 30px;
@@ -1589,11 +1957,14 @@ footer a.scroll:after {
   overflow: hidden;
 }
 .detalle-producto .container {
-  margin: 10em auto;
+  margin: 15em auto;
   width: 980px;
 }
 .detalle-producto .container .left {
   width: 50%;
+}
+.detalle-producto .container .left img {
+  width: 100%;
 }
 .detalle-producto .container .right {
   float: left;
@@ -1601,6 +1972,8 @@ footer a.scroll:after {
 }
 .detalle-producto .container .right .descripcion {
   display: table;
+  height: 312px;
+  max-height: 312px;
   margin-bottom: 2em;
 }
 .detalle-producto .container .right .descripcion h2 {
@@ -1743,38 +2116,28 @@ footer a.scroll:after {
 }
 
 .cover-interior-a {
-  background: #ffffff url(img/back-cover-a.jpg) repeat-x top center;
-  height: auto;
+  background: #402108;
+  height: 640px;
   margin: auto;
-  min-height: 720px;
-  position: relative;
-  width: 100%;
-}
-.cover-interior-a img {
+  min-height: 640px;
   position: absolute;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  left: 50%;
-  margin-top: 220px;
-  position: relative;
+  width: 100%;
 }
 
 .cover-interior-b {
   background: #142956;
-  height: 500px;
+  height: 560px;
   margin: auto;
-  min-height: 500px;
+  min-height: 560px;
   position: absolute;
   width: 100%;
 }
 
 .cover-interior-c {
   background: #402108;
-  height: 500px;
+  height: 560px;
   margin: auto;
-  min-height: 500px;
+  min-height: 560px;
   position: absolute;
   width: 100%;
 }
@@ -1786,13 +2149,30 @@ footer a.scroll:after {
   top: 0px;
   z-index: 99;
 }
-.modal .container div {
-  background: #ffffff;
+.modal .img-back1 {
+  background: url(img/element-img-back1.png) no-repeat;
+  background-position: -200px;
+  height: 574px;
+  left: 0;
+  position: absolute;
+  width: 500px;
+}
+.modal .img-back2 {
+  background: url(img/element-img-back2.png) no-repeat;
+  background-position: 70px;
+  bottom: 0;
+  height: 368px;
+  right: 0px;
+  position: absolute;
+  width: 300px;
+}
+.modal .container .content-modal {
+  background: #f9f9f9;
   box-sizing: border-box;
   display: table;
   height: auto;
   left: 50%;
-  padding: 3em 1em;
+  padding: 6em 1em;
   position: relative;
   top: 50%;
   -ms-transform: translate(-50%, -50%);
@@ -1802,27 +2182,271 @@ footer a.scroll:after {
   transform: translate(-50%, -50%);
   width: 80%;
 }
-.modal .container div .icono-chef {
-  background: url(img/icono-chef.png) no-repeat center;
-  height: 50px;
+.modal .container .content-modal .icono-chef-big {
+  background: url(img/icono-chef-100.png) no-repeat center;
+  height: 100px;
   margin: 10px auto;
-  width: 50px;
+  width: 100px;
 }
-.modal .container div h2 {
+.modal .container .content-modal h2 {
   color: #ff740f;
   margin: 0px;
   white-space: pre-line;
   text-align: center;
 }
+.modal .container .content-modal form {
+  margin: 3em;
+  display: table;
+  position: relative;
+  z-index: 999;
+}
+.modal .container .content-modal form .div100 {
+  padding: 0px 2em;
+}
+.modal .container .content-modal form .subir-imagen {
+  border: 2px dashed #ff740f;
+  height: 300px;
+  width: 300px;
+}
+.modal .container .content-modal form .subir-imagen a {
+  color: #676767;
+  display: block;
+  font-size: 1.429rem;
+  padding: 106px 50px;
+  text-align: center;
+  text-decoration: none;
+}
+.modal .container .content-modal form .subir-imagen a:after {
+  content: "";
+  font-family: "FontAwesome";
+  color: #ff740f;
+  display: block;
+  font-size: 2rem;
+  line-height: 2rem;
+  padding: 10px;
+}
+.modal .container .content-modal form .subir-imagen a:hover {
+  text-decoration: none;
+}
+.modal .container .content-modal form input {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  color: #676767;
+  height: auto;
+  font-size: 1rem;
+  margin: 2%;
+  outline: none;
+  padding: 14px 10px;
+  width: 46%;
+}
+.modal .container .content-modal form input:focus {
+  border: 1px solid #fb8303;
+  box-shadow: 0 0 5px #fb8303;
+  margin: 2%;
+  outline: 0px;
+  width: 46%;
+}
+.modal .container .content-modal form label {
+  float: left;
+  position: relative;
+}
+.modal .container .content-modal form label:before {
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+  content: " ";
+  height: 20px;
+  left: 10px;
+  position: absolute;
+  width: 30px;
+}
+.modal .container .content-modal form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff url(img/arrow-select.png) no-repeat 90% 50%;
+  border: 1px solid #e1e1e1;
+  border-radius: 0px;
+  box-sizing: border-box;
+  color: #676767;
+  cursor: pointer;
+  height: auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8571rem;
+  margin: 2em 16px 2em 0;
+  outline: 0;
+  padding: 14px 10px;
+  text-transform: uppercase;
+  width: 120px;
+}
+.modal .container .content-modal form select:focus {
+  border: 1px solid #fb8303;
+  box-shadow: 0 0 5px #fb8303;
+  margin: 2em 16px 2em 0;
+  outline: 0px;
+}
+.modal .container .content-modal form .ingredientes {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  color: #676767;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  height: 166px;
+  padding: 14px 10px;
+  width: 100%;
+}
+.modal .container .content-modal form .ingredientes:focus {
+  border: 1px solid #fb8303;
+  box-shadow: 0 0 5px #fb8303;
+  margin: 0;
+  outline: 0px;
+}
+.modal .container .content-modal form .preparacion {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  color: #676767;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  height: 146px;
+  margin: 2em 0;
+  padding: 14px 10px;
+  width: 100%;
+}
+.modal .container .content-modal form .preparacion:focus {
+  border: 1px solid #fb8303;
+  box-shadow: 0 0 5px #fb8303;
+  outline: 0px;
+}
 .modal span {
   color: #ff740f;
   cursor: pointer;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
 }
-.modal .boton .verde {
-  margin: 1em 0px;
+
+.contacto {
+  overflow: hidden;
+}
+.contacto .title {
+  overflow: hidden;
+}
+.contacto .title .container {
+  margin: 8em auto 1.375em;
+}
+.contacto .title .container h2 {
+  color: #ffffff;
+  font-weight: 400;
+  line-height: 5rem;
+  margin: 2em 0 0;
+}
+.contacto .title .container span {
+  color: #fbcb22;
+  font-weight: 700;
+}
+.contacto .title .container p {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 1rem 0 6rem;
+}
+.contacto .content-form .container {
+  margin: 5em auto;
+  width: 780px;
+}
+.contacto .content-form .container .left, .contacto .content-form .container .right {
+  width: 50%;
+}
+.contacto .content-form .container p {
+  color: #676767;
+  font-size: 2rem;
+}
+.contacto .content-form .container form {
+  margin: 0;
+  display: table;
+  position: relative;
+  width: 100%;
+  z-index: 999;
+}
+.contacto .content-form .container form .div100 {
+  padding: 0px 2em;
+}
+.contacto .content-form .container form input {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  color: #676767;
+  display: block;
+  height: auto;
+  font-size: 1rem;
+  margin: 0;
+  outline: none;
+  padding: 14px 10px;
+  width: 100%;
+}
+.contacto .content-form .container form input:focus {
+  border: 1px solid #fb8303;
+  box-shadow: 0 0 5px #fb8303;
+  margin: 0;
+  outline: 0px;
+}
+.contacto .content-form .container form textarea {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  color: #676767;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  height: 166px;
+  margin: 3em 0;
+  padding: 14px 10px;
+  width: 100%;
+}
+.contacto .content-form .container form textarea:focus {
+  border: 1px solid #fb8303;
+  box-shadow: 0 0 5px #fb8303;
+  margin: 3em 0;
+  outline: 0px;
+}
+.contacto .content-form .container a {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  background: #ed7028;
+  box-sizing: border-box;
+  color: #fff;
+  display: block;
+  height: 46px;
+  margin: 0 auto;
+  padding: 16px 48px;
+  text-decoration: none;
+  width: 140px;
+}
+.contacto .content-form .container a:hover {
+  background: #ff995e;
 }
 
 .productos-interior {
@@ -2329,11 +2953,40 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
   }
 
   .cover {
-    height: 442px;
+    height: 680px;
+    margin-bottom: 100px;
   }
-  .cover .scene {
-    height: 350px;
-    width: 1024px;
+  .cover .slider .container {
+    height: 780px;
+    width: 100% !important;
+  }
+
+  .productos .categorias .container .grid-productos .producto {
+    margin: 16px 44px;
+    width: 244px;
+  }
+
+  .grid .container .content-grid {
+    margin: 0 auto;
+    padding: 0;
+    width: 820px;
+  }
+  .grid .container .content-grid .receta {
+    border-radius: 6px 6px;
+    -moz-border-radius: 6px 6px;
+    -webkit-border-radius: 6px 6px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    height: auto;
+    margin: 20px 24px;
+    overflow: hidden;
+    padding: 0px;
+    text-decoration: none;
+    width: 358px;
   }
 }
 @media only screen and (min-width: 1280px) and (max-width: 1440px) {
@@ -2342,92 +2995,52 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
   }
 
   .cover {
-    height: 492px;
+    height: 680px;
+    margin-bottom: 100px;
   }
-  .cover .scene {
-    height: 430px;
-    width: 1280px;
+  .cover .slider .container {
+    height: 780px;
+    width: 100% !important;
+  }
+
+  .acerca .header .container {
+    width: 600px !important;
+  }
+  .acerca .info .container {
+    width: 768px !important;
+  }
+
+  .productos .categorias .container .grid-productos .producto {
+    margin: 16px 44px;
+    width: 244px;
+  }
+
+  .grid .container .content-grid {
+    margin: 0 auto;
+    padding: 0;
+    width: 820px;
+  }
+  .grid .container .content-grid .receta {
+    border-radius: 6px 6px;
+    -moz-border-radius: 6px 6px;
+    -webkit-border-radius: 6px 6px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    height: auto;
+    margin: 20px 24px;
+    overflow: hidden;
+    padding: 0px;
+    text-decoration: none;
+    width: 358px;
   }
 }
 @media only screen and (min-width: 960px) and (max-width: 1024px) {
   .container {
     width: 960px !important;
-  }
-
-  .menuHigh {
-    -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    margin: -50px auto 0px;
-    position: relative;
-    right: 0px;
-  }
-
-  .contGale ul {
-    height: 600px;
-  }
-
-  .galeria > div:not(#galeria) {
-    margin: auto;
-    width: 960px;
-  }
-  .galeria > div > span {
-    display: none;
-  }
-  .galeria .bx-controls-direction {
-    position: absolute;
-    -webkit-transform: translate(0%, 0%);
-    -moz-transform: translate(0%, 0%);
-    -ms-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-    position: inherit;
-    top: inherit;
-    left: inherit;
-    height: 54px;
-    margin: 1em auto;
-    overflow: hidden;
-  }
-
-  #prev {
-    left: 0px;
-    position: absolute;
-    top: 0px;
-  }
-
-  #next {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-  }
-
-  .controles {
-    height: 54px;
-    margin: 1em auto;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .action-button {
-    position: absolute;
-    -webkit-transform: translate(0%, 0%);
-    -moz-transform: translate(0%, 0%);
-    -ms-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-    position: inherit;
-    top: inherit;
-    left: inherit;
-  }
-
-  .form-prev {
-    left: 0px;
-    position: absolute;
-    top: 0px;
-  }
-
-  .form-next {
-    position: absolute;
-    right: 0px;
-    top: 0px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
@@ -2440,40 +3053,108 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
   }
 
   .container {
-    width: 100% !important;
+    width: 960px !important;
+  }
+
+  .cover-interior-a {
+    height: 540px;
+    min-height: 540px;
+  }
+
+  .cover-interior-b {
+    height: 480px;
+    min-height: 480px;
+  }
+
+  .cover-interior-c {
+    height: 480px;
+    min-height: 480px;
   }
 
   .cover {
-    height: 442px;
+    height: 580px;
+    margin-bottom: 100px;
   }
-  .cover .scene {
-    height: 350px;
-    width: 1024px;
+  .cover .slider .container {
+    height: 680px;
+    width: 100% !important;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li {
+    height: 680px;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .producto {
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 30px;
+    text-align: center;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li img {
+    width: 86%;
+    margin: 0 auto;
+  }
+
+  .acerca .header .container {
+    margin: 8em auto 0;
+    width: 500px !important;
+  }
+  .acerca .header .container img {
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+  }
+  .acerca .info {
+    overflow: hidden;
+  }
+  .acerca .info .container {
+    margin: 6em auto;
+    width: 768px !important;
+  }
+
+  .productos .categorias .container .grid-productos .producto {
+    width: 222px;
+  }
+
+  .detalle-producto .container {
+    margin: 14em auto 7em;
+    width: 840px !important;
+  }
+  .detalle-producto .container .descripcion {
+    display: table;
+    height: 332px;
+    max-height: 332px;
   }
 
   .grid .container .content-grid {
     margin: 0 auto;
-    width: 760px;
+    padding: 0;
+    width: 820px;
   }
-  .grid .container .content-grid .inspiracion {
+  .grid .container .content-grid .receta {
+    border-radius: 6px 6px;
+    -moz-border-radius: 6px 6px;
+    -webkit-border-radius: 6px 6px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
     height: auto;
-    margin: 10px;
-    padding: 0px;
-    width: 360px;
-  }
-  .grid .container .content-grid .inspiracion .effect-img {
-    margin: 0px 10px;
+    margin: 20px 24px;
     overflow: hidden;
-    width: 340px;
-  }
-  .grid .container .content-grid .inspiracion .btn {
-    height: 40px;
-    margin: 0 10px;
-    width: 126px;
-  }
-
-  .detalle-inspiracion .pasos .container .content img {
-    width: 100% !important;
+    padding: 0px;
+    text-decoration: none;
+    width: 358px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
@@ -2486,15 +3167,33 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
   }
 
   .container {
-    width: 100% !important;
+    width: 10% !important;
   }
 
   .cover {
-    height: 402px;
+    height: 580px;
+    margin-bottom: 100px;
   }
-  .cover .scene {
-    height: 260px;
-    width: 768px;
+  .cover .slider .container {
+    height: 680px;
+    width: 100% !important;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li {
+    height: 680px;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .producto {
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 30px;
+    text-align: center;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li img {
+    width: 86%;
+    margin: 0 auto;
   }
 
   .grid .container .content-grid {
@@ -2516,32 +3215,6 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
     height: 40px;
     margin: 0 0px;
     width: 126px;
-  }
-
-  .detalle-inspiracion .pasos .container .content img {
-    width: 100% !important;
-  }
-
-  .productos .container {
-    width: 320px !important;
-  }
-  .productos .container .left {
-    width: 100%;
-    margin: 1rem auto 2rem;
-  }
-  .productos .container .right {
-    width: 100%;
-  }
-  .productos .container .right h3 {
-    margin: 0 0;
-    text-align: center;
-  }
-  .productos .container .right p {
-    margin: 2rem 0;
-  }
-  .productos .container .right a {
-    float: none;
-    margin: 1rem auto;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -2554,58 +3227,90 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
   }
 
   .container {
-    width: 768px !important;
+    width: 680px !important;
+  }
+
+  .cover-interior-a {
+    height: 540px;
+    min-height: 540px;
+  }
+
+  .cover-interior-b {
+    height: 440px;
+    min-height: 440px;
+  }
+
+  .cover-interior-c {
+    height: 440px;
+    min-height: 440px;
   }
 
   .cover {
-    height: 402px;
+    height: 580px;
+    margin-bottom: 100px;
   }
-  .cover .scene {
-    height: 260px;
-    width: 768px;
+  .cover .slider .container {
+    height: 680px;
+    width: 100% !important;
   }
-
-  .grid .container .content-grid {
-    margin: 0 auto;
-    width: 100%;
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li {
+    height: 680px;
   }
-  .grid .container .content-grid .inspiracion {
-    height: auto;
-    margin: 10px;
-    padding: 0px;
-    width: 350px;
-  }
-  .grid .container .content-grid .inspiracion .effect-img {
-    margin: 0px 10px;
-    overflow: hidden;
-    width: 330px;
-  }
-  .grid .container .content-grid .inspiracion .btn {
-    height: 40px;
-    margin: 0 0px;
-    width: 126px;
-  }
-
-  .productos .container {
-    width: 320px !important;
-  }
-  .productos .container .left {
-    width: 100%;
-    margin: 1rem auto 2rem;
-  }
-  .productos .container .right {
-    width: 100%;
-  }
-  .productos .container .right h3 {
-    margin: 0 0;
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .producto {
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 30px;
     text-align: center;
   }
-  .productos .container .right p {
-    margin: 2rem 0;
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .txt {
+    left: 64%;
   }
-  .productos .container .right a {
-    float: none;
-    margin: 1rem auto;
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li img {
+    width: 72%;
+    margin: 0 auto;
+  }
+
+  .acerca .header .container {
+    margin: 8em auto 0;
+    width: 500px !important;
+  }
+
+  .productos .categorias .container .grid-productos .producto {
+    width: 240px;
+  }
+
+  .recetas .title .container {
+    width: 768px !important;
+  }
+  .recetas .filtro .container .buscar input {
+    padding: 14px 10px;
+    width: 480px;
+  }
+  .recetas .filtro .container .content-filtro select {
+    margin: 1em 20px;
+    width: 124px;
+  }
+
+  .grid .container .content-grid .receta {
+    border-radius: 6px 6px;
+    -moz-border-radius: 6px 6px;
+    -webkit-border-radius: 6px 6px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    height: auto;
+    margin: 20px auto;
+    overflow: hidden;
+    padding: 0px;
+    text-decoration: none;
+    width: 358px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2623,13 +3328,17 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
   }
 
   h2 {
+    font-size: 2rem;
+    line-height: 2.286rem;
+  }
+
+  h3 {
     font-size: 1.714rem;
     line-height: 2rem;
+    margin: 1.3125rem 0;
   }
 
   header {
-    box-shadow: 0px -1px 6px #333333;
-    position: fixed;
     top: 0px;
     z-index: 99;
   }
@@ -2646,13 +3355,19 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
     width: 100% !important;
   }
 
-  .cover {
-    height: 280px;
+  .cover-interior-a {
+    height: 460px;
+    min-height: 460px;
   }
-  .cover .scene {
-    height: 166px;
-    margin-left: -15%;
-    width: 130%;
+
+  .cover-interior-b {
+    height: 420px;
+    min-height: 420px;
+  }
+
+  .cover-interior-c {
+    height: 420px;
+    min-height: 420px;
   }
 
   .boton {
@@ -2668,90 +3383,242 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
   }
 
   .head h1.logo {
-    position: absolute;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
     background: url(img/logo.png);
     background-size: contain;
     display: table;
-    height: 38px;
-    left: 50%;
-    margin: 0em auto;
+    height: 40px;
+    right: 0%;
+    margin: 0em 0rem;
     top: 50%;
-    width: 100px;
+    width: 62px;
+    z-index: 99;
   }
   .head .hamburguesa {
     display: block;
   }
   .head .menu {
-    background: #2f3438;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    background: #2b1b0e;
     border-bottom: none;
     clear: both;
     height: auto;
-    display: none;
+    left: 0;
+    position: relative;
+    top: 0;
     width: 100%;
   }
   .head .menu ul {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    display: block;
+    display: none;
     height: auto;
+    margin-top: 100px;
     padding: 0;
   }
   .head .menu ul li {
-    background: #2f3438;
-    border: none;
+    border-bottom: 1px solid #fff;
     display: block;
     float: none;
     height: auto;
+    margin: 0px 1rem 2.571rem;
     padding: 0px;
   }
   .head .menu ul li:hover {
-    background: #2f3438;
+    border-bottom: 1px solid #fbcb22;
   }
   .head .menu ul li a {
-    color: #bdc3c7;
+    color: #ffffff;
     display: block;
     line-height: 1rem;
+    margin: 0px 1rem;
+    padding: 14px 0px;
+    text-align: left;
+  }
+  .head .menu ul li a:hover {
+    color: #fbcb22;
+  }
+  .head .menu .redes {
+    position: relative;
+    display: table;
+    height: 30px;
+    margin: 50px auto 10px;
+    overflow: hidden;
+    right: 0rem;
+    width: 100%;
+  }
+  .head .menu .redes ul {
+    display: table-row;
     margin: 0px;
-    padding: 20px 0px;
-  }
-  .head .facebook {
-    border: 0;
-    padding: 20px 0em;
+    padding: 0px;
     width: 100%;
   }
-  .head .busqueda {
+  .head .menu .redes ul li {
     border: 0;
-    padding: 20px 0em;
-    width: 100%;
+    display: table-cell;
+    overflow: hidden;
+    padding: 0 22px;
+    vertical-align: middle;
+    text-transform: uppercase;
   }
-  .head .pais {
-    border-left: 0;
+  .head .menu .redes ul li a {
+    font-family: "FontAwesome";
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    transition: all 0.4s;
+    color: #ffffff;
+    display: block;
+    font-size: 1.286rem;
+    height: 100%;
+    line-height: 30px;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+  }
+  .head .menu .redes ul li a.activo {
+    color: #fbcb22;
+  }
+  .head .menu .redes ul li a:hover {
+    color: #fbcb22;
   }
 
-  .filtro .container {
-    margin: 8em auto 3em;
+  .cover {
+    height: 540px;
+    margin-bottom: 0px;
   }
-  .filtro .container p {
-    font-size: 1.571rem;
-    line-height: 1.857rem;
+  .cover .slider .container {
+    height: 540px;
   }
-  .filtro .container .content-filtro {
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover {
+    height: 100% !important;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li {
+    height: 540px;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .producto {
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 110px;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .txt {
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    left: 50%;
+    top: 76%;
+    text-align: center;
+    width: 80%;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .txt h2 {
+    margin: 2rem 0 1rem;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .elemento1 {
+    display: none;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .elemento2 {
+    display: none;
+  }
+  .cover .slider .container .bx-wrapper .bx-viewport .slider-cover li .elemento3 {
+    display: none;
+  }
+  .cover .slider .container .bx-wrapper .bx-controls {
+    right: 14px;
+    top: 72%;
+  }
+
+  .descubre .container {
+    margin: 6em auto;
+  }
+  .descubre .container p {
+    font-size: 1.429rem;
+  }
+
+  .suscribete .container a:after {
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 14px 28px;
+  }
+  .suscribete .container input {
+    border: 0;
+    height: 40px;
+    font-size: 1rem;
+    padding: 0px 10px;
+    width: 200px;
+  }
+
+  .acerca .header .container img {
+    margin-top: 80px;
+  }
+  .acerca .info .container {
+    margin: 2em auto;
+  }
+
+  .productos .title .container h2 {
+    font-size: 2.714rem;
+    line-height: 3rem;
+  }
+  .productos .categorias .container .grid-productos .producto {
+    width: 222px;
+  }
+
+  .detalle-producto .container {
+    margin: 15em auto 6em;
+  }
+  .detalle-producto .container .left {
+    margin: auto;
+    width: 80%;
+  }
+  .detalle-producto .container .right {
+    width: 100%;
+  }
+  .detalle-producto .container .right .descripcion {
+    display: table;
+    height: auto;
+    margin: 0rem 0;
+  }
+  .detalle-producto .container .right .descripcion h2 {
+    color: #676767;
+    margin: 2rem 0px;
+  }
+  .detalle-producto .container .right .descripcion p {
+    color: #676767;
+    margin: 2rem 0px;
+  }
+
+  .recetas .title .container h2 {
+    font-size: 2.714rem;
+    line-height: 3rem;
+  }
+  .recetas .filtro .container .buscar a:after {
+    padding: 16px 26px;
+  }
+  .recetas .filtro .container .buscar input {
+    padding: 16px 10px;
+    width: 200px;
+  }
+  .recetas .filtro .container .content-filtro {
     margin: 2em auto;
     display: table;
   }
-  .filtro .container .content-filtro label {
+  .recetas .filtro .container .content-filtro label {
     float: left;
+    margin: 1em 0;
     position: relative;
     width: 100%;
   }
-  .filtro .container .content-filtro label:before {
+  .recetas .filtro .container .content-filtro label:before {
     position: absolute;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -2764,19 +3631,56 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
     position: absolute;
     width: 30px;
   }
-  .filtro .container .content-filtro select {
+  .recetas .filtro .container .content-filtro select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border: 1px solid #8e8e8e;
     margin: 0;
     width: 100%;
   }
-  .filtro .container .content-filtro .forma {
+  .recetas .filtro .container .content-filtro .forma {
     border-top: 0;
   }
-  .filtro .container .content-filtro a {
+  .recetas .filtro .container .content-filtro a {
     text-align: center;
+    width: 100%;
+  }
+
+  .detalle-receta .header .container .info {
+    width: 100%;
+  }
+  .detalle-receta .header .container .info h3 {
+    font-size: 2.429rem;
+    line-height: 2.857rem;
+  }
+  .detalle-receta .header .container .info .ranking {
+    width: 100%;
+    margin: 2rem 0;
+  }
+  .detalle-receta .header .container .info .share {
+    float: left;
+    margin: 2rem 0;
+  }
+  .detalle-receta .header .container .info .detalles {
+    display: table;
+    margin: 4em 0 1rem;
+    width: 100%;
+  }
+  .detalle-receta .header .container .info .detalles div {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    margin: 1px 0;
+    width: 100%;
+  }
+  .detalle-receta .header .container .info .detalles div .left {
+    width: 50%;
+  }
+  .detalle-receta .header .container .info .detalles div .right {
+    width: 50%;
+  }
+  .detalle-receta .header .container .image {
+    margin: 0;
     width: 100%;
   }
 

@@ -14,35 +14,35 @@
                             </li>
                             <li>
                                 <div class="producto"><img src="images/slider/s2-producto.png"/></div>
-                                <div class="txt"><h2>Mostaza <span>Clásica SQ</span></h2><a href="">Ver Producto</a></div>
+                                <div class="txt"><h2>Mostaza <span>Dijon</span></h2><a href="">Ver Producto</a></div>
                                 <div class="elemento1"><img src="images/slider/s2-elemento1.png"/></div>
                                 <div class="elemento2"><img src="images/slider/s2-elemento2.png"/></div>
                                 <div class="elemento3"><img src="images/slider/s2-elemento3.png"/></div>                                  
                             </li>
                             <li>
                                 <div class="producto"><img src="images/slider/s3-producto.png"/></div>
-                                <div class="txt"><h2>Salsa <span>Inglesa</span></h2><a href="">Ver Producto</a></div>
+                                <div class="txt"><h2>Mostaza <span>Deli</span></h2><a href="">Ver Producto</a></div>
                                 <div class="elemento1"><img src="images/slider/s3-elemento1.png"/></div>
                                 <div class="elemento2"><img src="images/slider/s3-elemento2.png"/></div>
                                 <div class="elemento3"><img src="images/slider/s3-elemento3.png"/></div>                                  
                             </li>
                             <li>
                                 <div class="producto"><img src="images/slider/s4-producto.png"/></div>
-                                <div class="txt"><h2>Mostaza <span>Deli</span></h2><a href="">Ver Producto</a></div>
+                                <div class="txt"><h2>Mostaza <span>Honey</span></h2><a href="">Ver Producto</a></div>
                                 <div class="elemento1"><img src="images/slider/s4-elemento1.png"/></div>
                                 <div class="elemento2"><img src="images/slider/s4-elemento2.png"/></div>
                                 <div class="elemento3"><img src="images/slider/s4-elemento3.png"/></div>                                  
                             </li>
                             <li>
                                 <div class="producto"><img src="images/slider/s5-producto.png"/></div>
-                                <div class="txt"><h2>Mostaza <span>Honey</span></h2><a href="">Ver Producto</a></div>
+                                <div class="txt"><h2>Salsa <span>Inglesa</span></h2><a href="">Ver Producto</a></div>
                                 <div class="elemento1"><img src="images/slider/s5-elemento1.png"/></div>
                                 <div class="elemento2"><img src="images/slider/s5-elemento2.png"/></div>
                                 <div class="elemento3"><img src="images/slider/s5-elemento3.png"/></div>                                  
                             </li>
                             <li>
                                 <div class="producto"><img src="images/slider/s6-producto.png"/></div>
-                                <div class="txt"><h2>Mostaza <span>Dijon</span></h2><a href="">Ver Producto</a></div>
+                                <div class="txt"><h2>Salsa <span>BBQ chipotle</span></h2><a href="">Ver Producto</a></div>
                                 <div class="elemento1"><img src="images/slider/s6-elemento1.png"/></div>
                                 <div class="elemento2"><img src="images/slider/s6-elemento2.png"/></div>
                                 <div class="elemento3"><img src="images/slider/s6-elemento3.png"/></div>                                  

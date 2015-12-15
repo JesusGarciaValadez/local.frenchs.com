@@ -20,6 +20,7 @@
         <script type="text/javascript" src="plugins/tinder/jquery.jTinder.js"></script>
         <script src="plugins/bxslider/jquery.bxslider.min.js"></script>
         <script src="plugins/parallax/parallax.js"></script>
+        <script src="plugins/drag-and-drop/jquery.ezdz.min.js"></script>
         <script src="js/main.js"></script>
         
         <script>
@@ -36,6 +37,29 @@
             captions: true
         });
 
+        </script>
+        
+        <script>
+            $('[type="file"]').ezdz({
+                text: 'drop a picture',
+                validators: {
+                    maxWidth:  600,
+                    maxHeight: 400
+                },
+                reject: function(file, errors) {
+                    if (errors.mimeType) {
+                        alert(file.name + ' must be an image.');
+                    }
+
+                    if (errors.maxWidth) {
+                        alert(file.name + ' must be width:600px max.');
+                    }
+
+                    if (errors.maxHeight) {
+                        alert(file.name + ' must be height:400px max.');
+                    }
+                }
+            });
         </script>
 
 
