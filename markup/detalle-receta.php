@@ -22,7 +22,7 @@
                             </div>
                             <div class="detalles">
                                 <div class="porciones">
-                                    <div class="left">Porcion:</div><div class="right">4</div>
+                                    <div class="left">Porciones:</div><div class="right">4</div>
                                 </div>
                                 <div class="tiempo-preparacion">
                                     <div class="left">Tiempo de preparación:</div><div class="right">15 min</div>
@@ -45,10 +45,10 @@
                             <div class="icono-ingredientes"></div>
                             <h3>Ingredientes</h3>
                             <ul>
-                                <li><span class="medida">4</span> filetes de salmón de 4oz o 113g sin piel</li>
-                                <li><span class="medida">2</span> cucharadas de aceite de oliva</li>
-                                <li><span class="medida">3</span> cucharadas de mostaza clásica <span class="marca">SQ FRENCH’S ®</span></li>
-                                <li><span class="medida">1 1/2</span> cucharada de miel</li>
+                                <li>4 filetes de salmón de 4oz o 113g sin piel</li>
+                                <li>2 cucharadas de aceite de oliva</li>
+                                <li>3 cucharadas de mostaza clásica <span class="marca">SQ FRENCH’S ®</span></li>
+                                <li>1 1/2 cucharada de miel</li>
                             </ul>
                         </div>
                         <div class="preparacion right">

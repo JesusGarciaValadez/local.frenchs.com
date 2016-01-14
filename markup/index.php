@@ -113,7 +113,7 @@
 
             <div class="suscribete">
                 <div class="container">
-                    <h3>Subscribete ahora <span>aliquam ligula aliquet sed.</span></h3>
+                    <h3>Subscríbete ahora</h3>
                     <div>    
                         <input type="text" placeholder="Ingresa tu correo electrónico">
                         <a href="#"></a>

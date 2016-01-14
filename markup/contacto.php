@@ -6,20 +6,20 @@
             
             <div class="title">
                 <div class="container">
-                    <h2>En <span>French’s</span><br>nos deleita tu visita.</h2>
-                    <p>Si tienes una gran idea, saludo o comentario,<br>compartelo con nosotros.</p>
+                    <h2>En <span>French’s</span><br>nos complace mucho tu visita.</h2>
+                    <p>Si tienes una gran idea, saludo o comentario,<br>compártelo con nosotros.</p>
                 </div>
             </div>
 
             <div class="content-form">
                 <div class="container">
-                    <p>Para contestar de manera más efectiva tu solicitud, ingresa la siguiente información</p>
+                    <p>Para poder responder a tu solicitud, ingresa la siguiente información:</p>
                     <form>
                         <div class="left">
                             <input type="text" placeholder="NOMBRE*">
                         </div>
                         <div class="right">
-                            <input type="text" placeholder="E-MAIL*">
+                            <input type="text" placeholder="CORREO ELECTRÓNICO*">
                         </div>
                         <div class="div100">
                             <textarea name="" id="" class="" placeholder="COMENTARIO"></textarea>
@@ -29,10 +29,6 @@
                 </div>
             </div>
 
-
-
-
         </section>
-
 
 <?php include('footer.php'); ?>

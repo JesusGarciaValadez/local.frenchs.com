@@ -41,10 +41,10 @@
         
         <script>
             $('[type="file"]').ezdz({
-                text: 'drop a picture',
+                text: 'SUBE TU FOTO',
                 validators: {
                     maxWidth:  600,
-                    maxHeight: 400
+                    maxHeight: 600
                 },
                 reject: function(file, errors) {
                     if (errors.mimeType) {
@@ -52,11 +52,11 @@
                     }
 
                     if (errors.maxWidth) {
-                        alert(file.name + ' must be width:600px max.');
+                        alert(file.name + ' debe ser maximo de 600px de ancho ');
                     }
 
                     if (errors.maxHeight) {
-                        alert(file.name + ' must be height:400px max.');
+                        alert(file.name + ' debe ser maximo de 600px de altura ');
                     }
                 }
             });

@@ -579,7 +579,7 @@ footer a.scroll:after {
   height: auto;
   position: absolute;
   right: 40px;
-  top: 56%;
+  top: 50%;
   -ms-transform: translate(0%, -50%);
   -webkit-transform: translate(0%, -50%);
   -moz-transform: translate(0%, -50%);
@@ -1221,6 +1221,7 @@ footer a.scroll:after {
   font-family: "FontAwesome";
   display: block;
   font-size: 1.286rem;
+  height: 20px;
   line-height: 1.286rem;
   padding: 16px 52px;
 }
@@ -1236,12 +1237,12 @@ footer a.scroll:after {
   border: 1px solid #d6d6d6;
   box-sizing: border-box;
   color: #676767;
-  height: auto;
+  height: 52px;
   font-size: 1rem;
   margin: 0;
   outline: none;
   padding: 16px 10px;
-  width: 614px;
+  width: 592px;
 }
 .recetas .filtro .container .buscar input:focus {
   border: 1px solid #fb8303;
@@ -1249,44 +1250,63 @@ footer a.scroll:after {
   margin: 0;
   outline: 0px;
 }
+.recetas .filtro .container .buscar input:-moz-placeholder {
+  color: #676767;
+}
+.recetas .filtro .container .buscar input::-moz-placeholder {
+  color: #676767;
+}
+.recetas .filtro .container .buscar input:-ms-input-placeholder {
+  color: #676767;
+}
+.recetas .filtro .container .buscar input::-webkit-input-placeholder {
+  color: #676767;
+}
 .recetas .filtro .container .content-filtro {
   margin: 1em auto;
   display: table;
+  width: 740px;
 }
 .recetas .filtro .container .content-filtro label {
   float: left;
+  margin: 2%;
   position: relative;
+  width: 21%;
 }
-.recetas .filtro .container .content-filtro label:before {
+.recetas .filtro .container .content-filtro label .first-icon, .recetas .filtro .container .content-filtro label .second-icon, .recetas .filtro .container .content-filtro label .third-icon {
+  color: #676767;
+  font-size: 0.8571rem;
+  padding: 16px 14px;
   position: absolute;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  top: 50%;
-  content: " ";
-  height: 20px;
-  left: 10px;
-  position: absolute;
-  width: 30px;
+  z-index: 999;
 }
-.recetas .filtro .container .content-filtro select {
+.recetas .filtro .container .content-filtro label select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: #fff url(img/arrow-select.png) no-repeat 90% 50%;
-  border: 1px solid #d6d6d6;
+  background: #fff url(img/arrow-select.png) no-repeat 92% 50%;
+  border: 1px solid #e1e1e1;
   border-radius: 0px;
+  box-sizing: border-box;
   color: #676767;
   cursor: pointer;
-  height: 46px;
+  height: auto;
   font-family: "Montserrat", sans-serif;
   font-size: 0.8571rem;
-  margin: 1em 10px;
   outline: 0;
-  padding: 1em;
+  padding: 14px 30px;
+  position: relative;
   text-transform: uppercase;
-  width: 168px;
+  width: 100%;
+}
+.recetas .filtro .container .content-filtro label select:focus {
+  border: 1px solid #fb8303;
+  box-shadow: 0 0 5px #fb8303;
+  margin: 2%;
+  outline: 0px;
+  padding: 11px 27px;
+  position: absolute;
+  width: 100%;
 }
 .recetas .filtro .container .content-filtro a {
   -webkit-transition: all 0.5s;
@@ -1322,8 +1342,9 @@ footer a.scroll:after {
 .detalle-receta .header .container .info h3 {
   color: #ffffff;
   font-weight: 400;
+  height: 174px;
   line-height: 3rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 .detalle-receta .header .container .info h3 span {
   color: #fbcb22;
@@ -1333,7 +1354,7 @@ footer a.scroll:after {
   background: url(img/stars-fill.png) no-repeat;
   float: left;
   height: 26px;
-  margin: 20px 0px;
+  margin: 14px 0px;
   width: 150px;
 }
 .detalle-receta .header .container .info .ranking .stars {
@@ -1357,7 +1378,8 @@ footer a.scroll:after {
   color: #ffffff;
   float: right;
   font-size: 0.8571rem;
-  margin: 10px 0px;
+  line-height: 26px;
+  margin: 14px 0px;
   width: auto;
 }
 .detalle-receta .header .container .info .share .btn-share {
@@ -1380,12 +1402,12 @@ footer a.scroll:after {
   color: #fbcb22;
 }
 .detalle-receta .header .container .info .share .redes {
-  height: 26px;
+  height: auto;
   overflow: hidden;
   display: inline-table;
 }
 .detalle-receta .header .container .info .share .redes ul {
-  margin: 10px;
+  margin: 0;
   padding: 0px;
   width: 100%;
   display: none;
@@ -1406,7 +1428,7 @@ footer a.scroll:after {
   display: block;
   font-size: 1.286rem;
   height: 100%;
-  line-height: 30px;
+  line-height: 22px;
   margin: auto;
   padding: 0;
   text-align: center;
@@ -1420,7 +1442,7 @@ footer a.scroll:after {
 }
 .detalle-receta .header .container .info .detalles {
   display: table;
-  margin: 3em 0;
+  margin: 2em 0 0;
   width: 100%;
   float: left;
 }
@@ -1518,21 +1540,20 @@ footer a.scroll:after {
   font-size: 1rem;
 }
 .detalle-receta .detalle .container .tab {
-  padding-top: 50px;
-  margin-bottom: 20px;
-  position: relative;
-  overflow: hidden;
   background: #fff;
-  width: 300px;
-  margin: 0 auto;
-  font-family: "Montserrat", sans-serif;
   color: #676767;
+  display: none;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
 }
 .detalle-receta .detalle .container .tab .tabs {
   display: table;
-  position: relative;
-  overflow: hidden;
   margin: 0;
+  overflow: hidden;
+  position: relative;
   width: 100%;
 }
 .detalle-receta .detalle .container .tab .tabs li {
@@ -1605,7 +1626,7 @@ footer a.scroll:after {
   text-decoration: none;
 }
 .detalle-receta .detalle .container .tab .tab_content .tabs_item .ingredientes ul li .medida {
-  font-size: 2.286rem;
+  font-size: 1.143rem;
 }
 .detalle-receta .detalle .container .tab .tab_content .tabs_item .ingredientes ul li .marca {
   color: #ff740f;
@@ -1885,7 +1906,7 @@ footer a.scroll:after {
 }
 .productos .categorias .container .grid-productos .producto {
   height: auto;
-  margin: 16px 44px;
+  margin: 16px 54px;
   padding: 0px;
   text-align: center;
   width: 280px;
@@ -2068,7 +2089,9 @@ footer a.scroll:after {
   background: #402108;
   color: #ffffff;
   display: inline-block;
-  margin-left: -3px;
+  height: 64px;
+  margin-left: -6px;
+  text-decoration: none;
 }
 .suscribete .container a:after {
   content: "";
@@ -2082,10 +2105,31 @@ footer a.scroll:after {
   background: #8c6749;
 }
 .suscribete .container input {
-  height: 60px;
+  border: 0px solid rgba(103, 103, 103, 0);
+  box-sizing: border-box;
+  height: 64px;
   font-size: 1rem;
   padding: 0px 10px;
   width: 480px;
+}
+.suscribete .container input:focus {
+  border: 0px solid #a7a7a7;
+  box-shadow: 0 0 0 #fb8303;
+  box-sizing: border-box;
+  margin: 0;
+  outline: 0px;
+}
+.suscribete .container input:-moz-placeholder {
+  color: #676767;
+}
+.suscribete .container input::-moz-placeholder {
+  color: #676767;
+}
+.suscribete .container input:-ms-input-placeholder {
+  color: #676767;
+}
+.suscribete .container input::-webkit-input-placeholder {
+  color: #676767;
 }
 
 .subir-receta {
@@ -2172,7 +2216,7 @@ footer a.scroll:after {
   display: table;
   height: auto;
   left: 50%;
-  padding: 6em 1em;
+  padding: 2em 1em;
   position: relative;
   top: 50%;
   -ms-transform: translate(-50%, -50%);
@@ -2184,18 +2228,22 @@ footer a.scroll:after {
 }
 .modal .container .content-modal .icono-chef-big {
   background: url(img/icono-chef-100.png) no-repeat center;
-  height: 100px;
-  margin: 10px auto;
-  width: 100px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
 }
-.modal .container .content-modal h2 {
+.modal .container .content-modal h3 {
   color: #ff740f;
   margin: 0px;
   white-space: pre-line;
   text-align: center;
 }
 .modal .container .content-modal form {
-  margin: 3em;
+  margin: 1em;
   display: table;
   position: relative;
   z-index: 999;
@@ -2251,28 +2299,36 @@ footer a.scroll:after {
   outline: 0px;
   width: 46%;
 }
+.modal .container .content-modal form input:-moz-placeholder {
+  color: #676767;
+}
+.modal .container .content-modal form input::-moz-placeholder {
+  color: #676767;
+}
+.modal .container .content-modal form input:-ms-input-placeholder {
+  color: #676767;
+}
+.modal .container .content-modal form input::-webkit-input-placeholder {
+  color: #676767;
+}
 .modal .container .content-modal form label {
+  color: #676767;
   float: left;
+  margin: 2%;
   position: relative;
+  width: 21%;
 }
-.modal .container .content-modal form label:before {
+.modal .container .content-modal form label .first-icon, .modal .container .content-modal form label .second-icon, .modal .container .content-modal form label .third-icon {
+  font-size: 0.8571rem;
+  padding: 16px 14px;
   position: absolute;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  top: 50%;
-  content: " ";
-  height: 20px;
-  left: 10px;
-  position: absolute;
-  width: 30px;
+  z-index: 999;
 }
-.modal .container .content-modal form select {
+.modal .container .content-modal form label select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: #fff url(img/arrow-select.png) no-repeat 90% 50%;
+  background: #fff url(img/arrow-select.png) no-repeat 92% 50%;
   border: 1px solid #e1e1e1;
   border-radius: 0px;
   box-sizing: border-box;
@@ -2281,17 +2337,20 @@ footer a.scroll:after {
   height: auto;
   font-family: "Montserrat", sans-serif;
   font-size: 0.8571rem;
-  margin: 2em 16px 2em 0;
   outline: 0;
-  padding: 14px 10px;
+  padding: 14px 30px;
+  position: relative;
   text-transform: uppercase;
-  width: 120px;
+  width: 100%;
 }
-.modal .container .content-modal form select:focus {
+.modal .container .content-modal form label select:focus {
   border: 1px solid #fb8303;
   box-shadow: 0 0 5px #fb8303;
-  margin: 2em 16px 2em 0;
+  margin: 2%;
   outline: 0px;
+  padding: 11px 27px;
+  position: absolute;
+  width: 100%;
 }
 .modal .container .content-modal form .ingredientes {
   -webkit-transition: all 0.3s;
@@ -2304,14 +2363,16 @@ footer a.scroll:after {
   font-size: 1rem;
   font-family: "Montserrat", sans-serif;
   height: 166px;
+  margin: 2%;
   padding: 14px 10px;
-  width: 100%;
+  width: 46%;
 }
 .modal .container .content-modal form .ingredientes:focus {
   border: 1px solid #fb8303;
   box-shadow: 0 0 5px #fb8303;
-  margin: 0;
+  margin: 2%;
   outline: 0px;
+  width: 46%;
 }
 .modal .container .content-modal form .preparacion {
   -webkit-transition: all 0.3s;
@@ -2323,15 +2384,20 @@ footer a.scroll:after {
   color: #676767;
   font-size: 1rem;
   font-family: "Montserrat", sans-serif;
-  height: 146px;
-  margin: 2em 0;
+  height: 166px;
+  margin: 2%;
   padding: 14px 10px;
-  width: 100%;
+  width: 46%;
 }
 .modal .container .content-modal form .preparacion:focus {
   border: 1px solid #fb8303;
   box-shadow: 0 0 5px #fb8303;
+  margin: 2%;
   outline: 0px;
+  width: 46%;
+}
+.modal .container .content-modal .boton {
+  margin: 0 auto;
 }
 .modal span {
   color: #ff740f;
@@ -2369,7 +2435,12 @@ footer a.scroll:after {
   margin: 5em auto;
   width: 780px;
 }
-.contacto .content-form .container .left, .contacto .content-form .container .right {
+.contacto .content-form .container .left {
+  padding: 0 1em 0 0;
+  width: 50%;
+}
+.contacto .content-form .container .right {
+  padding: 0px 0em 0 1em;
   width: 50%;
 }
 .contacto .content-form .container p {
@@ -2384,7 +2455,7 @@ footer a.scroll:after {
   z-index: 999;
 }
 .contacto .content-form .container form .div100 {
-  padding: 0px 2em;
+  padding: 0px 0em;
 }
 .contacto .content-form .container form input {
   -webkit-transition: all 0.3s;
@@ -2408,6 +2479,18 @@ footer a.scroll:after {
   box-shadow: 0 0 5px #fb8303;
   margin: 0;
   outline: 0px;
+}
+.contacto .content-form .container form input:-moz-placeholder {
+  color: #676767;
+}
+.contacto .content-form .container form input::-moz-placeholder {
+  color: #676767;
+}
+.contacto .content-form .container form input:-ms-input-placeholder {
+  color: #676767;
+}
+.contacto .content-form .container form input::-webkit-input-placeholder {
+  color: #676767;
 }
 .contacto .content-form .container form textarea {
   -webkit-transition: all 0.3s;
@@ -2441,7 +2524,7 @@ footer a.scroll:after {
   display: block;
   height: 46px;
   margin: 0 auto;
-  padding: 16px 48px;
+  padding: 16px 30px;
   text-decoration: none;
   width: 140px;
 }
@@ -2918,16 +3001,25 @@ footer .container nav ul li:last-child::after {
 }
 footer .container .derechos {
   display: table;
+  float: right;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
+  overflow: hidden;
 }
 footer .container .derechos p {
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
   color: #676767;
-  display: table-cell;
+  display: table;
   font-weight: 400;
+  margin: 0;
   padding: 0px 1em;
+  right: 0px;
   vertical-align: middle;
+  width: auto;
 }
 footer .container .derechos .logo3m {
   background: url(img/logo_3m.jpg) no-repeat center;
@@ -3134,27 +3226,8 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
     max-height: 332px;
   }
 
-  .grid .container .content-grid {
-    margin: 0 auto;
-    padding: 0;
-    width: 820px;
-  }
-  .grid .container .content-grid .receta {
-    border-radius: 6px 6px;
-    -moz-border-radius: 6px 6px;
-    -webkit-border-radius: 6px 6px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-    background: #ffffff;
-    border: 1px solid #e1e1e1;
-    height: auto;
-    margin: 20px 24px;
-    overflow: hidden;
-    padding: 0px;
-    text-decoration: none;
-    width: 358px;
+  .detalle-receta .header .container .info h3 {
+    height: 110px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
@@ -3215,6 +3288,10 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
     height: 40px;
     margin: 0 0px;
     width: 126px;
+  }
+
+  .detalle-receta .header .container .info h3 {
+    height: 110px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -3280,6 +3357,7 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
   }
 
   .productos .categorias .container .grid-productos .producto {
+    margin: 16px 44px;
     width: 240px;
   }
 
@@ -3293,6 +3371,10 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
   .recetas .filtro .container .content-filtro select {
     margin: 1em 20px;
     width: 124px;
+  }
+
+  .detalle-receta .header .container .info h3 {
+    height: 110px;
   }
 
   .grid .container .content-grid .receta {
@@ -3571,6 +3653,7 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
   }
   .productos .categorias .container .grid-productos .producto {
     width: 222px;
+    margin: 16px 64px;
   }
 
   .detalle-producto .container {
@@ -3683,6 +3766,15 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
     margin: 0;
     width: 100%;
   }
+  .detalle-receta .detalle .container {
+    margin: 4em auto;
+  }
+  .detalle-receta .detalle .container .columnas {
+    display: none;
+  }
+  .detalle-receta .detalle .container .tab {
+    display: block;
+  }
 
   .grid .container .content-grid .inspiracion {
     height: auto;
@@ -3716,124 +3808,140 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
     margin: 2rem auto;
   }
 
-  .comunidad .container a {
-    height: 44px;
-  }
-  .comunidad .container input {
-    height: 40px;
-    width: 180px;
-  }
-
-  .productos .container {
-    width: 320px !important;
-  }
-  .productos .container .left {
-    width: 100%;
-    margin: 1rem auto 2rem;
-  }
-  .productos .container .right {
-    width: 100%;
-  }
-  .productos .container .right h3 {
-    margin: 0 0;
-    text-align: center;
-  }
-  .productos .container .right p {
-    margin: 2rem 0;
-  }
-  .productos .container .right a {
-    float: none;
-    margin: 1rem auto;
-  }
-
-  .productos-interior .container {
-    margin: 8em auto 3em;
-  }
-  .productos-interior .container .left {
-    border-right: 0px solid #bcbcbc;
-  }
-
-  .detalle-inspiracion .header .container {
-    margin: 8em auto 2em;
-  }
-  .detalle-inspiracion .header .container .left {
-    width: 100%;
-  }
-  .detalle-inspiracion .header .container .left .nombre {
-    font-size: 1.571rem;
-    line-height: 1.857rem;
-    margin: 1rem 0;
-  }
-  .detalle-inspiracion .header .container .right {
-    position: relative;
-    width: 100%;
-  }
-  .detalle-inspiracion .header .container .right .tiempo {
-    border: 0;
-    width: 50%;
-  }
-  .detalle-inspiracion .header .container .right .dificultad {
-    width: 50%;
-  }
-  .detalle-inspiracion .descripcion .container {
-    margin: 0em auto 2em;
-  }
-  .detalle-inspiracion .descripcion .container .left {
-    width: 100%;
-  }
-  .detalle-inspiracion .descripcion .container .left .titulo {
-    width: 100%;
-  }
-  .detalle-inspiracion .descripcion .container .left p {
-    width: 100%;
-  }
-  .detalle-inspiracion .descripcion .container .left ul {
-    margin: 0px;
-    padding: 0px;
-  }
-  .detalle-inspiracion .descripcion .container .left ul li {
-    margin: 16px 0px;
-  }
-  .detalle-inspiracion .right {
-    padding: 0 0rem;
-    width: 100%;
-  }
-  .detalle-inspiracion .right img {
-    float: left;
-    height: auto;
-    width: 100%;
-  }
-  .detalle-inspiracion .pasos .container {
-    margin: 3em auto;
-    width: 300px !important;
-  }
-  .detalle-inspiracion .pasos .container .content ul {
-    margin: 0em 2em;
-  }
-  .detalle-inspiracion .pasos .container .content ul li a {
-    font-size: 1rem;
-    line-height: 1.429rem;
-    padding: 0 44px;
-  }
-  .detalle-inspiracion .pasos .container .content table tr td {
-    display: block;
-    padding: 0px;
-    width: 280px;
-  }
-  .detalle-inspiracion .pasos .container .content table tr td img {
-    width: 280px !important;
-  }
-  .detalle-inspiracion .pasos .container .content img {
-    width: 280px !important;
-  }
-  .detalle-inspiracion .comentarios .container {
-    margin: 2em auto;
-  }
-  .detalle-inspiracion .comentarios .container .left {
+  .modal .img-back1 {
     display: none;
   }
-  .detalle-inspiracion .comentarios .container .right {
+  .modal .img-back2 {
+    display: none;
+  }
+  .modal .container .content-modal {
+    display: block;
+    height: 100%;
+    overflow: scroll;
+    padding: 2em 0em;
     width: 100%;
+  }
+  .modal .container .content-modal .icono-chef-big {
+    background: url(img/icono-chef-100.png) no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 50px;
+    margin: 0 auto;
+    width: 50px;
+  }
+  .modal .container .content-modal h3 {
+    color: #ff740f;
+    margin: 0px;
+    white-space: pre-line;
+    text-align: center;
+  }
+  .modal .container .content-modal form {
+    margin: 2em;
+    display: table;
+    position: relative;
+    z-index: 999;
+  }
+  .modal .container .content-modal form .div100 {
+    padding: 0px 2em;
+  }
+  .modal .container .content-modal form .subir-imagen {
+    border: 2px dashed #ff740f;
+    height: 300px;
+    width: 300px;
+  }
+  .modal .container .content-modal form .subir-imagen a {
+    color: #676767;
+    display: block;
+    font-size: 1.429rem;
+    padding: 106px 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .modal .container .content-modal form .subir-imagen a:after {
+    content: "";
+    font-family: "FontAwesome";
+    color: #ff740f;
+    display: block;
+    font-size: 2rem;
+    line-height: 2rem;
+    padding: 10px;
+  }
+  .modal .container .content-modal form .subir-imagen a:hover {
+    text-decoration: none;
+  }
+  .modal .container .content-modal form .ezdz-dropzone {
+    width: 96%;
+  }
+  .modal .container .content-modal form input {
+    width: 96%;
+  }
+  .modal .container .content-modal form input:focus {
+    width: 96%;
+  }
+  .modal .container .content-modal form label {
+    position: relative;
+  }
+  .modal .container .content-modal form select {
+    width: 96%;
+  }
+  .modal .container .content-modal form select:focus {
+    width: 96%;
+  }
+  .modal .container .content-modal form .ingredientes {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+    border: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    color: #676767;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    height: 120px;
+    margin: 2%;
+    padding: 8px 6px;
+    width: 96%;
+  }
+  .modal .container .content-modal form .ingredientes:focus {
+    border: 1px solid #fb8303;
+    box-shadow: 0 0 5px #fb8303;
+    margin: 2%;
+    outline: 0px;
+    width: 96%;
+  }
+  .modal .container .content-modal form .preparacion {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+    border: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    color: #676767;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    height: 120px;
+    margin: 2%;
+    padding: 8px 6px;
+    width: 96%;
+  }
+  .modal .container .content-modal form .preparacion:focus {
+    border: 1px solid #fb8303;
+    box-shadow: 0 0 5px #fb8303;
+    margin: 2%;
+    outline: 0px;
+    width: 96%;
+  }
+  .modal .container .content-modal .boton {
+    margin: 0 auto;
+  }
+  .modal span {
+    color: #ff740f;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
 
   .redes {

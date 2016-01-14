@@ -18,6 +18,7 @@
                     </div>
                     <div class="content-filtro">
                         <label>
+                            <div class="first-icon"><i class="fa fa-tag"></i></div>
                             <select id="">
                                 <option value="vacio" selected>Categoría</option>
                                 <option value="">1</option>
@@ -29,17 +30,19 @@
                             </select>
                         </label>
                         <label>
+                            <div class="second-icon"><i class="fa fa-clock-o"></i></div>
                             <select id="">
                                 <option value="vacio" selected>Tiempo</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
+                                <option value="">5 mins.</option>
+                                <option value="">10 mins.</option>
+                                <option value="">15 mins.</option>
+                                <option value="">20 mins.</option>
+                                <option value="">25 mins.</option>
+                                <option value="">30 mins.</option>
                             </select>
                         </label>
                         <label>
+                            <div class="second-icon"><i class="fa fa-spoon"></i></div>
                             <select id="">
                                 <option value="vacio" selected>Porciones</option>
                                 <option value="">1</option>
@@ -51,14 +54,14 @@
                             </select>
                         </label>
                         <label>
+                            <div class="second-icon"><i class="fa fa-star"></i></div>
                             <select id="">
-                                <option value="vacio" selected><i class="fa fa-star"></i></option>
+                                <option value="vacio" selected>Ranking</option>
                                 <option value="">1</option>
-                                <option value="">2<i class="fa fa-star"></i></option>
+                                <option value="">2</option>
                                 <option value="">3</option>
                                 <option value="">4</option>
                                 <option value="">5</option>
-                                <option value="">6</option>
                             </select>
                         </label>
                     </div>
@@ -151,8 +154,8 @@
             <div class="container">
                 <div class="icono-chef"></div>
                 <h2>Sube tu receta</h2>
-                <p>Se parte de nuestras delicias</p>
-                <a class="boton">Ingresar</a>
+                <p>Forma parte de nuestras delicias</p>
+                <a class="boton">Subir Receta</a>
             </div>
         </section>
 
@@ -164,55 +167,62 @@
                     <div class="img-back2"></div>
                     <span class="fa fa-times fa-2x"></span>
                     <div class="icono-chef-big"></div>
-                    <h2>Sube tu receta</h2>
+                    <h3>Sube tu receta</h3>
                     <form>
                         <input type="text" placeholder="NOMBRE">
-                        <input type="text" placeholder="MAIL">
-                        <input type="text" placeholder="TÍTULO">
+                        <input type="text" placeholder="CORREO ELECTRÓNICO">
+                        <input type="text" placeholder="NOMBRE DE LA RECETA">
                         <input type="file" accept="image/png, image/jpeg">
-                        <div class="left">
-                            <div class="subir-imagen"><a href="">Sube una fotográfia de tu receta</a></div>
-                        </div>
-                        <div class="right">
-                            <input type="text" placeholder="TÍTULO">
-                            <label>
-                                <select id="">
-                                    <option value="vacio" selected>Porciones</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
-                                    <option value="">6</option>
-                                </select>
-                            </label>
-                            <label>
-                                <select id="">
-                                    <option value="vacio" selected>Tiempo</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
-                                    <option value="">6</option>
-                                </select>
-                            </label>
-                            <label>
-                                <select id="">
-                                    <option value="vacio" selected>Porciones</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
-                                    <option value="">6</option>
-                                </select>
-                            </label>
-                            <textarea name="" id="" class="ingredientes" placeholder="INGREDIENTES"></textarea>
-                        </div>
-                        <div class="div100">
-                            <textarea name="" id="" class="preparacion" placeholder="PREPARACIÓN"></textarea>
-                        </div>
+                        <label>
+                            <div class="first-icon"><i class="fa fa-tag"></i></div>
+                            <select id="">
+                                <option value="vacio" selected>Categoría</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                            </select>
+                        </label>
+                        <label>
+                            <div class="second-icon"><i class="fa fa-spoon"></i></div>
+                            <select id="">
+                                <option value="vacio" selected>Porciones</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                            </select>
+                        </label>
+                        <label>
+                            <div class="second-icon"><i class="fa fa-clock-o"></i></div>
+                            <select id="">
+                                <option value="vacio" selected>Preparación</option>
+                                <option value="">5 mins.</option>
+                                <option value="">10 mins.</option>
+                                <option value="">15 mins.</option>
+                                <option value="">20 mins.</option>
+                                <option value="">25 mins.</option>
+                                <option value="">30 mins.</option>
+                            </select>
+                        </label>
+                        <label>
+                            <div class="second-icon"><i class="fa fa-clock-o"></i></div>
+                            <select id="">
+                                <option value="vacio" selected>Cocción</option>
+                                <option value="">5 mins.</option>
+                                <option value="">10 mins.</option>
+                                <option value="">15 mins.</option>
+                                <option value="">20 mins.</option>
+                                <option value="">25 mins.</option>
+                                <option value="">30 mins.</option>
+                            </select>
+                        </label>
+                        <textarea name="" id="" class="ingredientes" placeholder="INGREDIENTES"></textarea>
+                        <textarea name="" id="" class="preparacion" placeholder="PREPARACIÓN"></textarea>
                     </form>
                     <a href="" class="boton">Subir</a>
                 </div>
