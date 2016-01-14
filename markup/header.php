@@ -28,7 +28,7 @@
                                 
                 <nav class="menu">
                     <ul>
-                        <li><a href="acerca.php">ACERCA DE</a></li>
+                        <li><a href="acerca.php">SOBRE NOSOTROS</a></li>
                         <li><a href="productos.php">PRODUCTOS</a></li>
                         <li><a href="recetas.php">RECETAS</a></li>
                         <li><a href="contacto.php">CONTACTO</a></li>
