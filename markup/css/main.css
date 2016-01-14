@@ -3685,15 +3685,18 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
     line-height: 3rem;
   }
   .recetas .filtro .container .buscar a:after {
-    padding: 16px 26px;
+    height: 14px;
+    padding: 14px 26px;
   }
   .recetas .filtro .container .buscar input {
     padding: 16px 10px;
     width: 200px;
+    height: 42px;
   }
   .recetas .filtro .container .content-filtro {
-    margin: 2em auto;
+    margin: 1em auto;
     display: table;
+    width: 264px;
   }
   .recetas .filtro .container .content-filtro label {
     float: left;
@@ -3882,6 +3885,7 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
   }
   .modal .container .content-modal form label {
     position: relative;
+    width: 96%;
   }
   .modal .container .content-modal form select {
     width: 96%;
