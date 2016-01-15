@@ -165,66 +165,77 @@
                 <div class="content-modal">
                     <div class="img-back1"></div>
                     <div class="img-back2"></div>
-                    <span class="fa fa-times fa-2x"></span>
-                    <div class="icono-chef-big"></div>
-                    <h3>Sube tu receta</h3>
-                    <form>
-                        <input type="text" placeholder="NOMBRE">
-                        <input type="text" placeholder="CORREO ELECTRÓNICO">
-                        <input type="text" placeholder="NOMBRE DE LA RECETA">
-                        <input type="file" accept="image/png, image/jpeg">
-                        <label>
-                            <div class="first-icon"><i class="fa fa-tag"></i></div>
-                            <select id="">
-                                <option value="vacio" selected>Categoría</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                            </select>
-                        </label>
-                        <label>
-                            <div class="second-icon"><i class="fa fa-spoon"></i></div>
-                            <select id="">
-                                <option value="vacio" selected>Porciones</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                            </select>
-                        </label>
-                        <label>
-                            <div class="second-icon"><i class="fa fa-clock-o"></i></div>
-                            <select id="">
-                                <option value="vacio" selected>Preparación</option>
-                                <option value="">5 mins.</option>
-                                <option value="">10 mins.</option>
-                                <option value="">15 mins.</option>
-                                <option value="">20 mins.</option>
-                                <option value="">25 mins.</option>
-                                <option value="">30 mins.</option>
-                            </select>
-                        </label>
-                        <label>
-                            <div class="second-icon"><i class="fa fa-clock-o"></i></div>
-                            <select id="">
-                                <option value="vacio" selected>Cocción</option>
-                                <option value="">5 mins.</option>
-                                <option value="">10 mins.</option>
-                                <option value="">15 mins.</option>
-                                <option value="">20 mins.</option>
-                                <option value="">25 mins.</option>
-                                <option value="">30 mins.</option>
-                            </select>
-                        </label>
-                        <textarea name="" id="" class="ingredientes" placeholder="INGREDIENTES"></textarea>
-                        <textarea name="" id="" class="preparacion" placeholder="PREPARACIÓN"></textarea>
-                    </form>
-                    <a href="" class="boton">Subir</a>
+                    <div class="form-receta">
+                        <span class="fa fa-times fa-2x"></span>
+                        <div class="icono-chef-big"></div>
+                        <h3>Sube tu receta</h3>
+                        <form>
+                            <input type="text" placeholder="NOMBRE">
+                            <input type="text" placeholder="CORREO ELECTRÓNICO">
+                            <input type="text" placeholder="NOMBRE DE LA RECETA">
+                            <input type="file" accept="image/png, image/jpeg">
+                            <p>Te recomendamos tu foto en formato: jpg / 300x300px</p>
+                            <label>
+                                <div class="first-icon"><i class="fa fa-tag"></i></div>
+                                <select id="">
+                                    <option value="vacio" selected>Categoría</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                    <option value="">6</option>
+                                </select>
+                            </label>
+                            <label>
+                                <div class="second-icon"><i class="fa fa-spoon"></i></div>
+                                <select id="">
+                                    <option value="vacio" selected>Porciones</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                    <option value="">6</option>
+                                </select>
+                            </label>
+                            <label>
+                                <div class="second-icon"><i class="fa fa-clock-o"></i></div>
+                                <select id="">
+                                    <option value="vacio" selected>Preparación</option>
+                                    <option value="">5 mins.</option>
+                                    <option value="">10 mins.</option>
+                                    <option value="">15 mins.</option>
+                                    <option value="">20 mins.</option>
+                                    <option value="">25 mins.</option>
+                                    <option value="">30 mins.</option>
+                                </select>
+                            </label>
+                            <label>
+                                <div class="second-icon"><i class="fa fa-clock-o"></i></div>
+                                <select id="">
+                                    <option value="vacio" selected>Cocción</option>
+                                    <option value="">5 mins.</option>
+                                    <option value="">10 mins.</option>
+                                    <option value="">15 mins.</option>
+                                    <option value="">20 mins.</option>
+                                    <option value="">25 mins.</option>
+                                    <option value="">30 mins.</option>
+                                </select>
+                            </label>
+                            <textarea name="" id="" class="ingredientes" placeholder="INGREDIENTES"></textarea>
+                            <textarea name="" id="" class="preparacion" placeholder="PREPARACIÓN"></textarea>
+                        </form>
+                        <a href="" id="subir-receta" class="boton">Subir</a>
+                    </div>
+                    <div class="gracias">
+                        <div class="container">
+                            <span class="fa fa-times fa-2x"></span>
+                            <div class="icono-gracias"></div>
+                            <h2>Gracias por subir tu receta</h2>
+                            <p>y ser parte de French´s</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

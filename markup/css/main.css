@@ -943,115 +943,6 @@ footer a.scroll:after {
   text-align: center;
 }
 
-.suscribete1 {
-  height: 180px;
-  position: fixed;
-  right: 0;
-  top: 34%;
-  width: auto;
-  z-index: 999;
-}
-.suscribete1 .btn-suscribete {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  background: #006838;
-  color: #ffffff;
-  height: 16px;
-  line-height: 20px;
-  padding: 18px 44px;
-  position: absolute;
-  right: -64px;
-  text-decoration: none;
-  top: 64px;
-  width: auto;
-  z-index: 989;
-}
-.suscribete1 .btn-suscribete:before {
-  content: "";
-  font-family: "FontAwesome";
-  font-size: 1rem;
-  margin: 0px 5px;
-}
-.suscribete1 .btn-suscribete:hover {
-  background: #c7162e;
-}
-.suscribete1 .box-suscribete {
-  background: #006838;
-  height: 180px;
-  position: absolute;
-  right: -500px;
-  top: 0;
-  width: 500px;
-  z-index: 999;
-}
-.suscribete1 .box-suscribete p {
-  color: #ffffff;
-  font-size: 1.143rem;
-  margin: 30px;
-  width: 260px;
-}
-.suscribete1 .box-suscribete a {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  transition: all 0.5s;
-  background: #eb1a3a;
-  bottom: 0;
-  color: #ffffff;
-  display: block;
-  float: right;
-  height: 48px;
-  position: absolute;
-  right: 0;
-  width: 80px;
-}
-.suscribete1 .box-suscribete a:after {
-  content: "";
-  font-family: "FontAwesome";
-  display: block;
-  font-size: 1.286rem;
-  line-height: 1.286rem;
-  padding: 14px 30px;
-}
-.suscribete1 .box-suscribete a:hover {
-  background: #c7162e;
-}
-.suscribete1 .box-suscribete input {
-  bottom: 0;
-  height: 44px;
-  font-size: 1rem;
-  padding: 0px 10px;
-  position: absolute;
-  width: 396px;
-}
-.suscribete1 .box-suscribete .close {
-  background: none;
-  height: 20px;
-  padding: 12px;
-  position: absolute;
-  right: 0;
-  text-decoration: none;
-  top: 0;
-  width: auto;
-}
-.suscribete1 .box-suscribete .close:after {
-  content: "";
-  font-family: "FontAwesome";
-  display: block;
-  font-size: 1.286rem;
-  line-height: 1.286rem;
-  padding: 0px 0px;
-}
-.suscribete1 .box-suscribete .close:hover {
-  background: none;
-}
-
 .acerca {
   overflow: hidden;
 }
@@ -2276,6 +2167,15 @@ footer a.scroll:after {
 .modal .container .content-modal form .subir-imagen a:hover {
   text-decoration: none;
 }
+.modal .container .content-modal form p {
+  color: #676767;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7857rem;
+  line-height: 1.071rem;
+  margin: -16px 52%;
+  position: absolute;
+  width: 46%;
+}
 .modal .container .content-modal form input {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -2398,6 +2298,33 @@ footer a.scroll:after {
 }
 .modal .container .content-modal .boton {
   margin: 0 auto;
+}
+.modal .container .content-modal .gracias {
+  display: none;
+  overflow: hidden;
+}
+.modal .container .content-modal .gracias .container {
+  margin: 0em auto;
+  text-align: center;
+  padding: 8em;
+}
+.modal .container .content-modal .gracias .container .icono-gracias {
+  background: url(img/icono-gracias.png) no-repeat center;
+  height: 102px;
+  margin: 10px auto;
+  width: 102px;
+}
+.modal .container .content-modal .gracias .container h2 {
+  color: #ff740f;
+  margin: 0px;
+  white-space: pre-line;
+  text-align: center;
+}
+.modal .container .content-modal .gracias .container p {
+  color: #676767;
+  font-size: 1.857rem;
+  text-align: center;
+  margin: 1rem 0px;
 }
 .modal span {
   color: #ff740f;
@@ -2631,340 +2558,6 @@ footer a.scroll:after {
 }
 .productos-interior .container .producto a:hover {
   color: #eb1a3a;
-}
-
-.detalle-inspiracion .header {
-  overflow: hidden;
-}
-.detalle-inspiracion .header .container {
-  margin: 6em auto 2em;
-}
-.detalle-inspiracion .header .container .left {
-  padding: 0 1rem;
-  width: 60%;
-}
-.detalle-inspiracion .header .container .left .categoria {
-  background-color: #eb1a3a;
-  color: #ffffff;
-  display: table;
-  margin: 0;
-  font-family: Lato;
-  font-size: 0.8571rem;
-  padding: 6px;
-}
-.detalle-inspiracion .header .container .left .nombre {
-  color: #fbcb22;
-  font-size: 2.286rem;
-  line-height: 2.714rem;
-  text-align: left;
-  margin: 0.5714rem 0;
-}
-.detalle-inspiracion .header .container .right {
-  position: absolute;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  top: 50%;
-  padding: 0 1rem;
-  right: 0%;
-  width: 40%;
-}
-.detalle-inspiracion .header .container .right .tiempo {
-  border-left: 1px solid #bcbcbc;
-  box-sizing: border-box;
-  display: table;
-  float: left;
-  padding: 0 20px;
-  text-align: center;
-  width: 42%;
-  border-left: 1px solid #bcbcbc;
-}
-.detalle-inspiracion .header .container .right .tiempo .titulo {
-  color: #fbcb22;
-  font-weight: 700;
-  font-size: 1.143rem;
-  line-height: 1rem;
-  margin: 0.5714rem 0;
-}
-.detalle-inspiracion .header .container .right .tiempo .minutos {
-  color: #eb1a3a;
-  font-weight: 700;
-  font-size: 1.143rem;
-  margin: 0.5714rem 0;
-}
-.detalle-inspiracion .header .container .right .dificultad {
-  border-left: 1px solid #bcbcbc;
-  box-sizing: border-box;
-  display: table;
-  float: left;
-  padding: 0 20px;
-  text-align: center;
-  width: 42%;
-  border-left: 1px solid #bcbcbc;
-}
-.detalle-inspiracion .header .container .right .dificultad .titulo {
-  color: #fbcb22;
-  font-weight: 700;
-  font-size: 1.143rem;
-  line-height: 1rem;
-  margin: 0.5714rem 0;
-}
-.detalle-inspiracion .header .container .right .dificultad .ribbon {
-  background: url(img/ribbons-red.png) no-repeat;
-  display: inline-block;
-  height: 14px;
-}
-.detalle-inspiracion .header .container .right .dificultad .ribbon.d1 {
-  width: 25px;
-}
-.detalle-inspiracion .header .container .right .dificultad .ribbon.d2 {
-  width: 50px;
-}
-.detalle-inspiracion .header .container .right .dificultad .ribbon.d3 {
-  width: 75px;
-}
-.detalle-inspiracion .header .container .right .dificultad .ribbon.d4 {
-  width: 75px;
-}
-.detalle-inspiracion .header .container .right .dificultad .minutos {
-  color: #eb1a3a;
-  font-weight: 700;
-  font-size: 1.143rem;
-  margin: 0.5714rem 0;
-}
-.detalle-inspiracion .descripcion {
-  background: #eb1a3a;
-  overflow: hidden;
-}
-.detalle-inspiracion .descripcion .container {
-  margin: 0em auto;
-}
-.detalle-inspiracion .descripcion .container .left {
-  padding: 0 1rem;
-  width: 50%;
-}
-.detalle-inspiracion .descripcion .container .left .titulo {
-  color: #676767;
-  font-weight: 700;
-  font-size: 1.286rem;
-  margin: 2rem 0;
-  width: 80%;
-}
-.detalle-inspiracion .descripcion .container .left p {
-  color: #676767;
-  font-size: 1rem;
-  text-align: left;
-  margin: 2rem 0;
-  width: 100%;
-}
-.detalle-inspiracion .descripcion .container .left ul {
-  margin: 0px;
-  padding: 0px;
-}
-.detalle-inspiracion .descripcion .container .left ul li {
-  color: #676767;
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 16px 16px;
-  padding: 0px;
-  vertical-align: middle;
-  text-decoration: none;
-}
-.detalle-inspiracion .descripcion .container .left ul li:before {
-  content: "";
-  font-family: "FontAwesome";
-  color: #676767;
-  padding: 0px 15px;
-}
-.detalle-inspiracion .descripcion .container .left .menu-redes-content {
-  height: auto;
-  float: right;
-  margin: 20px 0;
-  width: 100%;
-}
-.detalle-inspiracion .descripcion .container .left .menu-redes-content ul {
-  float: right;
-}
-.detalle-inspiracion .descripcion .container .left .menu-redes-content ul li {
-  display: table-cell;
-  font-size: 1.143rem;
-  overflow: hidden;
-  vertical-align: middle;
-  text-align: center;
-  text-transform: uppercase;
-  width: 50px;
-}
-.detalle-inspiracion .descripcion .container .left .menu-redes-content ul li:before {
-  content: " ";
-  padding: 0px 12px;
-}
-.detalle-inspiracion .descripcion .container .left .menu-redes-content ul li a {
-  color: #676767;
-}
-.detalle-inspiracion .descripcion .container .right {
-  min-height: 520px;
-  padding: 0 1rem;
-  width: 50%;
-}
-.detalle-inspiracion .descripcion .container .right .content-img {
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  text-align: center;
-  width: 46.5%;
-}
-.detalle-inspiracion .descripcion .container .right .content-img img {
-  height: 100%;
-  left: 50%;
-  margin-left: -100%;
-  position: relative;
-  width: auto !important;
-}
-.detalle-inspiracion .pasos .container {
-  margin: 4em auto;
-  width: 768px !important;
-}
-.detalle-inspiracion .pasos .container h2 {
-  color: #d5af66;
-  margin: 0 auto 4rem;
-  white-space: pre-line;
-  text-align: center;
-}
-.detalle-inspiracion .pasos .container .content h2, .detalle-inspiracion .pasos .container .content h3, .detalle-inspiracion .pasos .container .content h4, .detalle-inspiracion .pasos .container .content h5, .detalle-inspiracion .pasos .container .content h6 {
-  color: #009245;
-}
-.detalle-inspiracion .pasos .container .content p {
-  color: #fbcb22;
-}
-.detalle-inspiracion .pasos .container .content ol {
-  color: #fbcb22;
-  list-style-type: decimal;
-  margin: 1em 2em;
-}
-.detalle-inspiracion .pasos .container .content ol li {
-  font-size: 1rem;
-  margin: 0.5em 0px;
-}
-.detalle-inspiracion .pasos .container .content ul {
-  color: #fbcb22;
-  list-style-type: disc;
-  margin: 1em 2em;
-}
-.detalle-inspiracion .pasos .container .content ul li {
-  color: #626e73;
-  font-size: 1rem;
-  margin: 0.5em 0px;
-}
-.detalle-inspiracion .pasos .container .content a {
-  color: #eb1a3a;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.286rem;
-  text-decoration: none;
-}
-.detalle-inspiracion .pasos .container .content table tr td {
-  color: #fbcb22;
-  padding: 10px;
-  width: 50%;
-}
-.detalle-inspiracion .comentarios .container {
-  margin: 2em auto;
-}
-.detalle-inspiracion .comentarios .container h4 {
-  color: #d5af66;
-  margin: 0 auto 2rem;
-  white-space: pre-line;
-}
-.detalle-inspiracion .comentarios .container .left {
-  padding: 0;
-  width: 10%;
-}
-.detalle-inspiracion .comentarios .container .right {
-  width: 90%;
-}
-.detalle-inspiracion .comentarios .container .right textarea {
-  box-sizing: border-box;
-  border: 1px solid #7a7a7a;
-  color: #fbcb22;
-  font-size: 1rem;
-  min-height: 100px;
-  padding: 15px;
-  resize: none;
-  width: 100%;
-}
-.detalle-inspiracion .pages .container {
-  margin: 6em auto;
-}
-.detalle-inspiracion .pages .container ul {
-  display: table;
-  margin: auto;
-  padding: 0px;
-  width: auto;
-}
-.detalle-inspiracion .pages .container li {
-  border: 1px solid #7a7a7a;
-  display: table-cell;
-  overflow: hidden;
-  text-transform: uppercase;
-  vertical-align: middle;
-  width: 200px;
-}
-.detalle-inspiracion .pages .container li a {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  transition: all 0.5s;
-  box-sizing: border-box;
-  color: #fbcb22;
-  display: block;
-  font-size: 1rem;
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-}
-.detalle-inspiracion .pages .container li a:hover {
-  color: #eb1a3a;
-}
-.detalle-inspiracion .pages .container li:first-child {
-  border-right: 0;
-}
-.detalle-inspiracion .pages .container li:last-child {
-  border-left: 0;
-}
-.detalle-inspiracion .pages .container li .prev:before {
-  content: "";
-  font-family: "FontAwesome";
-  font-size: 1.143rem;
-  margin-right: 15px;
-}
-.detalle-inspiracion .pages .container li .prev.disabled {
-  color: #cccccc;
-  cursor: not-allowed;
-}
-.detalle-inspiracion .pages .container li .next:after {
-  content: "";
-  font-family: "FontAwesome";
-  font-size: 1.143rem;
-  margin-left: 15px;
-}
-.detalle-inspiracion .pages .container li .next.disabled {
-  color: #cccccc;
-  cursor: not-allowed;
-}
-.detalle-inspiracion .productos-relacionados .container {
-  margin: 0em auto;
-}
-.detalle-inspiracion .productos-relacionados .container h4 {
-  color: #d5af66;
-  margin: 0 auto 1rem;
-  white-space: pre-line;
-}
-.detalle-inspiracion .productos-relacionados .container .line {
-  background: #f8aab6;
-  height: 1px;
-  margin: 0 auto;
-  width: 100%;
 }
 
 footer .container nav {
@@ -3875,6 +3468,12 @@ div#colores, div#highlights, div#galeria, div#highlights2, div#versiones, div#ma
     text-decoration: none;
   }
   .modal .container .content-modal form .ezdz-dropzone {
+    margin-bottom: 8%;
+    width: 96%;
+  }
+  .modal .container .content-modal form p {
+    font-size: 0.7143rem;
+    margin: -14px 2%;
     width: 96%;
   }
   .modal .container .content-modal form input {
