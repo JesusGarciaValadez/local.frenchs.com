@@ -1,0 +1,178 @@
+//- Mixines
+=out
+	border: 1px dotted black
+
+=bx($value: border-box)
+	-moz-box-sizing: $value
+	-webkit-box-sizing: $value
+	box-sizing: $value
+
+=padd
+	padding: $min-spacer+3 $spacer
+
+=linked
+	color: $color-link
+	text-decoration: underline
+
+=btn($bg:$primario, $color: white, $borde: $color-border, $ancho: table)
+	+bx
+	width: auto
+	margin: $min-spacer 0px
+	font-size: $fontSize
+	text-align: center !important
+	text-decoration: none
+	display: $ancho
+	border-radius: 5px
+	padding: $min-spacer
+	line-height: 1
+	cursor: pointer
+	background: $bg
+	border: 1px solid $borde
+	color: $color !important
+
+=appearance
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+
+=aReset
+	color: inherit
+	text-decoration: none
+
+=center($value: v)
+	position: absolute
+	@if $value == v
+		-webkit-transform: translateX(-50%)
+		-moz-transform: translateX(-50%)
+		-ms-transform: translateX(-50%)
+		transform: translateX(-50%)
+		left: 50%
+	@else if $value == h
+		-webkit-transform: translateY(-50%)
+		-moz-transform: translateY(-50%)
+		-ms-transform: translateY(-50%)
+		transform: translateY(-50%)
+		top: 50%
+	@else if $value == vh
+		-webkit-transform: translate(-50%, -50%)
+		-moz-transform: translate(-50%, -50%)
+		-ms-transform: translate(-50%, -50%)
+		transform: translate(-50%, -50%)
+		top: 50%
+		left: 50%
+	@else if $value == r
+		-webkit-transform: translate(0%, 0%)
+		-moz-transform: translate(0%, 0%)
+		-ms-transform: translate(0%, 0%)
+		transform: translate(0%, 0%)
+		position: inherit
+		top: inherit
+		left:  inherit
+
+=translate($value1,$value2 )
+	-webkit-transform: translate($value1, $value2)
+	-moz-transform: translate($value1, $value2)
+	-ms-transform: translate($value1, $value2)
+	transform: translate($value1, $value2)
+
+
+=gradient($deg, $color_A, $color_B)
+	background: $color_A
+	background: -moz-linear-gradient($deg, $color_A 0%, $color_B 100%)
+	background: -webkit-gradient($deg, color-stop(0%, $color_A), color-stop(100%, $color_B))
+	background: -webkit-linear-gradient($deg, $color_A 0%, $color_B 100%)
+	background: -o-linear-gradient($deg, $color_A 0%, $color_B 100%)
+	background: -ms-linear-gradient($deg, $color_A 0%, $color_B 100%)
+	background: linear-gradient($deg, $color_A 0%, $color_B 100%)
+	@if $deg >=0 and $deg <=90
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_A}', endColorstr='#{$color_B}', GradientType=0 )
+	@if $deg >=91 and $deg <=180
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_A}', endColorstr='#{$color_B}', GradientType=1 )
+	@if $deg >=181 and $deg <=270
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_B}', endColorstr='#{$color_A}', GradientType=0 )
+	@if $deg >=271 and $deg <=360
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_B}', endColorstr='#{$color_A}', GradientType=1 )
+
+=fx($elem, $time: 1s)
+	-webkit-transition: $elem $time
+	-moz-transition: $elem $time
+	-ms-transition: $elem $time
+	transition: $elem $time
+
+=rounded
+	border-radius: 6px 6px
+	-moz-border-radius: 6px 6px 
+	-webkit-border-radius: 6px 6px 
+
+=rotation
+	-webkit-transform: rotate(-90deg)
+	-moz-transform: rotate(-90deg)
+	-o-transform: rotate(-90deg)
+	-ms-transform: rotate(-90deg)
+
+=scrollMobile
+	overflow-x: hidden
+	overflow-y: scroll
+	-webkit-overflow-scrolling: touch
+
+=shadow($type: box , $s1: 2px, $s2: 2px, $s3: 10px, $alpha: rgba(0,0,0,0.3))
+	-webkit-box-shadow: $s1 $s2 $s3 $alpha
+	-moz-box-shadow: $s1 $s2 $s3 $alpha
+	-o-box-shadow: $s1 $s2 $s3 $alpha
+	-ms-box-shadow: $s1 $s2 $s3 $alpha
+	box-shadow: $s1 $s2 $s3 $alpha
+
+=fawesome($value)
+	content: $value
+	font-family: "FontAwesome"
+
+=iconBg($img: icon-menu, $ancho: 40px, $alto: 40px)
+	content: " "
+	display: inline-block
+	background: url(img/#{$img}.png) no-repeat
+	background-position: 0 0
+	width: $ancho
+	height: $alto
+
+//- Bloque Experimental Flex
+=flex
+	display: -webkit-box
+	display: -moz-box !important
+	display: -ms-flexbox !important
+	webkit-display: -webkit-flex !important
+	display: -webkit-flex !important
+	display: flex !important
+
+=flexDir($dir: column)
+	flex-direction: $dir
+	-webkit-box-direction: $dir
+	-webkit-flex-direction: $dir
+	-ms-flex-direction: $dir
+
+=flexWrap($dir: wrap)
+	flex-wrap: $dir
+	-webkit-box-wrap: $dir
+	-webkit-flex-wrap: $dir
+	-ms-flex-wrap: $dir
+
+=alignItem($dir: center)
+	align-items: $dir
+	-webkit-align-items: $dir
+	-ms-flex-align: $dir
+
+=alignCont($dir: flex-start)
+	align-content: $dir
+	-webkit-align-content: $dir
+
+=justifyCont($dir: center)
+	justify-content: $dir
+	-webkit-justify-content: $dir
+	-ms-flex-pack: $dir
+	@if $dir == "flex-end"
+		-ms-flex-pack: end
+	@if $dir == "flex-start"
+		-ms-flex-pack: start
+	@if $dir == "space-around"
+		-ms-flex-pack: justify
+	@if $dir == "space-between"
+		-ms-flex-pack: justify

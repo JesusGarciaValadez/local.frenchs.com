@@ -1,0 +1,81 @@
+.head 
+	background: none
+	height: 100px
+	position: relative
+	width: 100%
+	h1.logo
+		+center(h)
+		background: $logo
+		background-size: contain
+		display: block
+		height: 68px
+		left: 2rem
+		margin: auto
+		top: 80%
+		width: 106px
+		span
+			display: none
+	.menu
+		+center(vh)
+		display: table
+		height: 30px
+		overflow: hidden
+		ul
+			display: table-row
+			margin: 0px
+			padding: 0px
+			width: 100%
+			li
+				display: table-cell
+				overflow: hidden
+				vertical-align: middle
+				text-transform: uppercase
+				a
+					+fx(all,0.4s)
+					color: #ffffff
+					display: block
+					font-size: 1rem
+					font-family: 'Montserrat'
+					font-weight: 700
+					height: 100%
+					line-height: 30px
+					margin: auto
+					padding: 0px 2em
+					text-align: center
+					text-decoration: none
+					&.activo
+						color: $txt4
+					&:hover
+						color: $txt4
+	.redes
+		+center(h)
+		display: table
+		height: 30px
+		right: 2rem
+		overflow: hidden
+		ul
+			display: table-row
+			margin: 0px
+			padding: 0px
+			width: 100%
+			li
+				display: table-cell
+				overflow: hidden
+				padding: 0 22px
+				vertical-align: middle
+				text-transform: uppercase
+				a
+					+fx(all,0.4s)
+					color: #ffffff
+					display: block
+					font-size: 1.286rem
+					height: 100%
+					line-height: 30px
+					margin: auto
+					padding: 0
+					text-align: center
+					text-decoration: none
+					&.activo
+						color: $txt4
+					&:hover
+						color: $txt4

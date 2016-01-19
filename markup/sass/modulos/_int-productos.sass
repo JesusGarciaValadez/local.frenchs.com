@@ -1,0 +1,82 @@
+.productos-interior
+	overflow: hidden
+	.container
+		margin: 6em auto
+		h2
+			color: $TitleRed
+			margin: 0 auto 4rem
+			white-space: pre-line
+			text-align: center
+		.left
+			width: 50%
+			border-right: 1px solid #bcbcbc
+		.right
+			width: 50%
+		.producto
+			display: table
+			margin: 0 auto
+			width: 320px
+			img
+				display: table
+				height: auto
+				margin: 2rem auto
+				width: 90%
+			h3
+				color: $txt4
+				line-height: 2.571rem
+				margin: 0 auto 2rem
+				text-align: center
+				width: 100%
+				span
+					font-size: 1.714rem
+					line-height: 1.714rem
+					font-weight: 400
+			h4
+				color: $txt4
+				line-height: 2.571rem
+				margin: 0 auto 2rem
+				text-align: center
+				width: 100%
+			ul
+				margin: 0px
+				padding: 0px
+				li
+					color: $txt4
+					font-size: 1rem
+					font-weight: 400
+					margin: 10px 20px
+					padding: 0px
+					vertical-align: middle
+					text-decoration: none
+					&:before
+						+fawesome("\f192")
+						color: $txt4
+						padding: 0px 15px
+			p
+				color: $txt5
+				font-size: 1.143rem
+				float: left
+				text-align: left
+				width: 100%
+			a
+				+fx(all,0.5s)
+				+rounded
+				border: 1px solid #7a7a7a
+				box-sizing: border-box
+				color: $txt4
+				display: table
+				font-size: 0.8571rem
+				font-weight: 700
+				height: auto
+				margin: 2rem auto
+				padding: 17px 60px
+				text-align: center
+				text-decoration: none
+				text-transform: uppercase
+				width: auto
+				&:hover
+					color: $txt6
+				//&:after
+				//	+fawesome("\f105")
+				//	padding: 0px 10px
+				//	font-size: 1rem

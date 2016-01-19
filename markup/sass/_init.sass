@@ -1,0 +1,235 @@
+//Clearfix
+.cf
+	*zoom: 1
+	&:after
+		clear: both
+		content: ""
+		display: table
+::-moz-selection
+	background: transparent
+::selection
+	background: transparent
+//Base
+html
+	-webkit-font-smoothing: antialiased
+	font-family: 'Montserrat', sans-serif
+	font-size: 14px
+	font-weight: 400
+	text-rendering: optimizeLegibility
+
+html, body
+	height: 100%
+	position: relative
+	width: 100%
+
+body
+	-webkit-overflow-scrolling: touch
+	background: #fff
+	display: block
+	height: 100vh
+	margin: 0px
+	overflow-y: scroll
+	padding: 0px
+	position: relative
+	width: 100%
+
+h1
+	color: $txt1
+	font-size: 4.286rem
+	font-weight: 700
+	line-height: 1em
+	margin: 4.286rem 0
+
+h2
+	color: $txt1
+	font-size: 4.286rem
+	font-weight: 700
+	line-height: 5rem
+	margin: 4.286rem 0
+
+h3
+	color: $txt1
+	font-size: 2.857rem
+	font-weight: 700
+	line-height: 1.3125em
+	margin: 1.3125rem 0
+
+h4
+	color: $txt1
+	font-size: 2rem
+	font-weight: 700
+	line-height: 1.3125em
+	margin: 1.3125rem 0
+
+h5
+	color: $txt1
+	font-size: 1.71429rem
+	font-weight: 700
+	line-height: 1.3125em
+	margin: 1.3125rem 0
+
+h6
+	color: $txt1
+	font-size: 1.42857rem
+	font-weight: 700
+	line-height: 1.3125em
+	margin: 0.75rem 0
+
+input
+	color: $txt5
+	font-family: "Montserrat", sans-serif
+	
+textarea
+	resize: none
+p
+	color: $txt1
+	font-family: 'Montserrat', sans-serif
+	font-size: 1rem
+	font-weight: 400
+	line-height: 1.3125em
+	margin: 1em 0px
+	span
+		font-weight: 700
+	small
+		font-size: 1.28571rem
+
+
+pre
+	color: $txt1
+	display: block
+	font-family: 'Montserrat', sans-serif
+	font-size: 1rem
+	font-weight: 400
+	line-height: 2rem
+	margin: 1em 0px
+	white-space: pre-line
+
+
+header
+	position: absolute
+	top: 0px
+	width: 100%
+	z-index: 999
+
+section
+	overflow: hidden
+	width: 100%
+
+footer
+	border-top: 1px solid #e1e1e1
+	overflow: visible
+	position: relative
+	width: 100%
+	a
+		&.scroll
+			+center(vh)
+			+fx(all,0.5s)
+			background: $Feedback1
+			border-radius: 50%
+			display: table
+			height: 50px
+			left: inherit
+			right: 15%
+			top: 0px
+			width: 50px
+			&:hover
+				background: $Feedback2
+			&:after
+				+center(vh)
+				+fawesome("\f106")
+				color: $Feedback1C
+				font-size: 2rem
+
+.container
+	+bx
+	height: 100%
+	margin: 0 auto
+	overflow: hidden
+	padding: 0px 1em
+	position: relative
+	width: 1200px
+
+.hidden
+	overflow: hidden
+
+
+.fixed
+	bottom: initial !important
+	position: fixed !important
+	top: 0px
+
+
+.link
+	color: $txt1
+	font-family: 'Open Sans', sans-serif
+	font-size: 1rem
+	font-weight: 600
+	margin: 1em auto
+	text-decoration: none
+	&:after
+		+fawesome("\f055")
+		color: $Feedback1
+		padding-left: 10px
+
+
+.boton
+	+fx(all,0.5s)
+	background: $boton1
+	clear: both
+	color: $txt1
+	cursor: pointer
+	display: table
+	font-family: 'Montserrat'
+	font-size: 1rem
+	font-weight: 400
+	margin: 2em auto
+	padding: 1.25em 0px
+	text-align: center
+	text-decoration: none
+	text-transform: uppercase
+	width: 15rem
+	&:hover
+		background: $boton1H
+	&.negro
+		background: $boton2
+		border: none
+		color: $boton2C
+		&:hover
+			background: $boton2H
+
+.left
+	+bx
+	float: left
+	padding: 0px 2em
+
+.right
+	+bx
+	float: right
+	padding: 0px 2em
+
+
+.hamburguesa
+	+center(h)
+	display: none
+	margin: 0px 2rem
+	padding: 0
+	position: absolute
+	right: 0
+	top: 50%
+	z-index: 99
+	&:before
+		+fawesome("\f0c9")
+		color: #ffffff
+		font-size: 2rem
+		height: 15px
+		width: 23px
+
+	&.activo
+		&:before
+			+fawesome("\f00d")
+			background-size: cover
+			width: 20px
+			height: 10px
+			z-index: 999
+
+

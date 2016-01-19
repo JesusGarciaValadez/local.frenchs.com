@@ -1,0 +1,258 @@
+.descubre
+	position: relative
+	.img-back1
+		background: url(img/element-img-back1.png) no-repeat
+		background-position: -200px
+		height: 574px
+		left: 0
+		position: absolute
+		width: 500px
+	.img-back2
+		background: url(img/element-img-back2.png) no-repeat
+		background-position: 70px
+		bottom: 0
+		height: 368px
+		right: 0px
+		position: absolute
+		width: 300px
+	.container
+		margin: 16em auto 3em
+		.icono-cubiertos
+			background: url(img/icono-cubiertos.png) no-repeat center
+			height: 50px
+			margin: 10px auto
+			width: 50px
+		h2
+			color: $txt2
+			margin: 0px
+			white-space: pre-line
+			text-align: center
+		p
+			color: $txt3
+			font-size: 1.857rem
+			text-align: center
+			margin: 1rem 0px
+		.content-filtro
+			margin: 2em auto
+			display: table
+			label
+				float: left
+				position: relative
+				&:before
+					+center(h)
+					content: " "
+					height: 20px
+					left: 10px
+					position: absolute
+					width: 30px
+			select
+				+appearance
+				background: #fff url(img/arrow-select-gray.png) no-repeat 97% 50%
+				border: 1px solid #8e8e8e
+				border-right: 0px solid #8e8e8e
+				border-radius: 0px
+				color: #555555
+				cursor: pointer
+				height: 46px
+				font-family: "Lato", sans-serif
+				font-size: 1rem
+				margin: 1em 0px
+				outline: 0
+				padding: 1em
+				width: 220px
+			a
+				+fx(all,0.5s)
+				background: #eb1a3a
+				box-sizing: border-box
+				color: #fff
+				display: block
+				float: left
+				height: 46px
+				margin: 1em 0px
+				padding: 16px 48px
+				text-decoration: none
+				width: 140px
+				&:hover
+					background: #c7162e
+	.recetas-home
+		height: 600px
+		margin: 4em auto
+		width: 100%
+		#tinderslide 
+			position: relative
+			background: #fff
+			height: 340px
+			margin: 60px auto
+			width: 294px
+			ul 
+				margin: 0
+				position: relative
+				display: block
+				height: 100%
+				li 
+					+rounded
+					display: block
+					width: 100%
+					height: 100%
+					overflow: hidden
+					position: absolute
+					top: 0
+					z-index: 2
+					left: 0
+					box-shadow: 0 0 20px rgba(0, 0, 0, .2)
+					overflow: hidden
+					text-align: center
+					padding: 0
+					background: #eee
+					font-size: 24px
+					color: #000
+					border: 1px solid rgba(204, 204, 204, 1)
+					-webkit-transform: translate3d(0%,0,0) scale3d(1,1,1)
+					-moz-transform: translate3d(0%,0,0) scale3d(1,1,1)
+					-ms-transform: translate3d(0%,0,0) scale3d(1,1,1)
+					-o-transform: translate3d(0%,0,0) scale3d(1,1,1)
+					transform: translate3d(0%,0,0) scale3d(1,1,1)
+					backface-visibility: hidden
+					-webkit-backface-visibility: hidden
+					.img 
+						height: 284px
+						width: auto
+						position: relative
+						-webkit-transform: translate3d(0%,0,0) scale3d(1,1,1)
+						-moz-transform: translate3d(0%,0,0) scale3d(1,1,1)
+						-ms-transform: translate3d(0%,0,0) scale3d(1,1,1)
+						-o-transform: translate3d(0%,0,0) scale3d(1,1,1)
+						transform: translate3d(0%,0,0) scale3d(1,1,1)
+						overflow: hidden
+						backface-visibility: hidden
+						-webkit-backface-visibility: hidden
+						-webkit-transform: translate3d(0,0,0) scale3d(1,1,1)
+						-webkit-transform-style: preserve-3d
+					.nombre
+						background: #ffffff
+						color: $txt2
+						font-size: 1rem
+						height: 56px
+						line-height: 56px
+						width: 100%
+						&:before
+							content: " - "
+						&:after
+							content: " - "
+				.pane1, .pane3
+					-webkit-transform: rotate(-4deg)
+					-moz-transform: rotate(-4deg)
+					-o-transform: rotate(-4deg)
+					-ms-transform: rotate(-4deg)
+					transform: rotate(-4deg)
+				.pane2, .pane4
+					-webkit-transform: rotate(5deg)
+					-moz-transform: rotate(5deg)
+					-o-transform: rotate(5deg)
+					-ms-transform: rotate(5deg)
+					transform: rotate(5deg)
+		
+
+		/* Like & dislike badge images */
+			.like, #tinderslide .dislike 
+				background: url("../img/liked.png") no-repeat scroll 0 0
+				opacity: 0
+				height: 80px
+				position: absolute
+				width: 170px
+				left: 45px
+				top: 40px
+				z-index: 1
+				overflow: hidden
+				-webkit-transform: translate3d(0%,0,0) scale3d(1,1,1)
+				-moz-transform: translate3d(0%,0,0) scale3d(1,1,1)
+				-ms-transform: translate3d(0%,0,0) scale3d(1,1,1)
+				-o-transform: translate3d(0%,0,0) scale3d(1,1,1)
+				transform: translate3d(0%,0,0) scale3d(1,1,1)
+				-webkit-backface-visibility: hidden
+				backface-visibility: hidden
+			.dislike 
+			right: 45px
+			left: auto
+			background: url("../img/nope.png") no-repeat scroll 0 0
+		
+
+		/* Action - buttons */
+		.actions 
+			text-align: center
+			width: 304px
+			margin: 40px auto
+			overflow: hidden
+		
+		.actions div 
+			position: relative
+			display: inline-block
+			margin-right: -4px
+		
+		.actions a i 
+			display: inline-block
+			width: 40px
+			height: 40px
+		
+		.actions a.dislike i 
+			+fx(all,0.5s)
+			border: 1px solid #f13931
+			border-radius: 34px
+			color: #f13931
+			-moz-border-radius: 34px 
+			-webkit-border-radius: 34px 
+			&:before
+				+center(vh)
+				+fawesome("\f00d")
+				font-size: 1.571rem
+				margin-right: 15px
+			&:hover
+				background: #f13931
+				color: $txt1
+			
+		.actions a.like i
+			+fx(all,0.5s) 
+			border: 1px solid #1fad22
+			border-radius: 34px
+			color: #1fad22
+			-moz-border-radius: 34px 
+			-webkit-border-radius: 34px 
+			&:before
+				+center(vh)
+				+fawesome("\f00c")
+				font-size: 1.571rem
+				margin-right: 15px
+			&:hover
+				background: #1fad22
+				color: $txt1
+		
+		.actions a 
+			float: left
+			display: block
+			margin: 0px 54px
+			width: 42px
+			height: 42px
+			position: relative
+			border-radius: 50%
+			outline: none
+		
+		.actions a:hover
+			text-decoration: none
+			color: #555
+			background: #f5f5f5
+		
+	.contador
+		p
+			color: #676767
+			font-size: 1.429rem
+			margin: 40px auto
+			text-align: center
+
+	/* jTinder status text */
+	#status 
+		color: $txt2
+		font-size: 1rem
+		margin: 40px auto
+		text-align: center
+	
+			
