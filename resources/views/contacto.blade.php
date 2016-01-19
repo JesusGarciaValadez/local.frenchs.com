@@ -2,11 +2,11 @@
 
 @section( 'title', "Contacto" )
 
-@section( 'content' ) 
+@section( 'content' )
         <div class="cover-interior-c"></div>
 
         <section class="contacto">
-            
+
             <div class="title">
                 <div class="container">
                     <h2>En <span>French’s</span><br>nos complace mucho tu visita.</h2>
@@ -17,18 +17,18 @@
             <div class="content-form">
                 <div class="container">
                     <p>Para poder responder a tu solicitud, ingresa la siguiente información:</p>
-                    <form>
+                    {!! Form::open( [ 'route' => 'sendContact', 'method' => 'POST' ] ) !!}
                         <div class="left">
-                            <input type="text" placeholder="NOMBRE*">
+                            {!! Form::text( 'name', null, [ 'placeholder' => 'NOMBRE*' ] ) !!}
                         </div>
                         <div class="right">
-                            <input type="text" placeholder="CORREO ELECTRÓNICO*">
+                            {!! Form::email( 'email', null, [ 'placeholder' => 'CORREO ELECTRÓNICO*' ] ) !!}
                         </div>
                         <div class="div100">
-                            <textarea name="" id="" class="" placeholder="COMENTARIO"></textarea>
+                            {!! Form::textarea( 'comments', null, [ 'placeholder' => 'COMENTARIO' ] ) !!}
                         </div>
-                    </form>
-                    <a href="" class="boton">Enviar</a>
+                    {!! Form::submit( 'Enviar', [ 'class' => 'boton' ] ) !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
 
