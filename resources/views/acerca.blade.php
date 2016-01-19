@@ -4,15 +4,12 @@
 
 @section( 'content' ) 
         <div class="cover-interior-a"></div>
-
         <section class="acerca">
-
             <div class="header">
                 <div class="container">
-                    <img src="images/cover/img-cover-acerca.png">
+                    {!! Html::image( 'assets/images/cover/img-cover-acerca.png', 'Botella de mostaza' ) !!}
                 </div>
             </div>
-
             <div class="info">
                 <div class="container">
                     <h2>Descúbre porque<br><span>French’s</span> es la compañía<br>perfecta para tu mesa.</h2>
@@ -39,7 +36,6 @@
                     </p>
                 </div>
             </div>
-
             <div class="slider-int">
                 <div class="container">
                     <ul class="slider-acerca">
@@ -56,5 +52,4 @@
                 </div>
             </div>
         </section>
-
 @endsection

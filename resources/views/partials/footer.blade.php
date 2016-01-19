@@ -1,3 +1,4 @@
+@section( 'footer' ) 
         <footer>
             <div class="container">
                 <nav class="menu-footer left">
@@ -11,3 +12,4 @@
                 </div>
             </div>
         </footer>
+@endsection

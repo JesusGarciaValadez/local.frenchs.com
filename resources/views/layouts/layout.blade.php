@@ -7,55 +7,89 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>@yield( 'title' ) | French's México</title>
-        <meta name="description" content="">
+        <meta name="description" content="@yield( 'description' )">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="plugins/bxslider/jquery.bxslider.css">
-        <link rel="stylesheet" href="plugins/drag-and-drop/jquery.ezdz.min.css">
-        <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        {!! Html::favicon( 'favicon.png' ) !!}
+
+        {!! Html::style( 'assets/css/main.css' ) !!}
+        {!! Html::style( 'assets/plugins/bxslider/jquery.bxslider.css' ) !!}
+        {!! Html::style( 'assets/plugins/drag-and-drop/jquery.ezdz.min.css' ) !!}
+        {!! Html::style( 'assets/plugins/font-awesome/css/font-awesome.min.css' ) !!}
 
         <!--[if lt IE 9]>
+            {!! Html::script('assets/js/bootstrap.min.js') !!}
+            {!! Html::script('assets/js/bootstrap.min.js') !!}
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
             <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
         <![endif]-->
     </head>
     <body>
-        
-        @yield( 'partials.header' )
+    @section( 'header' ) 
+        <header>
+            <div class="head">
+                <div class="hamburguesa"></div>
+                <div class="btn-close-menu"></div>
+                <a href="{{ route( 'home' ) }}"><h1 class="logo"><span>French´s</span></h1></a>           
+                <nav class="menu">
+                    <ul>
+                        <li><a href="{{ route( 'about' ) }}">SOBRE NOSOTROS</a></li>
+                        <li><a href="{{ route( 'products' ) }}">PRODUCTOS</a></li>
+                        <li><a href="{{ route( 'recipes' ) }}">RECETAS</a></li>
+                        <li><a href="{{ route( 'contact' ) }}">CONTACTO</a></li>
+                    </ul>
+                </nav>
+                <div class="redes">
+                    <ul>
+                        <li><a target="_blank" href="" class="fa fa-instagram"></a></li>
+                        <li><a target="_blank" href="" class="fa fa-pinterest"></a></li>
+                        <li><a target="_blank" href="" class="fa fa-facebook"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    @show
 
         @yield( 'content' )
 
-        @yield( 'partials.footer' )
+    @section( 'footer' ) 
+        <footer>
+            <div class="container">
+                <nav class="menu-footer left">
+                    <ul>
+                        <li><a href="">Términos Legales</a></li>
+                        <li><a href="">Aviso de Privacidad</a></li>
+                    </ul>
+                </nav>
+                <div class="derechos right">
+                    <p>© 2015  French´s MX All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    @show
 
   
         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
-        <script type="text/javascript" src="plugins/tinder/jquery.min.js"></script>
-        <script type="text/javascript" src="plugins/tinder/jquery.transform2d.js"></script>
-        <script type="text/javascript" src="plugins/tinder/jquery.jTinder.js"></script>
-        <script src="plugins/bxslider/jquery.bxslider.min.js"></script>
-        <script src="plugins/parallax/parallax.js"></script>
-        <script src="plugins/drag-and-drop/jquery.ezdz.min.js"></script>
-        <script src="js/main.js"></script>
+        {!! Html::script('assets/plugins/tinder/jquery.min.js') !!}
+        {!! Html::script('assets/plugins/tinder/jquery.transform2d.js') !!}
+        {!! Html::script('assets/plugins/tinder/jquery.jTinder.js') !!}
+        {!! Html::script('assets/plugins/bxslider/jquery.bxslider.min.js') !!}
+        {!! Html::script('assets/plugins/parallax/parallax.js') !!}
+        {!! Html::script('plugins/drag-and-drop/jquery.ezdz.min.js') !!}
+        {!! Html::script('js/main.js') !!}
         
         <script>
-
-        $('.slider-cover').bxSlider({
-            mode: 'fade',
-            controls: false,
-            captions: true
-        });
-
-        $('.slider-acerca').bxSlider({
-            mode: 'fade',
-            controls: false,
-            captions: true
-        });
-
-        </script>
-        
-        <script>
+            $('.slider-cover').bxSlider({
+                mode: 'fade',
+                controls: false,
+                captions: true
+            });
+            $('.slider-acerca').bxSlider({
+                mode: 'fade',
+                controls: false,
+                captions: true
+            });
             $('[type="file"]').ezdz({
                 text: 'SUBE TU FOTO',
                 validators: {
@@ -77,7 +111,6 @@
                 }
             });
         </script>
-
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
