@@ -5,164 +5,121 @@
 @section( 'content' )
         <section class="home">
             <div class="cover">
-                <div id="scene" class="scene">
-                    <div class="layer clouds" data-depth="0.40">{!! Html::image( 'assets/images/cover/nubes.png', 'Nubes' ) !!}</div>
-                    <div class="layer hills" data-depth="0.10">{!! Html::image( 'assets/images/cover/hills.png', 'Hills' ) !!}</div>
-                    <div class="layer santa" data-depth="0.20">{!! Html::image( 'assets/images/cover/santa.png', 'Santa' ) !!}</div>
-                    <div class="layer hazlo-unico" data-depth="0.30">{!! Html::image( 'assets/images/cover/hazlo-unico.png', 'Hazlo único' ) !!}</div>
-                    <div class="layer hills-front">{!! Html::image( 'assets/images/cover/hills-front.png', 'Hills Front' ) !!}</div>
-                </div>
-            </div>
-            <div class="filtro">
-                <div class="container">
-                    <h2>Los regalos de navidad significan más<br>cuando les agregas tu toque personal.</h2>
-                    <p>Encuentra la inspiración perfecta para envolver tus regalos.</p>
-                    <div class="content-filtro">
-                        <label>
-                            <select id="material" class="material">
-                                <option value="vacio" selected>Material</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                            </select>
-                        </label>
-                        <label>
-                            <select id="forma" class="forma">
-                                <option value="vacio" selected>Forma</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                            </select>
-                        </label>
-                        <a href="">Buscar</a>
+                <div class="slider">
+                    <div class="container">
+                        <ul class="slider-cover">
+                            <li>
+                                <div class="producto">{!! Html::image( 'assets/images/slider/s1-producto.png', '' ) !!}</div>
+                                <div class="txt"><h2>Mostaza <span>Clásica SQ</span></h2><a href="{{ route( 'products' ) }}">Ver Producto</a></div>
+                                <div class="elemento1">{!! Html::image( 'assets/images/slider/s1-elemento1.png', '' ) !!}</div>
+                                <div class="elemento2">{!! Html::image( 'assets/images/slider/s1-elemento2.png', '' ) !!}</div>
+                                <div class="elemento3">{!! Html::image( 'assets/images/slider/s1-elemento3.png', '' ) !!}</div>
+                            </li>
+                            <li>
+                                <div class="producto">{!! Html::image( 'assets/images/slider/s2-producto.png', '' ) !!}</div>
+                                <div class="txt"><h2>Mostaza <span>Dijon</span></h2><a href="{{ route( 'products' ) }}">Ver Producto</a></div>
+                                <div class="elemento1">{!! Html::image( 'assets/images/slider/s2-elemento1.png', '' ) !!}</div>
+                                <div class="elemento2">{!! Html::image( 'assets/images/slider/s2-elemento2.png', '' ) !!}</div>
+                                <div class="elemento3">{!! Html::image( 'assets/images/slider/s2-elemento3.png', '' ) !!}</div>
+                            </li>
+                            <li>
+                                <div class="producto">{!! Html::image( 'assets/images/slider/s3-producto.png', '' ) !!}</div>
+                                <div class="txt"><h2>Mostaza <span>Deli</span></h2><a href="{{ route( 'products' ) }}">Ver Producto</a></div>
+                                <div class="elemento1">{!! Html::image( 'assets/images/slider/s3-elemento1.png', '' ) !!}</div>
+                                <div class="elemento2">{!! Html::image( 'assets/images/slider/s3-elemento2.png', '' ) !!}</div>
+                                <div class="elemento3">{!! Html::image( 'assets/images/slider/s3-elemento3.png', '' ) !!}</div>
+                            </li>
+                            <li>
+                                <div class="producto">{!! Html::image( 'assets/images/slider/s4-producto.png', '' ) !!}</div>
+                                <div class="txt"><h2>Mostaza <span>Honey</span></h2><a href="{{ route( 'products' ) }}">Ver Producto</a></div>
+                                <div class="elemento1">{!! Html::image( 'assets/images/slider/s4-elemento1.png', '' ) !!}</div>
+                                <div class="elemento2">{!! Html::image( 'assets/images/slider/s4-elemento2.png', '' ) !!}</div>
+                                <div class="elemento3">{!! Html::image( 'assets/images/slider/s4-elemento3.png', '' ) !!}</div>
+                            </li>
+                            <li>
+                                <div class="producto">{!! Html::image( 'assets/images/slider/s5-producto.png', '' ) !!}</div>
+                                <div class="txt"><h2>Salsa <span>Inglesa</span></h2><a href="{{ route( 'products' ) }}">Ver Producto</a></div>
+                                <div class="elemento1">{!! Html::image( 'assets/images/slider/s5-elemento1.png', '' ) !!}</div>
+                                <div class="elemento2">{!! Html::image( 'assets/images/slider/s5-elemento2.png', '' ) !!}</div>
+                                <div class="elemento3">{!! Html::image( 'assets/images/slider/s5-elemento3.png', '' ) !!}</div>
+                            </li>
+                            <li>
+                                <div class="producto">{!! Html::image( 'assets/images/slider/s6-producto.png', '' ) !!}</div>
+                                <div class="txt"><h2>Salsa <span>BBQ chipotle</span></h2><a href="{{ route( 'products' ) }}">Ver Producto</a></div>
+                                <div class="elemento1">{!! Html::image( 'assets/images/slider/s6-elemento1.png', '' ) !!}</div>
+                                <div class="elemento2">{!! Html::image( 'assets/images/slider/s6-elemento2.png', '' ) !!}</div>
+                                <div class="elemento3">{!! Html::image( 'assets/images/slider/s6-elemento3.png', '' ) !!}</div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="grid">
+
+            <div class="descubre">
+                <div class="img-back1"></div>
+                <div class="img-back2"></div>
                 <div class="container">
-                    <div class="content-grid">
-                        <div class="inspiracion">
-                            <p class="categoria">Categoria</p>
-                            <figure class="effect-img">
-                                {!! Html::image( 'assets/images/inspiracion/img1-prueba-inspiracion.jpg', '' ) !!}
-                            </figure>
-                            <p class="nombre">Lorem Ipsum proin Gravida nibh.</p>
-                            <p class="tiempo">Se realizara en: 60 mins</p>
-                            <p class="line"></p>
-                            <div class="dificultad left">Dificultad: <span class="ribbon d1"></span></div>
-                            <div class="btn">
-                                <a href="">Instrucciones</a>
-                            </div>
-                        </div>
-                        <div class="inspiracion">
-                            <p class="categoria">Categoria</p>
-                            <figure class="effect-img">
-                                {!! Html::image( 'assets/images/inspiracion/img2-prueba-inspiracion.jpg', '' ) !!}
-                            </figure>
-                            <p class="nombre">Lorem Ipsum proin Gravida nibh.</p>
-                            <p class="tiempo">Se realizara en: 60 mins</p>
-                            <p class="line"></p>
-                            <div class="dificultad left">Dificultad: <span class="ribbon d1"></span></div>
-                            <div class="btn">
-                                <a href="">Instrucciones</a>
-                            </div>
-                        </div>
-                        <div class="inspiracion">
-                            <p class="categoria">Categoria</p>
-                            <figure class="effect-img">
-                                {!! Html::image( 'assets/images/inspiracion/img3-prueba-inspiracion.jpg', '' ) !!}
-                            </figure>
-                            <p class="nombre">Lorem Ipsum proin Gravida nibh.</p>
-                            <p class="tiempo">Se realizara en: 60 mins</p>
-                            <p class="line"></p>
-                            <div class="dificultad left">Dificultad: <span class="ribbon d1"></span></div>
-                            <div class="btn">
-                                <a href="">Instrucciones</a>
-                            </div>
-                        </div>
-                        <div class="inspiracion">
-                            <p class="categoria">Categoria</p>
-                            <figure class="effect-img">
-                                {!! Html::image( 'assets/images/inspiracion/img1-prueba-inspiracion.jpg', '' ) !!}
-                            </figure>
-                            <p class="nombre">Lorem Ipsum proin Gravida nibh.</p>
-                            <p class="tiempo">Se realizara en: 60 mins</p>
-                            <p class="line"></p>
-                            <div class="dificultad left">Dificultad: <span class="ribbon d1"></span></div>
-                            <div class="btn">
-                                <a href="">Instrucciones</a>
-                            </div>
-                        </div>
-                        <div class="inspiracion">
-                            <p class="categoria">Categoria</p>
-                            <figure class="effect-img">
-                                {!! Html::image( 'assets/images/inspiracion/img2-prueba-inspiracion.jpg', '' ) !!}
-                            </figure>
-                            <p class="nombre">Lorem Ipsum proin Gravida nibh.</p>
-                            <p class="tiempo">Se realizara en: 60 mins</p>
-                            <p class="line"></p>
-                            <div class="dificultad left">Dificultad: <span class="ribbon d1"></span></div>
-                            <div class="btn">
-                                <a href="">Instrucciones</a>
-                            </div>
-                        </div>
-                        <div class="inspiracion">
-                            <p class="categoria">Categoria</p>
-                            <figure class="effect-img">
-                                {!! Html::image( 'assets/images/inspiracion/img3-prueba-inspiracion.jpg', '' ) !!}
-                            </figure>
-                            <p class="nombre">Lorem Ipsum proin Gravida nibh.</p>
-                            <p class="tiempo">Se realizara en: 60 mins</p>
-                            <p class="line"></p>
-                            <div class="dificultad left">Dificultad: <span class="ribbon d1"></span></div>
-                            <div class="btn">
-                                <a href="">Instrucciones</a>
-                            </div>
-                        </div>
+                    <div class="icono-cubiertos"></div>
+                    <h2>Descubre nuevas recetas</h2>
+                    <p>¿Qué te gustaría cocinar hoy?</p>
+                </div>
+                <div class="recetas-home">
+
+                    <div id="tinderslide">
+                        <ul>
+                            <li class="pane1">
+                                <div class="img">{!! Html::image( 'assets/images/recetas/receta-prueba.jpg', 'Salmón con mostaza y miel' ) !!}</div>
+                                <div class="nombre">Salmón con mostaza y miel</div>
+                                <div class="like"></div>
+                                <div class="dislike"></div>
+                            </li>
+                            <li class="pane2">
+                                <div class="img">{!! Html::image( 'assets/images/recetas/receta-prueba.jpg', 'Salmón con mostaza y miel' ) !!}</div>
+                                <div class="nombre">Salmón con mostaza y miel</div>
+                                <div class="like"></div>
+                                <div class="dislike"></div>
+                            </li>
+                            <li class="pane3">
+                                <div class="img">{!! Html::image( 'assets/images/recetas/receta-prueba.jpg', 'Salmón con mostaza y miel' ) !!}></div>
+                                <div class="nombre">Salmón con mostaza y miel</div>
+                                <div class="like"></div>
+                                <div class="dislike"></div>
+                            </li>
+                            <li class="pane4">
+                                <div class="img">{!! Html::image( 'assets/images/recetas/receta-prueba.jpg', 'Salmón con mostaza y miel' ) !!}</div>
+                                <div class="nombre">Salmón con mostaza y miel</div>
+                                <div class="like"></div>
+                                <div class="dislike"></div>
+                            </li>
+                            <li class="pane5">
+                                <div class="img">{!! Html::image( 'assets/images/recetas/receta-prueba.jpg', 'Salmón con mostaza y miel' ) !!}</div>
+                                <div class="nombre">Salmón con mostaza y miel</div>
+                                <div class="like"></div>
+                                <div class="dislike"></div>
+                            </li>
+                        </ul>
                     </div>
-                    <a id="" href="#" class="btn-mas">Ver más</a>
+
+                    <div class="contador">
+                        <p>1/4</p>
+                    </div>
+
+                    <div class="actions">
+                        <a href="#" class="dislike"><i></i></a>
+                        <a href="#" class="like"><i></i></a>
+                    </div>
+
+                    <div id="status"></div>
+
                 </div>
             </div>
-            <div class="productos">
+
+            <div class="suscribete">
                 <div class="container">
-                    <div class="left">
-                        <div class="producto">
-                            <div class="left">
-                                {!! Html::image( 'assets/images/productos/producto-cinta-cristal.png', 'Cinta Cristal 100% transparente' ) !!}
-                            </div>
-                            <div class="right">
-                                <h3>Cinta Cristal<br><span>100% Transparente</span></h3>
-                                <p>Acabado brillante sobre el papel de regalo.</p>
-                                <a href="">Ver Producto</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="producto">
-                            <div class="left">
-                                {!! Html::image( 'assets/images/productos/producto-cinta-magica.png', 'Cinta Mágica 100% mate' ) !!}
-                            </div>
-                            <div class="right">
-                                <h3>Cinta Mágica<br><span>100% Mate</span></h3>
-                                <p>Acabado brillante sobre el papel de regalo.</p>
-                                <a href="">Ver Producto</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="comunidad">
-                <div class="container">
-                    <p>Nos encantaría compartir ideas, tips y contenido exclusivo contigo.<br>Forma parte de esta linda comunidad.</p>
+                    <h3>Subscríbete ahora</h3>
                     <div>
                         <input type="text" placeholder="Ingresa tu correo electrónico">
-                        {!! Html::link( '#', '' ) !!}
+                        <a href="#"></a>
                     </div>
                 </div>
             </div>
