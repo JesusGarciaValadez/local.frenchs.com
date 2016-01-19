@@ -19,7 +19,6 @@ Route::get( '/productos', [ 'as' => 'products', 'uses' => 'ProductsController@in
 
 Route::get( '/recetas', [ 'as' => 'recipes', 'uses' => 'RecipesController@index' ] );
 
-Route::get( '/contacto', [ 'as' => 'contact', 'uses' => 'ContactController@index' ] );
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +31,9 @@ Route::get( '/contacto', [ 'as' => 'contact', 'uses' => 'ContactController@index
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web']], function ()
+{
+  Route::get( '/contacto', [ 'as' => 'contact', 'uses' => 'ContactController@index' ] );
   //
   Route::post( '/contacto', [ 'as' => 'sendContact', 'uses' => 'ContactController@send' ] );
-});
+} );
