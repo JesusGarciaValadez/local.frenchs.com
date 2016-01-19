@@ -24,12 +24,12 @@
         <![endif]-->
     </head>
     <body>
-    @section( 'header' ) 
+    @section( 'header' )
         <header>
             <div class="head">
                 <div class="hamburguesa"></div>
                 <div class="btn-close-menu"></div>
-                <a href="{{ route( 'home' ) }}"><h1 class="logo"><span>French´s</span></h1></a>           
+                <a href="{{ route( 'home' ) }}"><h1 class="logo"><span>French´s</span></h1></a>
                 <nav class="menu">
                     <ul>
                         <li><a href="{{ route( 'about' ) }}">SOBRE NOSOTROS</a></li>
@@ -51,7 +51,7 @@
 
         @yield( 'content' )
 
-    @section( 'footer' ) 
+    @section( 'footer' )
         <footer>
             <div class="container">
                 <nav class="menu-footer left">
@@ -67,7 +67,7 @@
         </footer>
     @show
 
-  
+
         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
@@ -76,9 +76,9 @@
         {!! Html::script('assets/plugins/tinder/jquery.jTinder.js') !!}
         {!! Html::script('assets/plugins/bxslider/jquery.bxslider.min.js') !!}
         {!! Html::script('assets/plugins/parallax/parallax.js') !!}
-        {!! Html::script('plugins/drag-and-drop/jquery.ezdz.min.js') !!}
-        {!! Html::script('js/main.js') !!}
-        
+        {!! Html::script('assets/plugins/drag-and-drop/jquery.ezdz.min.js') !!}
+        {!! Html::script('assets/js/main.js') !!}
+
         <script>
             $('.slider-cover').bxSlider({
                 mode: 'fade',
