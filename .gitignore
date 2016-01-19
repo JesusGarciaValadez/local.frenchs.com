@@ -1,3 +1,8 @@
 .DS_Store
 .Frenchs.sublime-*
 .sass-cache
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
