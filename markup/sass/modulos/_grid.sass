@@ -1,0 +1,144 @@
+.grid
+	background: #f9f9f9
+	border-top: 1px solid #e1e1e1
+	.container
+		margin: 6em auto
+		h2
+			color: $txt3
+			margin: 0px
+			white-space: pre-line
+			text-align: center
+		p
+			color: $txt2
+			font-size: 1.857rem
+			text-align: center
+			margin: 1rem 0px
+		a.btn-mas
+			+fx(all,0.5s)
+			color: $txt2
+			display: block
+			font-family: "Montserrat", sans-serif
+			font-size: 1.143rem
+			font-weight: 400
+			height: auto
+			margin: 2em auto
+			text-align: center
+			text-decoration: none
+			width: 200px
+			&:after
+				+fawesome("\f055")
+				color: #fb8303
+				font-size: 1rem
+				margin: 0px 5px
+			&:hover
+				color: #fb8303
+		.content-grid
+			+flex
+			display: inline-flex
+			-webkit-flex-flow: row wrap
+			flex-wrap: wrap
+			justify-content: flex-start
+			list-style: none
+			padding: 0
+			width: 100%
+			.receta
+				+rounded
+				+fx(all,0.5s)
+				background: #ffffff
+				border: 1px solid #e1e1e1
+				height: auto
+				margin: 20px 14px
+				overflow: hidden
+				padding: 0px
+				text-decoration: none
+				width: 358px
+				.image
+					margin: 0px 0px
+					height: 360px
+					overflow: hidden
+					width: 360px
+					img 
+						display: block
+						margin: 0% 0%
+						-webkit-transition: opacity 0.35s, -webkit-transform 0.35s
+						width: 100%
+				.nombre
+					color: $txt2
+					font-size: 1.429rem
+					line-height: 1.714rem
+					text-align: left
+					margin: 1.714rem 15px
+				.porciones
+					color: $txt2
+					font-size: 1rem
+					line-height: 1rem
+					text-align: left
+					margin: 0.7143rem 15px
+				.tiempo
+					color: $txt2
+					font-size: 1rem
+					line-height: 1rem
+					text-align: left
+					margin: 0.7143rem 15px	
+				.dificultad
+					color: $txt3
+					font-size: 1rem
+					line-height: 1rem
+					text-align: left
+					margin: 0.7143rem 15px
+					padding: 0
+					width: 170px		
+				.btn
+					float: right
+					height: 50px
+					margin: 0 15px
+					width: 140px
+					a
+						+fx(all,0.5s)
+						+rounded
+						background: #eb1a3a
+						box-sizing: border-box
+						color: #fff
+						display: table
+						font-size: 0.8571rem
+						font-weight: 700
+						height: auto
+						padding: 15px 22px
+						text-align: center
+						text-decoration: none
+						text-transform: uppercase
+						width: auto
+						&:hover
+							background: #c7162e
+				.ranking
+					background: url(img/stars-fill.png) no-repeat
+					display: inline-block
+					height: 26px
+					margin: 18px 10px
+					width: 150px
+					.stars
+						background: url(img/stars.png) no-repeat
+						display: block
+						height: 26px	
+						&.s1
+							width: 30px
+						&.s2
+							width: 60px
+						&.s3
+							width: 90px	
+						&.s4
+							width: 120px	
+				.categoria
+					color: #ffffff
+					margin: 0px 0px
+					font-family: "Montserrat", sans-serif
+					font-size: 1rem
+					padding: 8px 18px
+					position: absolute		
+					z-index: 99			
+					&.b1
+						background: rgba(240,194,33,0.8)
+					&.b2
+						background: rgba(222,105,38,0.8)
+				&:hover
+					+shadow(0px,0px,0px,8px)

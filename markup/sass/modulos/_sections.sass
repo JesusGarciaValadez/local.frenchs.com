@@ -1,0 +1,299 @@
+.suscribete
+	background: #f0c221
+	overflow: hidden
+	.container
+		margin: 6em auto
+		text-align: center
+		p
+			color: $txt2
+			font-size: 1.857rem
+			text-align: center
+			margin: 0rem 0px 2em
+		a
+			+fx(all,0.5s)
+			background: #402108
+			color: $txt1
+			display: inline-block
+			height: 64px
+			margin-left: -6px
+			text-decoration: none
+			&:after
+				+fawesome("\f0e0")
+				display: block
+				font-size: 1.286rem
+				line-height: 1.286rem
+				padding: 22px 52px
+			&:hover
+				background: #8c6749
+		input			    
+			border: 0px solid rgba(103, 103, 103, 0)
+			box-sizing: border-box
+			height: 64px
+			font-size: 1rem
+			padding: 0px 10px
+			width: 480px
+			&:focus 
+				border: 0px solid rgba(167, 167, 167, 1)
+				box-shadow: 0 0 0 rgba(251, 131, 3, 1)
+				box-sizing: border-box
+				margin: 0
+				outline: 0px
+			+input-placeholder
+				color: $txt2
+.subir-receta
+	background: #ffffff
+	overflow: hidden
+	.container
+		margin: 6em auto
+		text-align: center
+		.icono-chef
+			background: url(img/icono-chef.png) no-repeat center
+			height: 50px
+			margin: 10px auto
+			width: 50px
+		h2
+			color: $txt3
+			margin: 0px
+			white-space: pre-line
+			text-align: center
+		p
+			color: $txt2
+			font-size: 1.857rem
+			text-align: center
+			margin: 1rem 0px
+	
+.cover-interior-a
+	background: #402108
+	height: 640px
+	margin: auto
+	min-height: 640px
+	position: absolute
+	width: 100%
+
+.cover-interior-b
+	background: #142956
+	height: 560px
+	margin: auto
+	min-height: 560px
+	position: absolute
+	width: 100%
+
+.cover-interior-c
+	background: #402108
+	height: 560px
+	margin: auto
+	min-height: 560px
+	position: absolute
+	width: 100%
+
+.modal
+	background: rgba(0, 0, 0, 0.8)
+	display: none
+	position: fixed
+	top: 0px
+	z-index: 99
+	.img-back1
+		background: url(img/element-img-back1.png) no-repeat
+		background-position: -200px
+		height: 574px
+		left: 0
+		position: absolute
+		width: 500px
+	.img-back2
+		background: url(img/element-img-back2.png) no-repeat
+		background-position: 70px
+		bottom: 0
+		height: 368px
+		right: 0px
+		position: absolute
+		width: 300px
+	.container 
+		.content-modal
+			background: #f9f9f9
+			box-sizing: border-box
+			display: table
+			height: auto
+			left: 50%
+			padding: 2em 1em
+			position: relative
+			top: 50%
+			-ms-transform: translate(-50%,-50%)
+			-webkit-transform: translate(-50%,-50%)
+			-moz-transform: translate(-50%,-50%)
+			-o-transform: translate(-50%,-50%)
+			transform: translate(-50%,-50%)
+			width: 80%
+			.icono-chef-big
+				background: url(img/icono-chef-100.png) no-repeat center
+				-webkit-background-size: cover
+				-moz-background-size: cover
+				-o-background-size: cover
+				background-size: cover
+				height: 50px
+				margin: 0 auto
+				width: 50px
+			h3
+				color: $txt3
+				margin: 0px
+				white-space: pre-line
+				text-align: center		
+			form
+				margin: 1em
+				display: table
+				position: relative
+				z-index: 999
+				.div100
+					padding: 0px 2em
+				.subir-imagen
+					border: 2px dashed #ff740f
+					height: 300px
+					width: 300px
+					a
+						color: $txt2
+						display: block
+						font-size: 1.429rem
+						padding: 106px 50px
+						text-align: center
+						text-decoration: none
+						&:after
+							+fawesome("\f0ee")
+							color: $txt3
+							display: block
+							font-size: 2rem
+							line-height: 2rem
+							padding: 10px
+						&:hover
+							text-decoration: none
+				p
+					color: $txt2
+					font-family: "Montserrat", sans-serif
+					font-size:  0.7857rem
+					line-height: 1.071rem
+					margin: -16px 52%
+					position: absolute
+					width: 46%
+				input
+					+fx(all,0.3s)
+					background: #ffffff
+					border: 1px solid #e1e1e1
+					box-sizing: border-box
+					color: $txt2
+					height: auto
+					font-size: 1rem
+					margin: 2%
+					outline: none
+					padding: 14px 10px
+					width: 46%
+					&:focus 
+						border: 1px solid rgba(251, 131, 3, 1)
+						box-shadow: 0 0 5px rgba(251, 131, 3, 1)
+						margin: 2%
+						outline: 0px
+						width: 46%
+					+input-placeholder
+						color: $txt2
+				label
+					color: $txt2
+					float: left
+					margin: 2%
+					position: relative
+					width: 21%
+					.first-icon, .second-icon, .third-icon
+						font-size: 0.8571rem
+						padding: 16px 14px
+						position: absolute
+						z-index: 999						
+					select
+						+appearance
+						background: #fff url(img/arrow-select.png) no-repeat 92% 50%
+						border: 1px solid #e1e1e1
+						border-radius: 0px
+						box-sizing: border-box
+						color: $txt2
+						cursor: pointer
+						height: auto
+						font-family: "Montserrat", sans-serif
+						font-size: 0.8571rem
+						outline: 0
+						padding: 14px 30px
+						position: relative
+						text-transform: uppercase
+						width: 100%
+						&:focus 
+							border: 1px solid rgba(251, 131, 3, 1)
+							box-shadow: 0 0 5px rgba(251, 131, 3, 1)
+							margin: 2%
+							outline: 0px
+							padding: 11px 27px
+							position: absolute
+							width: 100%
+				.ingredientes
+					+fx(all,0.3s)
+					border: 1px solid #e1e1e1
+					box-sizing: border-box
+					color: $txt2
+					font-size: 1rem
+					font-family: "Montserrat", sans-serif
+					height: 166px
+					margin: 2%
+					padding: 14px 10px
+					width: 46%
+					&:focus 
+						border: 1px solid rgba(251, 131, 3, 1)
+						box-shadow: 0 0 5px rgba(251, 131, 3, 1)
+						margin: 2%
+						outline: 0px
+						width: 46%
+				.preparacion
+					+fx(all,0.3s)
+					border: 1px solid #e1e1e1
+					box-sizing: border-box
+					color: $txt2
+					font-size: 1rem
+					font-family: "Montserrat", sans-serif
+					height: 166px
+					margin: 2%
+					padding: 14px 10px
+					width: 46%
+					&:focus 
+						border: 1px solid rgba(251, 131, 3, 1)
+						box-shadow: 0 0 5px rgba(251, 131, 3, 1)
+						margin: 2%
+						outline: 0px
+						width: 46%
+			.boton
+				margin: 0 auto
+
+			.gracias
+				display: none
+				overflow: hidden
+				.container
+					margin: 0em auto
+					text-align: center
+					padding: 8em
+					.icono-gracias
+						background: url(img/icono-gracias.png) no-repeat center
+						height: 102px
+						margin: 10px auto
+						width: 102px
+					h2
+						color: $txt3
+						margin: 0px
+						white-space: pre-line
+						text-align: center
+					p
+						color: $txt2
+						font-size: 1.857rem
+						text-align: center
+						margin: 1rem 0px
+	span
+		color: $txt3
+		cursor: pointer
+		position: absolute
+		top: 20px
+		right: 20px
+
+
+
+
+

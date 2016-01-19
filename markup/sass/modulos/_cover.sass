@@ -1,0 +1,104 @@
+.cover
+	background: #402108 url(img/cover.jpg) no-repeat center
+	height: 680px
+	margin: auto
+	margin-bottom: 160px
+	position: relative
+	width: 100%
+	.slider
+		.container
+			width: 100%
+			height: 780px
+			padding: 0
+			.bx-wrapper
+				margin: 0 auto
+				position: relative
+				.bx-viewport
+					background: none
+					border: 0
+					box-shadow: 0 0 0 #ccc
+					left: 0
+					.slider-cover
+						height: 100% !important
+						li
+							height: 780px
+							.producto
+								+center(v)
+								bottom: 30px
+							.txt
+								+center(h)
+								left: 62%
+								top: 58%
+								z-index: 99
+								h2
+									font-weight: 400
+									margin: 2rem 0
+									span
+										color: $txt4
+										display: block
+										font-weight: 700
+								a
+									color: $txt1
+									font-size: 1rem
+									text-decoration: none
+									&:after
+										+fawesome("\f178")
+										color: $txt3
+										font-size: 1.143rem
+										margin-left: 6px
+										text-decoration: none
+							.elemento1
+								+center(h)
+								left: -170px
+							.elemento2
+								+center(v)
+								left: 60%
+								top: -160px
+							.elemento3
+								position: absolute
+								right: -280px
+								bottom: 0%
+
+				.bx-controls
+					display: block
+					height: auto
+					position: absolute
+					right: 40px
+					top: 50%
+					-ms-transform: translate(0%,-50%)
+					-webkit-transform: translate(0%,-50%)
+					-moz-transform: translate(0%,-50%)
+					-o-transform: translate(0%,-50%)
+					transform: translate(0%,-50%)
+					width: 24px		
+					.bx-pager
+						display: block
+						margin: 14px 0px
+						bottom: 0px
+						.bx-pager-item
+							margin: 10px 0px
+							text-align: center
+							a 
+								+fx(all,0.5s)
+								color: $txt2
+								display: block
+								font-size: 0rem
+								font-family: 'Open Sans', sans-serif
+								font-weight: 300
+								height: 18px
+								line-height: 18px
+								margin: auto
+								text-decoration: none
+								width: 18px
+								&:after
+									+fawesome("\f111")
+									font-size: 0.8571rem
+									opacity: 0.7
+								&:hover
+									color: #fbcb22
+							.active
+								color: #fbcb22
+								&:after
+									+fawesome("\f192")
+									font-size: 1.429rem
+									opacity: 1

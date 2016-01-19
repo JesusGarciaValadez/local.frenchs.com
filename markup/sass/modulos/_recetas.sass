@@ -1,0 +1,113 @@
+.recetas
+	overflow: hidden
+	.title
+		overflow: hidden
+		.container
+			margin: 8em auto 4.750em
+			h2
+				color: $txt1
+				font-weight: 400
+				line-height: 5rem
+				margin: 2em 0 
+			span
+				color: $txt4
+				font-weight: 700
+	.filtro
+		overflow: hidden
+		.container
+			margin: 6em auto
+			.buscar
+				margin: 1em auto
+				display: table
+				a
+					+fx(all,0.5s)
+					background: #ed7028
+					color: $txt1
+					display: inline-block
+					margin-left: -3px
+					text-decoration: none
+					&:after
+						+fawesome("\f002")
+						display: block
+						font-size: 1.286rem
+						height: 20px
+						line-height: 1.286rem
+						padding: 16px 52px
+					&:hover
+						background: #ff995e
+				input			
+					+fx(all,0.3s)
+					background: #ffffff
+					border: 1px solid #d6d6d6
+					box-sizing: border-box
+					color: $txt2
+					height: 52px
+					font-size: 1rem
+					margin: 0
+					outline: none
+					padding: 16px 10px
+					width: 592px
+					&:focus 
+						border: 1px solid rgba(251, 131, 3, 1)
+						box-shadow: 0 0 5px rgba(251, 131, 3, 1)
+						margin: 0
+						outline: 0px
+					+input-placeholder
+						color: $txt2
+			.content-filtro
+				margin: 1em auto
+				display: table
+				width: 740px
+				label
+					float: left
+					margin: 2%
+					position: relative
+					width: 21%
+					.first-icon, .second-icon, .third-icon
+						color: $txt2
+						font-size: 0.8571rem
+						padding: 16px 14px
+						position: absolute
+						z-index: 999
+					select
+						+appearance
+						background: #fff url(img/arrow-select.png) no-repeat 92% 50%
+						border: 1px solid #e1e1e1
+						border-radius: 0px
+						box-sizing: border-box
+						color: $txt2
+						cursor: pointer
+						height: auto
+						font-family: "Montserrat", sans-serif
+						font-size: 0.8571rem
+						outline: 0
+						padding: 14px 30px
+						position: relative
+						text-transform: uppercase
+						width: 100%
+						&:focus 
+							border: 1px solid rgba(251, 131, 3, 1)
+							box-shadow: 0 0 5px rgba(251, 131, 3, 1)
+							margin: 2%
+							outline: 0px
+							padding: 11px 27px
+							position: absolute
+							width: 100%
+
+
+
+
+				a
+					+fx(all,0.5s)
+					background: #eb1a3a
+					box-sizing: border-box
+					color: #fff
+					display: block
+					float: left
+					height: 46px
+					margin: 1em 0px
+					padding: 16px 48px
+					text-decoration: none
+					width: 140px
+					&:hover
+						background: #c7162e

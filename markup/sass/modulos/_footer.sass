@@ -1,0 +1,58 @@
+footer
+	.container
+		nav
+			display: table
+			float: left
+			height: 100%
+			overflow: hidden
+			ul
+				display: table-row
+				margin: 0px
+				padding: 0px
+				li
+					display: table-cell
+					margin: 0px
+					padding: 30px 0
+					vertical-align: middle
+					a
+						color: $txt2
+						font-size: 1rem
+						font-weight: 400
+						font-family: "Lato", sans-serif
+						text-decoration: none
+					&:after
+						color: $txt2
+						content: " | "
+						padding: 0px 15px
+					&:last-child::after
+						content: ""
+		.derechos
+			display: table
+			float: right
+			height: 100%
+			overflow: hidden
+			p
+				+center(h)
+				color: $txt2
+				display: table
+				font-weight: 400
+				margin: 0
+				padding: 0px 1em
+				right: 0px
+				vertical-align: middle
+				width: auto
+			.logo3m
+				background: url(img/logo_3m.jpg) no-repeat center
+				background-size: cover
+				display: table-cell
+				height: 74px
+				vertical-align: middle
+				width: 58px
+div
+	&#cover, &#especificaciones
+		position: relative
+		top: -60px
+	&#colores, &#highlights, &#galeria, &#highlights2, &#versiones, &#manejo, &#descanso
+		position: relative
+		top: -50px
+
