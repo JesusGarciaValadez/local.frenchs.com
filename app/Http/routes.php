@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get( '/', [ 'as' => 'home', 'uses' => 'HomeController@home' ] );
+
+Route::get( 'sobre-nosotros', [ 'as' => 'about', 'uses' => 'AboutController@us' ] );
 
 /*
 |--------------------------------------------------------------------------
