@@ -33,5 +33,6 @@ Route::get( '/contacto', [ 'as' => 'contact', 'uses' => 'ContactController@index
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+  //
+  Route::post( '/contacto', [ 'as' => 'sendContact', 'uses' => 'ContactController@send' ] );
 });
