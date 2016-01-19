@@ -11,9 +11,15 @@
 |
 */
 
-Route::get( '/', [ 'as' => 'home', 'uses' => 'HomeController@home' ] );
+Route::get( '/', [ 'as' => 'home', 'uses' => 'HomeController@index' ] );
 
-Route::get( 'sobre-nosotros', [ 'as' => 'about', 'uses' => 'AboutController@us' ] );
+Route::get( '/sobre-nosotros', [ 'as' => 'about', 'uses' => 'AboutController@index' ] );
+
+Route::get( '/productos', [ 'as' => 'products', 'uses' => 'ProductsController@index' ] );
+
+Route::get( '/recetas', [ 'as' => 'recipes', 'uses' => 'RecipesController@index' ] );
+
+Route::get( '/contacto', [ 'as' => 'contact', 'uses' => 'ContactController@index' ] );
 
 /*
 |--------------------------------------------------------------------------
