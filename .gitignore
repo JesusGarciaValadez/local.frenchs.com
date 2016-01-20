@@ -1,5 +1,5 @@
 .DS_Store
-.Frenchs.sublime-*
+*.sublime-*
 .sass-cache
 /vendor
 /node_modules
