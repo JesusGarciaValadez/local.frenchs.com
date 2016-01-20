@@ -11,6 +11,6 @@ class RecipesController extends Controller
 {
     public function index ()
    	{
-   		return view( 'detalle-receta' );
+   		return view( 'recetas' );
    	}
 }

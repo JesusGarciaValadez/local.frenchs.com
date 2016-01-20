@@ -68,13 +68,12 @@
                     </div>
                 </div>
             </div>
-
         </section>
 
         <section class="grid">
             <div class="container">
                 <div class="content-grid">
-                    <a href="{{ route( 'recipes' ) }}" class="receta">
+                    <a href="" class="receta">
                         <p class="categoria b1">Snacks</p>
                         <div class="image">
                             {!! Html::image( 'assets/images/recetas/receta.jpg', 'Tiras de pollo con mostaza' ) !!}
@@ -159,7 +158,6 @@
                 <a class="boton">Subir Receta</a>
             </div>
         </section>
-
 
         <div class="modal">
             <div class="container">
