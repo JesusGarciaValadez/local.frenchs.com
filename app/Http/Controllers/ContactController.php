@@ -64,7 +64,5 @@ class ContactController extends Controller
          */
         return response()->json( [ 'response_message' => 'success', 'response_code' => '1' ] );
       }
-
     }
-
 }
