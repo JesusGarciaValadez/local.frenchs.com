@@ -16,19 +16,19 @@
                     <h4>Mostazas</h4>
                     <div class="grid-productos">
                         <div class="producto">
-                            <a href="detalle-producto.php">{!! Html::images( 'assets/images/productos/producto-prueba.jpg', 'Mostaza Honey SQ' ) !!}}</a>
+                            <a href="route( 'detalle-producto' )">{!! Html::image( 'assets/images/productos/producto-prueba.jpg', 'Mostaza Honey SQ' ) !!}</a>
                             <p class="nombre">Mostaza Honey SQ</p>
                             <div class="gramos">387g</div>
                             <div class="gramos">280g</div>
                             <div class="gramos">387g</div>
                         </div>
                         <div class="producto">
-                            <a href="detalle-producto.php">{!! Html::images( 'assets/images/productos/producto-prueba.jpg', 'Mostaza Honey SQ' ) !!}}</a>
+                            <a href="route( 'detalle-producto' )">{!! Html::image( 'assets/images/productos/producto-prueba.jpg', 'Mostaza Honey SQ' ) !!}</a>
                             <p class="nombre">Mostaza Honey SQ</p>
                             <div class="gramos">387g</div>
                         </div>
                         <div class="producto">
-                            <a href="">{!! Html::images( 'assets/images/productos/producto-prueba.jpg', 'Mostaza Honey SQ' ) !!}}</a>
+                            <a href="route( 'detalle-producto' )">{!! Html::image( 'assets/images/productos/producto-prueba.jpg', 'Mostaza Honey SQ' ) !!}</a>
                             <p class="nombre">Mostaza Honey SQ</p>
                             <div class="gramos">387g</div>
                         </div>
@@ -36,12 +36,12 @@
                     <h4>Salsas</h4>
                     <div class="grid-productos">
                         <div class="producto">
-                            <a href="detalle-producto.php">{!! Html::images( 'assets/images/productos/producto2-prueba.jpg', 'Salsa Inglesa' ) !!}}</a>
+                            <a href="route( 'detalle-producto' )">{!! Html::image( 'assets/images/productos/producto2-prueba.jpg', 'Salsa Inglesa' ) !!}</a>
                             <p class="nombre">Salsa Inglesa</p>
                             <div class="gramos">387g</div>
                         </div>
                         <div class="producto">
-                            <a href="">{!! Html::images( 'assets/images/productos/producto2-prueba.jpg', 'Salsa Inglesa' ) !!}}</a>
+                            <a href="route( 'detalle-producto' )">{!! Html::image( 'assets/images/productos/producto2-prueba.jpg', 'Salsa Inglesa' ) !!}</a>
                             <p class="nombre">Salsa Inglesa</p>
                             <div class="gramos">387g</div>
                         </div>

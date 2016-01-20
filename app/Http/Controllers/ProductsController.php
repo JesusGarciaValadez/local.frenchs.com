@@ -11,6 +11,6 @@ class ProductsController extends Controller
 {
     public function index ()
    	{
-   		return view( 'detalle-producto' );
+   		return view( 'productos' );
    	}
 }
