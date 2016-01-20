@@ -17,7 +17,6 @@ Route::get( '/sobre-nosotros', [ 'as' => 'about', 'uses' => 'AboutController@ind
 
 Route::get( '/productos', [ 'as' => 'products', 'uses' => 'ProductsController@index' ] );
 
-Route::get( '/recetas', [ 'as' => 'recipes', 'uses' => 'RecipesController@index' ] );
 
 
 /*
@@ -33,6 +32,11 @@ Route::get( '/recetas', [ 'as' => 'recipes', 'uses' => 'RecipesController@index'
 
 Route::group(['middleware' => ['web']], function ()
 {
+
+  Route::get( '/recetas', [ 'as' => 'recipes', 'uses' => 'RecipesController@index' ] );
+
+  Route::post( '/recetas', [ 'as' => 'uploadRecipe', 'uses' => 'RecipesController@upload' ] );
+
   Route::get( '/contacto', [ 'as' => 'contact', 'uses' => 'ContactController@index' ] );
   //
   Route::post( '/contacto', [ 'as' => 'sendContact', 'uses' => 'ContactController@send' ] );
