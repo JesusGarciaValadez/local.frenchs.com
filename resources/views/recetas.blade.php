@@ -168,64 +168,59 @@
                         <span class="fa fa-times fa-2x"></span>
                         <div class="icono-chef-big"></div>
                         <h3>Sube tu receta</h3>
-                        <form>
-                            <input type="text" placeholder="NOMBRE">
-                            <input type="text" placeholder="CORREO ELECTRÓNICO">
-                            <input type="text" placeholder="NOMBRE DE LA RECETA">
-                            <input type="file" accept="image/png, image/jpeg">
+                        {!! Form::open( [ 'route' => 'uploadRecipe', 'method' => 'POST', 'files' => true ] ) !!}
+                            {!! Form::text( 'user-name', null, [ 'placeholder' => 'NOMBRE' ] ) !!}
+                            {!! Form::email( 'user-email', null, [ 'placeholder' => 'CORREO ELECTRÓNICO' ] ) !!}
+                            {!! Form::text( 'recipe-email', null, [ 'placeholder' => 'NOMBRE DE LA RECETA' ] ) !!}
+                            {!! Form::file( 'recipe-photo', [ 'accept' => 'image/png, image/jpeg' ] ) !!}
                             <p>Te recomendamos tu foto en formato: jpg / 300x300px</p>
                             <label>
                                 <div class="first-icon"><i class="fa fa-tag"></i></div>
-                                <select id="">
-                                    <option value="vacio" selected>Categoría</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
-                                    <option value="">6</option>
-                                </select>
+                                {!! Form::select( 'recipe-categories', array(
+                                    '1' => '1',
+                                    '2' => '2',
+                                    '3' => '3',
+                                    '4' => '4',
+                                    '5' => '5'
+                                ), null, [ 'placeholder' => 'Categoría' ] ) !!}
                             </label>
                             <label>
                                 <div class="second-icon"><i class="fa fa-spoon"></i></div>
-                                <select id="">
-                                    <option value="vacio" selected>Porciones</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
-                                    <option value="">6</option>
-                                </select>
+                                {!! Form::select( 'recipe-portions', array(
+                                    '1' => '1',
+                                    '2' => '2',
+                                    '3' => '3',
+                                    '4' => '4',
+                                    '5' => '5',
+                                    '6' => '6'
+                                ), null, [ 'placeholder' => 'Porciones' ] ) !!}
                             </label>
                             <label>
                                 <div class="second-icon"><i class="fa fa-clock-o"></i></div>
-                                <select id="">
-                                    <option value="vacio" selected>Preparación</option>
-                                    <option value="">5 mins.</option>
-                                    <option value="">10 mins.</option>
-                                    <option value="">15 mins.</option>
-                                    <option value="">20 mins.</option>
-                                    <option value="">25 mins.</option>
-                                    <option value="">30 mins.</option>
-                                </select>
+                                {!! Form::select( 'recipe-preparation-time', array(
+                                    '5 minutos'     => '5 mins.',
+                                    '10 minutos'    => '10 mins.',
+                                    '15 minutos'    => '15 mins.',
+                                    '20 minutos'    => '20 mins.',
+                                    '25 minutos'    => '25 mins.',
+                                    '30 minutos'    => '30 mins.'
+                                ), null, [ 'placeholder' => 'Preparación' ] ) !!}
                             </label>
                             <label>
                                 <div class="second-icon"><i class="fa fa-clock-o"></i></div>
-                                <select id="">
-                                    <option value="vacio" selected>Cocción</option>
-                                    <option value="">5 mins.</option>
-                                    <option value="">10 mins.</option>
-                                    <option value="">15 mins.</option>
-                                    <option value="">20 mins.</option>
-                                    <option value="">25 mins.</option>
-                                    <option value="">30 mins.</option>
-                                </select>
+                                {!! Form::select( 'recipe-cooking-time', array(
+                                    '5 minutos'     => '5 mins.',
+                                    '10 minutos'    => '10 mins.',
+                                    '15 minutos'    => '15 mins.',
+                                    '20 minutos'    => '20 mins.',
+                                    '25 minutos'    => '25 mins.',
+                                    '30 minutos'    => '30 mins.'
+                                ), null, [ 'placeholder' => 'Cocción' ] ) !!}
                             </label>
-                            <textarea name="" id="" class="ingredientes" placeholder="INGREDIENTES"></textarea>
-                            <textarea name="" id="" class="preparacion" placeholder="PREPARACIÓN"></textarea>
-                        </form>
-                        <a href="" id="subir-receta" class="boton">Subir</a>
+                            {!! Form::textarea( 'recipe-ingredients', null, [ 'class' => 'ingredientes', 'placeholder' => 'INGREDIENTES' ] ) !!}
+                            {!! Form::textarea( 'recipe-preparation', null, [ 'class' => 'preparacion', 'placeholder' => 'PREPARACIÓN' ] ) !!}
+                            {!! Form::submit( 'Subir', [ 'class' => 'boton', 'id' => 'subir-receta' ] ) !!}
+                        {!! Form::close() !!}
                     </div>
                     <div class="gracias">
                         <div class="container">
