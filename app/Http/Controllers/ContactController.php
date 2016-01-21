@@ -28,7 +28,7 @@ class ContactController extends Controller
        */
       $validator = \Validator::make( $data, [
         'name'      => 'required|max:255',
-        'email'     => 'required|max:255',
+        'email'     => 'required|email|max:255',
         'comments'  => 'required|max:255',
       ] );
 
