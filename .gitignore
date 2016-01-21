@@ -1,4 +1,5 @@
 .DS_Store
+.sass-cache/*
 *.sublime-*
 .sass-cache
 vendor
