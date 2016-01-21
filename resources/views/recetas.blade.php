@@ -20,14 +20,11 @@
                     <div class="content-filtro">
                         <label>
                             <div class="first-icon"><i class="fa fa-tag"></i></div>
-                            <select id="">
-                                <option value="vacio" selected>Categoría</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
+                            <select name="recipe-categories">
+                                <option value="" selected>Categoría</option>
+                                @foreach ( $categories as $categorie )
+                                <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                                @endforeach
                             </select>
                         </label>
                         <label>
@@ -176,13 +173,12 @@
                             <p>Te recomendamos tu foto en formato: jpg / 300x300px</p>
                             <label>
                                 <div class="first-icon"><i class="fa fa-tag"></i></div>
-                                {!! Form::select( 'recipe-categories', array(
-                                    '1' => '1',
-                                    '2' => '2',
-                                    '3' => '3',
-                                    '4' => '4',
-                                    '5' => '5'
-                                ), null, [ 'placeholder' => 'Categoría' ] ) !!}
+                                <select name="recipe-categories">
+                                    <option value="" selected>Categoría</option>
+                                    @foreach ( $categories as $categorie )
+                                    <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                                    @endforeach
+                                </select>
                             </label>
                             <label>
                                 <div class="second-icon"><i class="fa fa-spoon"></i></div>
