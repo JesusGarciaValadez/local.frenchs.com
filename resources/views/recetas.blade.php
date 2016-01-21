@@ -171,7 +171,7 @@
                         {!! Form::open( [ 'route' => 'uploadRecipe', 'method' => 'POST', 'files' => true ] ) !!}
                             {!! Form::text( 'user-name', null, [ 'placeholder' => 'NOMBRE' ] ) !!}
                             {!! Form::email( 'user-email', null, [ 'placeholder' => 'CORREO ELECTRÓNICO' ] ) !!}
-                            {!! Form::text( 'recipe-email', null, [ 'placeholder' => 'NOMBRE DE LA RECETA' ] ) !!}
+                            {!! Form::text( 'recipe-name', null, [ 'placeholder' => 'NOMBRE DE LA RECETA' ] ) !!}
                             {!! Form::file( 'recipe-photo', [ 'accept' => 'image/png, image/jpeg' ] ) !!}
                             <p>Te recomendamos tu foto en formato: jpg / 300x300px</p>
                             <label>
