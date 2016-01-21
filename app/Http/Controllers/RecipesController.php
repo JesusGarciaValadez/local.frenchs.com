@@ -27,16 +27,16 @@ class RecipesController extends Controller
        * Setting validation rules
        */
       $validator = \Validator::make( $data, [
-        'user-name'               => 'required|max:255|alpha',
-        'user-email'              => 'required|max:255|email|alpha_dash',
-        'recipe-name'             => 'required|max:255|alpha',
-        'recipe-photo'            => 'required|mimes:png,jpeg',
-        'recipe-categories'       => 'required|max:255|alpha|exists:recipes_categories,name',
-        'recipe-portions'         => 'required|max:255|alpha_num|in:1,2,3,4,5,6',
-        'recipe-preparation-time' => 'required|max:255|alpha_num|in:5 minutos,10 minutos,15 minutos,20 minutos,25 minutos,30 minutos',
-        'recipe-cooking-time'     => 'required|max:255|alpha_num|in:5 minutos,10 minutos,15 minutos,20 minutos,25 minutos,30 minutos',
-        'recipe-ingredients'      => 'required|max:255|alpha_num',
-        'recipe-preparation'      => 'required|max:255|alpha_num'
+        'user_name'               => 'required|max:255|alpha',
+        'user_email'              => 'required|max:255|email|alpha_dash',
+        'recipe_name'             => 'required|max:255|alpha',
+        'recipe_photo'            => 'required|mimes:png,jpeg',
+        'recipe_categories'       => 'required|max:255|alpha|exists:recipes_categories,name',
+        'recipe_portions'         => 'required|max:255|alpha_num|in:1,2,3,4,5,6',
+        'recipe_preparation_time' => 'required|max:255|alpha_num|in:5 minutos,10 minutos,15 minutos,20 minutos,25 minutos,30 minutos',
+        'recipe_cooking_time'     => 'required|max:255|alpha_num|in:5 minutos,10 minutos,15 minutos,20 minutos,25 minutos,30 minutos',
+        'recipe_ingredients'      => 'required|max:255|alpha_num',
+        'recipe_preparation'      => 'required|max:255|alpha_num'
       ] );
 
       if ( $validator->fails() )

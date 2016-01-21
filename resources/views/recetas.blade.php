@@ -166,10 +166,10 @@
                         <div class="icono-chef-big"></div>
                         <h3>Sube tu receta</h3>
                         {!! Form::open( [ 'route' => 'uploadRecipe', 'method' => 'POST', 'files' => true ] ) !!}
-                            {!! Form::text( 'user-name', null, [ 'placeholder' => 'NOMBRE' ] ) !!}
-                            {!! Form::email( 'user-email', null, [ 'placeholder' => 'CORREO ELECTRÓNICO' ] ) !!}
-                            {!! Form::text( 'recipe-name', null, [ 'placeholder' => 'NOMBRE DE LA RECETA' ] ) !!}
-                            {!! Form::file( 'recipe-photo', [ 'accept' => 'image/png, image/jpeg' ] ) !!}
+                            {!! Form::text( 'user_name', null, [ 'placeholder' => 'NOMBRE' ] ) !!}
+                            {!! Form::email( 'user_email', null, [ 'placeholder' => 'CORREO ELECTRÓNICO' ] ) !!}
+                            {!! Form::text( 'recipe_name', null, [ 'placeholder' => 'NOMBRE DE LA RECETA' ] ) !!}
+                            {!! Form::file( 'recipe_photo', [ 'accept' => 'image/png, image/jpeg' ] ) !!}
                             <p>Te recomendamos tu foto en formato: jpg / 300x300px</p>
                             <label>
                                 <div class="first-icon"><i class="fa fa-tag"></i></div>
@@ -182,7 +182,7 @@
                             </label>
                             <label>
                                 <div class="second-icon"><i class="fa fa-spoon"></i></div>
-                                {!! Form::select( 'recipe-portions', array(
+                                {!! Form::select( 'recipe_portions', array(
                                     '1' => '1',
                                     '2' => '2',
                                     '3' => '3',
@@ -193,7 +193,7 @@
                             </label>
                             <label>
                                 <div class="second-icon"><i class="fa fa-clock-o"></i></div>
-                                {!! Form::select( 'recipe-preparation-time', array(
+                                {!! Form::select( 'recipe_preparation_time', array(
                                     '5 minutos'     => '5 mins.',
                                     '10 minutos'    => '10 mins.',
                                     '15 minutos'    => '15 mins.',
@@ -204,7 +204,7 @@
                             </label>
                             <label>
                                 <div class="second-icon"><i class="fa fa-clock-o"></i></div>
-                                {!! Form::select( 'recipe-cooking-time', array(
+                                {!! Form::select( 'recipe_cooking_time', array(
                                     '5 minutos'     => '5 mins.',
                                     '10 minutos'    => '10 mins.',
                                     '15 minutos'    => '15 mins.',
@@ -213,8 +213,8 @@
                                     '30 minutos'    => '30 mins.'
                                 ), null, [ 'placeholder' => 'Cocción' ] ) !!}
                             </label>
-                            {!! Form::textarea( 'recipe-ingredients', null, [ 'class' => 'ingredientes', 'placeholder' => 'INGREDIENTES' ] ) !!}
-                            {!! Form::textarea( 'recipe-preparation', null, [ 'class' => 'preparacion', 'placeholder' => 'PREPARACIÓN' ] ) !!}
+                            {!! Form::textarea( 'recipe_ingredients', null, [ 'class' => 'ingredientes', 'placeholder' => 'INGREDIENTES' ] ) !!}
+                            {!! Form::textarea( 'recipe_preparation', null, [ 'class' => 'preparacion', 'placeholder' => 'PREPARACIÓN' ] ) !!}
                             {!! Form::submit( 'Subir', [ 'class' => 'boton', 'id' => 'subir-receta' ] ) !!}
                         {!! Form::close() !!}
                     </div>
