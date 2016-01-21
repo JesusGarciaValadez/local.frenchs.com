@@ -1,7 +1,7 @@
 .DS_Store
 *.sublime-*
 .sass-cache
-/vendor
+vendor
 /node_modules
 Homestead.yaml
 Homestead.json
