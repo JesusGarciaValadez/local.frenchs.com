@@ -17,7 +17,7 @@
             <div class="content-form">
                 <div class="container">
                     <p>Para poder responder a tu solicitud, ingresa la siguiente información:</p>
-                    {!! Form::open( [ 'route' => 'sendContact', 'method' => 'POST' ] ) !!}
+                    {!! Form::open( [ 'route' => 'sendContact', 'method' => 'POST', 'files' => false ] ) !!}
                         <div class="left">
                             {!! Form::text( 'name', null, [ 'placeholder' => 'NOMBRE*' ] ) !!}
                         </div>
