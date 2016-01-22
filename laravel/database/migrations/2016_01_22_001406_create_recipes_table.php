@@ -8,7 +8,7 @@ class CreateRecipesTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return voisd
+     * @return void
      */
     public function up()
     {
@@ -23,12 +23,13 @@ class CreateRecipesTable extends Migration
             $table->foreign( 'recipes_categories_id' )
                   ->references( 'id' )->on( 'recipes_categories' )
                   ->onUpdate( 'cascade' );
-            $table->string( 'recipe_portions' )->default( '1' );
-            $table->string( 'recipe_preparation_time' );
-            $table->string( 'recipe_cooking_time' );
-            $table->string( 'recipe_ingredients' );
+            $table->enum( 'recipe_portions', [ '1', '2', '3', '4', '5', '6' ] )->default( '1' );
+            $table->enum( 'recipe_preparation_time', [ '5 min.', '10 mins.', '15 mins.', '20 mins.', '25 mins.', '30 mins.' ] );
+            $table->enum( 'recipe_cooking_time', [ '5 min.', '10 mins.', '15 mins.', '20 mins.', '25 mins.', '30 mins.' ] );
+            $table->string( 'recipe_ingredients_desktop' );
+            $table->string( 'recipe_ingredients_mobile' );
             $table->string( 'recipe_preparation' );
-            $table->enum( 'recipe_qualification', [ '1', '2', '3', '4', '5'] )->default( '1' );
+            $table->enum( 'recipe_ranking', [ '1', '2', '3', '4', '5'] )->default( '1' );
             $table->timestamps();
         } );
     }
