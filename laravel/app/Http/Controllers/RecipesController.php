@@ -21,7 +21,6 @@ class RecipesController extends Controller
     {
       // Retrieving of all input data from contact form
       $data = $request->all();
-      return $data;
 
       /*
        * Setting validation rules
