@@ -143,22 +143,22 @@
                                 <div class="second-icon"><i class="fa fa-clock-o"></i></div>
                                 {!! Form::select( 'recipe_preparation_time', array(
                                     '5 min.'     => '5 mins.',
-                                    '10 min.'    => '10 mins.',
-                                    '15 min.'    => '15 mins.',
-                                    '20 min.'    => '20 mins.',
-                                    '25 min.'    => '25 mins.',
-                                    '30 min.'    => '30 mins.'
+                                    '10 mins.'    => '10 mins.',
+                                    '15 mins.'    => '15 mins.',
+                                    '20 mins.'    => '20 mins.',
+                                    '25 mins.'    => '25 mins.',
+                                    '30 mins.'    => '30 mins.'
                                 ), null, [ 'placeholder' => 'Preparación' ] ) !!}
                             </label>
                             <label>
                                 <div class="second-icon"><i class="fa fa-clock-o"></i></div>
                                 {!! Form::select( 'recipe_cooking_time', array(
                                     '5 min.'     => '5 mins.',
-                                    '10 min.'    => '10 mins.',
-                                    '15 min.'    => '15 mins.',
-                                    '20 min.'    => '20 mins.',
-                                    '25 min.'    => '25 mins.',
-                                    '30 min.'    => '30 mins.'
+                                    '10 mins.'    => '10 mins.',
+                                    '15 mins.'    => '15 mins.',
+                                    '20 mins.'    => '20 mins.',
+                                    '25 mins.'    => '25 mins.',
+                                    '30 mins.'    => '30 mins.'
                                 ), null, [ 'placeholder' => 'Cocción' ] ) !!}
                             </label>
                             {!! Form::textarea( 'recipe_ingredients', null, [ 'class' => 'ingredientes', 'placeholder' => 'INGREDIENTES' ] ) !!}
