@@ -46,7 +46,7 @@ class RecipesController extends Controller
         // return redirect( 'home' )
         //     ->withInput()
         //     ->withErrors( $validator );
-        return response()->json( [ 'response_message' => 'error', 'response_code' => '0' ] );
+        return response()->json( [ 'response_message' => 'Validation fail', 'response_code' => '0' ] );
       }
       else
       {
@@ -68,7 +68,7 @@ class RecipesController extends Controller
         /*
          * Response via JSON with a success code
          */
-        return response()->json( [ 'response_message' => 'success', 'response_code' => '1' ] );
+        return response()->json( [ 'response_message' => 'Success', 'response_code' => '1' ] );
       }
     }
 }
