@@ -17,7 +17,7 @@ Route::get( '/sobre-nosotros', [ 'as' => 'about', 'uses' => 'AboutController@ind
 
 Route::get( '/productos', [ 'as' => 'products', 'uses' => 'ProductsController@index' ] );
 
-
+Route::get( '/receta/{id}', [ 'as' => 'recipeID', 'uses' => 'RecipeController@index' ] );
 
 /*
 |--------------------------------------------------------------------------
