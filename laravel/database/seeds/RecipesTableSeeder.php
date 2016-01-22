@@ -21,7 +21,7 @@ class RecipesTableSeeder extends Seeder
             'user_name'               => $faker->name,
             'user_email'              => $faker->unique()->email,
             'recipe_name'             => $faker->name,
-            'recipe_photo'            => $faker->imageUrl,
+            'recipe_photo'            => 'receta-detalle.jpg',
             'recipes_categories_id'   => $faker->numberBetween( 1, 10 ),
             'recipe_portions'         => $faker->words( 1, true ),
             'recipe_preparation_time' => $faker->words( 1, true ),
