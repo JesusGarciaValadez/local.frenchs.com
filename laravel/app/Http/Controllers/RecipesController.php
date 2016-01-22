@@ -12,9 +12,12 @@ use App\Http\Controllers\Controller;
 
 class RecipesController extends Controller
 {
-    public function index ( Recipes $recipes, RecipesCategories $recipesCategories )
+    protected $_subject;
+
+    public function index ( Recipes $recipesSet, RecipesCategories $recipesCategories )
     {
-      $recipes    = $recipes->all();
+      $recipes    = $recipesSet->orderBy( 'created_at' )->take( 6 )->get();
+
       $categories = $recipesCategories->all();
 
       return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
@@ -24,6 +27,8 @@ class RecipesController extends Controller
     {
       // Retrieving of all input data from contact form
       $data = $request->all();
+
+      $this->_subject = 'Han enviado una nueva receta.';
 
       /*
        * Setting validation rules
@@ -59,7 +64,7 @@ class RecipesController extends Controller
         \Mail::send( 'emails.message', $data, function( $message ) use ( $request )
         {
           // Setting sender
-          $message->from( $request->email, $request->name );
+          $message->from( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
 
           // Setting subject
           $message->subject( $this->_subject );

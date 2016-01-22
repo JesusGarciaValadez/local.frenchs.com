@@ -70,78 +70,26 @@
         <section class="grid">
             <div class="container">
                 <div class="content-grid">
-                    <a href="" class="receta">
-                        <p class="categoria b1">Snacks</p>
+                    @foreach ( $recipes as $recipe )
+                    <a href="{{ action( 'RecipeController@index', [ 'id' => $recipe->id ] ) }}" class="receta">
+                        <p class="categoria b1">
+                            @foreach ( $categories as $categorie )
+                                @if ( $categorie->id == $recipe->recipes_categories_id )
+                            {{$categorie->categorie_name}}
+                                @endif
+                            @endforeach
+                        </p>
                         <div class="image">
-                            {!! Html::image( 'assets/images/recetas/receta.jpg', 'Tiras de pollo con mostaza' ) !!}
+                            {!! Html::image( 'assets/images/recetas/' . $recipe->recipe_photo, $recipe->recipe_name ) !!}
                         </div>
-                        <p class="nombre">Tiras de pollo con mostaza</p>
-                        <p class="porciones">12 porciones</p>
-                        <p class="tiempo">Timepo de preparación: 15 min.</p>
+                        <p class="nombre">{{$recipe->recipe_name}}</p>
+                        <p class="porciones">{{$recipe->recipe_portions}} porciones</p>
+                        <p class="tiempo">Tiempo de preparación: {{$recipe->recipe_preparation_time}}</p>
                         <div class="ranking">
-                            <span class="stars s4"></span>
+                            <span class="stars s{{$recipe->recipe_qualification}}"></span>
                         </div>
                     </a>
-                    <a href="" class="receta">
-                        <p class="categoria b1">Snacks</p>
-                        <div class="image">
-                            {!! Html::image( 'assets/images/recetas/receta.jpg', 'Tiras de pollo con mostaza' ) !!}
-                        </div>
-                        <p class="nombre">Tiras de pollo con mostaza</p>
-                        <p class="porciones">12 porciones</p>
-                        <p class="tiempo">Timepo de preparación: 15 min.</p>
-                        <div class="ranking">
-                            <span class="stars s4"></span>
-                        </div>
-                    </a>
-                    <a href="" class="receta">
-                        <p class="categoria b1">Snacks</p>
-                        <div class="image">
-                            {!! Html::image( 'assets/images/recetas/receta.jpg', 'Tiras de pollo con mostaza' ) !!}
-                        </div>
-                        <p class="nombre">Tiras de pollo con mostaza</p>
-                        <p class="porciones">12 porciones</p>
-                        <p class="tiempo">Timepo de preparación: 15 min.</p>
-                        <div class="ranking">
-                            <span class="stars s4"></span>
-                        </div>
-                    </a>
-                    <a href="" class="receta">
-                        <p class="categoria b2">Platillos</p>
-                        <div class="image">
-                            {!! Html::image( 'assets/images/recetas/receta2.jpg', 'Tiras de pollo con mostaza' ) !!}
-                        </div>
-                        <p class="nombre">Tiras de pollo con mostaza</p>
-                        <p class="porciones">12 porciones</p>
-                        <p class="tiempo">Timepo de preparación: 15 min.</p>
-                        <div class="ranking">
-                            <span class="stars s4"></span>
-                        </div>
-                    </a>
-                    <a href="" class="receta">
-                        <p class="categoria b2">Platillos</p>
-                        <div class="image">
-                            {!! Html::image( 'assets/images/recetas/receta2.jpg', 'Tiras de pollo con mostaza' ) !!}
-                        </div>
-                        <p class="nombre">Tiras de pollo con mostaza</p>
-                        <p class="porciones">12 porciones</p>
-                        <p class="tiempo">Timepo de preparación: 15 min.</p>
-                        <div class="ranking">
-                            <span class="stars s4"></span>
-                        </div>
-                    </a>
-                    <a href="" class="receta">
-                        <p class="categoria b2">Platillos</p>
-                        <div class="image">
-                            {!! Html::image( 'assets/images/recetas/receta2.jpg', 'Tiras de pollo con mostaza' ) !!}
-                        </div>
-                        <p class="nombre">Tiras de pollo con mostaza</p>
-                        <p class="porciones">12 porciones</p>
-                        <p class="tiempo">Timepo de preparación: 15 min.</p>
-                        <div class="ranking">
-                            <span class="stars s4"></span>
-                        </div>
-                    </a>
+                    @endforeach
                 </div>
                 <a id="" href="#" class="btn-mas">Cargar más recetas</a>
             </div>
@@ -194,23 +142,23 @@
                             <label>
                                 <div class="second-icon"><i class="fa fa-clock-o"></i></div>
                                 {!! Form::select( 'recipe_preparation_time', array(
-                                    '5 minutos'     => '5 mins.',
-                                    '10 minutos'    => '10 mins.',
-                                    '15 minutos'    => '15 mins.',
-                                    '20 minutos'    => '20 mins.',
-                                    '25 minutos'    => '25 mins.',
-                                    '30 minutos'    => '30 mins.'
+                                    '5 min.'     => '5 mins.',
+                                    '10 min.'    => '10 mins.',
+                                    '15 min.'    => '15 mins.',
+                                    '20 min.'    => '20 mins.',
+                                    '25 min.'    => '25 mins.',
+                                    '30 min.'    => '30 mins.'
                                 ), null, [ 'placeholder' => 'Preparación' ] ) !!}
                             </label>
                             <label>
                                 <div class="second-icon"><i class="fa fa-clock-o"></i></div>
                                 {!! Form::select( 'recipe_cooking_time', array(
-                                    '5 minutos'     => '5 mins.',
-                                    '10 minutos'    => '10 mins.',
-                                    '15 minutos'    => '15 mins.',
-                                    '20 minutos'    => '20 mins.',
-                                    '25 minutos'    => '25 mins.',
-                                    '30 minutos'    => '30 mins.'
+                                    '5 min.'     => '5 mins.',
+                                    '10 min.'    => '10 mins.',
+                                    '15 min.'    => '15 mins.',
+                                    '20 min.'    => '20 mins.',
+                                    '25 min.'    => '25 mins.',
+                                    '30 min.'    => '30 mins.'
                                 ), null, [ 'placeholder' => 'Cocción' ] ) !!}
                             </label>
                             {!! Form::textarea( 'recipe_ingredients', null, [ 'class' => 'ingredientes', 'placeholder' => 'INGREDIENTES' ] ) !!}
