@@ -21,13 +21,14 @@ class RecipesTableSeeder extends Seeder
             'user_name'               => $faker->name,
             'user_email'              => $faker->unique()->email,
             'recipe_name'             => $faker->name,
-            'recipe_photo'            => $faker->image,
-            'recipe_categories'       => $faker->words( 1, true ),
+            'recipe_photo'            => $faker->imageUrl,
+            'recipes_categories_id'   => $faker->numberBetween( 1, 10 ),
             'recipe_portions'         => $faker->words( 1, true ),
             'recipe_preparation_time' => $faker->words( 1, true ),
             'recipe_cooking_time'     => $faker->words( 1, true ),
             'recipe_ingredients'      => $faker->sentences( 1, true ),
-            'recipe_preparation'      => $faker->text
+            'recipe_preparation'      => $faker->text,
+            'recipe_qualification'    => $faker->numberBetween( 1, 5 )
           ] );
         }
     }

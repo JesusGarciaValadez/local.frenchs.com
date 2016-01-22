@@ -22,7 +22,7 @@ class RecipesCategoriesTableSeeder extends Seeder
       for ( $i = 0; $i <= 9; $i++ )
       {
         DB::table( 'recipes_categories' )->insert( [
-          'name' => $faker->unique()->word
+          'categorie_name' => $faker->unique()->word
         ] );
       }
     }
