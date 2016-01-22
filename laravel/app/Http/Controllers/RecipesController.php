@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Recipes;
 use App\RecipesCategories;
 
 use Illuminate\Http\Request;
@@ -11,10 +12,12 @@ use App\Http\Controllers\Controller;
 
 class RecipesController extends Controller
 {
-    public function index ( RecipesCategories $recipesCategories )
+    public function index ( Recipes $recipes, RecipesCategories $recipesCategories )
     {
+      $recipes    = $recipes->all();
       $categories = $recipesCategories->all();
-      return view( 'recetas', [ 'categories' => $categories ] );
+
+      return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
     }
 
     public function upload ( Request $request )
