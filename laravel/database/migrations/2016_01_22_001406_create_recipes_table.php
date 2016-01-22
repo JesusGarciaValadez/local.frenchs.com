@@ -19,12 +19,16 @@ class CreateRecipesTable extends Migration
             $table->string( 'user_email' );
             $table->string( 'recipe_name' );
             $table->string( 'recipe_photo' );
-            $table->string( 'recipe_categories' );
-            $table->string( 'recipe_portions' );
+            $table->integer( 'recipes_categories_id' )->unsigned();
+            $table->foreign( 'recipes_categories_id' )
+                  ->references( 'id' )->on( 'recipes_categories' )
+                  ->onUpdate( 'cascade' );
+            $table->string( 'recipe_portions' )->default( '1' );
             $table->string( 'recipe_preparation_time' );
             $table->string( 'recipe_cooking_time' );
             $table->string( 'recipe_ingredients' );
             $table->string( 'recipe_preparation' );
+            $table->enum( 'recipe_qualification', [ '1', '2', '3', '4', '5'] )->default( '1' );
             $table->timestamps();
         } );
     }
