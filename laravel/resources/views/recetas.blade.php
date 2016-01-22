@@ -121,10 +121,10 @@
                             <p>Te recomendamos tu foto en formato: jpg / 300x300px</p>
                             <label>
                                 <div class="first-icon"><i class="fa fa-tag"></i></div>
-                                <select name="recipe-categories">
+                                <select name="recipe_categorie">
                                     <option value="" selected>Categoría</option>
                                     @foreach ( $categories as $categorie )
-                                    <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                                    <option value="{{ $categorie->id }}">{{ $categorie->categorie_name }}</option>
                                     @endforeach
                                 </select>
                             </label>
