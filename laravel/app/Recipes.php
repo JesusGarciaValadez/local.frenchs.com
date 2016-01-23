@@ -13,14 +13,15 @@ class Recipes extends Model
      */
     protected $fillable = [
       'user_name',
-      'user_mail',
+      'user_email',
       'recipe_name',
       'recipe_photo',
-      'recipe_categories',
+      'recipes_categories_id',
       'recipe_portions',
       'recipe_preparation_time',
       'recipe_cooking_time',
-      'recipe_ingredients',
+      'recipe_ingredients_desktop',
+      'recipe_ingredients_mobile',
       'recipe_preparation',
     ];
 
