@@ -25,13 +25,17 @@ class RecipesController extends Controller
 
     public function upload ( Request $request )
     {
-      // Retrieving of all input data from contact form
-      $data = $request->all();
-      unset( $data[ '_token' ] );
-      $data[ 'recipe_ingredients_desktop' ] = $data[ 'recipe_ingredients' ];
-      $data[ 'recipe_ingredients_mobile' ]  = $data[ 'recipe_ingredients' ];
+      // Retrieving of all input recipe from contact form
+      $recipe = $request->all();
+      $recipe[ 'recipes_categories_id' ]      = intval( $recipe[ 'recipe_categorie' ] );
+      $recipe[ 'recipe_ingredients_desktop' ] = $recipe[ 'recipe_ingredients' ];
+      $recipe[ 'recipe_ingredients_mobile' ]  = $recipe[ 'recipe_ingredients' ];
+      $recipe_photo_name                      = strtolower( $recipe[ 'recipe_photo' ]->getClientOriginalName() );
+      $recipe[ 'recipe_photo' ] = $recipe_photo_name;
 
-      unset( $data[ 'recipe_ingredients' ] );
+      unset( $recipe[ '_token' ] );
+      unset( $recipe[ 'recipe_categorie' ] );
+      unset( $recipe[ 'recipe_ingredients' ] );
 
       // Setting the subject for the email sended to alert about a new recipe is sended
       $this->_subject = 'Han enviado una nueva receta.';
@@ -39,16 +43,16 @@ class RecipesController extends Controller
       /*
        * Setting validation rules
        */
-      $validator = \Validator::make( $data, [
-        'user_name'                   => 'required|max:255|alpha',
+      $validator = \Validator::make( $recipe, [
+        'user_name'                   => 'required|max:255',
         'user_email'                  => 'required|max:255|email',
         'recipe_name'                 => 'required|max:255|alpha',
         'recipe_photo'                => 'required|mimes:png,jpeg',
-        'recipe_categorie'            => 'required|exists:recipes_categories,id',
+        'recipes_categories_id'       => 'required|exists:recipes_categories,id',
         'recipe_portions'             => 'required|in:1,2,3,4,5,6',
         'recipe_preparation_time'     => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
         'recipe_cooking_time'         => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
-        'recipe_ingredients_desktop'  => 'required|max:255|alpha_num',
+        'recipe_ingredients_desktop'  => 'required|max:255',
         'recipe_ingredients_mobile'   => 'required|max:255|same:recipe_ingredients_desktop',
         'recipe_preparation'          => 'required|max:255'
       ], [
@@ -64,33 +68,51 @@ class RecipesController extends Controller
          * If validation fails, send response via JSON with an error code
          */
         //return response()->json
-        dd( [ 'response_message' => 'Validation fail', 'response_code' => '0', 'errors' => $validator->errors()->all(), 'Data: ' => $data ] );
+        dd( [ 'response_message' => 'Validation fail', 'response_code' => '0', 'errors' => $validator->errors()->all(), 'recipe: ' => $recipe ] );
       }
       else
       {
-        // Persist the data into the database. Checking if there's an existing recipe with this information.
-        // If not, stores the new recipe.
-        Recipes::firstOrCreate( $data );
+        if ( $request->hasFile( 'recipe_photo' ) ) {
+          $file            = $request->file( 'recipe_photo' );
+          $destinationPath = public_path() . '/assets/images/recetas/';
+          $filename        = $recipe_photo_name;
+          $uploadSuccess   = $file->move( $destinationPath, $filename );
 
-        /*
-         * Sending the email alerting about a new recipe.
-         */
-        \Mail::send( 'emails.message', $data, function( $message ) use ( $request )
-        {
-          // Setting sender
-          $message->from( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
+          if ( $uploadSuccess )
+          {
 
-          // Setting subject
-          $message->subject( $this->_subject );
+            // Persist the recipe into the recipebase. Checking if there's an existing recipe with this information.
+            // If not, stores the new recipe.
+            Recipes::firstOrCreate( $recipe );
 
-          // Setting receiver
-          $message->to( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
-        } );
+            /*
+             * Sending the email alerting about a new recipe.
+             */
+            \Mail::send( 'emails.upload', $recipe, function( $message ) use ( $request )
+            {
+              // Setting sender
+              $message->from( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
 
-        /*
-         * Response via JSON with a success code.
-         */
-        return response()->json( [ 'response_message' => 'Success', 'response_code' => '1' ] );
+              // Setting subject
+              $message->subject( $this->_subject );
+
+              // Setting receiver
+              $message->to( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
+            } );
+
+            /*
+             * Response via JSON with a success code.
+             */
+            return response()->json( [ 'response_message' => 'Success', 'response_code' => '1' ] );
+          }
+          else
+          {
+            return response()->json( [ 'response_message' => 'Error: File was not uploaded', 'response_code' => '3' ] );
+          }
+        }
+
+
+
       }
     }
 }
