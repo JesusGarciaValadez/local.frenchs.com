@@ -12,109 +12,189 @@ use App\Http\Controllers\Controller;
 
 class RecipesController extends Controller
 {
-    protected $_subject;
+  protected $_subject;
+  protected $_search = [];
 
-    public function index ( Recipes $recipesSet, RecipesCategories $recipesCategories )
+  public function index ( Recipes $recipesSet, RecipesCategories $recipesCategories )
+  {
+    $recipes    = $recipesSet->orderBy( 'created_at', 'desc' )->take( 6 )->get();
+
+    $categories = $recipesCategories->all();
+
+    return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
+  }
+
+  public function upload ( Request $request )
+  {
+    // Retrieving of all input recipe from contact form
+    $recipe = $request->all();
+
+    // Setting the subject for the email sended to alert about a new recipe is sended
+    $this->_subject = 'Han enviado una nueva receta.';
+
+    /*
+     * Setting validation rules
+     */
+    $validator = \Validator::make( $recipe, [
+      'user_name'             => 'required|max:255',
+      'user_email'            => 'required|max:255|email',
+      'name'                  => 'required|max:255|alpha',
+      'photo'                 => 'required|mimes:png,jpeg',
+      'categorie'             => 'required|exists:recipes_categories,id',
+      'portions'              => 'required|in:1,2,3,4,5,6',
+      'preparation_time'      => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
+      'cooking_time'          => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
+      'ingredients'           => 'required|max:255',
+      'preparation'           => 'required|max:255'
+    ], [
+      'same'    => 'The :attribute and :other must match.',
+      'size'    => 'The :attribute must be exactly :size.',
+      'between' => 'The :attribute must be between :min - :max.',
+      'in'      => 'The :attribute must be one of the following types: :values',
+    ] );
+
+    if ( $validator->fails() )
     {
-      $recipes    = $recipesSet->orderBy( 'created_at' )->take( 6 )->get();
-
-      $categories = $recipesCategories->all();
-
-      return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
-    }
-
-    public function upload ( Request $request )
-    {
-      // Retrieving of all input recipe from contact form
-      $recipe = $request->all();
-
-      // Setting the subject for the email sended to alert about a new recipe is sended
-      $this->_subject = 'Han enviado una nueva receta.';
-
       /*
-       * Setting validation rules
+       * If validation fails, send response via JSON with an error code
        */
-      $validator = \Validator::make( $recipe, [
-        'user_name'             => 'required|max:255',
-        'user_email'            => 'required|max:255|email',
-        'name'                  => 'required|max:255|alpha',
-        'photo'                 => 'required|mimes:png,jpeg',
-        'categorie'             => 'required|exists:recipes_categories,id',
-        'portions'              => 'required|in:1,2,3,4,5,6',
-        'preparation_time'      => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
-        'cooking_time'          => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
-        'ingredients'           => 'required|max:255',
-        'preparation'           => 'required|max:255'
-      ], [
-        'same'    => 'The :attribute and :other must match.',
-        'size'    => 'The :attribute must be exactly :size.',
-        'between' => 'The :attribute must be between :min - :max.',
-        'in'      => 'The :attribute must be one of the following types: :values',
-      ] );
-
-      if ( $validator->fails() )
+      //return response()->json
+      return response()->json( [ 'response_message' => 'Validation fail', 'response_code' => '0', 'errors' => $validator->errors()->all(), 'recipe: ' => $recipe ] );
+    }
+    else
+    {
+      // If there's a file, then uploading it
+      if ( $request->hasFile( 'photo' ) )
       {
-        /*
-         * If validation fails, send response via JSON with an error code
-         */
-        //return response()->json
-        dd( [ 'response_message' => 'Validation fail', 'response_code' => '0', 'errors' => $validator->errors()->all(), 'recipe: ' => $recipe ] );
+        try {
+          $file               = $request->file( 'photo' );
+          $destinationPath    = public_path() . '/assets/images/recetas/';
+          $filename           = strtolower( $recipe[ 'photo' ]->getClientOriginalName() );
+          $uploadSuccess      = $file->move( $destinationPath, $filename );
+          $recipe[ 'photo' ]  = $filename;
+        } catch ( Exception $e ) {
+          return response()->json( [ 'response_message' => 'Error: File was not uploaded', 'response_code' => '3', 'Error: ' => $e->getError() ] );
+        }
       }
       else
       {
-        // If there's a file, then uploading it
-        if ( $request->hasFile( 'photo' ) )
-        {
-          try {
-            $file               = $request->file( 'photo' );
-            $destinationPath    = public_path() . '/assets/images/recetas/';
-            $filename           = strtolower( $recipe[ 'photo' ]->getClientOriginalName() );
-            $uploadSuccess      = $file->move( $destinationPath, $filename );
-            $recipe[ 'photo' ]  = $filename;
-          } catch ( Exception $e ) {
-            return response()->json( [ 'response_message' => 'Error: File was not uploaded', 'response_code' => '3', 'Error: ' => $e->getError() ] );
-          }
-        }
-        else
-        {
-          return response()->json( [ 'response_message' => "Error: There's is not file to upload", 'response_code' => '2' ] );
-        }
-
-        $recipe[ 'categorie' ]            = intval( $recipe[ 'categorie' ] );
-        $recipe[ 'ingredients_desktop' ]  = $recipe[ 'ingredients' ];
-        $recipe[ 'ingredients_mobile' ]   = $recipe[ 'ingredients' ];
-
-        unset( $recipe[ '_token' ] );
-        unset( $recipe[ 'ingredients' ] );
-
-        // Persist the recipe into the database. Checking if there's an existing recipe with this information.
-        // If not, stores the new recipe.
-        Recipes::firstOrCreate( $recipe );
-
-        /*
-         * Sending the email alerting about a new recipe.
-         */
-        \Mail::send( 'emails.upload', $recipe, function( $message ) use ( $request )
-        {
-          // Setting sender
-          $message->from( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
-
-          // Setting subject
-          $message->subject( $this->_subject );
-
-          // Setting receiver
-          $message->to( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
-        } );
-
-        /*
-         * Response via JSON with a success code.
-         */
-        return response()->json( [ 'response_message' => 'Success', 'response_code' => '1' ] );
+        return response()->json( [ 'response_message' => "Error: There's is not file to upload", 'response_code' => '2' ] );
       }
+
+      $recipe[ 'categorie' ]            = intval( $recipe[ 'categorie' ] );
+      $recipe[ 'ingredients_desktop' ]  = $recipe[ 'ingredients' ];
+      $recipe[ 'ingredients_mobile' ]   = $recipe[ 'ingredients' ];
+
+      unset( $recipe[ '_token' ] );
+      unset( $recipe[ 'ingredients' ] );
+
+      // Persist the recipe into the database. Checking if there's an existing recipe with this information.
+      // If not, stores the new recipe.
+      Recipes::firstOrCreate( $recipe );
+
+      /*
+       * Sending the email alerting about a new recipe.
+       */
+      \Mail::send( 'emails.upload', $recipe, function( $message ) use ( $request )
+      {
+        // Setting sender
+        $message->from( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
+
+        // Setting subject
+        $message->subject( $this->_subject );
+
+        // Setting receiver
+        $message->to( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
+      } );
+
+      /*
+       * Response via JSON with a success code.
+       */
+      return response()->json( [ 'response_message' => 'Success', 'response_code' => '1' ] );
+    }
+  }
+
+  public function search ( Request $request )
+  {
+    //  Obtain all the request parameters
+    $recipe   = $request->all();
+
+    // Prepare raw query
+    if ( empty( $recipe[ 'name' ] ) )
+    {
+      unset( $recipe[ 'name' ] );
+    }
+    else
+    {
+      array_push( $this->_search, "name like '%${recipe[ 'name' ]}%'" );
     }
 
-    public function search ( Request $request )
+    if ( empty( $recipe[ 'categorie' ] ) )
     {
-      return $request->all();
+      unset( $recipe[ 'categorie' ] );
     }
+    else
+    {
+      array_push( $this->_search, "categorie = '${recipe[ 'categorie' ]}'" );
+    }
+
+    if ( empty( $recipe[ 'preparation_time' ] ) )
+    {
+      unset( $recipe[ 'preparation_time' ] );
+    }
+    else
+    {
+      array_push( $this->_search, "preparation_time = '${recipe[ 'preparation_time' ]}'" );
+    }
+
+    if ( empty( $recipe[ 'portions' ] ) )
+    {
+      unset( $recipe[ 'portions' ] );
+    }
+    else
+    {
+      array_push( $this->_search, "portions = '${recipe[ 'portions' ]}'" );
+    }
+
+    if ( empty( $recipe[ 'ranking' ] ) )
+    {
+      unset( $recipe[ 'ranking' ] );
+    }
+    else
+    {
+      array_push( $this->_search, "ranking = '${recipe[ 'ranking' ]}'" );
+    }
+
+    $validator = \Validator::make( $recipe, [
+      'name'                  => 'sometimes|required|max:255|alpha',
+      'categorie'             => 'sometimes|required|exists:recipes_categories,id',
+      'preparation_time'      => 'sometimes|required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
+      'portions'              => 'sometimes|required|in:1,2,3,4,5,6',
+      'ranking'               => 'sometimes|required|in:1,2,3,4,5'
+    ], [
+      'same'    => 'The :attribute and :other must match.',
+      'size'    => 'The :attribute must be exactly :size.',
+      'between' => 'The :attribute must be between :min - :max.',
+      'in'      => 'The :attribute must be one of the following types: :values',
+    ] );
+
+    // If validation fails, send a json response with validation fail message
+    if ( $validator->fails() )
+    {
+      return response()->json( [ 'response_message' => 'Validation fail', 'response_code' => '0' ] );
+    }
+    else
+    {
+      $search = implode( 'OR ', array_flatten( $this->_search ) );
+
+      // Check if there's a recipe with the parameters received
+      $recipes    = Recipes::whereRaw( $search )
+                           ->orderBy( 'created_at', 'desc' )
+                           ->get();
+
+      $categories = RecipesCategories::all();
+
+      return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
+    }
+  }
 }
