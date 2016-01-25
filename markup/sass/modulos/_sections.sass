@@ -9,37 +9,42 @@
 			font-size: 1.857rem
 			text-align: center
 			margin: 0rem 0px 2em
-		a
-			+fx(all,0.5s)
-			background: #402108
-			color: $txt1
-			display: inline-block
-			height: 64px
-			margin-left: -6px
-			text-decoration: none
-			&:after
-				+fawesome("\f0e0")
-				display: block
-				font-size: 1.286rem
-				line-height: 1.286rem
+		div
+			display: table
+			height: auto
+			margin: 0 auto
+			width: auto
+			a
+				+fx(all,0.5s)
+				background: #402108
+				color: $txt1
+				float: left
+				height: 20px
+				margin-left: -2px
 				padding: 22px 52px
-			&:hover
-				background: #8c6749
-		input			    
-			border: 0px solid rgba(103, 103, 103, 0)
-			box-sizing: border-box
-			height: 64px
-			font-size: 1rem
-			padding: 0px 10px
-			width: 480px
-			&:focus 
-				border: 0px solid rgba(167, 167, 167, 1)
-				box-shadow: 0 0 0 rgba(251, 131, 3, 1)
+				text-decoration: none
+				&:after
+					+fawesome("\f0e0")
+					font-size: 1.286rem
+					line-height: 1.286rem
+				&:hover
+					background: #8c6749
+			input			    
+				border: 0px solid rgba(103, 103, 103, 0)
 				box-sizing: border-box
-				margin: 0
-				outline: 0px
-			+input-placeholder
-				color: $txt2
+				height: 64px
+				float: left
+				font-size: 1rem
+				padding: 0px 10px
+				width: 480px
+				&:focus 
+					border: 0px solid rgba(167, 167, 167, 1)
+					box-shadow: 0 0 0 rgba(251, 131, 3, 1)
+					box-sizing: border-box
+					margin: 0
+					outline: 0px
+				+input-placeholder
+					color: $txt2
 .subir-receta
 	background: #ffffff
 	overflow: hidden
@@ -180,7 +185,7 @@
 					color: $txt2
 					height: auto
 					font-size: 1rem
-					margin: 2%
+					margin: 2% 1.5% 2% 2% 
 					outline: none
 					padding: 14px 10px
 					width: 46%
@@ -227,6 +232,10 @@
 							padding: 11px 27px
 							position: absolute
 							width: 100%
+						&::-ms-expand
+							display: none
+						&::-moz-expand
+							display: none
 				.ingredientes
 					+fx(all,0.3s)
 					border: 1px solid #e1e1e1
@@ -235,7 +244,7 @@
 					font-size: 1rem
 					font-family: "Montserrat", sans-serif
 					height: 166px
-					margin: 2%
+					margin: 2% 1.5% 2% 2% 
 					padding: 14px 10px
 					width: 46%
 					&:focus 
@@ -252,7 +261,7 @@
 					font-size: 1rem
 					font-family: "Montserrat", sans-serif
 					height: 166px
-					margin: 2%
+					margin: 2% 1.5% 2% 2% 
 					padding: 14px 10px
 					width: 46%
 					&:focus 
