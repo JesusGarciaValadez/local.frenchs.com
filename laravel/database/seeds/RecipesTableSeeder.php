@@ -19,18 +19,18 @@ class RecipesTableSeeder extends Seeder
     for( $i = 0; $i <= 19; $i++ )
     {
       DB::table( 'recipes' )->insert( [
-        'user_name'                   => $faker->name,
-        'user_email'                  => $faker->unique()->email,
-        'recipe_name'                 => $faker->name,
-        'recipe_photo'                => 'receta-detalle.jpg',
-        'recipes_categories_id'       => $faker->numberBetween( 1, 10 ),
-        'recipe_portions'             => $faker->numberBetween( 1, 6 ),
-        'recipe_preparation_time'     => $faker->randomElement( [ '5 min.','10 mins.','15 mins.','20 mins.','25 mins.','30 mins.' ] ),
-        'recipe_cooking_time'         => $faker->randomElement( [ '5 min.','10 mins.','15 mins.','20 mins.','25 mins.','30 mins.' ] ),
-        'recipe_ingredients_desktop'  => $faker->sentences( 1, true ),
-        'recipe_ingredients_mobile'   => $faker->sentences( 1, true ),
-        'recipe_preparation'          => $faker->text,
-        'recipe_ranking'              => $faker->numberBetween( 1, 5 )
+        'user_name'            => $faker->name,
+        'user_email'           => $faker->unique()->email,
+        'name'                 => $faker->name,
+        'photo'                => 'receta-detalle.jpg',
+        'categorie'            => $faker->numberBetween( 1, 10 ),
+        'portions'             => $faker->numberBetween( 1, 6 ),
+        'preparation_time'     => $faker->randomElement( [ '5 min.','10 mins.','15 mins.','20 mins.','25 mins.','30 mins.' ] ),
+        'cooking_time'         => $faker->randomElement( [ '5 min.','10 mins.','15 mins.','20 mins.','25 mins.','30 mins.' ] ),
+        'ingredients_desktop'  => $faker->sentences( 1, true ),
+        'ingredients_mobile'   => $faker->sentences( 1, true ),
+        'preparation'          => $faker->text,
+        'ranking'              => $faker->numberBetween( 1, 5 )
       ] );
     }
   }

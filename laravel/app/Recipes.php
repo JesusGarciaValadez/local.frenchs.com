@@ -14,15 +14,15 @@ class Recipes extends Model
     protected $fillable = [
       'user_name',
       'user_email',
-      'recipe_name',
-      'recipe_photo',
-      'recipes_categories_id',
-      'recipe_portions',
-      'recipe_preparation_time',
-      'recipe_cooking_time',
-      'recipe_ingredients_desktop',
-      'recipe_ingredients_mobile',
-      'recipe_preparation',
+      'name',
+      'photo',
+      'categorie',
+      'portions',
+      'preparation_time',
+      'cooking_time',
+      'ingredients_desktop',
+      'ingredients_mobile',
+      'preparation',
     ];
 
     /**
@@ -30,5 +30,12 @@ class Recipes extends Model
      *
      * @var array
      */
-    protected $guarded = [ 'id', 'created_at', 'updated_at' ];
+    protected $guarded  = [ 'id', 'ingredients', 'created_at', 'updated_at' ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden   = [ '_token' ];
 }

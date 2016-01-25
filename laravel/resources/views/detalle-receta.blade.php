@@ -1,6 +1,6 @@
 @extends( 'layouts.layout' )
 
-@section( 'title', 'Receta para preparar ' . $recipe->recipe_name )
+@section( 'title', 'Receta para preparar ' . $recipe->name )
 
 @section( 'content' )
         <div class="cover-interior-c"></div>
@@ -8,9 +8,9 @@
             <div class="header">
                 <div class="container">
                     <div class="info left"></span>
-                        <h3>{{$recipe->recipe_name}}</h3>
+                        <h3>{{$recipe->name}}</h3>
                         <div class="ranking">
-                            <span class="stars s{{$recipe->recipe_ranking}}"></span>
+                            <span class="stars s{{$recipe->ranking}}"></span>
                         </div>
                         <div class="share">
                             Comparte esta receta:<a href="#" class="btn-share"></a>
@@ -23,18 +23,18 @@
                         </div>
                         <div class="detalles">
                             <div class="porciones">
-                                <div class="left">Porciones:</div><div class="right">{{$recipe->recipe_portions}}</div>
+                                <div class="left">Porciones:</div><div class="right">{{$recipe->portions}}</div>
                             </div>
                             <div class="tiempo-preparacion">
-                                <div class="left">Tiempo de preparación:</div><div class="right">{{$recipe->recipe_preparation_time}}</div>
+                                <div class="left">Tiempo de preparación:</div><div class="right">{{$recipe->preparation_time}}</div>
                             </div>
                             <div class="tiempo-coccion">
-                                <div class="left">Tiempo de cocción:</div><div class="right">{{$recipe->recipe_cooking_time}}</div>
+                                <div class="left">Tiempo de cocción:</div><div class="right">{{$recipe->cooking_time}}</div>
                             </div>
                         </div>
                     </div>
                     <div class="image right"></span>
-                        {!! Html::image( 'assets/images/recetas/' . $recipe->recipe_photo, $recipe->recipe_name ) !!}
+                        {!! Html::image( 'assets/images/recetas/' . $recipe->photo, $recipe->name ) !!}
                     </div>
                 </div>
             </div>
@@ -44,12 +44,12 @@
                         <div class="ingredientes left">
                             <div class="icono-ingredientes"></div>
                             <h3>Ingredientes</h3>
-                            {{$recipe->recipe_ingredients_desktop}}
+                            {{$recipe->ingredients_desktop}}
                         </div>
                         <div class="preparacion right">
                             <div class="icono-preparacion"></div>
                             <h3>Preparación</h3>
-                            {{$recipe->recipe_preparation}}
+                            {{$recipe->preparation}}
                         </div>
                     </div>
 
@@ -65,7 +65,7 @@
                                 <div class="ingredientes">
                                     <div class="icono-ingredientes"></div>
                                     <h3>Ingredientes</h3>
-                                    {{$recipe->recipe_ingredients_mobile}}
+                                    {{$recipe->ingredients_mobile}}
                                 </div>
                             </div>
 
@@ -74,7 +74,7 @@
                                 <div class="preparacion">
                                     <div class="icono-preparacion"></div>
                                     <h3>Preparación</h3>
-                                    {{$recipe->recipe_preparation}}
+                                    {{$recipe->preparation}}
                                 </div>
 
                             </div>
@@ -94,19 +94,19 @@
                     <a href="{{ action( 'RecipeController@index', [ 'id' => $recipe->id ] ) }}" class="receta">
                         <p class="categoria b2">
                             @foreach ( $categories as $categorie )
-                                @if ( $categorie->id == $recipe->recipes_categories_id )
+                                @if ( $categorie->id == $recipe->categorie )
                             {{$categorie->categorie_name}}
                                 @endif
                             @endforeach
                         </p>
                         <div class="image">
-                            {!! Html::image( 'assets/images/recetas/' . $recipe->recipe_photo, $recipe->recipe_name ) !!}
+                            {!! Html::image( 'assets/images/recetas/' . $recipe->photo, $recipe->name ) !!}
                         </div>
-                        <p class="nombre">{{$recipe->recipe_name}}</p>
-                        <p class="porciones">{{$recipe->recipe_portions}} porciones</p>
-                        <p class="tiempo">Tiempo de preparación: {{$recipe->recipe_preparation_time}}</p>
+                        <p class="nombre">{{$recipe->name}}</p>
+                        <p class="porciones">{{$recipe->portions}} porciones</p>
+                        <p class="tiempo">Tiempo de preparación: {{$recipe->preparation_time}}</p>
                         <div class="ranking">
-                            <span class="stars s{{$recipe->recipe_ranking}}"></span>
+                            <span class="stars s{{$recipe->ranking}}"></span>
                         </div>
                     </a>
                     @endforeach
