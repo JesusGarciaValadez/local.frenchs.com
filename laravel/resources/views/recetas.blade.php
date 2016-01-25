@@ -15,8 +15,9 @@
                 <div class="container">
                     {!! Form::open( [ 'route' => 'searchRecipe', 'method' => 'GET' ] ) !!}
                         <div class="buscar">
-                            {!! Form::text( 'search_term', null, [ 'placeholder' => '(Ejemplo: Pollo)' ] ) !!}
-                            {!! Html::link( '#', '' ) !!}
+                            {!! Form::text( 'name', null, [ 'placeholder' => '(Ejemplo: Pollo)' ] ) !!}
+                            {{-- Html::link( '#', '' ) --}}
+                            {!! Form::submit( 'buscar' ) !!}
                         </div>
                         <div class="content-filtro">
                             <label>
@@ -24,7 +25,7 @@
                                 <select name="categorie">
                                     <option value="" selected>Categoría</option>
                                     @foreach ( $categories as $categorie )
-                                    <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                                    <option value="{{ $categorie->id }}">{{ $categorie->categorie_name }}</option>
                                     @endforeach
                                 </select>
                             </label>
@@ -32,37 +33,36 @@
                                 <div class="second-icon"><i class="fa fa-clock-o"></i></div>
                                 {!! Form::select( 'preparation_time', array(
                                     ''  => 'Tiempo',
-                                    '1' => '1',
-                                    '2' => '2',
-                                    '3' => '3',
-                                    '4' => '4',
-                                    '5' => '5',
-                                    '6' => '6'
-                                ), '', [ 'placeholder' => 'Tiempo' ] ) !!}
+                                    '5 min.'    => '5 mins.',
+                                    '10 mins.'  => '10 mins.',
+                                    '15 mins.'  => '15 mins.',
+                                    '20 mins.'  => '20 mins.',
+                                    '25 mins.'  => '25 mins.',
+                                    '30 mins.'  => '30 mins.'
+                                ), '' ) !!}
                             </label>
                             <label>
                                 <div class="second-icon"><i class="fa fa-spoon"></i></div>
                                 {!! Form::select( 'portions', array(
                                     ''  => 'Porciones',
-                                    '1' => '1',
-                                    '2' => '2',
-                                    '3' => '3',
-                                    '4' => '4',
-                                    '5' => '5',
-                                    '6' => '6'
-                                ), '', [ 'placeholder' => 'Porciones' ] ) !!}
+                                    '1' => '1 porciones',
+                                    '2' => '2 porciones',
+                                    '3' => '3 porciones',
+                                    '4' => '4 porciones',
+                                    '5' => '5 porciones',
+                                    '6' => '6 porciones'
+                                ), '' ) !!}
                             </label>
                             <label>
                                 <div class="second-icon"><i class="fa fa-star"></i></div>
                                 {!! Form::select( 'ranking', array(
-                                    ''  => 'Porciones',
-                                    '1' => '1',
-                                    '2' => '2',
-                                    '3' => '3',
-                                    '4' => '4',
-                                    '5' => '5',
-                                    '6' => '6'
-                                ), '', [ 'placeholder' => 'Porciones' ] ) !!}
+                                    ''  => 'Ranking',
+                                    '1' => '1 Estrellas',
+                                    '2' => '2 Estrellas',
+                                    '3' => '3 Estrellas',
+                                    '4' => '4 Estrellas',
+                                    '5' => '5 Estrellas'
+                                ), '' ) !!}
                             </label>
                         </div>
                     {!! Form::close() !!}
@@ -94,7 +94,9 @@
                     </a>
                     @endforeach
                 </div>
+                @if ( count( $recipes ) > 1 )
                 <a id="" href="#" class="btn-mas">Cargar más recetas</a>
+                @endif
             </div>
         </section>
 
