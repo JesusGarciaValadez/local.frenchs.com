@@ -22,17 +22,17 @@
 				a
 					+fx(all,0.5s)
 					background: #ed7028
+					box-sizing: border-box
 					color: $txt1
-					display: inline-block
-					margin-left: -3px
+					float: left
+					height: 52px
+					margin-left: -2px
+					padding: 16px 52px
 					text-decoration: none
 					&:after
 						+fawesome("\f002")
-						display: block
 						font-size: 1.286rem
-						height: 20px
 						line-height: 1.286rem
-						padding: 16px 52px
 					&:hover
 						background: #ff995e
 				input			
@@ -41,8 +41,9 @@
 					border: 1px solid #d6d6d6
 					box-sizing: border-box
 					color: $txt2
-					height: 52px
+					float: left
 					font-size: 1rem
+					height: 52px
 					margin: 0
 					outline: none
 					padding: 16px 10px
@@ -93,10 +94,8 @@
 							padding: 11px 27px
 							position: absolute
 							width: 100%
-
-
-
-
+						&::-ms-expand
+							display: none
 				a
 					+fx(all,0.5s)
 					background: #eb1a3a
