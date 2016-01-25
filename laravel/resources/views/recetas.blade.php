@@ -215,8 +215,8 @@
                             </label>
                             {!! Form::textarea( 'recipe_ingredients', null, [ 'class' => 'ingredientes', 'placeholder' => 'INGREDIENTES' ] ) !!}
                             {!! Form::textarea( 'recipe_preparation', null, [ 'class' => 'preparacion', 'placeholder' => 'PREPARACIÓN' ] ) !!}
-                            {!! Form::submit( 'Subir', [ 'class' => 'boton', 'id' => 'subir-receta' ] ) !!}
                         {!! Form::close() !!}
+                        {!! Html::link( '#', 'Subir', [ 'class' => 'boton', 'id' => 'subir-receta' ] ) !!}
                     </div>
                     <div class="gracias">
                         <div class="container">

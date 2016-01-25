@@ -27,8 +27,8 @@
                         <div class="div100">
                             {!! Form::textarea( 'comments', null, [ 'placeholder' => 'COMENTARIO' ] ) !!}
                         </div>
-                        {!! Form::submit( 'Enviar', [ 'class' => 'boton' ] ) !!}
                     {!! Form::close() !!}
+                    {!! Html::link( '#', 'Enviar', [ 'class' => 'boton' ] ) !!}
                 </div>
             </div>
 
