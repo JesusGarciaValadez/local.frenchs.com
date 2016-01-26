@@ -1,4 +1,0 @@
-{{ $email }}
-{{ $comments }}
-{{-- $body --}}
-Gracias
