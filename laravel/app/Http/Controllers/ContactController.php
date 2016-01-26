@@ -37,9 +37,6 @@ class ContactController extends Controller
         /*
          * If validation fails, send response via JSON with an error code
          */
-        // return redirect( 'home' )
-        //     ->withInput()
-        //     ->withErrors( $validator );
         return response()->json( [ 'response_message' => 'error', 'response_code' => '0' ] );
       }
       else
@@ -47,10 +44,10 @@ class ContactController extends Controller
         /*
          * Sending the email
          */
-        \Mail::send( 'emails.message', $data, function( $message ) use ( $request )
+        \Mail::send( 'emails.contact', [ 'contact' => $data ], function( $message )
         {
           // Setting sender
-          $message->from( $request->email, $request->name );
+          $message->from( env( 'CONTACT_SENDER' ), env( 'CONTACT_APP_NAME' ) );
 
           // Setting subject
           $message->subject( $this->_subject );
