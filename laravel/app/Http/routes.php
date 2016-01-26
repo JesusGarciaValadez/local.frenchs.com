@@ -38,26 +38,14 @@ Route::group( [ 'middleware' => [ 'web' ] ], function ()
 
   Route::post( '/recetas', [ 'as' => 'uploadRecipe', 'uses' => 'RecipesController@upload' ] );
 
+  Route::get( '/editar-receta/{id}', [ 'as' => 'updateRecipe', 'middleware' => 'auth', 'uses' => 'RecipeController@update' ] );
+
   Route::get( '/contacto', [ 'as' => 'contact', 'uses' => 'ContactController@index' ] );
 
   Route::post( '/contacto', [ 'as' => 'sendContact', 'uses' => 'ContactController@send' ] );
+
+  Route::auth();
 } );
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "auth.user" middleware group to every route
-| it contains. The "auth.user" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and user authentication.
-|
-*/
-
-Route::group( [ 'middleware' => [ 'auth.user' ] ], function () {
-  Route::get( '/editar-receta/{id}', [ 'as' => 'updateRecipe', 'uses' => 'RecipeController@update' ] );
-} );
-
 
 /*
 |--------------------------------------------------------------------------
