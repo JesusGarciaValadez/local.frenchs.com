@@ -38,7 +38,7 @@ class RecipesController extends Controller
     $validator = \Validator::make( $recipe, [
       'user_name'             => 'required|max:255',
       'user_email'            => 'required|max:255|email',
-      'name'                  => 'required|max:255|alpha',
+      'name'                  => 'required|max:255',
       'photo'                 => 'required|mimes:png,jpeg',
       'categorie'             => 'required|exists:recipes_categories,id',
       'portions'              => 'required|in:1,2,3,4,5,6',
@@ -47,10 +47,14 @@ class RecipesController extends Controller
       'ingredients'           => 'required|max:255',
       'preparation'           => 'required|max:255'
     ], [
-      'same'    => 'The :attribute and :other must match.',
-      'size'    => 'The :attribute must be exactly :size.',
-      'between' => 'The :attribute must be between :min - :max.',
-      'in'      => 'The :attribute must be one of the following types: :values',
+      'required'    => "El campo ':attribute' es obligatorio.",
+      'alpha'       => "El campo ':attribute' solo debe contener letras.",
+      'alpha_dash'  => "El campo ':attribute' solo debe contener letras, numeros y guiones bajos.",
+      'alpha_num'   => "El campo ':attribute' solo debe contener letras y numeros.",
+      'same'        => 'The :attribute and :other must match.',
+      'size'        => 'The :attribute must be exactly :size.',
+      'between'     => 'The :attribute must be between :min - :max.',
+      'in'          => 'The :attribute must be one of the following types: :values',
     ] );
 
     if ( $validator->fails() )
@@ -58,7 +62,6 @@ class RecipesController extends Controller
       /*
        * If validation fails, send response via JSON with an error code
        */
-      //return response()->json
       return response()->json( [ 'response_message' => 'Validation fail', 'response_code' => '0', 'errors' => $validator->errors()->all(), 'recipe: ' => $recipe ] );
     }
     else
@@ -72,7 +75,9 @@ class RecipesController extends Controller
           $filename           = strtolower( $recipe[ 'photo' ]->getClientOriginalName() );
           $uploadSuccess      = $file->move( $destinationPath, $filename );
           $recipe[ 'photo' ]  = $filename;
-        } catch ( Exception $e ) {
+        }
+        catch ( Exception $e )
+        {
           return response()->json( [ 'response_message' => 'Error: File was not uploaded', 'response_code' => '3', 'Error: ' => $e->getError() ] );
         }
       }
@@ -90,15 +95,15 @@ class RecipesController extends Controller
 
       // Persist the recipe into the database. Checking if there's an existing recipe with this information.
       // If not, stores the new recipe.
-      Recipes::firstOrCreate( $recipe );
+      $recipe[ 'id' ] = Recipes::firstOrCreate( $recipe );
 
       /*
        * Sending the email alerting about a new recipe.
        */
-      \Mail::send( 'emails.upload', $recipe, function( $message ) use ( $request )
+      \Mail::send( 'emails.upload', [ 'recipe' => $recipe ], function( $message )
       {
         // Setting sender
-        $message->from( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
+        $message->from( env( 'CONTACT_SENDER' ), env( 'CONTACT_APP_NAME' ) );
 
         // Setting subject
         $message->subject( $this->_subject );
