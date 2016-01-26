@@ -35,11 +35,11 @@ Route::group( [ 'middleware' => [ 'web' ] ], function ()
 
   Route::get( '/recetas', [ 'as' => 'recipes', 'uses' => 'RecipesController@index' ] );
 
-  Route::get( '/buscar-recetas', [
-              'as' => 'searchRecipe',
-              'uses' => 'RecipesController@search' ] );
+  Route::get( '/buscar-recetas', [ 'as' => 'searchRecipe', 'uses' => 'RecipesController@search' ] );
 
   Route::post( '/recetas', [ 'as' => 'uploadRecipe', 'uses' => 'RecipesController@upload' ] );
+
+  Route::get( '/editar-receta/{id}', [ 'as' => 'updateRecipe', 'uses' => 'RecipeController@update' ] );
 
   Route::get( '/contacto', [ 'as' => 'contact', 'uses' => 'ContactController@index' ] );
   //
