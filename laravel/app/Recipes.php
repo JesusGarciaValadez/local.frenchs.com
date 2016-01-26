@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace frenchs;
 
 use Illuminate\Database\Eloquent\Model;
 

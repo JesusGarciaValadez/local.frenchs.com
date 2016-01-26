@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace frenchs\Http\Controllers;
 
-use App\Recipes;
-use App\RecipesCategories;
+use frenchs\Recipes;
+use frenchs\RecipesCategories;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use frenchs\Http\Requests;
+use frenchs\Http\Controllers\Controller;
 
 class RecipeController extends Controller
 {

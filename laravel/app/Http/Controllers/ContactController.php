@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace frenchs\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use frenchs\Http\Requests;
+use frenchs\Http\Controllers\Controller;
 
 class ContactController extends Controller
 {
