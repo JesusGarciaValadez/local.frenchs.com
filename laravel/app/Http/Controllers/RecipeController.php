@@ -47,9 +47,19 @@ class RecipeController extends Controller
   {
     // Obtain the recipe information
     $recipe   = $request->all();
-    dd( $recipe );
 
-    $response = $recipes->save( $recipe );
+    if ( !isset( $request[ 'photo' ] ) || empty( 'photo' ) )
+    {
+      $recipe[ 'photo' ] = $request[ 'old_photo' ];
+      unset( $recipe[ 'old_photo' ] );
+    }
+
+    $recipe[ 'categorie' ] = intval( $request[ 'categorie' ] );
+    unset( $recipe[ '_method' ] );
+    unset( $recipe[ '_token' ] );
+
+    $response = \frenchs\Recipes::where( 'id', $recipe[ 'id' ] )
+                                ->update( $recipe );
 
     // Passing the recipe information, categories and domain url to the view
     return view( 'recipes.edited', [ 'response' => $response ] );
