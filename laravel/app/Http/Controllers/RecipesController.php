@@ -17,7 +17,7 @@ class RecipesController extends Controller
 
   public function index ( Recipes $recipesSet, RecipesCategories $recipesCategories )
   {
-    $recipes    = $recipesSet->orderBy( 'created_at', 'desc' )->take( 6 )->get();
+    $recipes    = $recipesSet->where( 'active', true )->orderBy( 'created_at', 'desc' )->take( 6 )->get();
 
     $categories = $recipesCategories->all();
 
@@ -171,7 +171,7 @@ class RecipesController extends Controller
     }
 
     $validator = \Validator::make( $recipe, [
-      'name'                  => 'sometimes|required|max:255|alpha',
+      'name'                  => 'sometimes|required|max:255',
       'categorie'             => 'sometimes|required|exists:recipes_categories,id',
       'preparation_time'      => 'sometimes|required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
       'portions'              => 'sometimes|required|in:1,2,3,4,5,6',
@@ -186,11 +186,12 @@ class RecipesController extends Controller
     // If validation fails, send a json response with validation fail message
     if ( $validator->fails() )
     {
-      return response()->json( [ 'response_message' => 'Validation fail', 'response_code' => '0' ] );
+      return response()->json( [ 'response_message' => 'Validation fail', 'response_code' => '0', 'errors' => $validator->errors()->all() ] );
     }
     else
     {
       $search = implode( 'OR ', array_flatten( $this->_search ) );
+      $search += " AND active = true";
 
       // Check if there's a recipe with the parameters received
       $recipes    = Recipes::whereRaw( $search )
