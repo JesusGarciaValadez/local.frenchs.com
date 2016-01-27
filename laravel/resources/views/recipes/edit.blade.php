@@ -7,6 +7,14 @@
       <div class="panel panel-default">
         <div class="panel-heading">Editar receta</div>
         <div class="panel-body">
+          <div class="bs-example bs-example-bg-classes" data-example-id="contextual-backgrounds-helpers">
+          @if ( $response[ 'updated' ] === true )
+            <p class="bg-success">{{$response[ 'message' ]}}</p>
+          @endif
+          @if ( $response[ 'updated' ] === false )
+            <p class="bg-danger">{{$response[ 'message' ]}}</p>
+          @endif
+          </div>
           {!! Form::open( [ 'route' => 'updatedRecipe', 'method' => 'PUT', 'class' => 'form-horizontal', 'files' => true ] ) !!}
 
             {!! Form::hidden( 'old_photo', $recipe[ 'photo' ] ) !!}
