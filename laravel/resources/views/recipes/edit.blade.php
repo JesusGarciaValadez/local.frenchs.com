@@ -8,16 +8,16 @@
         <div class="panel-heading">Editar receta</div>
         <div class="panel-body">
           <div class="bs-example bs-example-bg-classes" data-example-id="contextual-backgrounds-helpers">
-          @if ( $response[ 'updated' ] === true )
-            <p class="bg-success">{{$response[ 'message' ]}}</p>
+          @if ( isset( $recipe[ 'updated' ] ) && $recipe[ 'updated'] === true )
+            <p class="bg-success">{{$recipe[ 'message' ]}}</p>
           @endif
-          @if ( $response[ 'updated' ] === false )
-            <p class="bg-danger">{{$response[ 'message' ]}}</p>
+          @if ( isset( $recipe[ 'updated' ] ) && $recipe[ 'updated' ] === false )
+            <p class="bg-danger">{{$recipe[ 'message' ]}}</p>
           @endif
           </div>
           {!! Form::open( [ 'route' => 'updatedRecipe', 'method' => 'PUT', 'class' => 'form-horizontal', 'files' => true ] ) !!}
 
-            {!! Form::hidden( 'old_photo', $recipe[ 'photo' ] ) !!}
+            {!! Form::hidden( 'old_photo', $recipe[ 'old_photo' ] ) !!}
             {!! Form::hidden( 'id', $recipe[ 'id' ] ) !!}
 
             <div class="form-group{{ $errors->has( 'name' ) ? ' has-error' : '' }}">
@@ -38,7 +38,7 @@
               {!! Form::label( 'photo', 'Fotografía', [ 'class' => 'col-md-4 control-label' ] ) !!}
 
               <div class="col-md-6">
-                {!! Form::file( 'photo', [ 'value' => $domain . 'assets/images/recetas/' . old( 'photo' ), ] ) !!}
+                {!! Form::file( 'photo' ) !!}
 
                 @if ( $errors->has( 'photo' ) )
                   <span class="help-block">
@@ -50,7 +50,7 @@
 
             <div class="form-group">
               <div class="center-block">
-                {!! Html::image( $domain . '/assets/images/recetas/' . $recipe[ 'photo' ], $recipe[ 'name' ], [ 'class' => 'img-responsive center-block' ] ) !!}
+                {!! Html::image( $domain . '/assets/images/recetas/' . $recipe[ 'old_photo' ], $recipe[ 'name' ], [ 'class' => 'img-responsive center-block' ] ) !!}
               </div>
             </div>
 
@@ -197,7 +197,7 @@
               {!! Form::label( 'active', 'Activo', [ 'class' => 'col-md-4 control-label' ] ) !!}
 
               <div class="col-md-6 checkbox">
-                {!! Form::checkbox( 'active', $recipe[ 'ranking' ], [ 'class' => 'form-control' ] ) !!}
+                {!! Form::checkbox( 'active', 'true', $recipe[ 'active' ] ) !!}
 
                 @if ( $errors->has( 'active' ) )
                   <span class="help-block">
