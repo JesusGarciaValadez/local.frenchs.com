@@ -7,6 +7,7 @@ use Validator;
 use frenchs\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -28,7 +29,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -68,5 +69,13 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function authenticate ( Request $request )
+    {
+        if ( Auth::attempt( [ 'email' => $email, 'password' => $password ], $remember ) )
+        {
+            return redirect()->intended( 'updateRecipe' );
+        }
     }
 }
