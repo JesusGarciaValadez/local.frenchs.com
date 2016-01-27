@@ -191,7 +191,7 @@ class RecipesController extends Controller
     else
     {
       $search = implode( 'OR ', array_flatten( $this->_search ) );
-      $search .= " AND active = true";
+      $search += " AND active = true";
 
       // Check if there's a recipe with the parameters received
       $recipes    = Recipes::whereRaw( $search )
@@ -200,17 +200,7 @@ class RecipesController extends Controller
 
       $categories = RecipesCategories::all();
 
-      /*
-       * If there's recipes then show it in the view. If not, then bring us back to the last grid of recipes showed.
-       */
-      if ( count( $recipes ) > 0 )
-      {
-        return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
-      }
-      else
-      {
-        return back()->with( [ 'recipes' => [], 'categories' => $categories ] )->withInput();
-      }
+      return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
     }
   }
 }
