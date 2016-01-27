@@ -30,7 +30,8 @@ class RecipesTableSeeder extends Seeder
         'ingredients_desktop'  => $faker->sentences( 1, true ),
         'ingredients_mobile'   => $faker->sentences( 1, true ),
         'preparation'          => $faker->text,
-        'ranking'              => $faker->numberBetween( 1, 5 )
+        'ranking'              => $faker->numberBetween( 1, 5 ),
+        'active'               => $faker->boolean(),
       ] );
     }
   }
