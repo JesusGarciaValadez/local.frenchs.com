@@ -171,6 +171,7 @@
                             </label>
                             {!! Form::textarea( 'ingredients', null, [ 'class' => 'ingredientes', 'placeholder' => 'INGREDIENTES' ] ) !!}
                             {!! Form::textarea( 'preparation', null, [ 'class' => 'preparacion', 'placeholder' => 'PREPARACIÓN' ] ) !!}
+                            {!! Form::submit( 'ENVIAR', [ 'class' => 'boton', 'id' => 'subit-receta' ] ) !!}
                         {!! Form::close() !!}
                         {!! Html::link( '#', 'Subir', [ 'class' => 'boton', 'id' => 'subir-receta' ] ) !!}
                     </div>
