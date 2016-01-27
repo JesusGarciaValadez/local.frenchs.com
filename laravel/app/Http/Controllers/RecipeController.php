@@ -12,6 +12,8 @@ use frenchs\Http\Controllers\Controller;
 
 class RecipeController extends Controller
 {
+  protected $_categories = [];
+
   public function index ( Request $request, Recipes $recipesSet, RecipesCategories $recipesCategories )
   {
     $recipe     = $recipesSet->findOrFail( $request->id );
@@ -21,10 +23,35 @@ class RecipeController extends Controller
     return view( 'detalle-receta', [ 'recipe' => $recipe, 'recipes' => $recipes, 'categories' => $categories ] );
   }
 
-  public function update ( Request $request )
+  public function update ( Request $request, Recipes $recipes, RecipesCategories $recipesCategories )
   {
-    $recipe = $request;
+    // Obtain the recipe information
+    $recipe         = $recipes->findOrFail( $request->id );
 
-    dd( \Route );
+    // Obtaining categories information
+    $categoriesSet  = $recipesCategories->all();
+
+    foreach ( $categoriesSet as $categorie )
+    {
+      $this->_categories[ $categorie[ 'id' ] ] = $categorie[ 'categorie_name' ];
+    }
+
+    // Obtain domain URL
+    $domain         = $request->root();
+
+    // Passing the recipe information, categories and domain url to the view
+    return view( 'recipes.edit', [ 'recipe' => $recipe, 'categories' => $this->_categories, 'domain' => $domain ] );
+  }
+
+  public function updated ( Request $request, Recipes $recipes )
+  {
+    // Obtain the recipe information
+    $recipe   = $request->all();
+    dd( $recipe );
+
+    $response = $recipes->save( $recipe );
+
+    // Passing the recipe information, categories and domain url to the view
+    return view( 'recipes.edited', [ 'response' => $response ] );
   }
 }
