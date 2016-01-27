@@ -7,7 +7,10 @@
       <div class="panel panel-default">
         <div class="panel-heading">Editar receta</div>
         <div class="panel-body">
-          {!! Form::open( [ 'route' => 'updatedRecipe', 'method' => 'PUT', 'class' => 'form-horizontal', 'file' => true ] ) !!}
+          {!! Form::open( [ 'route' => 'updatedRecipe', 'method' => 'PUT', 'class' => 'form-horizontal', 'files' => true ] ) !!}
+
+            {!! Form::hidden( 'old_photo', $recipe[ 'photo' ] ) !!}
+            {!! Form::hidden( 'id', $recipe[ 'id' ] ) !!}
 
             <div class="form-group{{ $errors->has( 'name' ) ? ' has-error' : '' }}">
               {!! Form::label( 'name', 'Nombre de la receta', [ 'class' => 'col-md-4 control-label' ] ) !!}
@@ -177,6 +180,20 @@
                 @if ( $errors->has( 'ranking' ) )
                   <span class="help-block">
                     <strong>{{ $errors->first( 'ranking' ) }}</strong>
+                  </span>
+                @endif
+              </div>
+            </div>
+
+            <div class="form-group{{ $errors->has( 'active' ) ? ' has-error' : '' }}">
+              {!! Form::label( 'active', 'Activo', [ 'class' => 'col-md-4 control-label' ] ) !!}
+
+              <div class="col-md-6 checkbox">
+                {!! Form::checkbox( 'active', $recipe[ 'ranking' ], [ 'class' => 'form-control' ] ) !!}
+
+                @if ( $errors->has( 'active' ) )
+                  <span class="help-block">
+                    <strong>{{ $errors->first( 'active' ) }}</strong>
                   </span>
                 @endif
               </div>

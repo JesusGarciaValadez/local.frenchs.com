@@ -28,7 +28,6 @@
 
               <div class="col-md-6">
                 {!! Form::file( 'photo', [ 'value' => $domain . 'assets/images/recetas/' . old( 'photo' ), 'accept' => 'image/png, image/jpeg' ] ) !!}
-                {!! Form::hidden( 'old_photo', $recipe[ 'photo' ] ) !!}
 
                 @if ( $errors->has( 'photo' ) )
                   <span class="help-block">
