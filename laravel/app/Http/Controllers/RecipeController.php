@@ -14,7 +14,7 @@ class RecipeController extends Controller
 {
   protected $_recipe      = [];
   protected $_categories  = [];
-  protected $domain       = "";
+  protected $_domain       = "";
 
   public function index ( Request $request, Recipes $recipesSet, RecipesCategories $recipesCategories )
   {
@@ -31,12 +31,27 @@ class RecipeController extends Controller
     $this->_getCategories( $recipesCategories );
     $this->_getDomain( $request );
 
-    // Passing the recipe information, categories and domain url to the view
+    $recipe[ 'id' ]                   = $this->_recipe[ 'id' ];
+    $recipe[ 'name' ]                 = $this->_recipe[ 'name' ];
+    $recipe[ 'old_photo' ]            = $this->_recipe[ 'photo' ];
+    $recipe[ 'photo' ]                = "";
+    $recipe[ 'categorie' ]            = $this->_recipe[ 'categorie' ];
+    $recipe[ 'portions' ]             = $this->_recipe[ 'portions' ];
+    $recipe[ 'preparation_time' ]     = $this->_recipe[ 'preparation_time' ];
+    $recipe[ 'cooking_time' ]         = $this->_recipe[ 'cooking_time' ];
+    $recipe[ 'ingredients_desktop' ]  = $this->_recipe[ 'ingredients_desktop' ];
+    $recipe[ 'ingredients_mobile' ]   = $this->_recipe[ 'ingredients_mobile' ];
+    $recipe[ 'preparation' ]          = $this->_recipe[ 'preparation' ];
+    $recipe[ 'ranking' ]              = $this->_recipe[ 'ranking' ];
+    $recipe[ 'active' ]               = ( $this->_recipe[ 'active' ] ) ? true : false;
+
+    /*
+     * Passing the recipe information, categories and domain url to the view
+     */
     return view( 'recipes.edit', [
-                 'recipe'     => $this->_recipe,
+                 'recipe'     => $recipe,
                  'categories' => $this->_categories,
-                 'domain'     => $this->_domain,
-                 'response'   => [ 'message' => '', 'updated' => null ] ] );
+                 'domain'     => $this->_domain ] );
   }
 
   public function updated ( Request $request, Recipes $recipes, RecipesCategories $recipesCategories )
@@ -45,53 +60,114 @@ class RecipeController extends Controller
     $this->_getCategories( $recipesCategories );
     $this->_getDomain( $request );
 
-    if ( !isset( $request[ 'photo' ] ) || empty( 'photo' ) )
+    $recipe         = $this->_setRecipeInfo( $request );
+    $recipe[ 'id' ] = $this->_recipe[ 'id' ];
+
+    /*
+     * Setting validation rules
+     */
+    $validator = \Validator::make( $recipe, [
+      'name'                => 'required|max:255',
+      'photo'               => 'sometimes|required|mimes:png,jpeg',
+      'categorie'           => 'required|exists:recipes_categories,id',
+      'portions'            => 'required|in:1,2,3,4,5,6',
+      'preparation_time'    => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
+      'cooking_time'        => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
+      'ingredients_desktop' => 'required|max:255',
+      'ingredients_mobile'  => 'required|max:255',
+      'preparation'         => 'required|max:255',
+      'ranking'             => 'required|in:1,2,3,4,5',
+      'active'              => 'required'
+    ], [
+      'required'    => "El campo ':attribute' es obligatorio.",
+      'alpha'       => "El campo ':attribute' solo debe contener letras.",
+      'alpha_dash'  => "El campo ':attribute' solo debe contener letras, numeros y guiones bajos.",
+      'alpha_num'   => "El campo ':attribute' solo debe contener letras y numeros.",
+      'same'        => 'The :attribute and :other must match.',
+      'size'        => 'The :attribute must be exactly :size.',
+      'between'     => 'The :attribute must be between :min - :max.',
+      'in'          => 'The :attribute must be one of the following types: :values',
+    ] );
+
+    if ( $validator->fails() )
     {
-      $this->recipe[ 'photo' ] = $request[ 'old_photo' ];
-      unset( $this->_recipe[ 'old_photo' ] );
+      /*
+       * If validation fails, send response via JSON with an error code
+       */
+      return response()->json( [
+        'response_message'  => 'Validation fail',
+        'response_code'     => '0',
+        'errors'            => $validator->errors()->all(),
+        'recipe: '          => $recipe ] );
     }
+    else
+    {
+      /*
+       * If there's a file, then uploading it.
+       */
+      $recipe[ 'photo' ] = ( $this->_uploadPhoto( $request ) ) ? $this->_recipe[ 'photo' ] : $request->old_photo;
 
-    $this->_recipe[ 'categorie' ] = intval( $request[ 'categorie' ] );
+      /*
+       * Persist the new data into the database.
+       */
+      $update = \frenchs\Recipes::where( 'id', $request[ 'id' ] )
+                                ->update( $recipe );
 
-    $recipe[ 'id' ]                   = $this->_recipe->id;
-    $recipe[ 'user_name' ]            = $this->_recipe->user_name;
-    $recipe[ 'user_email' ]           = $this->_recipe->user_email;
-    $recipe[ 'name' ]                 = $this->_recipe->name;
-    $recipe[ 'photo' ]                = $this->_recipe->photo;
-    $recipe[ 'categorie' ]            = $this->_recipe->categorie;
-    $recipe[ 'portions' ]             = $this->_recipe->portions;
-    $recipe[ 'preparation_time' ]     = $this->_recipe->preparation_time;
-    $recipe[ 'cooking_time' ]         = $this->_recipe->cooking_time;
-    $recipe[ 'ingredients_desktop' ]  = $this->_recipe->ingredients_desktop;
-    $recipe[ 'ingredients_mobile' ]   = $this->_recipe->ingredients_mobile;
-    $recipe[ 'preparation' ]          = $this->_recipe->preparation;
-    $recipe[ 'ranking' ]              = $this->_recipe->ranking;
-    $recipe[ 'active' ]               = $this->_recipe->active;
+      /*
+       * Create a response for passing it into the view.
+       */
+      $recipe[ 'message' ]    = ( $update ) ? "Receta actualizada" : "Hubo un error al actualizar la receta. :/";
+      $recipe[ 'updated' ]    = ( $update ) ? true : false;
+      $recipe[ 'old_photo' ]  = $recipe[ 'photo' ];
 
-    $update = \frenchs\Recipes::where( 'id', $this->_recipe[ 'id' ] )
-                              ->update( $recipe );
-
-    // Create a response for passing it to the view
-    $response[ 'message' ] = ( $update ) ? "Receta actualizada" : "Hubo un error al actualizar la receta. :/";
-    $response[ 'updated' ] = ( $update ) ? true : false;
-
-    // Passing the recipe information, categories and domain url to the view
-    return view( 'recipes.edit', [
-                 'recipe'     => $this->_recipe,
-                 'categories' => $this->_categories,
-                 'domain'     => $this->_domain,
-                 'response'   => $response ] );
+      /*
+       * Passing the recipe information, categories and domain url to the view.
+       */
+      return view( 'recipes.edit', [
+                   'recipe'     => $recipe,
+                   'categories' => $this->_categories,
+                   'domain'     => $this->_domain ] );
+    }
   }
 
   protected function _getRecipe ( Request $request, Recipes $recipes )
   {
-    // Obtain the recipe information
+    /*
+     * Obtain the recipe information
+     */
     $this->_recipe = $recipes->findOrFail( $request->id );
+  }
+
+  protected function _setRecipeInfo ( Request $request )
+  {
+    /*
+     * Setting recipe with new info for validation.
+     */
+    $recipe[ 'name' ]                 = $request[ 'name' ];
+    $recipe[ 'photo' ]                = $request[ 'photo' ];
+    $recipe[ 'categorie' ]            = $request[ 'categorie' ];
+    $recipe[ 'portions' ]             = $request[ 'portions' ];
+    $recipe[ 'preparation_time' ]     = $request[ 'preparation_time' ];
+    $recipe[ 'cooking_time' ]         = $request[ 'cooking_time' ];
+    $recipe[ 'ingredients_desktop' ]  = $request[ 'ingredients_desktop' ];
+    $recipe[ 'ingredients_mobile' ]   = $request[ 'ingredients_mobile' ];
+    $recipe[ 'preparation' ]          = $request[ 'preparation' ];
+    $recipe[ 'ranking' ]              = $request[ 'ranking' ];
+    $recipe[ 'active' ]               = ( $request[ 'active' ] ) ? true : false;
+
+    if ( !$request->hasFile( 'photo' ) )
+    {
+      unset( $recipe[ 'photo' ] );
+    }
+
+    return $recipe;
   }
 
   protected function _getCategories ( RecipesCategories $recipesCategories )
   {
-    // Obtaining categories information
+    /*
+     * Obtaining categories information
+     */
     $categoriesSet  = $recipesCategories->all();
 
     foreach ( $categoriesSet as $categorie )
@@ -102,7 +178,34 @@ class RecipeController extends Controller
 
   protected function _getDomain ( Request $request )
   {
-    // Obtain domain URL
-    $this->_domain         = $request->root();
+    /*
+     * Obtain domain URL
+     */
+    $this->_domain  = $request->root();
+  }
+
+  protected function _uploadPhoto ( Request $request )
+  {
+    if ( $request->hasFile( 'photo' ) )
+    {
+      /*
+       * Move the photo
+       */
+      try {
+        $file                     = $request->file( 'photo' );
+        $destinationPath          = public_path() . '/assets/images/recetas/';
+        $filename                 = strtolower( $file->getClientOriginalName() );
+        $uploadSuccess            = $file->move( $destinationPath, $filename );
+        $this->_recipe[ 'photo' ] = $filename;
+
+        return $uploadSuccess;
+      }
+      catch ( Exception $e )
+      {
+        return response()->json( [ 'response_message' => 'Error: File was not uploaded',
+                                   'response_code' => '3',
+                                   'Error: ' => $e->getError() ] );
+      }
+    }
   }
 }
