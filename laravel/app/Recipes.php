@@ -23,6 +23,8 @@ class Recipes extends Model
       'ingredients_desktop',
       'ingredients_mobile',
       'preparation',
+      'ranking',
+      'active'
     ];
 
     /**
