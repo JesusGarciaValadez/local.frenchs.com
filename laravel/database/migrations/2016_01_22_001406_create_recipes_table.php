@@ -29,7 +29,7 @@ class CreateRecipesTable extends Migration
             $table->string( 'ingredients_mobile' );
             $table->string( 'preparation' );
             $table->enum( 'ranking', [ '1', '2', '3', '4', '5'] )->default( '1' );
-            $table->boolean( 'active' );
+            $table->boolean( 'active' )->default( false );
             $table->timestamps();
         } );
     }
