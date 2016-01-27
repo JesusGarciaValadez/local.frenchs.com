@@ -13,11 +13,11 @@
 
 Route::get( '/', [ 'as' => 'home', 'uses' => 'HomeController@index' ] );
 
-Route::get( '/sobre-nosotros', [ 'as' => 'about', 'uses' => 'AboutController@index' ] );
+Route::get( 'sobre-nosotros', [ 'as' => 'about', 'uses' => 'AboutController@index' ] );
 
-Route::get( '/productos', [ 'as' => 'products', 'uses' => 'ProductsController@index' ] );
+Route::get( 'productos', [ 'as' => 'products', 'uses' => 'ProductsController@index' ] );
 
-Route::get( '/receta/{id}', [ 'as' => 'recipeID', 'uses' => 'RecipeController@index' ] );
+Route::get( 'receta/{id}', [ 'as' => 'recipeID', 'uses' => 'RecipeController@index' ] );
 
 /*
 |--------------------------------------------------------------------------
@@ -32,17 +32,19 @@ Route::get( '/receta/{id}', [ 'as' => 'recipeID', 'uses' => 'RecipeController@in
 
 Route::group( [ 'middleware' => [ 'web' ] ], function ()
 {
-  Route::get( '/recetas', [ 'as' => 'recipes', 'uses' => 'RecipesController@index' ] );
+  Route::get( 'recetas', [ 'as' => 'recipes', 'uses' => 'RecipesController@index' ] );
 
-  Route::get( '/buscar-recetas', [ 'as' => 'searchRecipe', 'uses' => 'RecipesController@search' ] );
+  Route::get( 'buscar-recetas', [ 'as' => 'searchRecipe', 'uses' => 'RecipesController@search' ] );
 
-  Route::post( '/recetas', [ 'as' => 'uploadRecipe', 'uses' => 'RecipesController@upload' ] );
+  Route::post( 'recetas', [ 'as' => 'uploadRecipe', 'uses' => 'RecipesController@upload' ] );
 
-  Route::get( '/editar-receta/{id}', [ 'as' => 'updateRecipe', 'middleware' => 'auth', 'uses' => 'RecipeController@update' ] );
+  Route::get( 'editar-receta/{id}', [ 'as' => 'updateRecipe', 'middleware' => 'auth', 'uses' => 'RecipeController@update' ] );
 
-  Route::get( '/contacto', [ 'as' => 'contact', 'uses' => 'ContactController@index' ] );
+  Route::put( 'editar-receta', [ 'as' => 'updatedRecipe', 'middleware' => 'auth', 'uses' => 'RecipeController@updated' ] );
 
-  Route::post( '/contacto', [ 'as' => 'sendContact', 'uses' => 'ContactController@send' ] );
+  Route::get( 'contacto', [ 'as' => 'contact', 'uses' => 'ContactController@index' ] );
+
+  Route::post( 'contacto', [ 'as' => 'sendContact', 'uses' => 'ContactController@send' ] );
 
   Route::auth();
 } );
