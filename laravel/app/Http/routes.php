@@ -63,6 +63,7 @@ Route::group( [ 'prefix' => 'producto' ], function ()
     Route::get( 'dijon-sq', [ 'as' => 'dijon', function() { return view( 'products.mustard.dijon-sq' ); } ] );
     Route::get( 'deli-sq', [ 'as' => 'deli', function() { return view( 'products.mustard.deli-sq' ); } ] );
     Route::get( 'honey-sq', [ 'as' => 'honey', function() { return view( 'products.mustard.honey-sq' ); } ] );
+    Route::get( 'bbq-chipotle', [ 'as' => 'bbq-chipotle', function() { return view( 'products.mustard.bbq-chipotle' ); } ] );
   } );
 
   // Sauces
