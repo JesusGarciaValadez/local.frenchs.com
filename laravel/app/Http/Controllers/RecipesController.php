@@ -103,7 +103,7 @@ class RecipesController extends Controller
       \Mail::send( 'emails.upload', [ 'recipe' => $recipe ], function( $message )
       {
         // Setting sender
-        $message->from( env( 'CONTACT_SENDER' ), env( 'CONTACT_APP_NAME' ) );
+        $message->from( env( 'CONTACT_SENDER' ), env( 'UPLOAD_APP_NAME' ) );
 
         // Setting subject
         $message->subject( $this->_subject );
