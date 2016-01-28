@@ -191,16 +191,23 @@ class RecipesController extends Controller
     else
     {
       $search = implode( 'OR ', array_flatten( $this->_search ) );
-      $search += " AND active = true";
+      $search = ( !empty( $search ) ) ? $search . " AND active = true" : "";
 
-      // Check if there's a recipe with the parameters received
-      $recipes    = Recipes::whereRaw( $search )
-                           ->orderBy( 'created_at', 'desc' )
-                           ->get();
+      if ( !empty( $search ) )
+      {
+        // Check if there's a recipe with the parameters received
+        $recipes    = Recipes::whereRaw( $search )
+                             ->orderBy( 'created_at', 'desc' )
+                             ->get();
 
-      $categories = RecipesCategories::all();
+        $categories = RecipesCategories::all();
 
-      return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
+        return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
+      }
+      else
+      {
+        return back( )->withInput( );
+      }
     }
   }
 }
