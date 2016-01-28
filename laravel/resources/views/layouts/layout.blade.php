@@ -9,6 +9,9 @@
         <title>@yield( 'title' ) | French's México</title>
         <meta name="description" content="@yield( 'description' )">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        {!! Html::meta( 'robots', 'INDEX,FOLLOW' ) !!}
+
+        {!! Html::style( 'humans.txt', [ 'type' => 'text/plain', 'rel' => 'author' ] ) !!}
         {!! Html::favicon( 'favicon.png' ) !!}
 
         {!! Html::style( 'assets/css/main.css' ) !!}

@@ -1,0 +1,26 @@
+/* TEAM */
+  UI developer:
+  Contact:
+  Twitter: @
+  From:
+
+  Web designer:
+  Twitter: @
+  From:
+
+  Back end: Jesus Garcia
+  Contact: jesus.garciav [at] me.com
+  Twitter: @_Chucho_
+  From:Ciudad de Mexico, Mexico
+
+
+/* THANKS */
+
+  Media Queries by: **** **** (@****) and ***** **** (@****)
+
+
+/* SITE */
+  Last update:2016/01/28
+  Language: Castellano
+  Doctype:HTML5
+  IDE: Sublime Text, Git, Github, Photoshop
