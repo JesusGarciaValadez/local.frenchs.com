@@ -16,8 +16,8 @@
                     {!! Form::open( [ 'route' => 'searchRecipe', 'method' => 'GET' ] ) !!}
                         <div class="buscar">
                             {!! Form::text( 'name', null, [ 'placeholder' => '(Ejemplo: Pollo)' ] ) !!}
-                            {{-- Html::link( '#', '' ) --}}
-                            {!! Form::submit( 'buscar' ) !!}
+                            {!! Html::link( '#', '' ) !!}
+                            {{-- Form::submit( 'buscar' ) --}}
                         </div>
                         <div class="content-filtro">
                             <label>
@@ -171,7 +171,7 @@
                             </label>
                             {!! Form::textarea( 'ingredients', null, [ 'class' => 'ingredientes', 'placeholder' => 'INGREDIENTES' ] ) !!}
                             {!! Form::textarea( 'preparation', null, [ 'class' => 'preparacion', 'placeholder' => 'PREPARACIÓN' ] ) !!}
-                            {!! Form::submit( 'ENVIAR', [ 'class' => 'boton', 'id' => 'subit-receta' ] ) !!}
+                            {{-- Form::submit( 'ENVIAR', [ 'class' => 'boton', 'id' => 'subit-receta' ] ) --}}
                         {!! Form::close() !!}
                         {!! Html::link( '#', 'Subir', [ 'class' => 'boton', 'id' => 'subir-receta' ] ) !!}
                     </div>
