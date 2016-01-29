@@ -27,7 +27,7 @@ class RecipesController extends Controller
   public function upload ( Request $request )
   {
     // Retrieving of all input recipe from contact form
-    $recipe = $request->all();
+    $recipe         = $request->all();
 
     // Setting the subject for the email sended to alert about a new recipe is sended
     $this->_subject = 'Han enviado una nueva receta.';
@@ -36,16 +36,16 @@ class RecipesController extends Controller
      * Setting validation rules
      */
     $validator = \Validator::make( $recipe, [
-      'user_name'             => 'required|max:255',
-      'user_email'            => 'required|max:255|email',
-      'name'                  => 'required|max:255',
-      'photo'                 => 'required|mimes:png,jpeg',
-      'categorie'             => 'required|exists:recipes_categories,id',
-      'portions'              => 'required|in:1,2,3,4,5,6',
-      'preparation_time'      => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
-      'cooking_time'          => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
-      'ingredients'           => 'required|max:255',
-      'preparation'           => 'required|max:255'
+      'user_name'         => 'required|max:255',
+      'user_email'        => 'required|max:255|email',
+      'name'              => 'required|max:255',
+      'photo'             => 'required|mimes:png,jpeg',
+      'categorie'         => 'required|exists:recipes_categories,id',
+      'portions'          => 'required|in:1,2,3,4,5,6',
+      'preparation_time'  => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
+      'cooking_time'      => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
+      'ingredients'       => 'required|max:255',
+      'preparation'       => 'required|max:255'
     ], [
       'required'    => "El campo ':attribute' es obligatorio.",
       'alpha'       => "El campo ':attribute' solo debe contener letras.",
