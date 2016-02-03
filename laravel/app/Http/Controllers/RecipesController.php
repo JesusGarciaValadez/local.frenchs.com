@@ -207,7 +207,7 @@ class RecipesController extends Controller
       }
       else
       {
-        return back( )->withInput( );
+        rreturn response()->json( [ 'response_message' => 'Search fail', 'response_code' => '4', 'errors' => $validator->errors()->all() ] );
       }
     }
   }
