@@ -171,11 +171,11 @@ class RecipesController extends Controller
     }
 
     $validator = \Validator::make( $recipe, [
-      'name'                  => 'sometimes|required|max:255',
-      'categorie'             => 'sometimes|required|exists:recipes_categories,id',
-      'preparation_time'      => 'sometimes|required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
-      'portions'              => 'sometimes|required|in:1,2,3,4,5,6',
-      'ranking'               => 'sometimes|required|in:1,2,3,4,5'
+      'name'              => 'sometimes|required|max:255',
+      'categorie'         => 'sometimes|required|exists:recipes_categories,id',
+      'preparation_time'  => 'sometimes|required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
+      'portions'          => 'sometimes|required|in:1,2,3,4,5,6',
+      'ranking'           => 'sometimes|required|in:1,2,3,4,5'
     ], [
       'same'    => 'The :attribute and :other must match.',
       'size'    => 'The :attribute must be exactly :size.',
@@ -196,13 +196,14 @@ class RecipesController extends Controller
       if ( !empty( $search ) )
       {
         // Check if there's a recipe with the parameters received
-        $recipes    = Recipes::whereRaw( $search )
+        $recipes    = Recipes::select( 'name', 'photo', 'portions', 'preparation_time', 'ranking' )
+                             ->whereRaw( $search )
                              ->orderBy( 'created_at', 'desc' )
                              ->get();
 
         $categories = RecipesCategories::all();
 
-        return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
+        return response()->json( $recipes );
       }
       else
       {
