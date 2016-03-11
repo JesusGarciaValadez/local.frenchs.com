@@ -15,10 +15,12 @@ class RecipesController extends Controller
   protected $_subject;
   protected $_search = [];
 
-  public function index ( Recipes $recipesSet, RecipesCategories $recipesCategories )
+  public function index ( Request $request, Recipes $recipesSet, RecipesCategories $recipesCategories )
   {
-    $recipes    = $recipesSet->where( 'active', true )->orderBy( 'created_at', 'desc' )->take( 6 )->get();
+    // Obtain the recipes and paginate it
+    $recipes    = $recipesSet->where( 'active', true )->paginate( 6 );
 
+    // Obtaining all the categories
     $categories = $recipesCategories->all();
 
     return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
@@ -207,7 +209,7 @@ class RecipesController extends Controller
       }
       else
       {
-        rreturn response()->json( [ 'response_message' => 'Search fail', 'response_code' => '4', 'errors' => $validator->errors()->all() ] );
+        return response()->json( [ 'response_message' => 'Search fail', 'response_code' => '4', 'errors' => $validator->errors()->all() ] );
       }
     }
   }

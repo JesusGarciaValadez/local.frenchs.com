@@ -94,7 +94,7 @@
                     </a>
                     @endforeach
                 </div>
-                @if ( count( $recipes ) > 1 )
+                @if ( $recipes->hasMorePages() )
                 <a id="" href="#" class="btn-mas">Cargar más recetas</a>
                 @endif
             </div>
