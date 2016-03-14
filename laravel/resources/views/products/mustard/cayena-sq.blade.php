@@ -1,6 +1,6 @@
 @extends( 'layouts.layout' )
 
-@section( 'title', "Mostaza BBQ Chipotle" )
+@section( 'title', "Mostaza Honey SQ" )
 
 @section( 'content' )
         <div class="cover-interior-b"></div>
@@ -8,16 +8,12 @@
         <section class="detalle-producto">
             <div class="container">
                 <div class="left">
-                    {!! Html::image( 'assets/images/slider/s6-producto.png', '' ) !!}
+                    {!! Html::image( 'assets/images/slider/s2-producto.png', '' ) !!}
                 </div>
                 <div class="right">
                     <div class="descripcion">
-                        <h2>Mostaza <span>BBQ Chipotle</span></h2>
-                        <p>
-                            Experimenta el increible sabor de Chardonnay, lo que hace que la mostaza francesa sea deliciosa.
-                            <br><br>
-                            Añade un poco de clase y creatividad a tus platillos.
-                        </p>
+                        <h2>Mostaza con <span>Azúcar cayena</span></h2>
+                        <p>La mezcla de la Mostaza French's con pimienta de Cayena la convierten en un aderezo único y delicioso.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
@@ -91,7 +87,7 @@
         <section class="grid">
             <div class="container">
                 <h2>Recetas</h2>
-                <p>que podrías preparar con Mostaza BBQ Chipotle</p>
+                <p>que podrías preparar con Mostaza Dijon SQ</p>
                 <div class="content-grid">
                     <a href="" class="receta">
                         <p class="categoria b2">Platillos</p>

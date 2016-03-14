@@ -1,6 +1,6 @@
 @extends( 'layouts.layout' )
 
-@section( 'title', "Mostaza Deli SQ" )
+@section( 'title', "Mostaza Honey SQ" )
 
 @section( 'content' )
         <div class="cover-interior-b"></div>
@@ -8,12 +8,12 @@
         <section class="detalle-producto">
             <div class="container">
                 <div class="left">
-                    {!! Html::image( 'assets/images/slider/s6-producto.png', '' ) !!}
+                    {!! Html::image( 'assets/images/slider/s3-producto.png', '' ) !!}
                 </div>
                 <div class="right">
                     <div class="descripcion">
-                        <h2>Mostaza <span>Deli</span></h2>
-                        <p>French’s te ofrece el sabor concentrado de la mostaza. Elaborada especialmente para los paladares más exigentes, la Mostaza Deli está preparada con la más fina selección de semillas y especias.</p>
+                        <h2>Mostaza con <span>Azúcar morena</span></h2>
+                        <p>Disfruta el original sabor agridulce de la Mostaza French's Honey, elaborada con finas semillas y un delicioso toque de miel.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>

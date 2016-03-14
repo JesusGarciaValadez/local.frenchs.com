@@ -1,6 +1,6 @@
 @extends( 'layouts.layout' )
 
-@section( 'title', "Mostaza Deli SQ" )
+@section( 'title', "Mostaza BBQ Chipotle" )
 
 @section( 'content' )
         <div class="cover-interior-b"></div>
@@ -8,12 +8,13 @@
         <section class="detalle-producto">
             <div class="container">
                 <div class="left">
-                    {!! Html::image( 'assets/images/slider/s6-producto.png', '' ) !!}
+                    {!! Html::image( 'assets/images/slider/s9-producto.png', '' ) !!}
                 </div>
                 <div class="right">
                     <div class="descripcion">
-                        <h2>Mostaza <span>Deli</span></h2>
-                        <p>French’s te ofrece el sabor concentrado de la mostaza. Elaborada especialmente para los paladares más exigentes, la Mostaza Deli está preparada con la más fina selección de semillas y especias.</p>
+                        <h2>Mostaza <span>BBQ Chipotle</span></h2>
+                        <p>French's BBQ Classic contiene el sabor francés del tomate con un toque picante, dulce y fuerte a la vez.</p>
+                        <p>Esta salsa de consistencia espectacular no puede faltar en tu alacena.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
@@ -87,7 +88,7 @@
         <section class="grid">
             <div class="container">
                 <h2>Recetas</h2>
-                <p>que podrías preparar con Mostaza Dijon SQ</p>
+                <p>que podrías preparar con Mostaza BBQ Chipotle</p>
                 <div class="content-grid">
                     <a href="" class="receta">
                         <p class="categoria b2">Platillos</p>

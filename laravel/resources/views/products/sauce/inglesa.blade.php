@@ -8,16 +8,13 @@
         <section class="detalle-producto">
             <div class="container">
                 <div class="left">
-                    {!! Html::image( 'assets/images/slider/s5-producto.png', '' ) !!}
+                    {!! Html::image( 'assets/images/slider/s8-producto.png', '' ) !!}
                 </div>
                 <div class="right">
                     <div class="descripcion">
                         <h2>Salsa <span>Inglesa</span></h2>
-                        <p>
-                            Experimenta el increible sabor de Chardonnay, lo que hace que la mostaza francesa sea deliciosa.
-                            <br><br>
-                            Añade un poco de clase y creatividad a tus platillos.
-                        </p>
+                        <p>Dale un sabor diferente y natural a tus platillos con la salsa inglesa French’s.</p>
+                        <p>No puede faltar en tu mesa: combina con todo.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>

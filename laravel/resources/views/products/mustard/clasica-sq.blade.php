@@ -1,6 +1,6 @@
 @extends( 'layouts.layout' )
 
-@section( 'title', "Mostaza Clasica SQ" )
+@section( 'title', "French's Classic Yellow - Mostaza Clásica" )
 
 @section( 'content' )
         <div class="cover-interior-b"></div>
@@ -12,12 +12,9 @@
                 </div>
                 <div class="right">
                     <div class="descripcion">
-                        <h2>Mostaza <span>Clásica SQ</span></h2>
-                        <p>
-                            Experimenta el increible sabor de Chardonnay, lo que hace que la mostaza francesa sea deliciosa.
-                            <br><br>
-                            Añade un poco de clase y creatividad a tus platillos.
-                        </p>
+                        <h2>Mostaza <span>Clásica</span></h2>
+                        <p>Elaborada con semillas de mostaza de la más alta calidad, sin colorantes artificiales y sin conservadores.</p>
+                        <p>Comparte con tu familia el rico sabor de la Mostaza Clásica French’s.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>

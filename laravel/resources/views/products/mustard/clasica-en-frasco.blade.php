@@ -8,16 +8,12 @@
         <section class="detalle-producto">
             <div class="container">
                 <div class="left">
-                    {!! Html::image( 'assets/images/slider/s1-producto.png', '' ) !!}
+                    {!! Html::image( 'assets/images/slider/s4-producto.png', '' ) !!}
                 </div>
                 <div class="right">
                     <div class="descripcion">
                         <h2>Mostaza <span>Clásica en Frasco</span></h2>
-                        <p>
-                            Experimenta el increible sabor de Chardonnay, lo que hace que la mostaza francesa sea deliciosa.
-                            <br><br>
-                            Añade un poco de clase y creatividad a tus platillos.
-                        </p>
+                        <p>La Mostaza Clásica French's con el mismo sabor e ingredientes de siempre, que la hacen única, ahora en frasco.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>

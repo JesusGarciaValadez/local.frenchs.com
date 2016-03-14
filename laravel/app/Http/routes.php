@@ -59,15 +59,18 @@ Route::group( [ 'prefix' => 'producto' ], function ()
   // Mustards
   Route::group( [ 'prefix' => 'mostaza' ], function () {
     Route::get( 'clasica-sq', [ 'as' => 'clasica-sq', function() { return view( 'products.mustard.clasica-sq' ); } ] );
+    Route::get( 'cayena', [ 'as' => 'cayena', function() { return view( 'products.mustard.cayena' ); } ] );
+    Route::get( 'morena', [ 'as' => 'morena', function() { return view( 'products.mustard.morena' ); } ] );
     Route::get( 'clasica-en-frasco', [ 'as' => 'clasica-frasco', function() { return view( 'products.mustard.clasica-en-frasco' ); } ] );
     Route::get( 'dijon-sq', [ 'as' => 'dijon', function() { return view( 'products.mustard.dijon-sq' ); } ] );
     Route::get( 'deli-sq', [ 'as' => 'deli', function() { return view( 'products.mustard.deli-sq' ); } ] );
     Route::get( 'honey-sq', [ 'as' => 'honey', function() { return view( 'products.mustard.honey-sq' ); } ] );
-    Route::get( 'bbq-chipotle', [ 'as' => 'bbq-chipotle', function() { return view( 'products.mustard.bbq-chipotle' ); } ] );
   } );
 
   // Sauces
   Route::group( [ 'prefix' => 'salsa' ], function () {
     Route::get( 'inglesa', [ 'as' => 'inglesa', function() { return view( 'products.sauce.inglesa' ); } ] );
+    Route::get( 'bbq-clasica', [ 'as' => 'bbq-clasica', function() { return view( 'products.sauce.bbq-clasica' ); } ] );
+    Route::get( 'bbq-chipotle', [ 'as' => 'bbq-chipotle', function() { return view( 'products.sauce.bbq-chipotle' ); } ] );
   } );
 } );
