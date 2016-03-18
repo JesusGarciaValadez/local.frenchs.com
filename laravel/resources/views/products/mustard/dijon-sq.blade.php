@@ -28,61 +28,62 @@
                         <table>
                             <thead>
                                 <tr>
-                                  <th colspan="2">Amount Per Serving</th>
+                                  <th colspan="2">Cantidades por porción.</th>
                                   <th>0% DV*</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                  <td>Total Fat</td>
+                                  <td>Grasa Total</td>
                                   <td>0g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Sat Fat</td>
+                                  <td>Grasa saturada</td>
                                   <td>0g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Trans Fat</td>
+                                  <td>Grasas Trans</td>
                                   <td>0g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Cholest</td>
+                                  <td>Colesterol</td>
                                   <td>0g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Sodium</td>
+                                  <td>Sodio</td>
+                                  <td>130g</td>
+                                  <td>5%</td>
+                                </tr>
+                                <tr>
+                                  <td>Carbohidratos totales</td>
                                   <td>0g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Total Carb.</td>
+                                  <td>Fibra</td>
                                   <td>0g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Fiber</td>
-                                  <td>0g</td>
+                                  <td>Azúcares</td>
+                                  <td><0g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Sugar</td>
-                                  <td>0g</td>
-                                  <td>0%</td>
-                                </tr>
-                                <tr>
-                                  <td>Protein</td>
+                                  <td>Proteína</td>
                                   <td>0g</td>
                                   <td>0%</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="f-table">* Percent Daily Values (DV) are based on 2,000 calorie diet.</p>
+                        <p class="f-table">* Porcentaje de valor diario (DV) estan basados en una dieta de 2,000 calorías.</p>
                     </div>
                 </div>
+                <p>{!! Html::link( 'productos', 'Todos los productos', [ 'class' => 'boton', 'id' => '' ] ) !!}</p>
             </div>
         </section>
         <section class="grid">
