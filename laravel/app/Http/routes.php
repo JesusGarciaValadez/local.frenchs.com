@@ -59,8 +59,6 @@ Route::group( [ 'prefix' => 'producto' ], function ()
   // Mustards
   Route::group( [ 'prefix' => 'mostaza' ], function () {
     Route::get( 'clasica-sq', [ 'as' => 'clasica-sq', function() { return view( 'products.mustard.clasica-sq' ); } ] );
-    Route::get( 'cayena', [ 'as' => 'cayena', function() { return view( 'products.mustard.cayena' ); } ] );
-    Route::get( 'morena', [ 'as' => 'morena', function() { return view( 'products.mustard.morena' ); } ] );
     Route::get( 'clasica-en-frasco', [ 'as' => 'clasica-frasco', function() { return view( 'products.mustard.clasica-en-frasco' ); } ] );
     Route::get( 'dijon-sq', [ 'as' => 'dijon', function() { return view( 'products.mustard.dijon-sq' ); } ] );
     Route::get( 'deli-sq', [ 'as' => 'deli', function() { return view( 'products.mustard.deli-sq' ); } ] );

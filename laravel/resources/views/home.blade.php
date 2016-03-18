@@ -16,20 +16,6 @@
                     <div class="elemento3">{!! Html::image( 'assets/images/slider/s1-elemento3.png', '' ) !!}</div>
                   </li>
                   <li>
-                    <div class="producto">{!! Html::image( 'assets/images/slider/s2-producto.png', '' ) !!}</div>
-                    <div class="txt"><h2>Mostaza con<span>Chile cayena</span></h2><a href="{{ route( 'cayena' ) }}">Ver Producto</a></div>
-                    <div class="elemento1">{!! Html::image( 'assets/images/slider/s2-elemento1.png', '' ) !!}</div>
-                    <div class="elemento2">{!! Html::image( 'assets/images/slider/s2-elemento2.png', '' ) !!}</div>
-                    <div class="elemento3">{!! Html::image( 'assets/images/slider/s2-elemento3.png', '' ) !!}</div>
-                  </li>
-                  <li>
-                    <div class="producto">{!! Html::image( 'assets/images/slider/s3-producto.png', '' ) !!}</div>
-                    <div class="txt"><h2>Mostaza con <span>Azúcar morena</span></h2><a href="{{ route( 'morena' ) }}">Ver Producto</a></div>
-                    <div class="elemento1">{!! Html::image( 'assets/images/slider/s3-elemento1.png', '' ) !!}</div>
-                    <div class="elemento2">{!! Html::image( 'assets/images/slider/s3-elemento2.png', '' ) !!}</div>
-                    <div class="elemento3">{!! Html::image( 'assets/images/slider/s3-elemento3.png', '' ) !!}</div>
-                  </li>
-                  <li>
                     <div class="producto">{!! Html::image( 'assets/images/slider/s4-producto.png', '' ) !!}</div>
                     <div class="txt"><h2>Mostaza <span>Clásica en frasco</span></h2><a href="{{ route( 'clasica-frasco' ) }}">Ver Producto</a></div>
                     <div class="elemento1">{!! Html::image( 'assets/images/slider/s4-elemento1.png', '' ) !!}</div>

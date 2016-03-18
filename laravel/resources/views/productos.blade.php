@@ -44,11 +44,6 @@
                             <p class="nombre">Frenchs' Mostaza Honey - Sabor agridulce</p>
                             <div class="gramos">340g</div>
                         </div>
-                        <div class="producto">
-                            <a href="{{ route( 'honey' ) }}">{!! Html::image( 'assets/images/slider/s2-producto.png', "French's Classic Yellow - Mostaza con pimienta de Cayena" ) !!}</a>
-                            <p class="nombre">French's Classic Yellow - Mostaza con pimienta de Cayena</p>
-                            <div class="gramos">226g</div>
-                        </div>
                     </div>
                     <h4>Salsas</h4>
                     <div class="grid-productos">
