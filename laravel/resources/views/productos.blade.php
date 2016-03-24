@@ -55,12 +55,12 @@
                             <div class="gramos">3,78l</div>
                         </div>
                         <div class="producto">
-                            <a href="{{ route( 'inglesa' ) }}">{!! Html::image( 'assets/images/slider/s9-producto.png', "French's BBQ Classic - Salsa BBQ Clásica" ) !!}</a>
+                            <a href="{{ route( 'bbq-clasica' ) }}">{!! Html::image( 'assets/images/slider/s9-producto.png', "French's BBQ Classic - Salsa BBQ Clásica" ) !!}</a>
                             <p class="nombre">French's BBQ Classic - Salsa BBQ Clásica</p>
                             <div class="gramos">397g</div>
                         </div>
                         <div class="producto">
-                            <a href="{{ route( 'honey' ) }}">{!! Html::image( 'assets/images/slider/s10-producto.png', "French's BBQ Chipotle - Salsa BBQ con chipotle" ) !!}</a>
+                            <a href="{{ route( 'bbq-chipotle' ) }}">{!! Html::image( 'assets/images/slider/s10-producto.png', "French's BBQ Chipotle - Salsa BBQ con chipotle" ) !!}</a>
                             <p class="nombre">French's BBQ Chipotle - Salsa BBQ con chipotle</p>
                             <div class="gramos">397g</div>
                         </div>
