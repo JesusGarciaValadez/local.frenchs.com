@@ -82,42 +82,26 @@
                 <h2>Recetas</h2>
                 <p>que podrías preparar con Mostaza BBQ Chipotle</p>
                 <div class="content-grid">
-                    <a href="" class="receta">
-                        <p class="categoria b2">Platillos</p>
-                        <div class="image">
-                            {!! Html::image( 'assets/images/recetas/receta2.jpg', 'Tiras de pollo con mostaza' ) !!}
-                        </div>
-                        <p class="nombre">Tiras de pollo con mostaza</p>
-                        <p class="porciones">12 porciones</p>
-                        <p class="tiempo">Timepo de preparación: 15 min.</p>
-                        <div class="ranking">
-                            <span class="stars s4"></span>
-                        </div>
-                    </a>
-                    <a href="" class="receta">
-                        <p class="categoria b2">Platillos</p>
-                        <div class="image">
-                            {!! Html::image( 'assets/images/recetas/receta2.jpg', 'Tiras de pollo con mostaza' ) !!}
-                        </div>
-                        <p class="nombre">Tiras de pollo con mostaza</p>
-                        <p class="porciones">12 porciones</p>
-                        <p class="tiempo">Timepo de preparación: 15 min.</p>
-                        <div class="ranking">
-                            <span class="stars s4"></span>
-                        </div>
-                    </a>
-                    <a href="" class="receta">
-                        <p class="categoria b2">Platillos</p>
-                        <div class="image">
-                            {!! Html::image( 'assets/images/recetas/receta2.jpg', 'Tiras de pollo con mostaza' ) !!}
-                        </div>
-                        <p class="nombre">Tiras de pollo con mostaza</p>
-                        <p class="porciones">12 porciones</p>
-                        <p class="tiempo">Timepo de preparación: 15 min.</p>
-                        <div class="ranking">
-                            <span class="stars s4"></span>
-                        </div>
-                    </a>
+                  @foreach ( $recipes as $recipe )
+                  <a href="{{ action( 'RecipeController@index', [ 'id' => $recipe->id ] ) }}" class="receta">
+                    <p class="categoria b2">
+                      @foreach ( $categories as $categorie )
+                        @if ( $categorie->id == $recipe->categorie )
+                      {{$categorie->categorie_name}}
+                        @endif
+                      @endforeach
+                    </p>
+                    <div class="image">
+                      {!! Html::image( 'assets/images/recetas/' . $recipe->photo, $recipe->name ) !!}
+                    </div>
+                    <p class="nombre">{{$recipe->name}}</p>
+                    <p class="porciones">{{$recipe->portions}} porciones</p>
+                    <p class="tiempo">Tiempo de preparación: {{$recipe->preparation_time}}</p>
+                    <div class="ranking">
+                      <span class="stars s{{$recipe->ranking}}"></span>
+                    </div>
+                  </a>
+                  @endforeach
                 </div>
                 <a id="" href="#" class="btn-mas">Ver más recetas</a>
             </div>

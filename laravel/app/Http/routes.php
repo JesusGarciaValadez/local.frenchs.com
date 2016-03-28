@@ -58,17 +58,17 @@ Route::group( [ 'prefix' => 'producto' ], function ()
 {
   // Mustards
   Route::group( [ 'prefix' => 'mostaza' ], function () {
-    Route::get( 'clasica-sq', [ 'as' => 'clasica-sq', function() { return view( 'products.mustard.clasica-sq' ); } ] );
-    Route::get( 'clasica-en-frasco', [ 'as' => 'clasica-frasco', function() { return view( 'products.mustard.clasica-en-frasco' ); } ] );
-    Route::get( 'dijon-sq', [ 'as' => 'dijon', function() { return view( 'products.mustard.dijon-sq' ); } ] );
-    Route::get( 'deli-sq', [ 'as' => 'deli', function() { return view( 'products.mustard.deli-sq' ); } ] );
-    Route::get( 'honey-sq', [ 'as' => 'honey', function() { return view( 'products.mustard.honey-sq' ); } ] );
+    Route::get( 'clasica-sq', [ 'as' => 'clasica-sq', 'uses' => 'ProductsController@classic' ] );
+    Route::get( 'clasica-en-frasco', [ 'as' => 'clasica-frasco', 'uses' => 'ProductsController@classicJar' ] );
+    Route::get( 'dijon-sq', [ 'as' => 'dijon', 'uses' => 'ProductsController@dijon' ] );
+    Route::get( 'deli-sq', [ 'as' => 'deli', 'uses' => 'ProductsController@deli' ] );
+    Route::get( 'honey-sq', [ 'as' => 'honey', 'uses' => 'ProductsController@honey' ] );
   } );
 
   // Sauces
   Route::group( [ 'prefix' => 'salsa' ], function () {
-    Route::get( 'inglesa', [ 'as' => 'inglesa', function() { return view( 'products.sauce.inglesa' ); } ] );
-    Route::get( 'bbq-clasica', [ 'as' => 'bbq-clasica', function() { return view( 'products.sauce.bbq-clasica' ); } ] );
-    Route::get( 'bbq-chipotle', [ 'as' => 'bbq-chipotle', function() { return view( 'products.sauce.bbq-chipotle' ); } ] );
+    Route::get( 'inglesa', [ 'as' => 'inglesa', 'uses' => 'ProductsController@englishSauce' ] );
+    Route::get( 'bbq-clasica', [ 'as' => 'bbq-clasica', 'uses' => 'ProductsController@bbqSauce' ] );
+    Route::get( 'bbq-chipotle', [ 'as' => 'bbq-chipotle', 'uses' => 'ProductsController@bbqChipotleSauce' ] );
   } );
 } );
