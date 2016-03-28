@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     public function index ( Recipes $recipesSet )
    	{
-      $recipes    = $recipesSet->where( 'active', true )->orderBy( 'created_at', 'desc' )->take( 4 )->get();
+      $recipes    = $recipesSet->where( 'active', true )->orderBy( 'created_at', 'desc' )->take( 3 )->get();
 
       return view( 'home', [ 'recipes' => $recipes ] );
    	}
