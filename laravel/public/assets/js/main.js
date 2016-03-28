@@ -2,8 +2,8 @@
 var seccion,slider,url='http://'+document.location.hostname+'/';
 var player, viewed = false, moved = false;
 
-init = function(){	
-	
+init = function(){
+
 	medidas = function(){
 		altura = $(window).height();
 		anchura = $(window).width();
@@ -42,7 +42,7 @@ init = function(){
 	$('.modal .container, .modal').on('click',function(e){
 
 		if(e.target !== this) return;
-		
+
 		$('.modal').fadeOut();
 		$('body').removeClass('hidden');
 	});
@@ -57,7 +57,7 @@ init = function(){
 
 		}
 		else if(anchura >= 768){
-			
+
 		}
 	}
 
@@ -68,26 +68,73 @@ init = function(){
 	$(window).resize(setSize);
 		inicio();
 
-	/**
-	 * jTinder initialization
-	 */
-	$("#tinderslide").jTinder({
-		// dislike callback
-	    onDislike: function (item) {
-		    // set the status text
-	        //$('#status').html('Dislike image ' + (item.index()+1));
-	    },
-		// like callback
-	    onLike: function (item) {
-		    // set the status text
-	        //$('#status').html('Like image ' + (item.index()+1));
-	    },
-		animationRevertSpeed: 200,
-		animationSpeed: 400,
-		threshold: 1,
-		likeSelector: '.like',
-		dislikeSelector: '.dislike'
-	});
+  var _recipesLiked             = [],
+      _totalHomeRecipes         = $( '.pane' ).length - 1,
+      _countItemsPushed         = 0;
+      _checkIfFinishTindering   = {},
+      _showRecipesOrLink        = {};
+
+  $( '#tinderslide .btn-mas' ).hide();
+
+  /**
+   *  Check if the index of the current liked or disliked element is equal to total tinder elements
+   */
+  _isFinishTindering = function ( _indexOfLikedElement ) {
+    if ( _indexOfLikedElement === _totalHomeRecipes ) {
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Check if there's elements liked. If yes, show them in columns. If not, show a link to recipes section
+   */
+  _showRecipesOrLink      = function ( ) {
+    $( '.contador, .actions, .status' ).fadeOut( 300 );
+    if ( _recipesLiked.length > 0 ) {
+      $( '#tinderslide' ).addClass( 'finished' );
+
+      _recipesLiked.forEach( function( currentValue ) {
+        _paneDisplayed = _recipesLiked[ currentValue ];
+        console.log( $( '#tinderslide .pane' + _paneDisplayed ) );
+        $( '#tinderslide .pane' + _paneDisplayed ).removeAttr( 'style' ).fadeIn( 300 );
+      } );
+    } else {
+      $( '#tinderslide .btn-mas' ).fadeIn( '300' );
+    }
+  }
+
+  /**
+   * jTinder initialization
+   */
+  $( "#tinderslide" ).jTinder( {
+    // dislike callback
+    onDislike: function ( item ) {
+      // set the status text
+      //$('#status').html('Dislike image ' + (item.index()+1));
+      if ( _isFinishTindering( _countItemsPushed ) ) {
+        _showRecipesOrLink();
+      }
+
+      _countItemsPushed++;
+    },
+  // like callback
+    onLike: function ( item ) {
+      // set the status text
+      //$('#status').html('Like image ' + (item.index()+1));
+      _recipesLiked[ item.index() ] = item.index();
+
+      if ( _isFinishTindering( _countItemsPushed ) ) {
+        _showRecipesOrLink();
+      }
+      _countItemsPushed++;
+    },
+    animationRevertSpeed: 200,
+    animationSpeed: 400,
+    threshold: 1,
+    likeSelector: '.like',
+    dislikeSelector: '.dislike'
+  } );
 
 	/**
 	 * Set button action to trigger jTinder like & dislike.
@@ -97,23 +144,23 @@ init = function(){
 		$("#tinderslide").jTinder($(this).attr('class'));
 	});
 
-	(function ($) { 
+	(function ($) {
 		$('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
-		
-		$('.tab ul.tabs li a').click(function (g) { 
-			var tab = $(this).closest('.tab'), 
+
+		$('.tab ul.tabs li a').click(function (g) {
+			var tab = $(this).closest('.tab'),
 				index = $(this).closest('li').index();
-			
+
 			tab.find('ul.tabs > li').removeClass('current');
 			$(this).closest('li').addClass('current');
-			
+
 			tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
 			tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
-			
+
 			g.preventDefault();
 		} );
 	})(jQuery);
-	
+
 
 };
 

@@ -80,16 +80,18 @@
             <div class="recetas-home">
               <div id="tinderslide">
                 <ul>
-                  @foreach( $recipes as $recipe )
-                    <li class="pane1">
-                      <div class="img">{!! Html::image( 'assets/images/recetas/' . $recipe->photo, $recipe->name ) !!}</div>
-                      <div class="nombre">{{ $recipe->name }}</div>
+                  @for ($i = 0; $i < 3; $i++)
+                  <li class="pane pane{{ $i }}">
+                    <a href="{{ action( 'RecipeController@index', [ 'id' => $recipes[$i]->id ] ) }}" class="receta">
+                      <div class="img">{!! Html::image( 'assets/images/recetas/' . $recipes[$i]->photo, $recipes[$i]->name ) !!}</div>
+                      <div class="nombre">{{ $recipes[$i]->name }}</div>
                       <div class="like"></div>
                       <div class="dislike"></div>
-                    </li>
-                  @endforeach
+                    </a>
+                  </li>
+                  @endfor
                 </ul>
-                <p><a href="{{ route( 'recipes' ) }}" title="Ver más recetas." target="_self">Ver más recetas.</a></p>
+                <a href="{{ route( 'recipes' ) }}" title="Ver más recetas." target="_self" class="btn-mas">Ver más recetas.</a>
               </div>
 
               <div class="contador">

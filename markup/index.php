@@ -10,42 +10,42 @@
                                 <div class="txt"><h2>Mostaza <span>Clásica SQ</span></h2><a href="detalle-producto.php">Ver Producto</a></div>
                                 <div class="elemento1"><img src="images/slider/s1-elemento1.png"/></div>
                                 <div class="elemento2"><img src="images/slider/s1-elemento2.png"/></div>
-                                <div class="elemento3"><img src="images/slider/s1-elemento3.png"/></div>                                  
+                                <div class="elemento3"><img src="images/slider/s1-elemento3.png"/></div>
                             </li>
                             <li>
                                 <div class="producto"><img src="images/slider/s2-producto.png"/></div>
                                 <div class="txt"><h2>Mostaza <span>Dijon</span></h2><a href="detalle-producto.php">Ver Producto</a></div>
                                 <div class="elemento1"><img src="images/slider/s2-elemento1.png"/></div>
                                 <div class="elemento2"><img src="images/slider/s2-elemento2.png"/></div>
-                                <div class="elemento3"><img src="images/slider/s2-elemento3.png"/></div>                                  
+                                <div class="elemento3"><img src="images/slider/s2-elemento3.png"/></div>
                             </li>
                             <li>
                                 <div class="producto"><img src="images/slider/s3-producto.png"/></div>
                                 <div class="txt"><h2>Mostaza <span>Deli</span></h2><a href="detalle-producto.php">Ver Producto</a></div>
                                 <div class="elemento1"><img src="images/slider/s3-elemento1.png"/></div>
                                 <div class="elemento2"><img src="images/slider/s3-elemento2.png"/></div>
-                                <div class="elemento3"><img src="images/slider/s3-elemento3.png"/></div>                                  
+                                <div class="elemento3"><img src="images/slider/s3-elemento3.png"/></div>
                             </li>
                             <li>
                                 <div class="producto"><img src="images/slider/s4-producto.png"/></div>
                                 <div class="txt"><h2>Mostaza <span>Honey</span></h2><a href="detalle-producto.php">Ver Producto</a></div>
                                 <div class="elemento1"><img src="images/slider/s4-elemento1.png"/></div>
                                 <div class="elemento2"><img src="images/slider/s4-elemento2.png"/></div>
-                                <div class="elemento3"><img src="images/slider/s4-elemento3.png"/></div>                                  
+                                <div class="elemento3"><img src="images/slider/s4-elemento3.png"/></div>
                             </li>
                             <li>
                                 <div class="producto"><img src="images/slider/s5-producto.png"/></div>
                                 <div class="txt"><h2>Salsa <span>Inglesa</span></h2><a href="detalle-producto.php">Ver Producto</a></div>
                                 <div class="elemento1"><img src="images/slider/s5-elemento1.png"/></div>
                                 <div class="elemento2"><img src="images/slider/s5-elemento2.png"/></div>
-                                <div class="elemento3"><img src="images/slider/s5-elemento3.png"/></div>                                  
+                                <div class="elemento3"><img src="images/slider/s5-elemento3.png"/></div>
                             </li>
                             <li>
                                 <div class="producto"><img src="images/slider/s6-producto.png"/></div>
                                 <div class="txt"><h2>Salsa <span>BBQ chipotle</span></h2><a href="detalle-producto.php">Ver Producto</a></div>
                                 <div class="elemento1"><img src="images/slider/s6-elemento1.png"/></div>
                                 <div class="elemento2"><img src="images/slider/s6-elemento2.png"/></div>
-                                <div class="elemento3"><img src="images/slider/s6-elemento3.png"/></div>                                  
+                                <div class="elemento3"><img src="images/slider/s6-elemento3.png"/></div>
                             </li>
                         </ul>
                     </div>
@@ -61,44 +61,33 @@
                     <p>¿Qué te gustaría cocinar hoy?</p>
                 </div>
                 <div class="recetas-home">
-                        
+
                     <div id="tinderslide">
                         <ul>
-                            <li class="pane1">
+                            <li class="pane pane0">
                                 <div class="img"><img src="images/recetas/receta-prueba.jpg"></div>
                                 <div class="nombre">Salmón con mostaza y miel</div>
                                 <div class="like"></div>
                                 <div class="dislike"></div>
                             </li>
-                            <li class="pane2">
+                            <li class="pane pane1">
                                 <div class="img"><img src="images/recetas/receta-prueba.jpg"></div>
                                 <div class="nombre">Salmón con mostaza y miel</div>
                                 <div class="like"></div>
                                 <div class="dislike"></div>
                             </li>
-                            <li class="pane3">
-                                <div class="img"><img src="images/recetas/receta-prueba.jpg">></div>
-                                <div class="nombre">Salmón con mostaza y miel</div>
-                                <div class="like"></div>
-                                <div class="dislike"></div>
-                            </li>
-                            <li class="pane4">
-                                <div class="img"><img src="images/recetas/receta-prueba.jpg"></div>
-                                <div class="nombre">Salmón con mostaza y miel</div>
-                                <div class="like"></div>
-                                <div class="dislike"></div>
-                            </li>
-                            <li class="pane5">
+                            <li class="pane pane2">
                                 <div class="img"><img src="images/recetas/receta-prueba.jpg"></div>
                                 <div class="nombre">Salmón con mostaza y miel</div>
                                 <div class="like"></div>
                                 <div class="dislike"></div>
                             </li>
                         </ul>
+                        <a href="{{ route( 'recipes' ) }}" title="Ver más recetas." target="_self" class="btn-mas">Ver más recetas.</a>
                     </div>
 
                     <div class="contador">
-                        <p>1/4</p>
+                        <p>1/3</p>
                     </div>
 
                     <div class="actions">
@@ -114,7 +103,7 @@
             <div class="suscribete">
                 <div class="container">
                     <h3>Subscríbete ahora</h3>
-                    <div>    
+                    <div>
                         <input type="text" placeholder="Ingresa tu correo electrónico">
                         <a href="#"></a>
                     </div>
