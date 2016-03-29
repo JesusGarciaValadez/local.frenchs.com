@@ -82,12 +82,14 @@
                 <ul>
                   @for ($i = 0; $i < 3; $i++)
                   <li class="pane pane{{ $i }}">
-                    <a href="{{ action( 'RecipeController@index', [ 'id' => $recipes[$i]->id ] ) }}" class="receta">
-                      <div class="img">{!! Html::image( 'assets/images/recetas/' . $recipes[$i]->photo, $recipes[$i]->name ) !!}</div>
-                      <div class="nombre">{{ $recipes[$i]->name }}</div>
-                      <div class="like"></div>
-                      <div class="dislike"></div>
-                    </a>
+                    <div class="img">{!! Html::image( 'assets/images/recetas/' . $recipes[$i]->photo, $recipes[$i]->name ) !!}</div>
+                    <div class="nombre">
+                      <a href="{{ action( 'RecipeController@index', [ 'id' => $recipes[$i]->id ] ) }}" class="receta">
+                        {{ $recipes[$i]->name }}
+                      </a>
+                    </div>
+                    <div class="like"></div>
+                    <div class="dislike"></div>
                   </li>
                   @endfor
                 </ul>

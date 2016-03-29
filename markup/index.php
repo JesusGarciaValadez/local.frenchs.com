@@ -66,19 +66,31 @@
                         <ul>
                             <li class="pane pane0">
                                 <div class="img"><img src="images/recetas/receta-prueba.jpg"></div>
-                                <div class="nombre">Salmón con mostaza y miel</div>
+                                <div class="nombre">
+                                    <a href="{{ action( 'RecipeController@index', [ 'id' => $recipes[$i]->id ] ) }}" class="receta">
+                                        Salmón con mostaza y miel
+                                    </a>
+                                </div>
                                 <div class="like"></div>
                                 <div class="dislike"></div>
                             </li>
                             <li class="pane pane1">
                                 <div class="img"><img src="images/recetas/receta-prueba.jpg"></div>
-                                <div class="nombre">Salmón con mostaza y miel</div>
+                                <div class="nombre">
+                                    <a href="{{ action( 'RecipeController@index', [ 'id' => $recipes[$i]->id ] ) }}" class="receta">
+                                        Salmón con mostaza y miel
+                                    </a>
+                                </div>
                                 <div class="like"></div>
                                 <div class="dislike"></div>
                             </li>
                             <li class="pane pane2">
                                 <div class="img"><img src="images/recetas/receta-prueba.jpg"></div>
-                                <div class="nombre">Salmón con mostaza y miel</div>
+                                <div class="nombre">
+                                    <a href="{{ action( 'RecipeController@index', [ 'id' => $recipes[$i]->id ] ) }}" class="receta">
+                                        Salmón con mostaza y miel
+                                    </a>
+                                </div>
                                 <div class="like"></div>
                                 <div class="dislike"></div>
                             </li>
