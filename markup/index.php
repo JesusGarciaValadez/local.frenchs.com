@@ -64,7 +64,7 @@
 
                     <div id="tinderslide">
                         <ul>
-                            <li class="pane pane0">
+                            <li class="pane pane3">
                                 <div class="img"><img src="images/recetas/receta-prueba.jpg"></div>
                                 <div class="nombre">
                                     <a href="{{ action( 'RecipeController@index', [ 'id' => $recipes[$i]->id ] ) }}" class="receta">
@@ -74,7 +74,7 @@
                                 <div class="like"></div>
                                 <div class="dislike"></div>
                             </li>
-                            <li class="pane pane1">
+                            <li class="pane pane6">
                                 <div class="img"><img src="images/recetas/receta-prueba.jpg"></div>
                                 <div class="nombre">
                                     <a href="{{ action( 'RecipeController@index', [ 'id' => $recipes[$i]->id ] ) }}" class="receta">
@@ -84,7 +84,7 @@
                                 <div class="like"></div>
                                 <div class="dislike"></div>
                             </li>
-                            <li class="pane pane2">
+                            <li class="pane pane8">
                                 <div class="img"><img src="images/recetas/receta-prueba.jpg"></div>
                                 <div class="nombre">
                                     <a href="{{ action( 'RecipeController@index', [ 'id' => $recipes[$i]->id ] ) }}" class="receta">
@@ -99,7 +99,7 @@
                     </div>
 
                     <div class="contador">
-                        <p>1/3</p>
+                        <p><span class="remaining">0</span>/3</p>
                     </div>
 
                     <div class="actions">

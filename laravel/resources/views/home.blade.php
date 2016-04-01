@@ -97,7 +97,7 @@
               </div>
 
               <div class="contador">
-                <p><span class="remaining">1</span>/{{ count( $recipes ) }}</p>
+                <p><span class="remaining">0</span>/{{ count( $recipes ) }}</p>
               </div>
 
               <div class="actions">

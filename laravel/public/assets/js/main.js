@@ -80,6 +80,8 @@ init = function(){
    *  Check if the index of the current liked or disliked element is equal to total tinder elements
    */
   _isFinishTindering = function ( _indexOfLikedElement ) {
+    $( '.remaining' ).text( _indexOfLikedElement + 1 );
+
     if ( _indexOfLikedElement === _totalHomeRecipes ) {
       return true;
     }
@@ -94,10 +96,10 @@ init = function(){
     if ( _recipesLiked.length > 0 ) {
       $( '#tinderslide' ).addClass( 'finished' );
 
-      _recipesLiked.forEach( function( currentValue ) {
+      $( '#tinderslide ul li' ).map( function( currentValue ) {
         _paneDisplayed = _recipesLiked[ currentValue ];
-        console.log( $( '#tinderslide .pane' + _paneDisplayed ) );
-        $( '#tinderslide .pane' + _paneDisplayed ).removeAttr( 'style' ).fadeIn( 300 );
+
+        $( '#tinderslide ul li' ).eq( _paneDisplayed ).removeAttr( 'style' ).fadeIn( 300 );
       } );
     } else {
       $( '#tinderslide .btn-mas' ).fadeIn( '300' );
