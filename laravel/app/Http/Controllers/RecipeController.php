@@ -33,8 +33,10 @@ class RecipeController extends Controller
 
     $recipe[ 'id' ]                   = $this->_recipe[ 'id' ];
     $recipe[ 'name' ]                 = $this->_recipe[ 'name' ];
-    $recipe[ 'old_photo' ]            = $this->_recipe[ 'photo' ];
-    $recipe[ 'photo' ]                = "";
+    $recipe[ 'photo_big' ]            = "";
+    $recipe[ 'photo_small' ]          = "";
+    $recipe[ 'old_photo_big' ]        = $this->_recipe[ 'photo_big' ];
+    $recipe[ 'old_photo_small' ]      = $this->_recipe[ 'photo_small' ];
     $recipe[ 'categorie' ]            = $this->_recipe[ 'categorie' ];
     $recipe[ 'portions' ]             = $this->_recipe[ 'portions' ];
     $recipe[ 'preparation_time' ]     = $this->_recipe[ 'preparation_time' ];
@@ -43,7 +45,8 @@ class RecipeController extends Controller
     $recipe[ 'ingredients_mobile' ]   = $this->_recipe[ 'ingredients_mobile' ];
     $recipe[ 'preparation' ]          = $this->_recipe[ 'preparation' ];
     $recipe[ 'ranking' ]              = $this->_recipe[ 'ranking' ];
-    $recipe[ 'active' ]               = ( $this->_recipe[ 'active' ] ) ? true : false;
+    $recipe[ 'product_name' ]         = $this->_recipe[ 'product_name' ];
+    $recipe[ 'active' ]               = ( $this->_recipe[ 'active' ] ) ? 'checked' : '';
 
     /*
      * Passing the recipe information, categories and domain url to the view
@@ -68,15 +71,17 @@ class RecipeController extends Controller
      */
     $validator = \Validator::make( $recipe, [
       'name'                => 'required|max:255',
-      'photo'               => 'sometimes|required|mimes:png,jpeg',
+      'photo_big'           => 'sometimes|image|mimes:png,jpeg',
+      'photo_small'         => 'sometimes|image|mimes:png,jpeg',
       'categorie'           => 'required|exists:recipes_categories,id',
       'portions'            => 'required|in:1,2,3,4,5,6',
       'preparation_time'    => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
       'cooking_time'        => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
-      'ingredients_desktop' => 'required|max:255',
-      'ingredients_mobile'  => 'required|max:255',
-      'preparation'         => 'required|max:255',
+      'ingredients_desktop' => 'required|max:1500',
+      'ingredients_mobile'  => 'required|max:1500',
+      'preparation'         => 'required|max:1500',
       'ranking'             => 'required|in:1,2,3,4,5',
+      'product_name'        => 'required|in:classic-sq,classic-sq-en-frasco,dijon,deli,honey,inglesa,bbq,bbq-chipotle',
       'active'              => 'required'
     ], [
       'required'    => "El campo ':attribute' es obligatorio.",
@@ -105,7 +110,8 @@ class RecipeController extends Controller
       /*
        * If there's a file, then uploading it.
        */
-      $recipe[ 'photo' ] = ( $this->_uploadPhoto( $request ) ) ? $this->_recipe[ 'photo' ] : $request->old_photo;
+      $recipe[ 'photo_big' ] = ( $this->_uploadPhoto( $request ) ) ? $this->_recipe[ 'photo_big' ] : $request->old_photo_big;
+      $recipe[ 'photo_small' ] = ( $this->_uploadPhoto( $request ) ) ? $this->_recipe[ 'photo_small' ] : $request->old_photo_small;
 
       /*
        * Persist the new data into the database.
@@ -116,9 +122,10 @@ class RecipeController extends Controller
       /*
        * Create a response for passing it into the view.
        */
-      $recipe[ 'message' ]    = ( $update ) ? "Receta actualizada" : "Hubo un error al actualizar la receta. :/";
-      $recipe[ 'updated' ]    = ( $update ) ? true : false;
-      $recipe[ 'old_photo' ]  = $recipe[ 'photo' ];
+      $recipe[ 'message' ]          = ( $update ) ? "Receta actualizada" : "Hubo un error al actualizar la receta. :/";
+      $recipe[ 'updated' ]          = ( $update ) ? true : false;
+      $recipe[ 'old_photo_big' ]    = $recipe[ 'photo_big' ];
+      $recipe[ 'old_photo_small' ]  = $recipe[ 'photo_small' ];
 
       /*
        * Passing the recipe information, categories and domain url to the view.
@@ -144,7 +151,8 @@ class RecipeController extends Controller
      * Setting recipe with new info for validation.
      */
     $recipe[ 'name' ]                 = $request[ 'name' ];
-    $recipe[ 'photo' ]                = $request[ 'photo' ];
+    $recipe[ 'photo_big' ]            = $request[ 'photo_big' ];
+    $recipe[ 'photo_small' ]          = $request[ 'photo_small' ];
     $recipe[ 'categorie' ]            = $request[ 'categorie' ];
     $recipe[ 'portions' ]             = $request[ 'portions' ];
     $recipe[ 'preparation_time' ]     = $request[ 'preparation_time' ];
@@ -153,6 +161,7 @@ class RecipeController extends Controller
     $recipe[ 'ingredients_mobile' ]   = $request[ 'ingredients_mobile' ];
     $recipe[ 'preparation' ]          = $request[ 'preparation' ];
     $recipe[ 'ranking' ]              = $request[ 'ranking' ];
+    $recipe[ 'product_name' ]         = $request[ 'product_name' ];
     $recipe[ 'active' ]               = ( $request[ 'active' ] ) ? true : false;
 
     if ( !$request->hasFile( 'photo' ) )
@@ -186,17 +195,39 @@ class RecipeController extends Controller
 
   protected function _uploadPhoto ( Request $request )
   {
-    if ( $request->hasFile( 'photo' ) )
+    if ( $request->hasFile( 'photo_big' ) )
     {
       /*
        * Move the photo
        */
       try {
-        $file                     = $request->file( 'photo' );
-        $destinationPath          = public_path() . '/assets/images/recetas/';
-        $filename                 = strtolower( $file->getClientOriginalName() );
-        $uploadSuccess            = $file->move( $destinationPath, $filename );
-        $this->_recipe[ 'photo' ] = $filename;
+        $file                         = $request->file( 'photo_big' );
+        $destinationPath              = public_path() . '/assets/images/recetas/';
+        $filename                     = strtolower( $file->getClientOriginalName() );
+        $uploadSuccess                = $file->move( $destinationPath, $filename );
+        $this->_recipe[ 'photo_big' ] = $filename;
+
+        return $uploadSuccess;
+      }
+      catch ( Exception $e )
+      {
+        return response()->json( [ 'response_message' => 'Error: File was not uploaded',
+                                   'response_code' => '3',
+                                   'Error: ' => $e->getError() ] );
+      }
+    }
+
+    if ( $request->hasFile( 'photo_small' ) )
+    {
+      /*
+       * Move the photo
+       */
+      try {
+        $file                           = $request->file( 'photo_small' );
+        $destinationPath                = public_path() . '/assets/images/recetas/';
+        $filename                       = strtolower( $file->getClientOriginalName() );
+        $uploadSuccess                  = $file->move( $destinationPath, $filename );
+        $this->_recipe[ 'photo_small' ] = $filename;
 
         return $uploadSuccess;
       }

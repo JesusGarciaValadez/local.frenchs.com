@@ -40,7 +40,7 @@ Route::group( [ 'middleware' => [ 'web' ] ], function ()
 
   Route::get( 'editar-receta/{id}', [ 'as' => 'updateRecipe', 'middleware' => 'auth', 'uses' => 'RecipeController@update' ] );
 
-  Route::put( 'editar-receta', [ 'as' => 'updatedRecipe', 'middleware' => 'auth', 'uses' => 'RecipeController@updated' ] );
+  Route::put( 'editar-receta/{id}', [ 'as' => 'updatedRecipe', 'middleware' => 'auth', 'uses' => 'RecipeController@updated' ] );
 
   Route::get( 'contacto', [ 'as' => 'contact', 'uses' => 'ContactController@index' ] );
 

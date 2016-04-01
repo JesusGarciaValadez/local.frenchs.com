@@ -15,7 +15,8 @@ class Recipes extends Model
       'user_name',
       'user_email',
       'name',
-      'photo',
+      'photo_big',
+      'photo_small',
       'categorie',
       'portions',
       'preparation_time',
@@ -24,6 +25,7 @@ class Recipes extends Model
       'ingredients_mobile',
       'preparation',
       'ranking',
+      'product_name',
       'active'
     ];
 

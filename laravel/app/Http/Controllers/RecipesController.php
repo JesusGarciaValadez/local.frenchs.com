@@ -41,7 +41,7 @@ class RecipesController extends Controller
       'user_name'         => 'required|max:255',
       'user_email'        => 'required|max:255|email',
       'name'              => 'required|max:255',
-      'photo'             => 'required|mimes:png,jpeg',
+      'photo_big'         => 'required|mimes:png,jpeg',
       'categorie'         => 'required|exists:recipes_categories,id',
       'portions'          => 'required|in:1,2,3,4,5,6',
       'preparation_time'  => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
@@ -69,14 +69,14 @@ class RecipesController extends Controller
     else
     {
       // If there's a file, then uploading it
-      if ( $request->hasFile( 'photo' ) )
+      if ( $request->hasFile( 'photo_big' ) )
       {
         try {
-          $file               = $request->file( 'photo' );
+          $file               = $request->file( 'photo_big' );
           $destinationPath    = public_path() . '/assets/images/recetas/';
-          $filename           = strtolower( $recipe[ 'photo' ]->getClientOriginalName() );
+          $filename           = strtolower( $recipe[ 'photo_big' ]->getClientOriginalName() );
           $uploadSuccess      = $file->move( $destinationPath, $filename );
-          $recipe[ 'photo' ]  = $filename;
+          $recipe[ 'photo_big' ]  = $filename;
         }
         catch ( Exception $e )
         {
@@ -198,7 +198,7 @@ class RecipesController extends Controller
       if ( !empty( $search ) )
       {
         // Check if there's a recipe with the parameters received
-        $recipes    = Recipes::select( 'name', 'photo', 'portions', 'preparation_time', 'ranking' )
+        $recipes    = Recipes::select( 'name', 'photo_big', 'portions', 'preparation_time', 'ranking' )
                              ->whereRaw( $search )
                              ->orderBy( 'created_at', 'desc' )
                              ->get();
