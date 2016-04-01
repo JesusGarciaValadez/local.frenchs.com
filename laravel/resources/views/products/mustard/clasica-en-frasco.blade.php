@@ -8,7 +8,7 @@
         <section class="detalle-producto">
             <div class="container">
                 <div class="left">
-                    {!! Html::image( 'assets/images/slider/s4-producto.png', '' ) !!}
+                    {!! Html::image( 'assets/images/productos/mostaza-tarrito.png', '' ) !!}
                 </div>
                 <div class="right">
                     <div class="descripcion">
@@ -100,7 +100,7 @@
                       @endforeach
                     </p>
                     <div class="image">
-                      {!! Html::image( 'assets/images/recetas/' . $recipe->photo_big, $recipe->name ) !!}
+                      {!! Html::image( 'assets/images/recetas/' . $recipe->photo_small, $recipe->name ) !!}
                     </div>
                     <p class="nombre">{!!$recipe->name!!}</p>
                     <p class="porciones">{{$recipe->portions}} porciones</p>
