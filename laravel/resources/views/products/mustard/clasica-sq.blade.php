@@ -101,9 +101,9 @@
                       @endforeach
                     </p>
                     <div class="image">
-                      {!! Html::image( 'assets/images/recetas/' . $recipe->photo, $recipe->name ) !!}
+                      {!! Html::image( 'assets/images/recetas/' . $recipe->photo_big, $recipe->name ) !!}
                     </div>
-                    <p class="nombre">{{$recipe->name}}</p>
+                    <p class="nombre">{!!$recipe->name!!}</p>
                     <p class="porciones">{{$recipe->portions}} porciones</p>
                     <p class="tiempo">Tiempo de preparación: {{$recipe->preparation_time}}</p>
                     <div class="ranking">

@@ -82,10 +82,10 @@
                 <ul>
                   @for ($i = 0; $i < 3; $i++)
                   <li class="pane pane{{ $i }}">
-                    <div class="img">{!! Html::image( 'assets/images/recetas/' . $recipes[$i]->photo, $recipes[$i]->name ) !!}</div>
+                    <div class="img">{!! Html::image( 'assets/images/recetas/' . $recipes[$i]->photo_small, $recipes[$i]->name ) !!}</div>
                     <div class="nombre">
                       <a href="{{ action( 'RecipeController@index', [ 'id' => $recipes[$i]->id ] ) }}" class="receta">
-                        {{ $recipes[$i]->name }}
+                        {!! $recipes[$i]->name !!}
                       </a>
                     </div>
                     <div class="like"></div>

@@ -83,9 +83,9 @@
                             @endforeach
                         </p>
                         <div class="image">
-                            {!! Html::image( 'assets/images/recetas/' . $recipe->photo, $recipe->name ) !!}
+                            {!! Html::image( 'assets/images/recetas/' . $recipe->photo_small, $recipe->name ) !!}
                         </div>
-                        <p class="nombre">{{$recipe->name}}</p>
+                        <p class="nombre">{!!$recipe->name!!}</p>
                         <p class="porciones">{{$recipe->portions}} porciones</p>
                         <p class="tiempo">Tiempo de preparación: {{$recipe->preparation_time}}</p>
                         <div class="ranking">
@@ -122,7 +122,7 @@
                             {!! Form::text( 'user_name', null, [ 'placeholder' => 'NOMBRE' ] ) !!}
                             {!! Form::email( 'user_email', null, [ 'placeholder' => 'CORREO ELECTRÓNICO' ] ) !!}
                             {!! Form::text( 'name', null, [ 'placeholder' => 'NOMBRE DE LA RECETA' ] ) !!}
-                            {!! Form::file( 'photo', [ 'accept' => 'image/png, image/jpeg' ] ) !!}
+                            {!! Form::file( 'photo_big', [ 'accept' => 'image/png, image/jpeg' ] ) !!}
                             <p>Te recomendamos tu foto en formato: jpg / 300x300px</p>
                             <label>
                                 <div class="first-icon"><i class="fa fa-tag"></i></div>

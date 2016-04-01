@@ -15,9 +15,10 @@
             <p class="bg-danger">{{$recipe[ 'message' ]}}</p>
           @endif
           </div>
-          {!! Form::open( [ 'route' => 'updatedRecipe', 'method' => 'PUT', 'class' => 'form-horizontal', 'files' => true ] ) !!}
+          {!! Form::open( [ 'url' => 'editar-receta/' . $recipe[ 'id' ], 'method' => 'PUT', 'class' => 'form-horizontal', 'files' => true ] ) !!}
 
-            {!! Form::hidden( 'old_photo', $recipe[ 'old_photo' ] ) !!}
+            {!! Form::hidden( 'old_photo_big', $recipe[ 'old_photo_big' ] ) !!}
+            {!! Form::hidden( 'old_photo_small', $recipe[ 'old_photo_small' ] ) !!}
             {!! Form::hidden( 'id', $recipe[ 'id' ] ) !!}
 
             <div class="form-group{{ $errors->has( 'name' ) ? ' has-error' : '' }}">
@@ -34,15 +35,17 @@
               </div>
             </div>
 
-            <div class="form-group{{ $errors->has( 'email' ) ? ' has-error' : '' }}">
-              {!! Form::label( 'photo', 'Fotografía', [ 'class' => 'col-md-4 control-label' ] ) !!}
+            <div class="form-group{{ $errors->has( 'photo_big' ) ? ' has-error' : '' }}">
+              {!! Form::label( 'photo_big', 'Fotografía grande', [ 'class' => 'col-md-4 control-label' ] ) !!}
 
               <div class="col-md-6">
-                {!! Form::file( 'photo' ) !!}
+                {!! Form::input( 'file', 'photo_big', $recipe[ 'old_photo_big' ], [
+                  'class'     => 'photo_big'
+                ] ) !!}
 
-                @if ( $errors->has( 'photo' ) )
+                @if ( $errors->has( 'photo_big' ) )
                   <span class="help-block">
-                    <strong>{{ $errors->first( 'photo' ) }}</strong>
+                    <strong>{{ $errors->first( 'photo_big' ) }}</strong>
                   </span>
                 @endif
               </div>
@@ -50,7 +53,30 @@
 
             <div class="form-group">
               <div class="center-block">
-                {!! Html::image( $domain . '/assets/images/recetas/' . $recipe[ 'old_photo' ], $recipe[ 'name' ], [ 'class' => 'img-responsive center-block' ] ) !!}
+                {!! Html::image( $domain . '/assets/images/recetas/' . $recipe[ 'old_photo_big' ], $recipe[ 'name' ], [ 'class' => 'img-responsive center-block' ] ) !!}
+              </div>
+            </div>
+
+
+            <div class="form-group{{ $errors->has( 'photo_small' ) ? ' has-error' : '' }}">
+              {!! Form::label( 'photo_small', 'Fotografía tipo Tinder', [ 'class' => 'col-md-4 control-label' ] ) !!}
+
+              <div class="col-md-6">
+                {!! Form::input( 'file', 'photo_small', $recipe[ 'old_photo_small' ], [
+                  'class'     => 'photo_small'
+                ] ) !!}
+
+                @if ( $errors->has( 'photo_small' ) )
+                  <span class="help-block">
+                    <strong>{{ $errors->first( 'photo_small' ) }}</strong>
+                  </span>
+                @endif
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="center-block">
+                {!! Html::image( $domain . '/assets/images/recetas/' . $recipe[ 'old_photo_small' ], $recipe[ 'name' ], [ 'class' => 'img-responsive center-block' ] ) !!}
               </div>
             </div>
 
@@ -134,7 +160,7 @@
             <div class="form-group{{ $errors->has( 'ingredients_desktop' ) ? ' has-error' : '' }}">
               {!! Form::label( 'ingredients_desktop', 'Ingredientes para versión de escritorio', [ 'class' => 'col-md-4 control-label' ] ) !!}
 
-              <div class="col-md-6">
+              <div class="col-md-8">
                 {!! Form::textarea( 'ingredients_desktop', $recipe[ 'ingredients_desktop' ], [ 'class' => 'form-control' ] ) !!}
 
                 @if ($errors->has('ingredients_desktop'))
@@ -148,7 +174,7 @@
             <div class="form-group{{ $errors->has( 'ingredients_mobile' ) ? ' has-error' : '' }}">
               {!! Form::label( 'ingredients_mobile', 'Ingredientes para versión móvil', [ 'class' => 'col-md-4 control-label' ] ) !!}
 
-              <div class="col-md-6">
+              <div class="col-md-8">
                 {!! Form::textarea( 'ingredients_mobile', $recipe[ 'ingredients_mobile' ], [ 'class' => 'form-control' ] ) !!}
 
                 @if ($errors->has('ingredients_mobile'))
@@ -162,7 +188,7 @@
             <div class="form-group{{ $errors->has( 'preparation' ) ? ' has-error' : '' }}">
               {!! Form::label( 'preparation', 'Preparación', [ 'class' => 'col-md-4 control-label' ] ) !!}
 
-              <div class="col-md-6">
+              <div class="col-md-8">
                 {!! Form::textarea( 'preparation', $recipe[ 'preparation' ], [ 'class' => 'form-control' ] ) !!}
 
                 @if ($errors->has('preparation'))
@@ -188,6 +214,29 @@
                 @if ( $errors->has( 'ranking' ) )
                   <span class="help-block">
                     <strong>{{ $errors->first( 'ranking' ) }}</strong>
+                  </span>
+                @endif
+              </div>
+            </div>
+
+            <div class="form-group{{ $errors->has( 'product_name' ) ? ' has-error' : '' }}">
+              {!! Form::label( 'product_name', 'Producto usado', [ 'class' => 'col-md-4 control-label' ] ) !!}
+
+              <div class="col-md-6">
+                {!! Form::select( 'product_name', array(
+                    'classic-sq'            => 'French&rsquo;s Mostaza Cl&aacute;sica',
+                    'classic-sq-en-frasco'  => 'French&rsquo;s Mostaza Cl&aacute;sica en frasco',
+                    'dijon'                 => 'French&rsquo;s Mostaza Dijon',
+                    'deli'                  => 'French&rsquo;s Mostaza Deli',
+                    'honey'                 => 'French&rsquo;s Mostaza Honey - sabor agridulce',
+                    'inglesa'               => 'French&rsquo;s Salsa ingl&eacute;sa',
+                    'bbq'                   => 'French&rsquo;s Salsa BBQ',
+                    'bbq-chipotle'          => 'French&rsquo;s Salsa BBQ con chipotle'
+                ), $recipe[ 'product_name' ], [ 'class' => 'form-control' ] ) !!}
+
+                @if ( $errors->has( 'product_name' ) )
+                  <span class="help-block">
+                    <strong>{{ $errors->first( 'product_name' ) }}</strong>
                   </span>
                 @endif
               </div>
@@ -220,4 +269,27 @@
     </div>
   </div>
 </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script>
+  $( document ).on( 'ready', function ( ) {
+    $( 'button[type="button"]' ).on( 'click', function ( event ) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      $( event.currentTarget ).siblings( 'input[type="file"]' ).removeAttr( 'disabled' );
+    } );
+
+    tinymce.init( {
+      selector:'textarea',
+      height: 300,
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table contextmenu paste code'
+      ],
+      toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image'
+    } );
+  } );
+</script>
 @endsection

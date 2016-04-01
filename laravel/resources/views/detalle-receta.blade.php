@@ -8,7 +8,7 @@
             <div class="header">
                 <div class="container">
                     <div class="info left"></span>
-                        <h3>{{$recipe->name}}</h3>
+                        <h3>{!!$recipe->name!!}</h3>
                         <div class="ranking">
                             <span class="stars s{{$recipe->ranking}}"></span>
                         </div>
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="image right"></span>
-                        {!! Html::image( 'assets/images/recetas/' . $recipe->photo, $recipe->name ) !!}
+                        {!! Html::image( 'assets/images/recetas/' . $recipe->photo_big, $recipe->name ) !!}
                     </div>
                 </div>
             </div>
@@ -44,12 +44,12 @@
                         <div class="ingredientes left">
                             <div class="icono-ingredientes"></div>
                             <h3>Ingredientes</h3>
-                            {{$recipe->ingredients_desktop}}
+                            {!!$recipe->ingredients_desktop!!}
                         </div>
                         <div class="preparacion right">
                             <div class="icono-preparacion"></div>
                             <h3>Preparación</h3>
-                            {{$recipe->preparation}}
+                            {!!$recipe->preparation!!}
                         </div>
                     </div>
 
@@ -65,7 +65,7 @@
                                 <div class="ingredientes">
                                     <div class="icono-ingredientes"></div>
                                     <h3>Ingredientes</h3>
-                                    {{$recipe->ingredients_mobile}}
+                                    {!!$recipe->ingredients_mobile!!}
                                 </div>
                             </div>
 
@@ -74,7 +74,7 @@
                                 <div class="preparacion">
                                     <div class="icono-preparacion"></div>
                                     <h3>Preparación</h3>
-                                    {{$recipe->preparation}}
+                                    {!!$recipe->preparation!!}
                                 </div>
 
                             </div>
@@ -100,9 +100,9 @@
                             @endforeach
                         </p>
                         <div class="image">
-                            {!! Html::image( 'assets/images/recetas/' . $recipe->photo, $recipe->name ) !!}
+                            {!! Html::image( 'assets/images/recetas/' . $recipe->photo_small, $recipe->name ) !!}
                         </div>
-                        <p class="nombre">{{$recipe->name}}</p>
+                        <p class="nombre">{!!$recipe->name!!}</p>
                         <p class="porciones">{{$recipe->portions}} porciones</p>
                         <p class="tiempo">Tiempo de preparación: {{$recipe->preparation_time}}</p>
                         <div class="ranking">
