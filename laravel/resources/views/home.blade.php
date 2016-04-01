@@ -80,24 +80,24 @@
             <div class="recetas-home">
               <div id="tinderslide">
                 <ul>
-                  @for ($i = 0; $i < 3; $i++)
-                  <li class="pane pane{{ $i }}">
-                    <div class="img">{!! Html::image( 'assets/images/recetas/' . $recipes[$i]->photo_small, $recipes[$i]->name ) !!}</div>
+                  @foreach( $recipes as $recipe )
+                  <li class="pane pane{{$recipe->id}}">
+                    <div class="img">{!! Html::image( 'assets/images/recetas/' . $recipe->photo_small, $recipe->name ) !!}</div>
                     <div class="nombre">
-                      <a href="{{ action( 'RecipeController@index', [ 'id' => $recipes[$i]->id ] ) }}" class="receta">
-                        {!! $recipes[$i]->name !!}
+                      <a href="{{ action( 'RecipeController@index', [ 'id' => $recipe->id ] ) }}" class="receta">
+                        {!! $recipe->name !!}
                       </a>
                     </div>
                     <div class="like"></div>
                     <div class="dislike"></div>
                   </li>
-                  @endfor
+                  @endforeach
                 </ul>
                 <a href="{{ route( 'recipes' ) }}" title="Ver más recetas." target="_self" class="btn-mas">Ver más recetas.</a>
               </div>
 
               <div class="contador">
-                <p>{{ count( $recipes ) }}/{{ count( $recipes ) }}</p>
+                <p><span class="remaining">1</span>/{{ count( $recipes ) }}</p>
               </div>
 
               <div class="actions">
