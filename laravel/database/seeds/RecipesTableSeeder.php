@@ -30,7 +30,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>2 cucharadas de cebolla blanca picada.</li>
                                   <li>1/2 diente de ajo.</li>
                                   <li>3 tazas de agua.</li>
-                                  <li>3 cucharadas de <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li>3 cucharadas de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li>Sal al gusto.</li>
                                   <li>1 taza de chistorra frita y en pedazos de 2 cm.</li>
                                   <li>6 cucharadas de nuez picada.</li>
@@ -42,7 +42,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">2</span> cucharadas de cebolla blanca picada.</li>
                                   <li><span class="medida">1</span>/2 diente de ajo.</li>
                                   <li><span class="medida">3</span> tazas de agua.</li>
-                                  <li><span class="medida">3</span> cucharadas de <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li><span class="medida">3</span> cucharadas de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li>Sal al gusto.</li>
                                   <li><span class="medida">1</span> taza de chistorra frita y en pedazos de 2 cm.</li>
                                   <li><span class="medida">6</span> cucharadas de nuez picada.</li>
@@ -79,7 +79,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>1/4 de taza de agua.</li>
                                   <li>400 g de camarón grande y pelado.</li>
                                   <li>1 taza de aceite.</li>
-                                  <li>5 cucharadas de <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li>5 cucharadas de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li>10 cucharadas de jugo de mandarina.</li>
                                   <li>1/2 cucharadita de sal.</li>
                                 </ul>',
@@ -93,7 +93,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">1/4</span> de taza de agua.</li>
                                   <li><span class="medida">400</span> g de camarón grande y pelado.</li>
                                   <li><span class="medida">1</span> taza de aceite.</li>
-                                  <li><span class="medida">5</span> cucharadas de <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li><span class="medida">5</span> cucharadas de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li><span class="medida">10</span> cucharadas de jugo de mandarina.</li>
                                   <li><span class="medida">1/2</span> cucharadita de sal.</li>
                                 </ul>',
@@ -126,7 +126,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>4 piezas de chorizo argentino.</li>
                                   <li>1 pieza de pan baguette grande.</li>
                                   <li>1/2 taza de chimichurri.</li>
-                                  <li><span class="marca">French&rsquo;sS&reg; Mostaza Picante</span> al gusto.</li>
+                                  <li><span class="marca">French&rsquo;s&reg; Mostaza Picante</span> al gusto.</li>
                                 </ul>',
       'ingredients_mobile'  => '<ul>
                                   <li><span class="medida">3</span> cucharadas de mantequilla sin sal.</li>
@@ -136,7 +136,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">4</span> piezas de chorizo argentino.</li>
                                   <li><span class="medida">1</span> pieza de pan baguette grande.</li>
                                   <li><span class="medida">1/2</span> taza de chimichurri.</li>
-                                  <li><span class="marca">French&rsquo;sS&reg; Mostaza Picante</span> al gusto.</li>
+                                  <li><span class="marca">French&rsquo;s&reg; Mostaza Picante</span> al gusto.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Derrite</span> la mantequilla en una sart&eacute;n, a fuego lento. Incorpora la cebolla y acitrona. Agrega el az&uacute;car y la sal. Mant&eacute;n la mezcla en la llama, sin dejar de revolver, hasta que la cebolla adquiera un color caramelo. Déjala enfriar.</p>
                                 <p><span class="paso">Asa</span> el chorizo a la parrilla hasta que est&eacute; completamente cocido.</p>
@@ -166,7 +166,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>1 cucharada de harina.</li>
                                   <li>1 taza de leche.</li>
                                   <li>4 cucharadas de crema.</li>
-                                  <li>3 cucharadas de <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li>3 cucharadas de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li>1 cucharada de perejil picado.</li>
                                   <li>1 cucharada de ceboll&iacute;n picado.</li>
                                   <li>1/2 cucharada de tomillo picado.</li>
@@ -180,7 +180,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">1</span> cucharada de harina.</li>
                                   <li><span class="medida">1</span> taza de leche.</li>
                                   <li><span class="medida">4</span> cucharadas de crema.</li>
-                                  <li><span class="medida">3</span> cucharadas de <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li><span class="medida">3</span> cucharadas de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li><span class="medida">1</span> cucharada de perejil picado.</li>
                                   <li><span class="medida">1</span> cucharada de ceboll&iacute;n picado.</li>
                                   <li><span class="medida">1/2</span> cucharada de tomillo picado.</li>
@@ -220,7 +220,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>2 cucharadas de mantequilla.</li>
                                   <li>2 cucharadas de vinager blanco <span class="marca">La Coste&ntilde;a&reg;</span>.</li>
                                   <li>3/4 taza de agua.</li>
-                                  <li>2 cucharadas <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li>2 cucharadas <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li>2 cucharadas perejil picado.</li>
                                   <li>Sal y pimienta al gusto.</li>
                                 </ul>',
@@ -236,13 +236,13 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">2</span> cucharadas de mantequilla.</li>
                                   <li><span class="medida">2</span> cucharadas de vinager blanco <span class="marca">La Coste&ntilde;a&reg;</span>.</li>
                                   <li><span class="medida">3/4</span> taza de agua.</li>
-                                  <li><span class="medida">2</span> cucharadas <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li><span class="medida">2</span> cucharadas <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li><span class="medida">2</span> cucharadas perejil picado.</li>
                                   <li>Sal y pimienta al gusto.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Saltea</span> los pimientos, la cebolla y la zanahoria en aceite de oliva por 3 minutos. Sazona con sal y pimienta al gusto..</p>
                                 <p><span class="paso">Extiende</span> los vegetales sobre los 4 filetes y enr&oacute;llalos. Hornea 10 minutos o hasta que est&eacute;n completamente cocidos..</p>
-                                <p><span class="paso">Acitrona</span> la cebolla en mantequilla. Agrega el vinagre blanco y cocina por 2 minutos. Incorpora el agua, la <span class="marca">French&rsquo;ss&reg; Mostaza Picante</span> y el perejil. Hierve y sazona con sal y pimienta.</p>
+                                <p><span class="paso">Acitrona</span> la cebolla en mantequilla. Agrega el vinagre blanco y cocina por 2 minutos. Incorpora el agua, la <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> y el perejil. Hierve y sazona con sal y pimienta.</p>
                                 <p><span class="paso">Ba&ntilde;a</span> los filetes de pescado con la salsa.</p>',
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
@@ -268,7 +268,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>1 pieza de cebolla blanca.</li>
                                   <li>1/4 de pieza de pimiento morrón verde.</li>
                                   <li>1/4 de pieza de pimiento morrón rojo.</li>
-                                  <li>2 cucharadas de <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li>2 cucharadas de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                 </ul>',
       'ingredients_mobile'  => '<ul>
                                   <li><span class="medida">500</span> g de puntas de res.</li>
@@ -277,7 +277,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">1</span> pieza de cebolla blanca.</li>
                                   <li><span class="medida">1/4</span> de pieza de pimiento morrón verde.</li>
                                   <li><span class="medida">1/4</span> de pieza de pimiento morrón rojo.</li>
-                                  <li><span class="medida">2</span> cucharadas de <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li><span class="medida">2</span> cucharadas de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Salpimienta</span> las puntas de res y fr&iacute;elas en el aceite.</p>
                                 <p><span class="paso">Agrega</span> la cebolla y los pimientos, y saltea con la carne.</p>
@@ -304,7 +304,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>2 piezas de huevo cocido y picado.</li>
                                   <li>2 cucharadas de salami frito y picado.</li>
                                   <li>2 cucharadas de mayonesa <span class="marca">La Coste&ntilde;a&reg;</span>.</li>
-                                  <li>1 cucharada de <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li>1 cucharada de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li>1 cucharada de jugo de lim&oacute;.</li>
                                   <li>Sal y pimienta al gusto.</li>
                                   <li>2 cucharadas de ceboll&iacute;n picado.</li>
@@ -314,7 +314,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">2</span> piezas de huevo cocido y picado.</li>
                                   <li><span class="medida">2</span> cucharadas de salami frito y picado.</li>
                                   <li><span class="medida">2</span> cucharadas de mayonesa <span class="marca">La Coste&ntilde;a&reg;</span>.</li>
-                                  <li><span class="medida">1</span> cucharada de <span class="marca">French&rsquo;sS&reg; Mostaza Picante.</span></li>
+                                  <li><span class="medida">1</span> cucharada de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li><span class="medida">1</span> cucharada de jugo de lim&oacute;.</li>
                                   <li>Sal y pimienta al gusto.</li>
                                   <li><span class="medida">2</span> cucharadas de ceboll&iacute;n picado.</li>
