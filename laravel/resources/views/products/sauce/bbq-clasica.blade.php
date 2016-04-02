@@ -77,6 +77,7 @@
                 <p>{!! Html::link( 'productos', 'Todos los productos', [ 'class' => 'boton', 'id' => '' ] ) !!}</p>
             </div>
         </section>
+        @if ( count( $recipes ) > 0 )
         <section class="grid">
             <div class="container">
                 <h2>Recetas</h2>
@@ -106,4 +107,5 @@
                 <a id="" href="#" class="btn-mas">Ver más recetas</a>
             </div>
         </section>
+        @endif
 @endsection
