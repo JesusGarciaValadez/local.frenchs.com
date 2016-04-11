@@ -94,13 +94,14 @@ init = function(){
   _showRecipesOrLink      = function ( ) {
     $( '.contador, .actions, .status' ).fadeOut( 300 );
     if ( _recipesLiked.length > 0 ) {
-      $( '#tinderslide' ).addClass( 'finished' );
+      $( '#tinderslide ul' ).addClass( 'finished' );
 
       $( '#tinderslide ul li' ).map( function( currentValue ) {
         _paneDisplayed = _recipesLiked[ currentValue ];
 
         $( '#tinderslide ul li' ).eq( _paneDisplayed ).removeAttr( 'style' ).fadeIn( 300 );
       } );
+      $( '#tinderslide' ).addClass( 'container' ).removeClass( 'tinderslide' );
     } else {
       $( '#tinderslide .btn-mas' ).fadeIn( '300' );
     }
