@@ -198,7 +198,7 @@ class RecipesController extends Controller
       if ( !empty( $search ) )
       {
         // Check if there's a recipe with the parameters received
-        $recipes    = Recipes::select( 'name', 'photo_big', 'portions', 'preparation_time', 'ranking' )
+        $recipes    = Recipes::select('id', 'name', 'photo_small', 'portions', 'preparation_time', 'ranking','categorie' )
                              ->whereRaw( $search )
                              ->orderBy( 'created_at', 'desc' )
                              ->get();
