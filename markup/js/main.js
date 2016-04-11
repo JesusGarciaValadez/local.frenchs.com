@@ -103,7 +103,8 @@ init = function(){
 
         $( '#tinderslide ul li' ).eq( _paneDisplayed ).removeAttr( 'style' ).fadeIn( 300 );
       } );
-      $( '#tinderslide' ).addClass( 'container' ).removeClass( 'tinderslide' );
+      $( '#tinderslide' ).addClass( 'container' );
+      $( '#tinderslide.container' ).removeClass( 'tinderslide' );
     } else {
       $( '#tinderslide .btn-mas' ).fadeIn( '300' );
     }
