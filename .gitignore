@@ -9,3 +9,4 @@ Homestead.json
 .env
 *.crt
 *.key
+git-log.txt
