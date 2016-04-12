@@ -13,10 +13,10 @@
             </div>
             <div class="filtro">
                 <div class="container">
-                    {!! Form::open( [ 'route' => 'searchRecipe', 'method' => 'GET' ] ) !!}
+                    {!! Form::open( [ 'route' => 'searchRecipe', 'method' => 'GET','id'=>'enviar_receta' ] ) !!}
                         <div class="buscar">
-                            {!! Form::text( 'name', null, [ 'placeholder' => '(Ejemplo: Pollo)' ] ) !!}
-                            {!! Html::link( '#', '' ) !!}
+                            {!! Form::text( 'name', null, [ 'placeholder' => '(Ejemplo: Pollo)'] ) !!}
+                            {!! Html::link( '#', '' , array('id' => 'btn_search')) !!}
                             {{-- Form::submit( 'buscar' ) --}}
                         </div>
                         <div class="content-filtro">
@@ -186,4 +186,48 @@
                 </div>
             </div>
         </div>
+
+    <script>
+        $('#btn_search').click(function (){
+            enviar();
+        });
+
+        $( "#enviar_receta" ).submit(function( event ) {
+          event.preventDefault();
+          enviar();
+        });
+
+        function enviar(){
+            var nombre = $( "input[name='name']" ).val();
+            var categoria = $( "select[name='categorie']" ).val();
+            var tiempo = $( "select[name='preparation_time']" ).val();
+            var porciones = $( "select[name='portions']" ).val();
+            var rank = $( "select[name='ranking']" ).val();
+            var codigoHtml;
+            //Obtencion de resultados
+                $.get( "/buscar-recetas", {name :nombre, categorie:categoria,preparation_time:tiempo,portions:porciones,ranking:rank} )
+
+                    //Si ocurre un error
+                      .fail(function() {
+                        alert( "error" );
+                      })
+
+                    //Si es correcto
+                      .done(function( data ) {
+                            $(".receta").hide();
+                            $.each(data, function(i, item) {
+                            
+
+                                codigoHTML = '<a href="/receta/'+item.id+'" class="receta"><p class="categoria b1">entrada<div class="image"><img src="/assets/images/recetas/'+item.photo_small+'" alt="'+item.name+'"></div><p class="nombre">'+item.name+'</p><p class="porciones">'+item.portions+' porciones</p><p class="tiempo">Tiempo de preparación: '+item.preparation_time+'</p><div class="ranking"><span class="stars s'+item.ranking+'"></span></div></a>';
+                                
+                                $(".content-grid").append(codigoHTML);
+
+                            });
+                            
+                             
+                      });
+        };
+         
+    </script>
+        }
 @endsection

@@ -18,6 +18,7 @@
         {!! Html::style( 'assets/plugins/bxslider/jquery.bxslider.css' ) !!}
         {!! Html::style( 'assets/plugins/drag-and-drop/jquery.ezdz.min.css' ) !!}
         {!! Html::style( 'assets/plugins/font-awesome/css/font-awesome.min.css' ) !!}
+        <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
         <!--[if lt IE 9]>
             {!! Html::script('assets/js/bootstrap.min.js') !!}
@@ -72,7 +73,7 @@
 
 
         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        
 
         {!! Html::script('assets/plugins/tinder/jquery.min.js') !!}
         {!! Html::script('assets/plugins/tinder/jquery.transform2d.js') !!}
