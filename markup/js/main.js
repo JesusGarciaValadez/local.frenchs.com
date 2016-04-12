@@ -103,8 +103,10 @@ init = function(){
 
         $( '#tinderslide ul li' ).eq( _paneDisplayed ).removeAttr( 'style' ).fadeIn( 300 );
       } );
-      $( '#tinderslide' ).addClass( 'container' );
-      $( '#tinderslide.container' ).removeAttr( 'id' );
+      $( '#tinderslide' ).fadeOut( 150, function () {
+        $( '#tinderslide' ).addClass( 'container' );
+        $( '#tinderslide.container' ).removeAttr( 'id' ).fadeIn( 300 );
+      } );
     } else {
       $( '#tinderslide .btn-mas' ).fadeIn( '300' );
     }
