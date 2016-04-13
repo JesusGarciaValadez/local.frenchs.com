@@ -53,6 +53,7 @@ class RecipeController extends Controller
      */
     return view( 'recipes.edit', [
                  'recipe'     => $recipe,
+                 'categories' => $this->_categories,
                  'domain'     => $this->_domain ] );
   }
 

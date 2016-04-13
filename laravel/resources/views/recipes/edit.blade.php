@@ -57,7 +57,6 @@
               </div>
             </div>
 
-
             <div class="form-group{{ $errors->has( 'photo_small' ) ? ' has-error' : '' }}">
               {!! Form::label( 'photo_small', 'Fotografía tipo Tinder', [ 'class' => 'col-md-4 control-label' ] ) !!}
 
@@ -84,7 +83,7 @@
               {!! Form::label( 'categorie', 'Categoria', [ 'class' => 'col-md-4 control-label' ] ) !!}
 
               <div class="col-md-6">
-                {!! Form::select( 'categorie', $categories, $recipe[ 'categorie' ], [ 'class' => 'form-control' ] ) !!}
+                {!! Form::select( 'categorie', $categories, $recipe[ 'categorie_id' ], [ 'class' => 'form-control' ] ) !!}
 
                 @if ( $errors->has( 'categorie' ) )
                   <span class="help-block">
