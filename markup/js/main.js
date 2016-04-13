@@ -105,7 +105,12 @@ init = function(){
       } );
       $( '#tinderslide' ).fadeOut( 150, function () {
         $( '#tinderslide' ).addClass( 'container' );
-        $( '#tinderslide.container' ).removeAttr( 'id' ).fadeIn( 300 );
+        $( '#tinderslide.container' ).removeAttr( 'id' );
+
+        var _container = $( '.recetas-home' ).children( '.container' ).clone();
+        $( '.recetas-home' ).prepend( _container );
+        $( '.recetas-home .container' ).eq( 1 ).remove();
+        $( '.recetas-home .container' ).fadeIn( 300 );
       } );
     } else {
       $( '#tinderslide .btn-mas' ).fadeIn( '300' );
