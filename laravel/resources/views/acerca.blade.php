@@ -40,13 +40,10 @@
                 <div class="container">
                     <ul class="slider-acerca">
                         <li>
-                            <h3>En 1974 se presenta el empaque de<br><span>French’s</span> para apretar la botella 1</h3>
+                            <h3>En 1974 se presenta el empaque de<br><span>French’s</span> para apretar la botella</h3>
                         </li>
                         <li>
-                            <h3>En 1974 se presenta el empaque de<br><span>French’s</span> para apretar la botella 2</h3>
-                        </li>
-                        <li>
-                            <h3>En 1974 se presenta el empaque de<br><span>French’s</span> para apretar la botella 3</h3>
+                            <h3>La Mostaza <span>French’s</span> se presentó al público en 1904</h3>
                         </li>
                     </ul>
                 </div>
