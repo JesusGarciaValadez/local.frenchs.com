@@ -111,7 +111,9 @@ init = function(){
         $( '.recetas-home .container' ).fadeIn( 300 );
       } );
     } else {
-      $( '.recetas-home .btn-mas' ).css( 'display', 'block' ).fadeIn( '300' );
+      $( '#tinderslide' ).fadeOut( 300, function () {
+        $( '.recetas-home .btn-mas' ).css( 'display', 'block' ).fadeIn( 300 );
+      } );
     }
   }
 
