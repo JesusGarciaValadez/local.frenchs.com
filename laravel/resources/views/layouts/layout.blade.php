@@ -44,9 +44,7 @@
                 </nav>
                 <div class="redes">
                     <ul>
-                        <li><a target="_blank" href="" class="fa fa-instagram"></a></li>
-                        <li><a target="_blank" href="" class="fa fa-pinterest"></a></li>
-                        <li><a target="_blank" href="" class="fa fa-facebook"></a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/FrenchsMexico/?fref=ts" class="fa fa-facebook"></a></li>
                     </ul>
                 </div>
             </div>
@@ -73,7 +71,7 @@
 
 
         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
-        
+
 
         {!! Html::script('assets/plugins/tinder/jquery.min.js') !!}
         {!! Html::script('assets/plugins/tinder/jquery.transform2d.js') !!}
