@@ -93,8 +93,8 @@
                   </li>
                   @endforeach
                 </ul>
-                <a href="{{ route( 'recipes' ) }}" title="Ver más recetas." target="_self" class="btn-mas">Ver más recetas.</a>
               </div>
+              <a href="{{ route( 'recipes' ) }}" title="Ver más recetas." target="_self" class="btn-mas">Ver más recetas.</a>
 
               <div class="contador">
                 <p><span class="remaining">0</span>/{{ count( $recipes ) }}</p>

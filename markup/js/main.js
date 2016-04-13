@@ -75,7 +75,7 @@ init = function(){
       _checkIfFinishTindering   = {},
       _showRecipesOrLink        = {};
 
-  $( '#tinderslide .btn-mas' ).hide();
+  $( '.recetas-home .btn-mas' ).hide();
 
   /**
    *  Check if the index of the current liked or disliked element is equal to total tinder elements
@@ -113,7 +113,7 @@ init = function(){
         $( '.recetas-home .container' ).fadeIn( 300 );
       } );
     } else {
-      $( '#tinderslide .btn-mas' ).fadeIn( '300' );
+      $( '.recetas-home .btn-mas' ).css( 'display', 'block' ).fadeIn( '300' );
     }
   }
 
