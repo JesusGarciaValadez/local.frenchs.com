@@ -160,6 +160,7 @@ return [
          * Custom Service Providers
          */
         Collective\Html\HtmlServiceProvider::class,
+        Themsaid\MailPreview\MailPreviewServiceProvider::class
     ],
 
     /*
