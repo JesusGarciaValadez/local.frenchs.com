@@ -20,9 +20,9 @@ class CreateRecipesTable extends Migration
             $table->string( 'name' );
             $table->string( 'photo_big' );
             $table->string( 'photo_small' );
-            $table->integer( 'categorie' )
+            $table->integer( 'categorie_id' )
                   ->unsigned();
-            $table->foreign( 'categorie' )
+            $table->foreign( 'categorie_id' )
                   ->references( 'id' )
                   ->on( 'recipes_categories' );
             $table->enum( 'portions', [

@@ -22,7 +22,7 @@
                         <div class="content-filtro">
                             <label>
                                 <div class="first-icon"><i class="fa fa-tag"></i></div>
-                                <select name="categorie">
+                                <select name="categorie_id">
                                     <option value="" selected>Categoría</option>
                                     @foreach ( $categories as $categorie )
                                     <option value="{{ $categorie->id }}">{{ $categorie->categorie_name }}</option>
@@ -76,11 +76,7 @@
                     @foreach ( $recipes as $recipe )
                     <a href="{{ action( 'RecipeController@index', [ 'id' => $recipe->id ] ) }}" class="receta">
                         <p class="categoria b1">
-                            @foreach ( $categories as $categorie )
-                                @if ( $categorie->id == $recipe->categorie )
-                            {{$categorie->categorie_name}}
-                                @endif
-                            @endforeach
+                            {{$recipe->categorie->categorie_name}}
                         </p>
                         <div class="image">
                             {!! Html::image( 'assets/images/recetas/' . $recipe->photo_small, $recipe->name ) !!}
@@ -126,7 +122,7 @@
                             <p>Te recomendamos tu foto en formato: jpg / 300x300px</p>
                             <label>
                                 <div class="first-icon"><i class="fa fa-tag"></i></div>
-                                <select name="categorie">
+                                <select name="categorie_id">
                                     <option value="" selected>Categoría</option>
                                     @foreach ( $categories as $categorie )
                                     <option value="{{ $categorie->id }}">{{ $categorie->categorie_name }}</option>
@@ -199,13 +195,13 @@
 
         function enviar(){
             var nombre = $( "input[name='name']" ).val();
-            var categoria = $( "select[name='categorie']" ).val();
+            var categoria = $( "select[name='categorie_id']" ).val();
             var tiempo = $( "select[name='preparation_time']" ).val();
             var porciones = $( "select[name='portions']" ).val();
             var rank = $( "select[name='ranking']" ).val();
             var codigoHtml;
             //Obtencion de resultados
-                $.get( "/buscar-recetas", {name :nombre, categorie:categoria,preparation_time:tiempo,portions:porciones,ranking:rank} )
+                $.get( "/buscar-recetas", {name :nombre, categorie_id:categoria,preparation_time:tiempo,portions:porciones,ranking:rank} )
 
                     //Si ocurre un error
                       .fail(function() {
@@ -216,18 +212,24 @@
                       .done(function( data ) {
                             $(".receta").hide();
                             $.each(data, function(i, item) {
-                            
 
-                                codigoHTML = '<a href="/receta/'+item.id+'" class="receta"><p class="categoria b1">entrada<div class="image"><img src="/assets/images/recetas/'+item.photo_small+'" alt="'+item.name+'"></div><p class="nombre">'+item.name+'</p><p class="porciones">'+item.portions+' porciones</p><p class="tiempo">Tiempo de preparación: '+item.preparation_time+'</p><div class="ranking"><span class="stars s'+item.ranking+'"></span></div></a>';
-                                
+                                switch( item.categorie_id ) {
+                                    @foreach ( $categories as $categorie )
+                                    case {{ $categorie->id }}:
+                                        item.categorie_name = '{{ $categorie->categorie_name }}';
+                                        break;
+                                    @endforeach
+                                }
+                                codigoHTML = '<a href="/receta/'+item.id+'" class="receta"><p class="categoria b1">' + item.categorie_name + '<div class="image"><img src="/assets/images/recetas/'+item.photo_small+'" alt="'+item.name+'"></div><p class="nombre">'+item.name+'</p><p class="porciones">'+item.portions+' porciones</p><p class="tiempo">Tiempo de preparación: '+item.preparation_time+'</p><div class="ranking"><span class="stars s'+item.ranking+'"></span></div></a>';
+
                                 $(".content-grid").append(codigoHTML);
 
                             });
-                            
-                             
+
+
                       });
         };
-         
+
     </script>
         }
 @endsection

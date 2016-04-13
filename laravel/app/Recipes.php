@@ -17,7 +17,7 @@ class Recipes extends Model
       'name',
       'photo_big',
       'photo_small',
-      'categorie',
+      'categorie_id',
       'portions',
       'preparation_time',
       'cooking_time',
@@ -42,4 +42,9 @@ class Recipes extends Model
      * @var array
      */
     protected $hidden   = [ '_token' ];
+
+    public function categorie ()
+    {
+      return $this->belongsTo( RecipesCategories::class );
+    }
 }

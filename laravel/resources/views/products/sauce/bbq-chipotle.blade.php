@@ -85,11 +85,7 @@
                   @foreach ( $recipes as $recipe )
                   <a href="{{ action( 'RecipeController@index', [ 'id' => $recipe->id ] ) }}" class="receta">
                     <p class="categoria b2">
-                      @foreach ( $categories as $categorie )
-                        @if ( $categorie->id == $recipe->categorie )
-                      {{$categorie->categorie_name}}
-                        @endif
-                      @endforeach
+                      {{$recipe->categorie->categorie_name}}
                     </p>
                     <div class="image">
                       {!! Html::image( 'assets/images/recetas/' . $recipe->photo_small, $recipe->name ) !!}

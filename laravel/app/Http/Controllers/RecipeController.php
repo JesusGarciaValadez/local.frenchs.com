@@ -37,7 +37,7 @@ class RecipeController extends Controller
     $recipe[ 'photo_small' ]          = "";
     $recipe[ 'old_photo_big' ]        = $this->_recipe[ 'photo_big' ];
     $recipe[ 'old_photo_small' ]      = $this->_recipe[ 'photo_small' ];
-    $recipe[ 'categorie' ]            = $this->_recipe[ 'categorie' ];
+    $recipe[ 'categorie_id' ]         = $this->_recipe[ 'categorie_id' ];
     $recipe[ 'portions' ]             = $this->_recipe[ 'portions' ];
     $recipe[ 'preparation_time' ]     = $this->_recipe[ 'preparation_time' ];
     $recipe[ 'cooking_time' ]         = $this->_recipe[ 'cooking_time' ];
@@ -53,7 +53,6 @@ class RecipeController extends Controller
      */
     return view( 'recipes.edit', [
                  'recipe'     => $recipe,
-                 'categories' => $this->_categories,
                  'domain'     => $this->_domain ] );
   }
 
@@ -73,7 +72,7 @@ class RecipeController extends Controller
       'name'                => 'required|max:255',
       'photo_big'           => 'sometimes|image|mimes:png,jpeg',
       'photo_small'         => 'sometimes|image|mimes:png,jpeg',
-      'categorie'           => 'required|exists:recipes_categories,id',
+      'categorie_id'        => 'required|exists:recipes_categories,id',
       'portions'            => 'required|in:1,2,3,4,5,6',
       'preparation_time'    => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
       'cooking_time'        => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
@@ -153,7 +152,7 @@ class RecipeController extends Controller
     $recipe[ 'name' ]                 = $request[ 'name' ];
     $recipe[ 'photo_big' ]            = $request[ 'photo_big' ];
     $recipe[ 'photo_small' ]          = $request[ 'photo_small' ];
-    $recipe[ 'categorie' ]            = $request[ 'categorie' ];
+    $recipe[ 'categorie_id' ]         = $request[ 'categorie_id' ];
     $recipe[ 'portions' ]             = $request[ 'portions' ];
     $recipe[ 'preparation_time' ]     = $request[ 'preparation_time' ];
     $recipe[ 'cooking_time' ]         = $request[ 'cooking_time' ];

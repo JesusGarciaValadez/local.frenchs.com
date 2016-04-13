@@ -42,7 +42,7 @@ class RecipesController extends Controller
       'user_email'        => 'required|max:255|email',
       'name'              => 'required|max:255',
       'photo_big'         => 'required|mimes:png,jpeg',
-      'categorie'         => 'required|exists:recipes_categories,id',
+      'categorie_id'      => 'required|exists:recipes_categories,id',
       'portions'          => 'required|in:1,2,3,4,5,6',
       'preparation_time'  => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
       'cooking_time'      => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
@@ -88,7 +88,7 @@ class RecipesController extends Controller
         return response()->json( [ 'response_message' => "Error: There's is not file to upload", 'response_code' => '2' ] );
       }
 
-      $recipe[ 'categorie' ]            = intval( $recipe[ 'categorie' ] );
+      $recipe[ 'categorie_id' ]         = intval( $recipe[ 'categorie_id' ] );
       $recipe[ 'ingredients_desktop' ]  = $recipe[ 'ingredients' ];
       $recipe[ 'ingredients_mobile' ]   = $recipe[ 'ingredients' ];
 
@@ -136,13 +136,13 @@ class RecipesController extends Controller
       array_push( $this->_search, "name like '%${recipe[ 'name' ]}%'" );
     }
 
-    if ( empty( $recipe[ 'categorie' ] ) )
+    if ( empty( $recipe[ 'categorie_id' ] ) )
     {
-      unset( $recipe[ 'categorie' ] );
+      unset( $recipe[ 'categorie_id' ] );
     }
     else
     {
-      array_push( $this->_search, "categorie = '${recipe[ 'categorie' ]}'" );
+      array_push( $this->_search, "categorie_id = '${recipe[ 'categorie_id' ]}'" );
     }
 
     if ( empty( $recipe[ 'preparation_time' ] ) )
@@ -174,7 +174,7 @@ class RecipesController extends Controller
 
     $validator = \Validator::make( $recipe, [
       'name'              => 'sometimes|required|max:255',
-      'categorie'         => 'sometimes|required|exists:recipes_categories,id',
+      'categorie_id'      => 'sometimes|required|exists:recipes_categories,id',
       'preparation_time'  => 'sometimes|required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
       'portions'          => 'sometimes|required|in:1,2,3,4,5,6',
       'ranking'           => 'sometimes|required|in:1,2,3,4,5'
@@ -198,8 +198,7 @@ class RecipesController extends Controller
       if ( !empty( $search ) )
       {
         // Check if there's a recipe with the parameters received
-        $recipes    = Recipes::select('id', 'name', 'photo_small', 'portions', 'preparation_time', 'ranking','categorie' )
-                             ->whereRaw( $search )
+        $recipes    = Recipes::whereRaw( $search )
                              ->orderBy( 'created_at', 'desc' )
                              ->get();
 

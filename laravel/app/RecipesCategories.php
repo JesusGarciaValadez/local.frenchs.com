@@ -19,4 +19,10 @@ class RecipesCategories extends Model
      * @var array
      */
     protected $guarded = [ 'id', 'created_at', 'updated_at' ];
+
+    // Obtains all the recipes with a categorie
+    public function recipes ()
+    {
+        return $this->hasMany( Recipes::class );
+    }
 }
