@@ -192,7 +192,7 @@ class RecipesController extends Controller
     }
     else
     {
-      $search = implode( 'OR ', array_flatten( $this->_search ) );
+      $search = implode( 'AND ', array_flatten( $this->_search ) );
       $search = ( !empty( $search ) ) ? $search . " AND active = true" : "active = true";
 
       if ( !empty( $search ) )
