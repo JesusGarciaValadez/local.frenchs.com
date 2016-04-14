@@ -80,10 +80,10 @@
             </div>
 
             <div class="form-group{{ $errors->has( 'categorie' ) ? ' has-error' : '' }}">
-              {!! Form::label( 'categorie', 'Categoria', [ 'class' => 'col-md-4 control-label' ] ) !!}
+              {!! Form::label( 'categorie_id', 'Categoria', [ 'class' => 'col-md-4 control-label' ] ) !!}
 
               <div class="col-md-6">
-                {!! Form::select( 'categorie', $categories, $recipe[ 'categorie_id' ], [ 'class' => 'form-control' ] ) !!}
+                {!! Form::select( 'categorie_id', $categories, $recipe[ 'categorie_id' ], [ 'class' => 'form-control' ] ) !!}
 
                 @if ( $errors->has( 'categorie' ) )
                   <span class="help-block">

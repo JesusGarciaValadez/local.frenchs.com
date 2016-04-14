@@ -30,6 +30,7 @@ class RecipesController extends Controller
   {
     // Retrieving of all input recipe from contact form
     $recipe         = $request->all();
+    // unset( $recipe[ 'Enviar' ] );
 
     // Setting the subject for the email sended to alert about a new recipe is sended
     $this->_subject = 'Han enviado una nueva receta.';
@@ -98,11 +99,12 @@ class RecipesController extends Controller
       // Persist the recipe into the database. Checking if there's an existing recipe with this information.
       // If not, stores the new recipe.
       $recipe[ 'id' ] = Recipes::firstOrCreate( $recipe );
+      $recipes        = Recipes::findOrFail( [ 'id' => $recipe[ 'id' ]->id ] );
 
       /*
        * Sending the email alerting about a new recipe.
        */
-      \Mail::send( 'emails.upload', [ 'recipe' => $recipe ], function( $message )
+      \Mail::send( 'emails.upload', [ 'recipes' => $recipes ], function( $message )
       {
         // Setting sender
         $message->from( env( 'CONTACT_SENDER' ), env( 'UPLOAD_APP_NAME' ) );
