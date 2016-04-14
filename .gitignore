@@ -10,3 +10,4 @@ Homestead.json
 *.crt
 *.key
 git-log.txt
+laravel/storage/email-previews/
