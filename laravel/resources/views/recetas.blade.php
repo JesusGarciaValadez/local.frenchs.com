@@ -8,7 +8,7 @@
         <section class="recetas">
             <div class="title">
                 <div class="container">
-                    <h2>Descúbre la variedad de recetas<br>que <span>French’s</span> tiene para ti.</h2>
+                    <h2>Descubre la variedad de recetas<br>que <span>French’s</span> tiene para ti.</h2>
                 </div>
             </div>
             <div class="filtro">
@@ -167,7 +167,7 @@
                             </label>
                             {!! Form::textarea( 'ingredients', null, [ 'class' => 'ingredientes', 'placeholder' => 'INGREDIENTES' ] ) !!}
                             {!! Form::textarea( 'preparation', null, [ 'class' => 'preparacion', 'placeholder' => 'PREPARACIÓN' ] ) !!}
-                            {{-- Form::submit( 'ENVIAR', [ 'class' => 'boton', 'id' => 'subit-receta', 'name' => 'Enviar' ] ) --}}
+                            {!! Form::submit( 'ENVIAR', [ 'class' => 'boton', 'id' => 'subit-receta', 'name' => 'Enviar' ] ) !!}
                         {!! Form::close() !!}
                         {!! Html::link( '#', 'Subir', [ 'class' => 'boton', 'id' => 'subir-receta' ] ) !!}
                     </div>
