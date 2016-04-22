@@ -12,7 +12,7 @@
             </div>
             <div class="info">
                 <div class="container">
-                    <h2>Descúbre porque<br><span>French’s</span> es la compañía<br>perfecta para tu mesa.</h2>
+                    <h2>Descubre por qué<br><span>French’s</span> es la compañía<br>perfecta para tu mesa.</h2>
                     <p>
                         La Mostaza French´s se presentó al público en 1904, en la Feria Mundial de St. Louis, ante la presencia de más de 20 millones de personas (aproximadamente un cuarto de la población de Estados Unidos en ese entonces). Junto con la Mostaza French’s, en la misma feria, se introdujo otro clásico estadounidense: el hot dog. La combinación causó sensación y ambos productos tuvieron un éxito rotundo.
                         <br><br>
