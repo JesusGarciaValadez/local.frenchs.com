@@ -1,6 +1,6 @@
 @extends( 'layouts.layout' )
 
-@section( 'title', "Mostaza BBQ Chipotle" )
+@section( 'title', "Nueva Mostaza BBQ Chipotle" )
 
 @section( 'content' )
         <div class="cover-interior-b"></div>
@@ -12,8 +12,8 @@
                 </div>
                 <div class="right">
                     <div class="descripcion">
-                        <h2>Mostaza <span>BBQ Chipotle</span></h2>
-                        <p>French's BBQ Classic contiene el sabor francés del tomate con un toque picante, dulce y fuerte a la vez.</p>
+                        <h2>Nueva Mostaza <span>BBQ Chipotle</span></h2>
+                        <p>La Nueva French's BBQ Classic contiene el sabor francés del tomate con un toque picante, dulce y fuerte a la vez.</p>
                         <p>Esta salsa de consistencia espectacular no puede faltar en tu alacena.</p>
                     </div>
                     <div class="ingredientes">
@@ -23,7 +23,7 @@
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
-                        <p>Cont. Neto: 12oz (396g)</p>
+                        <p>Cont. Neto: 12oz (396g.)</p>
                         <p>Porción: 3 Calorías: 208</p>
                         <table>
                             <thead>
@@ -81,7 +81,7 @@
         <section class="grid">
             <div class="container">
                 <h2>Recetas</h2>
-                <p>que podrías preparar con Mostaza BBQ Chipotle</p>
+                <p>que podrías preparar con la Nueva Mostaza BBQ Chipotle</p>
                 <div class="content-grid">
                   @foreach ( $recipes as $recipe )
                   <a href="{{ action( 'RecipeController@index', [ 'id' => $recipe->id ] ) }}" class="receta">
