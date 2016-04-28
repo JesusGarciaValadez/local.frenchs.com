@@ -65,6 +65,19 @@ return [
             'strict'        => false,
         ],
 
+        'mysql_test' => [
+            'driver'        => 'mysql',
+            'host'          => env('DB_HOST', 'localhost'),
+            'unix_socket'   => env('DB_SOCKET', ''),
+            'database'      => env('DB_DATABASE', 'forge') . '73s7_',
+            'username'      => env('DB_USERNAME', 'forge'),
+            'password'      => env('DB_PASSWORD', ''),
+            'charset'       => 'utf8',
+            'collation'     => 'utf8_unicode_ci',
+            'prefix'        => '',
+            'strict'        => false,
+        ],
+
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'localhost'),
