@@ -1,6 +1,6 @@
 @extends( 'layouts.layout' )
 
-@section( 'title', "Mostaza BBQ Chipotle" )
+@section( 'title', "Nueva Mostaza BBQ Chipotle" )
 
 @section( 'content' )
         <div class="cover-interior-b"></div>
@@ -12,7 +12,7 @@
                 </div>
                 <div class="right">
                     <div class="descripcion">
-                        <h2>Mostaza <span>BBQ Chipotle</span></h2>
+                        <h2>Nueva Mostaza <span>BBQ Chipotle</span></h2>
                         <p>Salsa hecha a base de tomate de la más alta calidad, con sabor a chipotle ahumado, creada especialmente para los conocedores. No contiene almidones.</p>
                     </div>
                     <div class="ingredientes">
@@ -22,7 +22,7 @@
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
-                        <p>Cont. Neto: 12oz (396g)</p>
+                        <p>Cont. Neto: 12oz (396g.)</p>
                         <p>Porción: 3 Calorías: 208</p>
                         <table>
                             <thead>
@@ -80,7 +80,7 @@
         <section class="grid">
             <div class="container">
                 <h2>Recetas</h2>
-                <p>que podrías preparar con Mostaza BBQ Chipotle</p>
+                <p>que podrías preparar con la Nueva Mostaza BBQ Chipotle</p>
                 <div class="content-grid">
                   @foreach ( $recipes as $recipe )
                   <a href="{{ action( 'RecipeController@index', [ 'id' => $recipe->id ] ) }}" class="receta">
