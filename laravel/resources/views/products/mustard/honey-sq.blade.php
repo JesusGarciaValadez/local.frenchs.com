@@ -34,7 +34,7 @@
                             <tbody>
                                 <tr>
                                   <td>Grasa Total</td>
-                                  <td>0g</td>
+                                  <td>1g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>

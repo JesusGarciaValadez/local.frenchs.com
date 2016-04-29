@@ -60,22 +60,22 @@
                                 </tr>
                                 <tr>
                                   <td>Carbohidratos totales</td>
-                                  <td>19g</td>
+                                  <td>29g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Fibra</td>
-                                  <td>0g</td>
+                                  <td>Fibra Dietética</td>
+                                  <td>1g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
                                   <td>Azúcares</td>
-                                  <td><0g</td>
+                                  <td>15g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
                                   <td>Proteína</td>
-                                  <td>0g</td>
+                                  <td>2g</td>
                                   <td>0%</td>
                                 </tr>
                             </tbody>

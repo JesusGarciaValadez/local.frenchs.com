@@ -55,7 +55,7 @@
                                 </tr>
                                 <tr>
                                   <td>Sodio</td>
-                                  <td>130g</td>
+                                  <td>644mg</td>
                                   <td>5%</td>
                                 </tr>
                                 <tr>

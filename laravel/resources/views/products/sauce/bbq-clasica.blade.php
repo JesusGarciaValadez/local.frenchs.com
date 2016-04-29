@@ -12,7 +12,7 @@
                 </div>
                 <div class="right">
                     <div class="descripcion">
-                        <h2>Nueva Mostaza <span>BBQ Chipotle</span></h2>
+                        <h2>Nueva Mostaza <span>BBQ Clásica</span></h2>
                         <p>La Nueva French's BBQ Classic contiene el sabor francés del tomate con un toque picante, dulce y fuerte a la vez.</p>
                         <p>Esta salsa de consistencia espectacular no puede faltar en tu alacena.</p>
                     </div>

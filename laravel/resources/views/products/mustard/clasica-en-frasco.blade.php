@@ -69,7 +69,7 @@
                                 </tr>
                                 <tr>
                                   <td>Azúcares</td>
-                                  <td>&lt;0g</td>
+                                  <td>0g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
