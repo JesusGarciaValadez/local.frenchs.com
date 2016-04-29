@@ -13,6 +13,11 @@ class ContactTest extends TestCase
      */
     public function testExample()
     {
-        $this->assertTrue(true);
+      $this->visit( '/contacto' )
+           ->type( 'Jesús Antonio García Valadez', 'name' )
+           ->type( 'jesus.garcia@lunave.com', 'email' )
+           ->type( 'Este es un mensaje de prueba', 'comments' )
+           ->press( 'SEND' )
+           ->seePageIs( '/contacto' );
     }
 }

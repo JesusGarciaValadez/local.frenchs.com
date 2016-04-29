@@ -13,9 +13,7 @@ class UploadRecipeTest extends TestCase
    */
   public function testForm()
   {
-    // $this->assertTrue(true);
     $this->visit( '/recetas' )
-         // ->see('Laravel 5')
          ->type( 'Jesús Antonio García Valadez', 'user_name' )
          ->type( 'jesus.garcia@lunave.com', 'user_email' )
          ->type( 'Alitas BBQ', 'name' )
