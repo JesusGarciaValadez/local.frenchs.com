@@ -1,6 +1,6 @@
 @extends( 'layouts.layout' )
 
-@section( 'title', "Mostaza BBQ Chipotle" )
+@section( 'title', "Nueva Mostaza BBQ Chipotle" )
 
 @section( 'content' )
         <div class="cover-interior-b"></div>
@@ -12,7 +12,7 @@
                 </div>
                 <div class="right">
                     <div class="descripcion">
-                        <h2>Mostaza <span>BBQ Chipotle</span></h2>
+                        <h2>Nueva Mostaza <span>BBQ Chipotle</span></h2>
                         <p>Salsa hecha a base de tomate de la más alta calidad, con sabor a chipotle ahumado, creada especialmente para los conocedores. No contiene almidones.</p>
                     </div>
                     <div class="ingredientes">

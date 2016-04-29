@@ -23,8 +23,8 @@
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
-                        <p>Cont. Neto: 12oz (340g)</p>
-                        <p>Porción: 1 cucharada (5g) Total: 79 Calorías: 0</p>
+                        <p>Cont. Neto: 7.97oz (226g)</p>
+                        <p>Porción: 1 cucharada (7.5g) Total: 30.13 Calorías: 98</p>
                         <table>
                             <thead>
                                 <tr>
@@ -35,7 +35,7 @@
                             <tbody>
                                 <tr>
                                   <td>Grasa Total</td>
-                                  <td>0g</td>
+                                  <td>1g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
@@ -55,27 +55,27 @@
                                 </tr>
                                 <tr>
                                   <td>Sodio</td>
-                                  <td>55mg</td>
+                                  <td>333mg</td>
                                   <td>2%</td>
                                 </tr>
                                 <tr>
                                   <td>Carbohidratos totales</td>
-                                  <td>0g</td>
+                                  <td>1g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Fibra</td>
-                                  <td>0g</td>
+                                  <td>Fibra Dietética</td>
+                                  <td>1g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
                                   <td>Azúcares</td>
-                                  <td><0g</td>
+                                  <td>0g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
                                   <td>Proteína</td>
-                                  <td>0g</td>
+                                  <td>1g</td>
                                   <td>0%</td>
                                 </tr>
                             </tbody>

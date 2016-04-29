@@ -1,6 +1,6 @@
 @extends( 'layouts.layout' )
 
-@section( 'title', "Mostaza BBQ Chipotle" )
+@section( 'title', "Nueva Mostaza BBQ Chipotle" )
 
 @section( 'content' )
         <div class="cover-interior-b"></div>
@@ -12,8 +12,8 @@
                 </div>
                 <div class="right">
                     <div class="descripcion">
-                        <h2>Mostaza <span>BBQ Chipotle</span></h2>
-                        <p>French's BBQ Classic contiene el sabor francés del tomate con un toque picante, dulce y fuerte a la vez.</p>
+                        <h2>Nueva Mostaza <span>BBQ Chipotle</span></h2>
+                        <p>La Nueva French's BBQ Classic contiene el sabor francés del tomate con un toque picante, dulce y fuerte a la vez.</p>
                         <p>Esta salsa de consistencia espectacular no puede faltar en tu alacena.</p>
                     </div>
                     <div class="ingredientes">
