@@ -23,8 +23,8 @@
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
-                        <p>Cont. Neto: 5.22oz (148g)</p>
-                        <p>Porción: 1 cucharada (5g) Total: 29.6 Calorías: 120</p>
+                        <p>Cont. Neto: 5.5oz (156g)</p>
+                        <p>Porción: 1 cucharada (5g) Total: 31.2 Calorías: 120</p>
                         <table>
                             <thead>
                                 <tr>

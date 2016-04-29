@@ -52,7 +52,7 @@
                             <p class="nombre">French's Worcestershire Sauce - Salsa inglesa</p>
                             <div class="gramos">148g</div>
                             <div class="gramos">295g</div>
-                            <div class="gramos">3,78l</div>
+                            <div class="gramos">4kg</div>
                         </div>
                         <div class="producto">
                             <a href="{{ route( 'bbq-clasica' ) }}">{!! Html::image( 'assets/images/slider/s9-producto.png', "Nueva French's BBQ Classic - Salsa BBQ Clásica" ) !!}</a>
