@@ -23,7 +23,7 @@
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
                         <p>Cont. Neto: 6oz (170g)</p>
-                        <p>Porción: 1 cucharada (5g) Total: 34 Calorías: 0</p>
+                        <p>Porción: 1 cucharada (5.6g) Total: 30.3 Calorías: 74</p>
                         <table>
                             <thead>
                                 <tr>
@@ -34,7 +34,7 @@
                             <tbody>
                                 <tr>
                                   <td>Grasa Total</td>
-                                  <td>0g</td>
+                                  <td>1g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
@@ -54,27 +54,27 @@
                                 </tr>
                                 <tr>
                                   <td>Sodio</td>
-                                  <td>55g</td>
+                                  <td>333g</td>
                                   <td>2%</td>
                                 </tr>
                                 <tr>
                                   <td>Carbohidratos totales</td>
-                                  <td>0g</td>
+                                  <td>1g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Fibra</td>
-                                  <td>0g</td>
+                                  <td>Fibra Dietética</td>
+                                  <td>1g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
                                   <td>Azúcares</td>
-                                  <td><0g</td>
+                                  <td>&lt;0g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
                                   <td>Proteína</td>
-                                  <td>0g</td>
+                                  <td>1g</td>
                                   <td>0%</td>
                                 </tr>
                             </tbody>

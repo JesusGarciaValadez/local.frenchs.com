@@ -23,8 +23,8 @@
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
-                        <p>Cont. Neto: 12oz (340g)</p>
-                        <p>Porción: 1 cucharada (5g) Total: 88 Calorías: 0</p>
+                        <p>Cont. Neto: 5.22oz (148g)</p>
+                        <p>Porción: 1 cucharada (5g) Total: 29.6 Calorías: 120</p>
                         <table>
                             <thead>
                                 <tr>
@@ -55,12 +55,12 @@
                                 </tr>
                                 <tr>
                                   <td>Sodio</td>
-                                  <td>65g</td>
+                                  <td>1.4g</td>
                                   <td>1%</td>
                                 </tr>
                                 <tr>
                                   <td>Carbohidratos totales</td>
-                                  <td>1g</td>
+                                  <td>19g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
