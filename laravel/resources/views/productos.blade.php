@@ -51,7 +51,7 @@
                             <a href="{{ route( 'inglesa' ) }}">{!! Html::image( 'assets/images/slider/s8-producto.png', "French's Worcestershire Sauce - Salsa inglesa" ) !!}</a>
                             <p class="nombre">French's Worcestershire Sauce - Salsa inglesa</p>
                             <div class="gramos">156g</div>
-                            <div class="gramos">295g</div>
+                            <div class="gramos">312g</div>
                             <div class="gramos">4kg</div>
                         </div>
                         <div class="producto">
