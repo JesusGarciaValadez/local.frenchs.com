@@ -13,22 +13,22 @@
                 <div class="right">
                     <div class="descripcion">
                         <h2>Nueva Mostaza <span>BBQ Chipotle</span></h2>
-                        <p>Salsa hecha a base de tomate de la más alta calidad, con sabor a chipotle ahumado, creada especialmente para los conocedores. No contiene almidones.</p>
+                        <p>Descubre el rico sabor de la Nueva French's&copy; Salsa BBQ Sabor Chipotle. Salsa hecha a base de tomate de la más alta calidad, con sabor a chipotle ahumado, creada especialmente para los conocedores. No contiene almidones. Utiliza nuestra salsa en tu próxima parrillada.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
-                        <p>Vinagre, azúcar, pasta de tomate, aga, sal, chile (pimienta de cayena), saborizante natural humo, harina de mostaza, chile chipotle, paprika ahumada, cebolla en polvo, saborizante natural, especias, ajo en polvo, y benzonato de sodio (como conservador).</p>
+                        <p>Vinagre, azúcar, pasta de tomate, aga, sal, chile (pimienta de cayena), saborizante natural humo, harina de mostaza, chile chipotle, paprika ahumada, cebolla en polvo, saborizante natural, especias, ajo en polvo, y benzonato de sodio (como conservador). Contiene: mostaza.</p>
                     </div>
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
-                        <p>Cont. Neto: 12oz (396g)</p>
-                        <p>Porción: 3 Calorías: 463</p>
+                        <p>Cont. Neto: 396g</p>
+                        <p>Porción: 130g Calorías: 152 (646 kJ)</p>
                         <table>
                             <thead>
                                 <tr>
-                                  <th colspan="2">Cantidades por porción.</th>
-                                  <th>0% DV*</th>
+                                  <th colspan="2"><strong>Cantidades por porción.</strong></th>
+                                  <th>DV*</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,10 +42,6 @@
                                 </tr>
                                 <tr>
                                   <td>Grasas Trans</td>
-                                  <td>0g</td>
-                                </tr>
-                                <tr>
-                                  <td>Colesterol</td>
                                   <td>0g</td>
                                 </tr>
                                 <tr>
@@ -70,7 +66,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="f-table">* Porcentaje de valor diario (DV) estan basados en una dieta de 2,000 calorías.</p>
                     </div>
                 </div>
                 <p>{!! Html::link( 'productos', 'Todos los productos', [ 'class' => 'boton', 'id' => '' ] ) !!}</p>
