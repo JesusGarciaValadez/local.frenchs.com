@@ -176,7 +176,7 @@
                             <span class="fa fa-times fa-2x"></span>
                             <div class="icono-gracias"></div>
                             <h2>Gracias por subir tu receta</h2>
-                            <p>y ser parte de French´s</p>
+                            <p>y ser parte de French's</p>
                         </div>
                     </div>
                 </div>

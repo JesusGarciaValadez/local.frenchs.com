@@ -1,4 +1,4 @@
-@section( 'footer' ) 
+@section( 'footer' )
         <footer>
             <div class="container">
                 <nav class="menu-footer left">
@@ -8,7 +8,7 @@
                     </ul>
                 </nav>
                 <div class="derechos right">
-                    <p>© 2015  French´s MX All rights reserved.</p>
+                    <p>© 2015  French's MX All rights reserved.</p>
                 </div>
             </div>
         </footer>

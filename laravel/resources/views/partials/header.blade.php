@@ -1,9 +1,9 @@
-@section( 'header' ) 
+@section( 'header' )
         <header>
             <div class="head">
                 <div class="hamburguesa"></div>
                 <div class="btn-close-menu"></div>
-                <a href="{{ route( 'home' ) }}"><h1 class="logo"><span>French´s</span></h1></a>           
+                <a href="{{ route( 'home' ) }}"><h1 class="logo"><span>French's</span></h1></a>
                 <nav class="menu">
                     <ul>
                         <li><a href="{{ route( 'about' ) }}">SOBRE NOSOTROS</a></li>
