@@ -23,7 +23,7 @@
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
                         <p>Cont. Neto: 170g</p>
-                        <p>Porción: 1 cucharada (30g) Calorías: 13 (54 kj)</p>
+                        <p>Porción: 1 cucharada (30g) Calorías: 13 (54 kJ)</p>
                         <table>
                             <thead>
                                 <tr>
