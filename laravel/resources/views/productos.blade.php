@@ -18,7 +18,6 @@
                         <div class="producto">
                             <a href="{{ route( 'clasica-sq' ) }}">{!! Html::image( 'assets/images/slider/s1-producto.png', "French's Classic Yellow - Mostaza Clásica" ) !!}</a>
                             <p class="nombre">French's Classic Yellow - Mostaza Clásica</p>
-                            <div class="gramos">7g</div>
                             <div class="gramos">226g</div>
                             <div class="gramos">397g</div>
                             <div class="gramos">567g</div>
@@ -61,7 +60,7 @@
                         </div>
                         <div class="producto">
                             <a href="{{ route( 'bbq-chipotle' ) }}">{!! Html::image( 'assets/images/slider/s10-producto.png', "Nueva French's BBQ Chipotle - Salsa BBQ con chipotle" ) !!}</a>
-                            <p class="nombre">Nueva French's BBQ Chipotle - Salsa BBQ con chipotle</p>
+                            <p class="nombre">Nueva French's BBQ Chipotle - Salsa BBQ sabor chipotle</p>
                             <div class="gramos">396g</div>
                         </div>
                     </div>
