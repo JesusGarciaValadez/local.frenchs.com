@@ -17,18 +17,18 @@
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
-                        <p>Vinagre destilado, agua, semilla de mostaza grado 1, sal,  cúrcuma, paprika especias, saborizantes naturales y polvo de ajo.</p>
+                        <p>Vinagre, agua, semilla de mostaza, sal, cúrcuma, paprika, especia, saborizantes naturales y ajo en polvo. Contiene: mostaza.</p>
                     </div>
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
-                        <p>Cont. Neto: 6oz (170g)</p>
-                        <p>Porción: 1 cucharada (5.6g) Total: 30.3 Calorías: 74</p>
+                        <p>Cont. Neto: 170g</p>
+                        <p>Porción: 1 cucharada (30g) Calorías: 13 (54 kj)</p>
                         <table>
                             <thead>
                                 <tr>
-                                  <th colspan="2">Cantidades por porción.</th>
-                                  <th>0% DV*</th>
+                                  <th colspan="2"><strong>Cantidades por porción.</strong></th>
+                                  <th>DV*</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,11 +44,6 @@
                                 </tr>
                                 <tr>
                                   <td>Grasas Trans</td>
-                                  <td>0g</td>
-                                  <td>0%</td>
-                                </tr>
-                                <tr>
-                                  <td>Colesterol</td>
                                   <td>0g</td>
                                   <td>0%</td>
                                 </tr>
