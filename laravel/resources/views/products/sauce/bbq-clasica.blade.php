@@ -17,7 +17,8 @@
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
-                        <p>Pasta de tomate, jarábe de maíz de alta fructuosa, jarábe de maíz, agua, vinagre, melaza, sal, harina de mostaza, saborizante natural humo, especias, cebolla en polvo, benzonato de sodio (como conservador), ajo en polvo, azúcar y saborizante natural. Contiene: mostaza.</p>
+                        <p>Pasta de tomate, jarábe de maíz de alta fructuosa, jarábe de maíz, agua, vinagre, melaza, sal, harina de mostaza, saborizante natural humo, especias, cebolla en polvo, benzonato de sodio (como conservador), ajo en polvo, azúcar y saborizante natural.</p>
+                        <p>Contiene: mostaza.</p>
                     </div>
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>

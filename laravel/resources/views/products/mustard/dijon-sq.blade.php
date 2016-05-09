@@ -18,7 +18,8 @@
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
-                        <p>Vinagre, agua, semilla de mostaza, sal, vino Chardonnay (como saborizante), ácido cítrico, ácido tartárico, especias y cúrcuma. Contiene mostaza.</p>
+                        <p>Vinagre, agua, semilla de mostaza, sal, vino Chardonnay (como saborizante), ácido cítrico, ácido tartárico, especias y cúrcuma.</p>
+                        <p>Contiene: mostaza.</p>
                     </div>
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>

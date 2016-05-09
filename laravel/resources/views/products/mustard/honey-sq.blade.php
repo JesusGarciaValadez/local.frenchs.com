@@ -17,7 +17,8 @@
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
-                        <p>Vinagre, agua, azúcar, semilla de mostaza, miel (como saborizante), sal, especias, extracto natural de zanahoria y ajo en polvo. Contiene: mostaza.</p>
+                        <p>Vinagre, agua, azúcar, semilla de mostaza, miel (como saborizante), sal, especias, extracto natural de zanahoria y ajo en polvo.</p>
+                        <p>Contiene: mostaza.</p>
                     </div>
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>

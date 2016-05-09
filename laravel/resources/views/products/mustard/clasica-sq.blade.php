@@ -18,12 +18,13 @@
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
-                        <p>Vinagre, agua, semilla de mostaza, sal, cúrcuma, paprika, especia, saborizantes naturales y ajo en polvo. Contiene mostaza.</p>
+                        <p>Vinagre, agua, semilla de mostaza, sal, cúrcuma, paprika, especia, saborizantes naturales y ajo en polvo.</p>
+                        <p>Contiene: mostaza.</p>
                     </div>
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
-                        <p>Cont. Neto: 226g, 397g, 567g, 2980g</p>
+                        <p>Cont. Neto: 226g, 397g, 567g, 2980g.</p>
                         <p>Porción: 1 cucharada (30g) Calorías: 13 (54 kJ)</p>
                         <table>
                             <thead>

@@ -17,7 +17,8 @@
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
-                        <p>Vinagre, agua, semilla de mostaza, sal, cúrcuma, paprika, especia, saborizantes naturales y ajo en polvo. Contiene: mostaza.</p>
+                        <p>Vinagre, agua, semilla de mostaza, sal, cúrcuma, paprika, especia, saborizantes naturales y ajo en polvo.</p>
+                        <p>Contiene: mostaza.</p>
                     </div>
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>

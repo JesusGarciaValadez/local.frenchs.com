@@ -18,8 +18,10 @@
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
-                        <p>156g y 312g: Vinagre, melaza, jarabe de maíz, agua, sal, azúcar, especias, anchoas, saborizantes naturales, ácido cítrico, semillas de apio, goma xantana y extracto de tamarindo. Contiene: pescado y soya.</p>
-                        <p>4kg: Vinagre, melaza, agua, jarabe de maíz, sal, colorante Caramelo clase iv, azúcar, especias, anchoas, saborizantes naturales, y extracto de tamarindo. Contiene: soya.</p>
+                        <p>156g y 312g: Vinagre, melaza, jarabe de maíz, agua, sal, azúcar, especias, anchoas, saborizantes naturales, ácido cítrico, semillas de apio, goma xantana y extracto de tamarindo.</p>
+                        <p>Contiene: pescado y soya.</p>
+                        <p>4kg: Vinagre, melaza, agua, jarabe de maíz, sal, colorante Caramelo clase iv, azúcar, especias, anchoas, saborizantes naturales, y extracto de tamarindo.</p>
+                        <p>Contiene: soya.</p>
                     </div>
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
@@ -27,7 +29,7 @@
                         <table>
                             <thead>
                                 <tr>
-                                  <th></th>
+                                  <th>Porciones</th>
                                   <th>156g</th>
                                   <th>312g</th>
                                   <th>4kg</th>
@@ -68,7 +70,7 @@
                                   <td>Sodio</td>
                                   <td>1.4g</td>
                                   <td>45g</td>
-                                  <td>45g</td>
+                                  <td>43g</td>
                                 </tr>
                                 <tr>
                                   <td>Carbohidratos totales</td>
