@@ -11,3 +11,4 @@ Homestead.json
 *.key
 git-log.txt
 laravel/storage/email-previews/
+main.css.map
