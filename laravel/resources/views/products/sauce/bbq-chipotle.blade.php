@@ -3,7 +3,7 @@
 @section( 'title', "Nueva Mostaza BBQ Chipotle" )
 
 @section( 'content' )
-        <div class="cover-interior-b"></div>
+        <div class="cover-interior-b bbq-chipotle"></div>
 
         <section class="detalle-producto">
             <div class="container">
