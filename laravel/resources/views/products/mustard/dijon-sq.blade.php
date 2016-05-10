@@ -14,7 +14,7 @@
                     <div class="descripcion">
                         <h2>Mostaza <span>Dijon</span></h2>
                         <p>Disfruta del incomparable sabor de la Mostaza Dijon que te ofrece French’s.</p>
-                        <p>La combinación de ingredientes naturales y vino blanco chardonnay le dará un toque gourmet a tus platillos.</p>
+                        <p>La combinación de ingredientes naturales y vino blanco Chardonnay le dará un toque gourmet a tus platillos.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
