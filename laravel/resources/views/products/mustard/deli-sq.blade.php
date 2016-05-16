@@ -17,24 +17,25 @@
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
-                        <p>Vinagre destilado, agua, semilla de mostaza grado 1, sal, especias, cúrcuma, saborizantes naturales,</p>
+                        <p>Vinagre, semilla de mostaza, agua, sal, especias, cúrcuma y saborizantes naturales.</p>
+                        <p>Contiene: mostaza.</p>
                     </div>
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
-                        <p>Cont. Neto: 12oz (340g)</p>
-                        <p>Porción: 1 cucharada (5g) Total: 68 Calorías: 5</p>
+                        <p>Cont. Neto: 340g</p>
+                        <p>Porción: 1 cucharada (30g) Calorías: 30 (125 kJ)</p>
                         <table>
                             <thead>
                                 <tr>
-                                  <th colspan="2">Cantidades por porción.</th>
-                                  <th>0% DV*</th>
+                                  <th colspan="2"><strong>Cantidades por porción.</strong></th>
+                                  <th>DV*</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                   <td>Grasa Total</td>
-                                  <td>0g</td>
+                                  <td>2g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
@@ -48,33 +49,28 @@
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Colesterol</td>
-                                  <td>0g</td>
-                                  <td>0%</td>
-                                </tr>
-                                <tr>
                                   <td>Sodio</td>
-                                  <td>80g</td>
+                                  <td>474g</td>
                                   <td>3%</td>
                                 </tr>
                                 <tr>
                                   <td>Carbohidratos totales</td>
-                                  <td>0g</td>
+                                  <td>2g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
-                                  <td>Fibra</td>
-                                  <td>0g</td>
+                                  <td>Fibra Dietética</td>
+                                  <td>1g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
                                   <td>Azúcares</td>
-                                  <td><0g</td>
+                                  <td>0g</td>
                                   <td>0%</td>
                                 </tr>
                                 <tr>
                                   <td>Proteína</td>
-                                  <td>0g</td>
+                                  <td>2g</td>
                                   <td>0%</td>
                                 </tr>
                             </tbody>

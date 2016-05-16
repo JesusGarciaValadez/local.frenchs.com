@@ -18,7 +18,6 @@
                         <div class="producto">
                             <a href="{{ route( 'clasica-sq' ) }}">{!! Html::image( 'assets/images/slider/s1-producto.png', "French's Classic Yellow - Mostaza Clásica" ) !!}</a>
                             <p class="nombre">French's Classic Yellow - Mostaza Clásica</p>
-                            <div class="gramos">7g</div>
                             <div class="gramos">226g</div>
                             <div class="gramos">397g</div>
                             <div class="gramos">567g</div>
@@ -50,19 +49,19 @@
                         <div class="producto">
                             <a href="{{ route( 'inglesa' ) }}">{!! Html::image( 'assets/images/slider/s8-producto.png', "French's Worcestershire Sauce - Salsa inglesa" ) !!}</a>
                             <p class="nombre">French's Worcestershire Sauce - Salsa inglesa</p>
-                            <div class="gramos">148g</div>
-                            <div class="gramos">295g</div>
-                            <div class="gramos">3,78l</div>
+                            <div class="gramos">156g</div>
+                            <div class="gramos">312g</div>
+                            <div class="gramos">4kg</div>
                         </div>
                         <div class="producto">
-                            <a href="{{ route( 'bbq-clasica' ) }}">{!! Html::image( 'assets/images/slider/s9-producto.png', "French's BBQ Classic - Salsa BBQ Clásica" ) !!}</a>
-                            <p class="nombre">French's BBQ Classic - Salsa BBQ Clásica</p>
-                            <div class="gramos">397g</div>
+                            <a href="{{ route( 'bbq-clasica' ) }}">{!! Html::image( 'assets/images/slider/s9-producto.png', "Nueva French's BBQ Classic - Salsa BBQ Clásica" ) !!}</a>
+                            <p class="nombre">Nueva French's BBQ Classic - Salsa BBQ Clásica</p>
+                            <div class="gramos">396g</div>
                         </div>
                         <div class="producto">
-                            <a href="{{ route( 'bbq-chipotle' ) }}">{!! Html::image( 'assets/images/slider/s10-producto.png', "French's BBQ Chipotle - Salsa BBQ con chipotle" ) !!}</a>
-                            <p class="nombre">French's BBQ Chipotle - Salsa BBQ con chipotle</p>
-                            <div class="gramos">397g</div>
+                            <a href="{{ route( 'bbq-chipotle' ) }}">{!! Html::image( 'assets/images/slider/s10-producto.png', "Nueva French's BBQ Chipotle - Salsa BBQ con chipotle" ) !!}</a>
+                            <p class="nombre">Nueva French's BBQ Chipotle - Salsa BBQ sabor chipotle</p>
+                            <div class="gramos">396g</div>
                         </div>
                     </div>
                 </div>

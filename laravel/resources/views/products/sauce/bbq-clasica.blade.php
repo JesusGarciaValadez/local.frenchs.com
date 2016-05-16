@@ -1,6 +1,6 @@
 @extends( 'layouts.layout' )
 
-@section( 'title', "Mostaza BBQ Chipotle" )
+@section( 'title', "Nueva Mostaza BBQ Chipotle" )
 
 @section( 'content' )
         <div class="cover-interior-b"></div>
@@ -12,24 +12,24 @@
                 </div>
                 <div class="right">
                     <div class="descripcion">
-                        <h2>Mostaza <span>BBQ Chipotle</span></h2>
-                        <p>French's BBQ Classic contiene el sabor francés del tomate con un toque picante, dulce y fuerte a la vez.</p>
-                        <p>Esta salsa de consistencia espectacular no puede faltar en tu alacena.</p>
+                        <h2>Nueva Mostaza <span>BBQ Clásica</span></h2>
+                        <p>La Nueva French's BBQ Classica contiene el rico sabor del tomate con un toque dulce y fuerte a la vez. Crea tu parrillada con French's. Usa esta salsa para marinar costillas, pollo y carne.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
                         <p>Pasta de tomate, jarábe de maíz de alta fructuosa, jarábe de maíz, agua, vinagre, melaza, sal, harina de mostaza, saborizante natural humo, especias, cebolla en polvo, benzonato de sodio (como conservador), ajo en polvo, azúcar y saborizante natural.</p>
+                        <p>Contiene: mostaza.</p>
                     </div>
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
-                        <p>Cont. Neto: 12oz (396g)</p>
-                        <p>Porción: 3 Calorías: 208</p>
+                        <p>Cont. Neto: 396g</p>
+                        <p>Porción: 130g Calorías: 208 (884 kJ)</p>
                         <table>
                             <thead>
                                 <tr>
-                                  <th colspan="2">Cantidades por porción.</th>
-                                  <th>0% DV*</th>
+                                  <th colspan="2"><strong>Cantidades por porción.</strong></th>
+                                  <th>DV*</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,10 +43,6 @@
                                 </tr>
                                 <tr>
                                   <td>Grasas Trans</td>
-                                  <td>0g</td>
-                                </tr>
-                                <tr>
-                                  <td>Colesterol</td>
                                   <td>0g</td>
                                 </tr>
                                 <tr>

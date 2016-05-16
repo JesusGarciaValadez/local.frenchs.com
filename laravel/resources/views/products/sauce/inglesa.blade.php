@@ -18,65 +18,83 @@
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>
-                        <p>Vinagre destilado, agua, melaza, jarábe de maíz, especias, colorizante caramelo, anchoas, saborizantes naturales (Soya), goma xantana, polvo de ajo deshidratado y extracto de tamarindo.</p>
+                        <p>156g y 312g: Vinagre, melaza, jarabe de maíz, agua, sal, azúcar, especias, anchoas, saborizantes naturales, ácido cítrico, semillas de apio, goma xantana y extracto de tamarindo.</p>
+                        <p>Contiene: pescado y soya.</p>
+                        <p>4kg: Vinagre, melaza, agua, jarabe de maíz, sal, colorante Caramelo clase iv, azúcar, especias, anchoas, saborizantes naturales, y extracto de tamarindo.</p>
+                        <p>Contiene: soya.</p>
                     </div>
                     <div class="informacion">
                         <h3>Información Nutrimental</h3>
                         <div class="line"></div>
-                        <p>Cont. Neto: 12oz (340g)</p>
-                        <p>Porción: 1 cucharada (5g) Total: 88 Calorías: 0</p>
                         <table>
                             <thead>
                                 <tr>
-                                  <th colspan="2">Cantidades por porción.</th>
-                                  <th>0% DV*</th>
+                                  <th>Porciones</th>
+                                  <th>156g</th>
+                                  <th>312g</th>
+                                  <th>4kg</th>
+                                </tr>
+                                <tr>
+                                  <th><strong>Cantidades por porción.</strong></th>
+                                  <th>156g</th>
+                                  <th>5g</th>
+                                  <th>5g</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
+                                  <td>Calorías</td>
+                                  <td>120 Cal (510 kJ)</td>
+                                  <td>4 Cal (17 kJ)</td>
+                                  <td>4 Cal (17 kJ)</td>
+                                </tr>
+                                <tr>
                                   <td>Grasa Total</td>
                                   <td>0g</td>
-                                  <td>0%</td>
+                                  <td>0g</td>
+                                  <td>0g</td>
                                 </tr>
                                 <tr>
                                   <td>Grasa saturada</td>
                                   <td>0g</td>
-                                  <td>0%</td>
+                                  <td>0g</td>
+                                  <td>0g</td>
                                 </tr>
                                 <tr>
                                   <td>Grasas Trans</td>
                                   <td>0g</td>
-                                  <td>0%</td>
-                                </tr>
-                                <tr>
-                                  <td>Colesterol</td>
                                   <td>0g</td>
-                                  <td>0%</td>
+                                  <td>0g</td>
                                 </tr>
                                 <tr>
                                   <td>Sodio</td>
-                                  <td>65g</td>
-                                  <td>1%</td>
+                                  <td>1.4g</td>
+                                  <td>45g</td>
+                                  <td>43g</td>
                                 </tr>
                                 <tr>
                                   <td>Carbohidratos totales</td>
+                                  <td>29g</td>
                                   <td>1g</td>
-                                  <td>0%</td>
+                                  <td>1g</td>
                                 </tr>
                                 <tr>
-                                  <td>Fibra</td>
+                                  <td>Fibra Dietética</td>
+                                  <td>1g</td>
                                   <td>0g</td>
-                                  <td>0%</td>
+                                  <td>0g</td>
                                 </tr>
                                 <tr>
                                   <td>Azúcares</td>
-                                  <td><0g</td>
-                                  <td>0%</td>
+                                  <td>15g</td>
+                                  <td>0g</td>
+                                  <td>1g</td>
                                 </tr>
                                 <tr>
                                   <td>Proteína</td>
+                                  <td>2g</td>
                                   <td>0g</td>
-                                  <td>0%</td>
+                                  <td>0g</td>
                                 </tr>
                             </tbody>
                         </table>
