@@ -12,112 +12,91 @@ use frenchs\Http\Controllers\Controller;
 
 class ProductsController extends Controller
 {
+    private $_recipes;
+    private $_categories;
+    private $_NUMBER_OF_RECIPES = 4;
+
+    public function __construct( RecipesCategories $recipesCategories )
+    {
+      $this->_categories = $recipesCategories->all();
+    }
+
     public function index ()
    	{
    		return view( 'productos' );
    	}
 
-    public function classic ( Recipes $recipesSet, RecipesCategories $recipesCategories )
+    public function classic ( )
     {
-      $recipes    = $recipesSet->where( 'active', true )
-                               ->where( 'product_name', '=', 'classic-sq' )
-                               ->orderBy( 'created_at', 'desc' )
-                               ->take( 4 )
-                               ->get();
+      $this->_recipes = $this->_searchRecipesByProductType( 'classic-sq' );
 
-      $categories = $recipesCategories->all();
-
-      return view( 'products.mustard.clasica-sq', [ 'recipes' => $recipes, 'categories' => $categories ] );
+      return $this->_setViewForProduct( 'products.mustard.clasica-sq' );
     }
 
-    public function classicJar ( Recipes $recipesSet, RecipesCategories $recipesCategories )
+    public function classicJar ( Recipes $recipesSet )
     {
-      $recipes    = $recipesSet->where( 'active', true )
-                               ->where( 'product_name', '=', 'classic-sq-en-frasco' )
-                               ->orderBy( 'created_at', 'desc' )
-                               ->take( 4 )
-                               ->get();
+      $this->_recipes = $this->_searchRecipesByProductType( 'classic-sq-en-frasco' );
 
-      $categories = $recipesCategories->all();
-
-      return view( 'products.mustard.clasica-en-frasco', [ 'recipes' => $recipes, 'categories' => $categories ] );
+      return $this->_setViewForProduct( 'products.mustard.clasica-en-frasco' );
     }
 
-    public function dijon ( Recipes $recipesSet, RecipesCategories $recipesCategories )
+    public function dijon ( Recipes $recipesSet )
     {
-      $recipes    = $recipesSet->where( 'active', true )
-                               ->where( 'product_name', '=', 'dijon' )
-                               ->orderBy( 'created_at', 'desc' )
-                               ->take( 4 )
-                               ->get();
+      $this->_recipes = $this->_searchRecipesByProductType( 'dijon' );
 
-      $categories = $recipesCategories->all();
-
-      return view( 'products.mustard.dijon-sq', [ 'recipes' => $recipes, 'categories' => $categories ] );
+      return $this->_setViewForProduct( 'products.mustard.dijon-sq' );
     }
 
-    public function deli ( Recipes $recipesSet, RecipesCategories $recipesCategories )
+    public function deli ( Recipes $recipesSet )
     {
-      $recipes    = $recipesSet->where( 'active', true )
-                               ->where( 'product_name', '=', 'deli' )
-                               ->orderBy( 'created_at', 'desc' )
-                               ->take( 4 )
-                               ->get();
+      $this->_recipes = $this->_searchRecipesByProductType( 'deli' );
 
-      $categories = $recipesCategories->all();
-
-      return view( 'products.mustard.deli-sq', [ 'recipes' => $recipes, 'categories' => $categories ] );
+      return $this->_setViewForProduct( 'products.mustard.deli-sq' );
     }
 
-    public function honey ( Recipes $recipesSet, RecipesCategories $recipesCategories )
+    public function honey ( Recipes $recipesSet )
     {
-      $recipes    = $recipesSet->where( 'active', true )
-                               ->where( 'product_name', '=', 'honey' )
-                               ->orderBy( 'created_at', 'desc' )
-                               ->take( 4 )
-                               ->get();
+      $this->_recipes = $this->_searchRecipesByProductType( 'honey' );
 
-      $categories = $recipesCategories->all();
-
-      return view( 'products.mustard.honey-sq', [ 'recipes' => $recipes, 'categories' => $categories ] );
+      return $this->_setViewForProduct( 'products.mustard.honey-sq' );
     }
 
-    public function englishSauce ( Recipes $recipesSet, RecipesCategories $recipesCategories )
+    public function englishSauce ( Recipes $recipesSet )
     {
-      $recipes    = $recipesSet->where( 'active', true )
-                               ->where( 'product_name', '=', 'inglesa' )
-                               ->orderBy( 'created_at', 'desc' )
-                               ->take( 4 )
-                               ->get();
+      $this->_recipes = $this->_searchRecipesByProductType( 'inglesa' );
 
-      $categories = $recipesCategories->all();
-
-      return view( 'products.sauce.inglesa', [ 'recipes' => $recipes, 'categories' => $categories ] );
+      return $this->_setViewForProduct( 'products.sauce.inglesa' );
     }
 
-    public function bbqSauce ( Recipes $recipesSet, RecipesCategories $recipesCategories )
+    public function bbqSauce ( Recipes $recipesSet )
     {
-      $recipes    = $recipesSet->where( 'active', true )
-                               ->where( 'product_name', '=', 'bbq' )
-                               ->orderBy( 'created_at', 'desc' )
-                               ->take( 4 )
-                               ->get();
+      $this->_recipes = $this->_searchRecipesByProductType( 'bbq' );
 
-      $categories = $recipesCategories->all();
-
-      return view( 'products.sauce.bbq-clasica', [ 'recipes' => $recipes, 'categories' => $categories ] );
+      return $this->_setViewForProduct( 'products.sauce.bbq-clasica' );
     }
 
-    public function bbqChipotleSauce ( Recipes $recipesSet, RecipesCategories $recipesCategories )
+    public function bbqChipotleSauce ( Recipes $recipesSet )
     {
+      $this->_recipes = $this->_searchRecipesByProductType( 'bbq-chipotle' );
+
+      return $this->_setViewForProduct( 'products.sauce.bbq-chipotle' );
+    }
+
+    public function _searchRecipesByProductType ( $productType )
+    {
+      $recipesSet = new \frenchs\Recipes();
+
       $recipes    = $recipesSet->where( 'active', true )
-                               ->where( 'product_name', '=', 'bbq-chipotle' )
+                               ->where( 'product_name', '=', $productType )
                                ->orderBy( 'created_at', 'desc' )
-                               ->take( 4 )
+                               ->take( $this->_NUMBER_OF_RECIPES )
                                ->get();
 
-      $categories = $recipesCategories->all();
+      return $recipes;
+    }
 
-      return view( 'products.sauce.bbq-chipotle', [ 'recipes' => $recipes, 'categories' => $categories ] );
+    public function _setViewForProduct ( $productView )
+    {
+      return view( $productView, [ 'recipes' => $this->_recipes, 'categories' => $this->_categories ] );
     }
 }
