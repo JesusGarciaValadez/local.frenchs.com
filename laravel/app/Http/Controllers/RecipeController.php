@@ -12,10 +12,29 @@ use frenchs\Http\Controllers\Controller;
 
 class RecipeController extends Controller
 {
+  /**
+   * Array of recipes.
+   * @var array
+   */
   protected $_recipe      = [];
+  /**
+   * Array of categories.
+   * @var array
+   */
   protected $_categories  = [];
+  /**
+   * Domain in the URL of the application.
+   * @var string
+   */
   protected $_domain       = "";
 
+  /**
+   * Display the recipe information
+   * @param  Request           $request           The parameters of the request of the page.
+   * @param  Recipes           $recipesSet        Model of the recipes.
+   * @param  RecipesCategories $recipesCategories Model of the categories of the recipes.
+   * @return View                                 View with the recipe information.
+   */
   public function index ( Request $request, Recipes $recipesSet, RecipesCategories $recipesCategories )
   {
     $recipe     = $recipesSet->findOrFail( $request->id );
@@ -25,6 +44,13 @@ class RecipeController extends Controller
     return view( 'detalle-receta', [ 'recipe' => $recipe, 'recipes' => $recipes, 'categories' => $categories ] );
   }
 
+  /**
+   * Show the recipe for edit the information.
+   * @param  Request           $request           The parameters of the request of the page.
+   * @param  Recipes           $recipes           Model of the recipes.
+   * @param  RecipesCategories $recipesCategories Model of the categories of the recipes.
+   * @return View                                 View with the recipe information.
+   */
   public function update ( Request $request, Recipes $recipes, RecipesCategories $recipesCategories )
   {
     $this->_getRecipe( $request, $recipes );
@@ -57,6 +83,13 @@ class RecipeController extends Controller
                  'domain'     => $this->_domain ] );
   }
 
+  /**
+   * Update the information of the recipe given.
+   * @param  Request           $request           The parameters of the request of the page.
+   * @param  Recipes           $recipes           Model of the recipes.
+   * @param  RecipesCategories $recipesCategories Model of the categories of the recipes.
+   * @return mixed                                Return the response if there's an error or the view with hiw parameters.
+   */
   public function updated ( Request $request, Recipes $recipes, RecipesCategories $recipesCategories )
   {
     $this->_getRecipe( $request, $recipes );
@@ -110,8 +143,8 @@ class RecipeController extends Controller
       /*
        * If there's a file, then uploading it.
        */
-      $recipe[ 'photo_big' ] = ( $this->_uploadPhoto( $request ) ) ? $this->_recipe[ 'photo_big' ] : $request->old_photo_big;
-      $recipe[ 'photo_small' ] = ( $this->_uploadPhoto( $request ) ) ? $this->_recipe[ 'photo_small' ] : $request->old_photo_small;
+      $recipe[ 'photo_big' ]    = ( $this->_movePhoto( $request, 'photo_big' ) ) ? $this->_recipe[ 'photo_big' ] : $request->old_photo_big;
+      $recipe[ 'photo_small' ]  = ( $this->_movePhoto( $request, 'photo_small' ) ) ? $this->_recipe[ 'photo_small' ] : $request->old_photo_small;
 
       /*
        * Persist the new data into the database.
@@ -137,19 +170,23 @@ class RecipeController extends Controller
     }
   }
 
+  /**
+   * Obtain the recipe information
+   * @param  Request $request The parameters of the request of the page.
+   * @param  Recipes $recipes Model of the recipes.
+   * @return void.
+   */
   protected function _getRecipe ( Request $request, Recipes $recipes )
   {
-    /*
-     * Obtain the recipe information
-     */
     $this->_recipe = $recipes->findOrFail( $request->id );
   }
 
+  /**
+   * Setting recipe with new info for validation.
+   * @param Request $request The parameters of the request of the page.
+   */
   protected function _setRecipeInfo ( Request $request )
   {
-    /*
-     * Setting recipe with new info for validation.
-     */
     $recipe[ 'name' ]                 = $request[ 'name' ];
     $recipe[ 'photo_big' ]            = $request[ 'photo_big' ];
     $recipe[ 'photo_small' ]          = $request[ 'photo_small' ];
@@ -172,6 +209,11 @@ class RecipeController extends Controller
     return $recipe;
   }
 
+  /**
+   * Get all the categories and fill an array with the categories and his names.
+   * @param  RecipesCategories $recipesCategories Model of the recipes.
+   * @return void.
+   */
   protected function _getCategories ( RecipesCategories $recipesCategories )
   {
     /*
@@ -185,6 +227,11 @@ class RecipeController extends Controller
     }
   }
 
+  /**
+   * Get the domain of the URL.
+   * @param  Request $request The parameters of the request of the page.
+   * @return void.
+   */
   protected function _getDomain ( Request $request )
   {
     /*
@@ -193,49 +240,30 @@ class RecipeController extends Controller
     $this->_domain  = $request->root();
   }
 
-  protected function _uploadPhoto ( Request $request )
+  /**
+   * Move the photo to the images folder.
+   * @param  Request $request The parameters of the request of the page.
+   * @param  string  $photo   Name of the image.
+   * @return mixed            Response if the image was moved.
+   */
+  protected function _movePhoto ( Request $request, $photo )
   {
-    if ( $request->hasFile( 'photo_big' ) )
+    if ( $request->hasFile( $photo ) )
     {
-      /*
-       * Move the photo
-       */
       try {
-        $file                         = $request->file( 'photo_big' );
+        $file                         = $request->file( $photo );
         $destinationPath              = public_path() . '/assets/images/recetas/';
         $filename                     = strtolower( $file->getClientOriginalName() );
         $uploadSuccess                = $file->move( $destinationPath, $filename );
-        $this->_recipe[ 'photo_big' ] = $filename;
+        $this->_recipe[ $photo ]      = $filename;
 
         return $uploadSuccess;
       }
       catch ( Exception $e )
       {
         return response()->json( [ 'response_message' => 'Error: File was not uploaded',
-                                   'response_code' => '3',
-                                   'Error: ' => $e->getError() ] );
-      }
-    }
-
-    if ( $request->hasFile( 'photo_small' ) )
-    {
-      /*
-       * Move the photo
-       */
-      try {
-        $file                           = $request->file( 'photo_small' );
-        $destinationPath                = public_path() . '/assets/images/recetas/';
-        $filename                       = strtolower( $file->getClientOriginalName() );
-        $uploadSuccess                  = $file->move( $destinationPath, $filename );
-        $this->_recipe[ 'photo_small' ] = $filename;
-
-        return $uploadSuccess;
-      }
-      catch ( Exception $e )
-      {
-        return response()->json( [ 'response_message' => 'Error: File was not uploaded',
-                                   'response_code' => '3',
-                                   'Error: ' => $e->getError() ] );
+                                   'response_code'    => '3',
+                                   'Error: '          => $e->getError() ] );
       }
     }
   }
