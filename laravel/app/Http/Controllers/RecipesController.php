@@ -30,6 +30,7 @@ class RecipesController extends Controller
   {
     // Retrieving of all input recipe from contact form
     $recipe         = $request->all();
+    unset( $recipe[ 'Enviar' ] );
     // unset( $recipe[ 'Enviar' ] );
 
     // Setting the subject for the email sended to alert about a new recipe is sended
