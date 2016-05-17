@@ -724,8 +724,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/bd73a91703969a2d20ab4bfbf971d6c2cbe36612",
-                "reference": "bd73a91703969a2d20ab4bfbf971d6c2cbe36612",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/35a83cf67d80d7040f306c77b0a84b9fbcc4fbfb",
+                "reference": "35a83cf67d80d7040f306c77b0a84b9fbcc4fbfb",
                 "shasum": ""
             },
             "require": {
@@ -856,7 +856,7 @@
                 "debug",
                 "debugbar"
             ],
-            "time": "2016-01-22 12:22:23"
+            "time": "2016-04-22 10:56:25"
         },
         {
             "name": "monolog/monolog",
@@ -2244,6 +2244,9 @@
                 "ext-intl": "*",
                 "phpunit/phpunit": "~4.0",
                 "squizlabs/php_codesniffer": "~1.5"
+            },
+            "suggest": {
+                "ext-intl": "*"
             },
             "type": "library",
             "extra": {

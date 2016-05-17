@@ -47,13 +47,13 @@ class ContactController extends Controller
         \Mail::send( 'emails.contact', [ 'contact' => $data ], function( $message )
         {
           // Setting sender
-          $message->from( env( 'CONTACT_SENDER' ), env( 'CONTACT_APP_NAME' ) );
+          $message->from( env( 'CONTACT_SENDER', 'forge' ), env( 'CONTACT_APP_NAME', 'forge' ) );
 
           // Setting subject
           $message->subject( $this->_subject );
 
           // Setting receiver
-          $message->to( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
+          $message->to( env( 'CONTACT_MAIL', 'forge' ), env( 'CONTACT_NAME', 'forge' ) );
         } );
 
         /*
