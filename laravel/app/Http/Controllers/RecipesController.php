@@ -42,7 +42,7 @@ class RecipesController extends Controller
       'user_name'         => 'required|max:255',
       'user_email'        => 'required|max:255|email',
       'name'              => 'required|max:255',
-      'photo_big'         => 'required|mimes:png,jpeg',
+      'photo_big'         => 'required|mimes:png,jpeg,jpg',
       'categorie_id'      => 'required|exists:recipes_categories,id',
       'portions'          => 'required|in:1,2,3,4,5,6',
       'preparation_time'  => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
