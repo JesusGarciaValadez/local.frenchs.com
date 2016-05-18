@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class RecipeTest extends TestCase
 {
-  use DatabaseMigrations;
+  use DatabaseTransactions;
 
   /**
    * A basic test example.
@@ -23,10 +23,8 @@ class RecipeTest extends TestCase
 
   public function testChapataRecipe ()
   {
-    $this->visit( '/receta/17' )
-         ->assertResponseStatus( '404' )
-         ->assertRedirectTo( '/recetas' )
-         ->seePageIs( '/recetas' )
-         ->dontSee( "Alitas BBQ" );
+    $response = $this->call( 'GET', '/receta/17' );
+
+    $this->assertEquals( 404, $response->status() );
   }
 }
