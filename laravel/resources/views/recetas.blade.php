@@ -15,9 +15,9 @@
                 <div class="container">
                     {!! Form::open( [ 'route' => 'searchRecipe', 'method' => 'GET','id'=>'enviar_receta' ] ) !!}
                         <div class="buscar">
-                            {!! Form::text( 'name', null, [ 'placeholder' => '(Ejemplo: Pollo)'] ) !!}
-                            {!! Html::link( '#', '' , array('id' => 'btn_search')) !!}
-                            {{-- Form::submit( 'buscar' ) --}}
+                            {!! Form::text( 'name', null, [ 'placeholder' => '(Ejemplo: Pollo)' ] ) !!}
+                            {!! Html::link( '#', '' , [ 'id' => 'btn_search' ] ) !!}
+                            {!! Form::submit( 'Buscar', [ 'id' => 'btn_seach', 'name' => 'buscar' ] ) !!}
                         </div>
                         <div class="content-filtro">
                             <label>
