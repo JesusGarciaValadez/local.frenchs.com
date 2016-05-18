@@ -27,7 +27,11 @@ class ProductsTest extends TestCase
            ->see( "Nueva French's BBQ Chipotle - Salsa BBQ sabor chipotle" );
     }
 
-
+    /**
+     * Test Classic Mustard landing page avalability.
+     *
+     * @return void
+     */
     public function testClassicMustardAvailability ()
     {
       $this->visit('/producto/mostaza/clasica-sq')
