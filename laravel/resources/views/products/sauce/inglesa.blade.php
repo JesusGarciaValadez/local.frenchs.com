@@ -108,7 +108,7 @@
         <section class="grid">
             <div class="container">
                 <h2>Recetas</h2>
-                <p>que podrías preparar con Mostaza Dijon SQ</p>
+                <p>que podrías preparar con Salsa Inglesa</p>
                 <div class="content-grid">
                   @foreach ( $recipes as $recipe )
                   <a href="{{ action( 'RecipeController@index', [ 'id' => $recipe->id ] ) }}" class="receta">

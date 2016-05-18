@@ -30,7 +30,7 @@ class RecipesController extends Controller
   {
     // Retrieving of all input recipe from contact form
     $recipe         = $request->all();
-    // unset( $recipe[ 'Enviar' ] );
+    unset( $recipe[ 'Enviar' ] );
 
     // Setting the subject for the email sended to alert about a new recipe is sended
     $this->_subject = 'Han enviado una nueva receta.';
@@ -65,28 +65,41 @@ class RecipesController extends Controller
       /*
        * If validation fails, send response via JSON with an error code
        */
-      return response()->json( [ 'response_message' => 'Validation fail', 'response_code' => '0', 'errors' => $validator->errors()->all(), 'recipe: ' => $recipe ] );
+      return response()->json( [
+                                'response_message'  => 'Validation fail',
+                                'response_code'     => '0',
+                                'errors'            => $validator->errors()->all(),
+                                'recipe'            => $recipe
+                              ] );
     }
     else
     {
       // If there's a file, then uploading it
       if ( $request->hasFile( 'photo_big' ) )
       {
-        try {
-          $file               = $request->file( 'photo_big' );
-          $destinationPath    = public_path() . '/assets/images/recetas/';
-          $filename           = strtolower( $recipe[ 'photo_big' ]->getClientOriginalName() );
-          $uploadSuccess      = $file->move( $destinationPath, $filename );
+        try
+        {
+          $file                   = $request->file( 'photo_big' );
+          $destinationPath        = public_path() . '/assets/images/recetas/';
+          $filename               = strtolower( $recipe[ 'photo_big' ]->getClientOriginalName() );
+          $uploadSuccess          = $file->move( $destinationPath, $filename );
           $recipe[ 'photo_big' ]  = $filename;
         }
         catch ( Exception $e )
         {
-          return response()->json( [ 'response_message' => 'Error: File was not uploaded', 'response_code' => '3', 'Error: ' => $e->getError() ] );
+          return response()->json( [
+                                    'response_message' => 'Error: File was not uploaded',
+                                    'response_code' => '3',
+                                    'Error: ' => $e->getError()
+                                  ] );
         }
       }
       else
       {
-        return response()->json( [ 'response_message' => "Error: There's is not file to upload", 'response_code' => '2' ] );
+        return response()->json( [
+                                  'response_message' => "Error: There's is not file to upload",
+                                  'response_code' => '2'
+                                ] );
       }
 
       $recipe[ 'categorie_id' ]         = intval( $recipe[ 'categorie_id' ] );
@@ -119,7 +132,10 @@ class RecipesController extends Controller
       /*
        * Response via JSON with a success code.
        */
-      return response()->json( [ 'response_message' => 'Success', 'response_code' => '1' ] );
+      return response()->json( [
+                                'response_message' => 'Success',
+                                'response_code' => '1'
+                              ] );
     }
   }
 

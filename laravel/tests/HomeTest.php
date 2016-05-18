@@ -6,13 +6,16 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class HomeTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
-    {
-        $this->assertTrue(true);
-    }
+  use DatabaseTransactions;
+
+  /**
+   * A basic test example.
+   *
+   * @return void
+   */
+  public function testHomeAvailability()
+  {
+      $this->visit( '/' )
+           ->assertResponseOk();
+  }
 }
