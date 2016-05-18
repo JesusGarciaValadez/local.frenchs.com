@@ -89,8 +89,12 @@ class ProductsController extends Controller
       $recipes    = $recipesSet->where( 'active', true )
                                ->where( 'product_name', '=', $productType )
                                ->orderBy( 'created_at', 'desc' )
-                               ->get()
-                               ->random( $this->_NUMBER_OF_RECIPES );
+                               ->get();
+
+      if ( !$recipes->isEmpty() )
+      {
+        $recipes  = $recipes->random( $this->_NUMBER_OF_RECIPES );
+      }
 
       return $recipes;
     }
