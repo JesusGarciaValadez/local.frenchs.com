@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ProductsTest extends TestCase
 {
-  use DatabaseMigrations;
+  use DatabaseTransactions;
 
   /**
    * Test products landing page availability.

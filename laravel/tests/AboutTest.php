@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class AboutTest extends TestCase
 {
-  use DatabaseMigrations;
+  use DatabaseTransactions;
 
   /**
    * A test for check about us section availability
