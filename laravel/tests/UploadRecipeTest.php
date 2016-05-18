@@ -29,6 +29,9 @@ class UploadRecipeTest extends TestCase
          ->type( 'Freír las alitas de pollo.', 'preparation' )
          ->press( 'Enviar' )
          ->seeJson( [ 'response_message' => 'Success', 'response_code' => '1' ] )
-         ->seeInDatabase( 'recipes', [ 'name' => 'Alitas BBQ' ] );
+         ->seeInDatabase( 'recipes', [
+                          'name'      => 'Alitas BBQ',
+                          'photo_big' => 'Alitas-C.png'
+                        ] );
   }
 }
