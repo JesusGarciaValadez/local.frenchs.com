@@ -16,20 +16,25 @@ class RecipeController extends Controller
    * Array of recipes.
    * @var array
    */
-  protected $_recipe      = [];
+  protected $_recipe          = [];
   /**
    * Array of categories.
    * @var array
    */
-  protected $_categories  = [];
+  protected $_categories      = [];
   /**
    * Domain in the URL of the application.
    * @var string
    */
-  protected $_domain       = "";
+  protected $_domain          = "";
+  /**
+   * Quantity of recipes to show in the recipes examples.
+   * @var integer
+   */
+  protected $_number_of_recipes_to_show = 6;
 
   /**
-   * Display the recipe information
+   * Display the recipe information with some example recipes.
    * @param  Request           $request           The parameters of the request of the page.
    * @param  Recipes           $recipesSet        Model of the recipes.
    * @param  RecipesCategories $recipesCategories Model of the categories of the recipes.
@@ -38,10 +43,28 @@ class RecipeController extends Controller
   public function index ( Request $request, Recipes $recipesSet, RecipesCategories $recipesCategories )
   {
     $recipe     = $recipesSet->findOrFail( $request->id );
-    $recipes    = $recipesSet->orderBy( 'created_at' )->take( 6 )->get();
+    $recipes    = $recipesSet->where( 'active', '1' )
+                             ->orderBy( 'created_at' )->get();
+
+    if ( !$recipes->isEmpty() )
+    {
+      $recipes   = $recipes->random( $this->_number_of_recipes_to_show );
+    }
+
     $categories = $recipesCategories->all();
 
-    return view( 'detalle-receta', [ 'recipe' => $recipe, 'recipes' => $recipes, 'categories' => $categories ] );
+    if ( $recipe->active )
+    {
+      return view( 'detalle-receta', [
+                   'recipe' => $recipe,
+                   'recipes' => $recipes,
+                   'categories' => $categories
+                  ] );
+    }
+    else
+    {
+      return redirect( '/recetas' );
+    }
   }
 
   /**
@@ -80,7 +103,8 @@ class RecipeController extends Controller
     return view( 'recipes.edit', [
                  'recipe'     => $recipe,
                  'categories' => $this->_categories,
-                 'domain'     => $this->_domain ] );
+                 'domain'     => $this->_domain
+                ] );
   }
 
   /**
@@ -166,7 +190,8 @@ class RecipeController extends Controller
       return view( 'recipes.edit', [
                    'recipe'     => $recipe,
                    'categories' => $this->_categories,
-                   'domain'     => $this->_domain ] );
+                   'domain'     => $this->_domain
+                  ] );
     }
   }
 
@@ -261,9 +286,11 @@ class RecipeController extends Controller
       }
       catch ( Exception $e )
       {
-        return response()->json( [ 'response_message' => 'Error: File was not uploaded',
-                                   'response_code'    => '3',
-                                   'Error: '          => $e->getError() ] );
+        return response()->json( [
+                                  'response_message' => 'Error: File was not uploaded',
+                                  'response_code'    => '3',
+                                  'Error: '          => $e->getError()
+                                 ] );
       }
     }
   }
