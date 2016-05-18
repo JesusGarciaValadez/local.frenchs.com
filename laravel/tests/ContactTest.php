@@ -29,4 +29,19 @@ class ContactTest extends TestCase
            ->seePageIs( '/contacto' )
            ->assertResponseOk();
     }
+
+    public function testJSONResponse ()
+    {
+      $this->json( 'POST', '/contacto', [
+                   'name'     => 'Jesús Antonio García Valadez',
+                   'email'    => 'jesus.garcia@lunave.com',
+                   'comments' => 'Este es un mensaje de prueba.'
+                 ] )
+           ->seePageIs( '/contacto' )
+           ->assertResponseOk()
+           ->seeJSON( [
+                      'response_message' => 'success',
+                      'response_code'    => '1'
+                    ] );
+    }
 }
