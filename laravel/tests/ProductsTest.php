@@ -36,6 +36,8 @@ class ProductsTest extends TestCase
     {
       $this->visit('/producto/mostaza/clasica-sq')
            ->assertResponseOk()
-           ->see( "Mostaza Clásica" );
+           ->see( "Mostaza Clásica" )
+           ->see( "Recetas" )
+           ->see( "que podrías preparar con Mostaza Clásica" );
     }
 }
