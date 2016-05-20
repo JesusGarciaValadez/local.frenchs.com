@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
       DB::table( 'users' )->insert( [
         'name'          => env( 'ADMIN_NAME', 'forge' ),
         'email'         => env( 'ADMIN_EMAIL', 'forge' ),
-        'password'      => \Hash::make( env( 'ADMIN_PASSWORD'. 'forge' ) ),
+        'password'      => bcrypt( env( 'ADMIN_PASSWORD', 'forge' ) ),
         'created_at'    => date( 'Y-m-d H:i:s' ),
       ] );
     }
