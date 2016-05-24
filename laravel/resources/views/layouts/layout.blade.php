@@ -40,6 +40,9 @@
                         <li><a href="{{ route( 'products' ) }}">PRODUCTOS</a></li>
                         <li><a href="{{ route( 'recipes' ) }}">RECETAS</a></li>
                         <li><a href="{{ route( 'contact' ) }}">CONTACTO</a></li>
+                        @if (Auth::check())
+                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Salir</a></
+                        @endif
                     </ul>
                 </nav>
                 <div class="redes">
