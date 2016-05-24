@@ -82,6 +82,7 @@
                 <p>{!! Html::link( 'productos', 'Todos los productos', [ 'class' => 'boton', 'id' => '' ] ) !!}</p>
             </div>
         </section>
+        {{-- Show recipes if are recipes made with this product --}}
         @if ( count( $recipes ) > 0 )
           @include( 'partials.productRecipes', [ 'productName' => 'Mostaza Dijon' ] )
         @endif
