@@ -2,8 +2,7 @@
 
 namespace frenchs\Http\Controllers;
 
-use frenchs\Recipes;
-use frenchs\RecipesCategories;
+use frenchs\Recipe;
 
 use Illuminate\Http\Request;
 
@@ -17,7 +16,7 @@ class HomeController extends Controller
    * @param  Recipes $recipesSet Set of recipes from the database
    * @return View                View 'home' with a bunch of recipes as parameters
    */
-  public function index ( Recipes $recipesSet )
+  public function index ( Recipe $recipesSet )
   {
     $recipes    = $recipesSet->where( 'active', true )
                              ->orderBy( 'created_at', 'desc' )

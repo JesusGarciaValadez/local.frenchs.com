@@ -2,8 +2,8 @@
 
 namespace frenchs\Http\Controllers;
 
-use frenchs\Recipes;
-use frenchs\RecipesCategories;
+use frenchs\Recipe;
+use frenchs\Category;
 
 use Illuminate\Http\Request;
 
@@ -25,17 +25,17 @@ class RecipesController extends Controller
 
   /**
    * Return the 'recetas' view with recipes and categories as parameters.
-   * @param  Request           $request           The parameters of the request of the page.
-   * @param  Recipes           $recipesSet        Model of the Recipes.
-   * @param  RecipesCategories $recipesCategories Model of the Categories.
-   * @return View                                 View 'recipes' returned with recipes and categories as paremeters.
+   * @param  Request  $request  The parameters of the request of the page.
+   * @param  Recipe   $recipe   Model of the Recipes.
+   * @param  Category $category Model of the Categories.
+   * @return View               View 'recipes' returned with recipes and categories as paremeters.
    */
-  public function index ( Request $request, Recipes $recipesSet, RecipesCategories $recipesCategories )
+  public function index ( Request $request, Recipe $recipe, Category $category )
   {
-    $recipes    = $recipesSet->where( 'active', true )
-                             ->paginate( 6 );
+    $recipes    = $recipe->where( 'active', true )
+                         ->paginate( 6 );
 
-    $categories = $recipesCategories->all();
+    $categories = $category->all();
 
     return view( 'recetas', compact( 'recipes', 'categories' ) );
   }
@@ -121,8 +121,8 @@ class RecipesController extends Controller
 
       // Persist the recipe into the database. Checking if there's an existing recipe with this information.
       // If not, stores the new recipe.
-      $recipe[ 'id' ] = Recipes::firstOrCreate( $recipe );
-      $recipes        = Recipes::findOrFail( [ 'id' => $recipe[ 'id' ]->id ] );
+      $recipe[ 'id' ] = Recipe::firstOrCreate( $recipe );
+      $recipes        = Recipe::findOrFail( [ 'id' => $recipe[ 'id' ]->id ] );
 
       \Mail::send( 'emails.upload', [ 'recipes' => $recipes ], function( $message )
       {
@@ -221,11 +221,11 @@ class RecipesController extends Controller
 
       if ( !empty( $search ) )
       {
-        $recipes    = Recipes::whereRaw( $search )
+        $recipes    = Recipe::whereRaw( $search )
                              ->orderBy( 'created_at', 'desc' )
                              ->get();
 
-        $categories = RecipesCategories::all();
+        $categories = Category::all();
 
         return response()->json( $recipes );
       }

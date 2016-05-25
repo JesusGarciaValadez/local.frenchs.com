@@ -2,8 +2,8 @@
 
 namespace frenchs\Http\Controllers;
 
-use frenchs\Recipes;
-use frenchs\RecipesCategories;
+use frenchs\Recipe;
+use frenchs\Category;
 
 use Illuminate\Http\Request;
 
@@ -35,23 +35,23 @@ class RecipeController extends Controller
 
   /**
    * Display the recipe information with some example recipes.
-   * @param  Request           $request           The parameters of the request of the page.
-   * @param  Recipes           $recipesSet        Model of the recipes.
-   * @param  RecipesCategories $recipesCategories Model of the categories of the recipes.
-   * @return View                                 View with the recipe information.
+   * @param  Request  $request    The parameters of the request of the page.
+   * @param  Recipe   $recipes    Model of the recipes.
+   * @param  Category $categories Model of the categories of the recipes.
+   * @return View                 View with the recipe information.
    */
-  public function index ( Request $request, Recipes $recipesSet, RecipesCategories $recipesCategories )
+  public function index ( Request $request, Recipe $recipe, Category $category )
   {
-    $recipe     = $recipesSet->findOrFail( $request->id );
-    $recipes    = $recipesSet->where( 'active', '1' )
-                             ->orderBy( 'created_at' )->get();
+    $recipe     = $recipe->findOrFail( $request->id );
+    $recipes    = $recipe->where( 'active', '1' )
+                         ->orderBy( 'created_at' )->get();
 
     if ( !$recipes->isEmpty() )
     {
       $recipes   = $recipes->random( $this->_number_of_recipes_to_show );
     }
 
-    $categories = $recipesCategories->all();
+    $categories = $category->all();
 
     if ( $recipe->active )
     {
@@ -70,14 +70,14 @@ class RecipeController extends Controller
   /**
    * Show the recipe for edit the information.
    * @param  Request           $request           The parameters of the request of the page.
-   * @param  Recipes           $recipes           Model of the recipes.
-   * @param  RecipesCategories $recipesCategories Model of the categories of the recipes.
+   * @param  Recipe            $recipes           Model of the recipes.
+   * @param  Category          $Category          Model of the categories of the recipes.
    * @return View                                 View with the recipe information.
    */
-  public function update ( Request $request, Recipes $recipes, RecipesCategories $recipesCategories )
+  public function update ( Request $request, Recipe $recipe, Category $category )
   {
-    $this->_getRecipe( $request, $recipes );
-    $this->_getCategories( $recipesCategories );
+    $this->_getRecipe( $request, $recipe );
+    $this->_getCategories( $category );
     $this->_getDomain( $request );
 
     $recipe[ 'id' ]                   = $this->_recipe[ 'id' ];
@@ -109,15 +109,15 @@ class RecipeController extends Controller
 
   /**
    * Update the information of the recipe given.
-   * @param  Request           $request           The parameters of the request of the page.
-   * @param  Recipes           $recipes           Model of the recipes.
-   * @param  RecipesCategories $recipesCategories Model of the categories of the recipes.
-   * @return mixed                                Return the response if there's an error or the view with hiw parameters.
+   * @param  Request    $request    The parameters of the request of the page.
+   * @param  Recipe     $recipe     Model of the recipes.
+   * @param  Categories $categories Model of the categories of the recipes.
+   * @return mixed                  Return the response if there's an error or the view with hiw parameters.
    */
-  public function updated ( Request $request, Recipes $recipes, RecipesCategories $recipesCategories )
+  public function updated ( Request $request, Recipe $recipe, Category $category )
   {
-    $this->_getRecipe( $request, $recipes );
-    $this->_getCategories( $recipesCategories );
+    $this->_getRecipe( $request, $recipe );
+    $this->_getCategories( $category );
     $this->_getDomain( $request );
 
     $recipe         = $this->_setRecipeInfo( $request );
@@ -173,8 +173,8 @@ class RecipeController extends Controller
       /*
        * Persist the new data into the database.
        */
-      $update = \frenchs\Recipes::where( 'id', $request[ 'id' ] )
-                                ->update( $recipe );
+      $update = \frenchs\Recipe::where( 'id', $request[ 'id' ] )
+                               ->update( $recipe );
 
       /*
        * Create a response for passing it into the view.
@@ -198,12 +198,12 @@ class RecipeController extends Controller
   /**
    * Obtain the recipe information
    * @param  Request $request The parameters of the request of the page.
-   * @param  Recipes $recipes Model of the recipes.
+   * @param  Recipe  $recipe  Model of the recipes.
    * @return void.
    */
-  protected function _getRecipe ( Request $request, Recipes $recipes )
+  protected function _getRecipe ( Request $request, Recipe $recipe )
   {
-    $this->_recipe = $recipes->findOrFail( $request->id );
+    $this->_recipe = $recipe->findOrFail( $request->id );
   }
 
   /**
@@ -239,12 +239,12 @@ class RecipeController extends Controller
    * @param  RecipesCategories $recipesCategories Model of the recipes.
    * @return void.
    */
-  protected function _getCategories ( RecipesCategories $recipesCategories )
+  protected function _getCategories ( Category $category )
   {
     /*
      * Obtaining categories information
      */
-    $categoriesSet  = $recipesCategories->all();
+    $categoriesSet  = $category->all();
 
     foreach ( $categoriesSet as $categorie )
     {

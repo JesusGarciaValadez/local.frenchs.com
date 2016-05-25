@@ -2,8 +2,8 @@
 
 namespace frenchs\Http\Controllers;
 
-use frenchs\Recipes;
-use frenchs\RecipesCategories;
+use frenchs\Recipe;
+use frenchs\Category;
 
 use Illuminate\Http\Request;
 
@@ -30,11 +30,11 @@ class ProductsController extends Controller
 
   /**
    * Obtain all the categories in all the views of products.
-   * @param RecipesCategories $recipesCategories Model of categories.
+   * @param Category $category Model of categories.
    */
-  public function __construct( RecipesCategories $recipesCategories )
+  public function __construct( Category $category )
   {
-    $this->_categories = $recipesCategories->all();
+    $this->_categories = $category->all();
   }
 
   /**
@@ -149,7 +149,7 @@ class ProductsController extends Controller
    */
   public function _searchRecipesByProductType ( $productName )
   {
-    $recipesSet = new \frenchs\Recipes();
+    $recipesSet = new \frenchs\Recipe();
 
     $recipes    = $recipesSet->where( 'active', true )
                              ->where( 'product_name', '=', $productName )
