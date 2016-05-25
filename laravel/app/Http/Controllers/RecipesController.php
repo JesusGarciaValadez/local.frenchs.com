@@ -206,7 +206,11 @@ class RecipesController extends Controller
     // If validation fails, send a json response with validation fail message
     if ( $validator->fails() )
     {
-      return response()->json( [ 'response_message' => 'Validation fail', 'response_code' => '0', 'errors' => $validator->errors()->all() ] );
+      return response()->json( [
+                                'response_message' => 'Validation fail',
+                                'response_code' => '0',
+                                'errors' => $validator->errors()->all()
+                               ] );
     }
     else
     {
@@ -226,7 +230,11 @@ class RecipesController extends Controller
       }
       else
       {
-        return response()->json( [ 'response_message' => 'Search fail', 'response_code' => '4', 'errors' => $validator->errors()->all() ] );
+        return response()->json( [
+                                  'response_message' => 'Search fail',
+                                  'response_code' => '4',
+                                  'errors' => $validator->errors()->all()
+                                 ] );
       }
     }
   }
