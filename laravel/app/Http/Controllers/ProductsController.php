@@ -12,8 +12,20 @@ use frenchs\Http\Controllers\Controller;
 
 class ProductsController extends Controller
 {
+  /**
+   * Set of recipes from the database
+   * @var Collection
+   */
   private $_recipes;
+  /**
+   * Set of categories from the database
+   * @var Collection
+   */
   private $_categories;
+  /**
+   * Describe the number of recipes filtered from the Collection.
+   * @var integer
+   */
   private $_NUMBER_OF_RECIPES = 4;
 
   /**
