@@ -12,32 +12,46 @@ use frenchs\Http\Controllers\Controller;
 
 class RecipesController extends Controller
 {
+  /**
+   * Subject of the email to send if a user upload a recipe.
+   * @var String
+   */
   protected $_subject;
+  /**
+   * Array to form a query string depends of the parameters received in the request.
+   * @var array
+   */
   protected $_search = [];
 
+  /**
+   * Return the 'recetas' view with recipes and categories as parameters.
+   * @param  Request           $request           The parameters of the request of the page.
+   * @param  Recipes           $recipesSet        Model of the Recipes.
+   * @param  RecipesCategories $recipesCategories Model of the Categories.
+   * @return View                                 View 'recipes' returned with recipes and categories as paremeters.
+   */
   public function index ( Request $request, Recipes $recipesSet, RecipesCategories $recipesCategories )
   {
-    // Obtain the recipes and paginate it
-    $recipes    = $recipesSet->where( 'active', true )->paginate( 6 );
+    $recipes    = $recipesSet->where( 'active', true )
+                             ->paginate( 6 );
 
-    // Obtaining all the categories
     $categories = $recipesCategories->all();
 
-    return view( 'recetas', [ 'recipes' => $recipes, 'categories' => $categories ] );
+    return view( 'recetas', compact( 'recipes', 'categories' ) );
   }
 
+  /**
+   * Set a recipe into the database
+   * @param  Request $request The parameters of the request of the page.
+   * @return String           JSON response with a message and code.
+   */
   public function upload ( Request $request )
   {
-    // Retrieving of all input recipe from contact form
     $recipe         = $request->all();
     unset( $recipe[ 'Enviar' ] );
 
-    // Setting the subject for the email sended to alert about a new recipe is sended
     $this->_subject = 'Han enviado una nueva receta.';
 
-    /*
-     * Setting validation rules
-     */
     $validator = \Validator::make( $recipe, [
       'user_name'         => 'required|max:255',
       'user_email'        => 'required|max:255|email',
@@ -62,9 +76,6 @@ class RecipesController extends Controller
 
     if ( $validator->fails() )
     {
-      /*
-       * If validation fails, send response via JSON with an error code
-       */
       return response()->json( [
                                 'response_message'  => 'Validation fail',
                                 'response_code'     => '0',
@@ -74,7 +85,6 @@ class RecipesController extends Controller
     }
     else
     {
-      // If there's a file, then uploading it
       if ( $request->hasFile( 'photo_big' ) )
       {
         try
@@ -114,24 +124,13 @@ class RecipesController extends Controller
       $recipe[ 'id' ] = Recipes::firstOrCreate( $recipe );
       $recipes        = Recipes::findOrFail( [ 'id' => $recipe[ 'id' ]->id ] );
 
-      /*
-       * Sending the email alerting about a new recipe.
-       */
       \Mail::send( 'emails.upload', [ 'recipes' => $recipes ], function( $message )
       {
-        // Setting sender
         $message->from( env( 'CONTACT_SENDER' ), env( 'UPLOAD_APP_NAME' ) );
-
-        // Setting subject
         $message->subject( $this->_subject );
-
-        // Setting receiver
         $message->to( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
       } );
 
-      /*
-       * Response via JSON with a success code.
-       */
       return response()->json( [
                                 'response_message' => 'Success',
                                 'response_code' => '1'
@@ -139,9 +138,13 @@ class RecipesController extends Controller
     }
   }
 
+  /**
+   * Search a recipe into database and retrieve it as a JSON.
+   * @param  Request $request The parameters of the request of the page.
+   * @return String           JSON response with a message and code.
+   */
   public function search ( Request $request )
   {
-    //  Obtain all the request parameters
     $recipe   = $request->all();
 
     // Prepare raw query
@@ -203,7 +206,6 @@ class RecipesController extends Controller
       'in'      => 'The :attribute must be one of the following types: :values',
     ] );
 
-    // If validation fails, send a json response with validation fail message
     if ( $validator->fails() )
     {
       return response()->json( [
@@ -219,7 +221,6 @@ class RecipesController extends Controller
 
       if ( !empty( $search ) )
       {
-        // Check if there's a recipe with the parameters received
         $recipes    = Recipes::whereRaw( $search )
                              ->orderBy( 'created_at', 'desc' )
                              ->get();
