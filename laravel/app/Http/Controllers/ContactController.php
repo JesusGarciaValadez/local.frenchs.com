@@ -20,9 +20,9 @@ class ContactController extends Controller
    * @return View
    */
   public function index ()
- 	{
- 		return view( 'contacto' );
- 	}
+  {
+    return view( 'contacto' );
+  }
 
   /**
    * Receive the user's data from the contact form.
