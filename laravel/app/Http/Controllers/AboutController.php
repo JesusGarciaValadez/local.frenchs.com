@@ -9,8 +9,12 @@ use frenchs\Http\Controllers\Controller;
 
 class AboutController extends Controller
 {
-    public function index ()
-   	{
-   		return view( 'acerca' );
-   	}
+  /**
+   * Show 'acerca' view
+   * @return View Return the 'acerca' view
+   */
+  public function index ()
+  {
+    return view( 'acerca' );
+  }
 }
