@@ -106,6 +106,9 @@
         </section>
         {{-- Show recipes if are recipes made with this product --}}
         @if ( count( $recipes ) > 0 )
-          @include( 'partials.productRecipes', [ 'productName' => 'Salsa Inglesa' ] )
+          @include( 'partials.productRecipes', [
+                    'product' => 'Salsa Inglesa',
+                    'recipes'  => $recipes
+                  ] )
         @endif
 @endsection

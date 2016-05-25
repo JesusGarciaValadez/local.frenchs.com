@@ -84,6 +84,9 @@
         </section>
         {{-- Show recipes if are recipes made with this product --}}
         @if ( count( $recipes ) > 0 )
-          @include( 'partials.productRecipes', [ 'productName' => 'Mostaza Clásica' ] )
+          @include( 'partials.productRecipes', [
+                    'product' => 'Mostaza Clásica',
+                    'recipes'  => $recipes
+                  ] )
         @endif
 @endsection
