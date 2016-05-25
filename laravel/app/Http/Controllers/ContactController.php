@@ -9,57 +9,52 @@ use frenchs\Http\Controllers\Controller;
 
 class ContactController extends Controller
 {
-    protected $_subject = '';
+  /**
+   * Subject of the email sended when a user fills and send the contact form.
+   * @var string
+   */
+  protected $_subject = '';
 
-    public function index ()
-   	{
-   		return view( 'contacto' );
-   	}
+  /**
+   * Show the 'contacto' view.
+   * @return View
+   */
+  public function index ()
+ 	{
+ 		return view( 'contacto' );
+ 	}
 
-    public function send ( Request $request )
+  /**
+   * Receive the user's data from the contact form.
+   * @param  Request $request Parameters of the request of the page.
+   * @return String           JSON response with a message and code.
+   */
+  public function send ( Request $request )
+  {
+    $data = $request->all();
+
+    $this->_subject = 'Formulario de contacto';
+
+    $validator = \Validator::make( $data, [
+      'name'      => 'required|max:255',
+      'email'     => 'required|email|max:255',
+      'comments'  => 'required|max:255',
+    ] );
+
+    if ( $validator->fails() )
     {
-      // Retrieving of all input data from contact form
-      $data = $request->all();
-
-      $this->_subject = 'Formulario de contacto';
-
-      /*
-       * Setting validation rules
-       */
-      $validator = \Validator::make( $data, [
-        'name'      => 'required|max:255',
-        'email'     => 'required|email|max:255',
-        'comments'  => 'required|max:255',
-      ] );
-
-      if ( $validator->fails() )
-      {
-        /*
-         * If validation fails, send response via JSON with an error code
-         */
-        return response()->json( [ 'response_message' => 'error', 'response_code' => '0' ] );
-      }
-      else
-      {
-        /*
-         * Sending the email
-         */
-        \Mail::send( 'emails.contact', [ 'contact' => $data ], function( $message )
-        {
-          // Setting sender
-          $message->from( env( 'CONTACT_SENDER', 'forge' ), env( 'CONTACT_APP_NAME', 'forge' ) );
-
-          // Setting subject
-          $message->subject( $this->_subject );
-
-          // Setting receiver
-          $message->to( env( 'CONTACT_MAIL', 'forge' ), env( 'CONTACT_NAME', 'forge' ) );
-        } );
-
-        /*
-         * Response via JSON with a success code
-         */
-        return response()->json( [ 'response_message' => 'success', 'response_code' => '1' ] );
-      }
+      return response()->json( [ 'response_message' => 'error', 'response_code' => '0' ] );
     }
+    else
+    {
+      \Mail::send( 'emails.contact', [ 'contact' => $data ], function( $message )
+      {
+        $message->from( env( 'CONTACT_SENDER', 'forge' ), env( 'CONTACT_APP_NAME', 'forge' ) );
+        $message->subject( $this->_subject );
+        $message->to( env( 'CONTACT_MAIL', 'forge' ), env( 'CONTACT_NAME', 'forge' ) );
+      } );
+
+      return response()->json( [ 'response_message' => 'success', 'response_code' => '1' ] );
+    }
+  }
 }
