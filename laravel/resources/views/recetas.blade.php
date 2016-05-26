@@ -25,7 +25,7 @@
                                 <select name="categorie_id">
                                     <option value="" selected>Categoría</option>
                                     @foreach ( $categories as $categorie )
-                                    <option value="{{ $categorie->id }}">{{ $categorie->categorie_name }}</option>
+                                    <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
                                     @endforeach
                                 </select>
                             </label>
@@ -115,7 +115,7 @@
                                 <select name="categorie_id">
                                     <option value="" selected>Categoría</option>
                                     @foreach ( $categories as $categorie )
-                                    <option value="{{ $categorie->id }}">{{ $categorie->categorie_name }}</option>
+                                    <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
                                     @endforeach
                                 </select>
                             </label>
@@ -206,11 +206,11 @@
                                 switch( item.categorie_id ) {
                                     @foreach ( $categories as $categorie )
                                     case {{ $categorie->id }}:
-                                        item.categorie_name = '{{ $categorie->categorie_name }}';
+                                        item.name = '{{ $categorie->name }}';
                                         break;
                                     @endforeach
                                 }
-                                codigoHTML = '<a href="/receta/'+item.id+'" class="receta"><p class="categoria b1">' + item.categorie_name + '<div class="image"><img src="/assets/images/recetas/'+item.photo_small+'" alt="'+item.name+'"></div><p class="nombre">'+item.name+'</p><p class="porciones">'+item.portions+' porciones</p><p class="tiempo">Tiempo de preparación: '+item.preparation_time+'</p><div class="ranking"><span class="stars s'+item.ranking+'"></span></div></a>';
+                                codigoHTML = '<a href="/receta/'+item.id+'" class="receta"><p class="categoria b1">' + item.name + '<div class="image"><img src="/assets/images/recetas/'+item.photo_small+'" alt="'+item.name+'"></div><p class="nombre">'+item.name+'</p><p class="porciones">'+item.portions+' porciones</p><p class="tiempo">Tiempo de preparación: '+item.preparation_time+'</p><div class="ranking"><span class="stars s'+item.ranking+'"></span></div></a>';
 
                                 $(".content-grid").append(codigoHTML);
 

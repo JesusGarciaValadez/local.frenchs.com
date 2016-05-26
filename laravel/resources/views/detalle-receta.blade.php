@@ -92,9 +92,9 @@
                 <div class="content-grid">
                     @foreach( $recipes as $recipe )
                         @include( 'partials.recipe', [
-                                'recipe' => $recipe,
-                                'class' => 'b2'
-                              ])
+                                  'recipe' => $recipe,
+                                  'class' => 'b2'
+                                ])
                     @endforeach
                 </div>
                 <a id="" href="#" class="btn-mas">Ver más recetas</a>

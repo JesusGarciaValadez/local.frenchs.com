@@ -28,7 +28,7 @@ class Category extends Model
   protected $guarded = [ 'id', 'created_at', 'updated_at' ];
 
   /**
-   * Obtains all the recipes within a categorie
+   * Obtains all the recipe within a category
    */
   public function recipes ()
   {
