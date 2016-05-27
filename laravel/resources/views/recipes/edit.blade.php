@@ -79,15 +79,15 @@
               </div>
             </div>
 
-            <div class="form-group{{ $errors->has( 'categorie' ) ? ' has-error' : '' }}">
-              {!! Form::label( 'categorie_id', 'Categoria', [ 'class' => 'col-md-4 control-label' ] ) !!}
+            <div class="form-group{{ $errors->has( 'category' ) ? ' has-error' : '' }}">
+              {!! Form::label( 'category_id', 'Categoria', [ 'class' => 'col-md-4 control-label' ] ) !!}
 
               <div class="col-md-6">
-                {!! Form::select( 'categorie_id', $categories, $recipe[ 'categorie_id' ], [ 'class' => 'form-control' ] ) !!}
+                {!! Form::select( 'category_id', $categories, $recipe[ 'category_id' ], [ 'class' => 'form-control' ] ) !!}
 
-                @if ( $errors->has( 'categorie' ) )
+                @if ( $errors->has( 'categories' ) )
                   <span class="help-block">
-                    <strong>{{ $errors->first( 'categorie' ) }}</strong>
+                    <strong>{{ $errors->first( 'categories' ) }}</strong>
                   </span>
                 @endif
               </div>

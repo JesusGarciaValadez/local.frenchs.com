@@ -57,7 +57,7 @@ class RecipesController extends Controller
       'user_email'        => 'required|max:255|email',
       'name'              => 'required|max:255',
       'photo_big'         => 'required|mimes:png,jpeg,jpg',
-      'categorie_id'      => 'required|exists:recipes_categories,id',
+      'category_id'       => 'required|exists:categories,id',
       'portions'          => 'required|in:1,2,3,4,5,6',
       'preparation_time'  => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
       'cooking_time'      => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
@@ -112,7 +112,7 @@ class RecipesController extends Controller
                                 ] );
       }
 
-      $recipe[ 'categorie_id' ]         = intval( $recipe[ 'categorie_id' ] );
+      $recipe[ 'category_id' ]          = intval( $recipe[ 'category_id' ] );
       $recipe[ 'ingredients_desktop' ]  = $recipe[ 'ingredients' ];
       $recipe[ 'ingredients_mobile' ]   = $recipe[ 'ingredients' ];
 
@@ -157,13 +157,13 @@ class RecipesController extends Controller
       array_push( $this->_search, "name like '%${recipe[ 'name' ]}%'" );
     }
 
-    if ( empty( $recipe[ 'categorie_id' ] ) )
+    if ( empty( $recipe[ 'category_id' ] ) )
     {
       unset( $recipe[ 'categorie_id' ] );
     }
     else
     {
-      array_push( $this->_search, "categorie_id = '${recipe[ 'categorie_id' ]}'" );
+      array_push( $this->_search, "category_id = '${recipe[ 'category_id' ]}'" );
     }
 
     if ( empty( $recipe[ 'preparation_time' ] ) )
@@ -195,7 +195,7 @@ class RecipesController extends Controller
 
     $validator = \Validator::make( $recipe, [
       'name'              => 'sometimes|required|max:255',
-      'categorie_id'      => 'sometimes|required|exists:recipes_categories,id',
+      'category_id'       => 'sometimes|required|exists:categories,id',
       'preparation_time'  => 'sometimes|required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
       'portions'          => 'sometimes|required|in:1,2,3,4,5,6',
       'ranking'           => 'sometimes|required|in:1,2,3,4,5'

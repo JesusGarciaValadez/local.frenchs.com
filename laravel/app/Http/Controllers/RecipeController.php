@@ -56,8 +56,8 @@ class RecipeController extends Controller
     if ( $recipe->active )
     {
       return view( 'detalle-receta', [
-                   'recipe' => $recipe,
-                   'recipes' => $recipes,
+                   'recipe'     => $recipe,
+                   'recipes'    => $recipes,
                    'categories' => $categories
                   ] );
     }
@@ -70,15 +70,13 @@ class RecipeController extends Controller
   /**
    * Show the recipe for edit the information.
    * @param  Request           $request           The parameters of the request of the page.
-   * @param  Recipe            $recipes           Model of the recipes.
-   * @param  Category          $Category          Model of the categories of the recipes.
    * @return View                                 View with the recipe information.
    */
-  public function update ( Request $request, Recipe $recipe, Category $category )
+  public function update ( Request $request )
   {
-    $this->_getRecipe( $request, $recipe );
-    $this->_getCategories( $category );
-    $this->_getDomain( $request );
+    $this->_recipe      = $this->_getRecipe( $request );
+    $this->_categories  = $this->_getCategories( );
+    $this->_domain      = $this->_getDomain( $request );
 
     $recipe[ 'id' ]                   = $this->_recipe[ 'id' ];
     $recipe[ 'name' ]                 = $this->_recipe[ 'name' ];
@@ -86,7 +84,7 @@ class RecipeController extends Controller
     $recipe[ 'photo_small' ]          = "";
     $recipe[ 'old_photo_big' ]        = $this->_recipe[ 'photo_big' ];
     $recipe[ 'old_photo_small' ]      = $this->_recipe[ 'photo_small' ];
-    $recipe[ 'categorie_id' ]         = $this->_recipe[ 'categorie_id' ];
+    $recipe[ 'category_id' ]          = $this->_recipe[ 'category_id' ];
     $recipe[ 'portions' ]             = $this->_recipe[ 'portions' ];
     $recipe[ 'preparation_time' ]     = $this->_recipe[ 'preparation_time' ];
     $recipe[ 'cooking_time' ]         = $this->_recipe[ 'cooking_time' ];
@@ -114,11 +112,11 @@ class RecipeController extends Controller
    * @param  Categories $categories Model of the categories of the recipes.
    * @return mixed                  Return the response if there's an error or the view with hiw parameters.
    */
-  public function updated ( Request $request, Recipe $recipe, Category $category )
+  public function updated ( Request $request  )
   {
-    $this->_getRecipe( $request, $recipe );
-    $this->_getCategories( $category );
-    $this->_getDomain( $request );
+    $this->_recipe      = $this->_getRecipe( $request );
+    $this->_categories  = $this->_getCategories( );
+    $this->_domain      = $this->_getDomain( $request );
 
     $recipe         = $this->_setRecipeInfo( $request );
     $recipe[ 'id' ] = $this->_recipe[ 'id' ];
@@ -130,7 +128,7 @@ class RecipeController extends Controller
       'name'                => 'required|max:255',
       'photo_big'           => 'sometimes|image|mimes:png,jpeg',
       'photo_small'         => 'sometimes|image|mimes:png,jpeg',
-      'categorie_id'        => 'required|exists:recipes_categories,id',
+      'category_id'         => 'required|exists:categories,id',
       'portions'            => 'required|in:1,2,3,4,5,6',
       'preparation_time'    => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
       'cooking_time'        => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
@@ -201,9 +199,9 @@ class RecipeController extends Controller
    * @param  Recipe  $recipe  Model of the recipes.
    * @return void.
    */
-  protected function _getRecipe ( Request $request, Recipe $recipe )
+  protected function _getRecipe ( Request $request )
   {
-    $this->_recipe = $recipe->findOrFail( $request->id );
+    return \frenchs\Recipe::findOrFail( $request->id );
   }
 
   /**
@@ -215,7 +213,7 @@ class RecipeController extends Controller
     $recipe[ 'name' ]                 = $request[ 'name' ];
     $recipe[ 'photo_big' ]            = $request[ 'photo_big' ];
     $recipe[ 'photo_small' ]          = $request[ 'photo_small' ];
-    $recipe[ 'categorie_id' ]         = $request[ 'categorie_id' ];
+    $recipe[ 'category_id' ]          = $request[ 'category_id' ];
     $recipe[ 'portions' ]             = $request[ 'portions' ];
     $recipe[ 'preparation_time' ]     = $request[ 'preparation_time' ];
     $recipe[ 'cooking_time' ]         = $request[ 'cooking_time' ];
@@ -239,17 +237,19 @@ class RecipeController extends Controller
    * @param  RecipesCategories $recipesCategories Model of the recipes.
    * @return void.
    */
-  protected function _getCategories ( Category $category )
+  protected function _getCategories ( )
   {
     /*
      * Obtaining categories information
      */
-    $categoriesSet  = $category->all();
+    $categoriesSet  = \frenchs\Category::all();
 
-    foreach ( $categoriesSet as $categorie )
+    foreach ( $categoriesSet as $category )
     {
-      $this->_categories[ $categorie[ 'id' ] ] = $categorie[ 'categorie_name' ];
+      $categories[ $category[ 'id' ] ] = $category[ 'name' ];
     }
+
+    return $categories;
   }
 
   /**
@@ -259,10 +259,7 @@ class RecipeController extends Controller
    */
   protected function _getDomain ( Request $request )
   {
-    /*
-     * Obtain domain URL
-     */
-    $this->_domain  = $request->root();
+    return $request->root();
   }
 
   /**

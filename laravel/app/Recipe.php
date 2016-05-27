@@ -17,7 +17,7 @@ class Recipe extends Model
     'name',
     'photo_big',
     'photo_small',
-    'categorie_id',
+    'category_id',
     'portions',
     'preparation_time',
     'cooking_time',

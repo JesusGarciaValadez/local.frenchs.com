@@ -22,10 +22,10 @@
                         <div class="content-filtro">
                             <label>
                                 <div class="first-icon"><i class="fa fa-tag"></i></div>
-                                <select name="categorie_id">
+                                <select name="category_id">
                                     <option value="" selected>Categoría</option>
-                                    @foreach ( $categories as $categorie )
-                                    <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                                    @foreach ( $categories as $category )
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </label>
@@ -112,10 +112,10 @@
                             <p>Te recomendamos tu foto en formato: jpg / 300x300px</p>
                             <label>
                                 <div class="first-icon"><i class="fa fa-tag"></i></div>
-                                <select name="categorie_id">
+                                <select name="category_id">
                                     <option value="" selected>Categoría</option>
-                                    @foreach ( $categories as $categorie )
-                                    <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                                    @foreach ( $categories as $category )
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </label>
@@ -172,52 +172,52 @@
                 </div>
             </div>
         </div>
+        <script>
+            $('#btn_search').click( function ( ) {
+                enviar( );
+            } );
 
-    <script>
-        $('#btn_search').click(function (){
-            enviar();
-        });
+            $( "#enviar_receta" ).submit( function( event ) {
+              event.preventDefault( );
+              enviar( );
+            });
 
-        $( "#enviar_receta" ).submit(function( event ) {
-          event.preventDefault();
-          enviar();
-        });
+            function enviar( ) {
+                var nombre  = $( "input[name='name']" ).val( ),
+                categoria   = $( "select[name='category_id']" ).val( ),
+                tiempo      = $( "select[name='preparation_time']" ).val( ),
+                porciones   = $( "select[name='portions']" ).val( ),
+                rank        = $( "select[name='ranking']" ).val( ),
+                codigoHtml;
 
-        function enviar(){
-            var nombre = $( "input[name='name']" ).val();
-            var categoria = $( "select[name='categorie_id']" ).val();
-            var tiempo = $( "select[name='preparation_time']" ).val();
-            var porciones = $( "select[name='portions']" ).val();
-            var rank = $( "select[name='ranking']" ).val();
-            var codigoHtml;
-            //Obtencion de resultados
-                $.get( "/buscar-recetas", {name :nombre, categorie_id:categoria,preparation_time:tiempo,portions:porciones,ranking:rank} )
+                //Obtencion de resultados
+                $.get( "/buscar-recetas", {
+                    name:               nombre,
+                    category_id:        categoria,
+                    preparation_time:   tiempo,
+                    portions:           porciones,
+                    ranking:            rank
+                } )
+                //Si ocurre un error
+                .fail( function( ) {
+                    alert( "error" );
+                } )
+                //Si es correcto
+                .done( function( response ) {
+                    $( ".receta" ).hide();
 
-                    //Si ocurre un error
-                      .fail(function() {
-                        alert( "error" );
-                      })
-
-                    //Si es correcto
-                      .done(function( data ) {
-                            $(".receta").hide();
-                            $.each(data, function(i, item) {
-
-                                switch( item.categorie_id ) {
-                                    @foreach ( $categories as $categorie )
-                                    case {{ $categorie->id }}:
-                                        item.name = '{{ $categorie->name }}';
-                                        break;
-                                    @endforeach
-                                }
-                                codigoHTML = '<a href="/receta/'+item.id+'" class="receta"><p class="categoria b1">' + item.name + '<div class="image"><img src="/assets/images/recetas/'+item.photo_small+'" alt="'+item.name+'"></div><p class="nombre">'+item.name+'</p><p class="porciones">'+item.portions+' porciones</p><p class="tiempo">Tiempo de preparación: '+item.preparation_time+'</p><div class="ranking"><span class="stars s'+item.ranking+'"></span></div></a>';
-
-                                $(".content-grid").append(codigoHTML);
-
-                            });
-
-
-                      });
-        };
-    </script>
+                    $.each( response, function( index, item ) {
+                        switch( item.category_id ) {
+                            @foreach ( $categories as $category )
+                            case {{ $category->id }}:
+                                item.name = '{{ $category->name }}';
+                                break;
+                            @endforeach
+                        }
+                        codigoHTML = '<a href="/receta/'+item.id+'" class="receta"><p class="categoria b1">' + item.name + '<div class="image"><img src="/assets/images/recetas/'+item.photo_small+'" alt="'+item.name+'"></div><p class="nombre">'+item.name+'</p><p class="porciones">'+item.portions+' porciones</p><p class="tiempo">Tiempo de preparación: '+item.preparation_time+'</p><div class="ranking"><span class="stars s'+item.ranking+'"></span></div></a>';
+                        $( ".content-grid" ).append( codigoHTML );
+                    } );
+                } );
+            };
+        </script>
 @endsection
