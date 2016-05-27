@@ -41,7 +41,7 @@ class AlterRecipesTable extends Migration
             ->after( 'photo_small' );
       $table->foreign( 'categorie_id' )
             ->references( 'id' )
-            ->on( 'recipes_categories' );
+            ->on( 'categories' );
     } );
   }
 }
