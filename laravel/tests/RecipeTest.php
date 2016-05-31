@@ -30,7 +30,7 @@ class RecipeTest extends TestCase
 
   public function testEditRecipe ()
   {
-    $user = factory( frenchs\User::class )->create();
+    $user = factory( Frenchs\User::class )->create();
 
     $this->actingAs( $user )
          ->visit( "/editar-receta/16" )

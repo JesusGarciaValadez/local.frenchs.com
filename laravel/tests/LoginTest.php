@@ -24,7 +24,7 @@ class LoginTest extends TestCase
 
   public function testLogout ()
   {
-    $user = factory( frenchs\User::class )->create();
+    $user = factory( Frenchs\User::class )->create();
 
     $this->actingAs( $user )
          ->visit( '/' )

@@ -13,7 +13,7 @@
                 <div class="right">
                     <div class="descripcion">
                         <h2>Nueva Mostaza <span>BBQ Chipotle</span></h2>
-                        <p>Descubre el rico sabor de la Nueva French's&reg; Salsa BBQ Sabor Chipotle. Salsa hecha a base de tomate de la más alta calidad, con sabor a chipotle ahumado, creada especialmente para los conocedores. No contiene almidones. Utiliza nuestra salsa en tu próxima parrillada.</p>
+                        <p>Descubre el rico sabor de la Nueva French's&reg;  Salsa BBQ Sabor chipotle. Salsa hecha a base de tomate de la más alta calidad, con sabor a chipotle ahumado, creada especialmente para los conocedores. No contiene almidones. Utiliza nuestra salsa en tu próxima parrillada.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>

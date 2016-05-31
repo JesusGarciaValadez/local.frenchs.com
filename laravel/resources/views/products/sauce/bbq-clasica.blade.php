@@ -13,7 +13,7 @@
                 <div class="right">
                     <div class="descripcion">
                         <h2>Nueva Mostaza <span>BBQ Clásica</span></h2>
-                        <p>La Nueva French's BBQ Classica contiene el rico sabor del tomate con un toque dulce y fuerte a la vez. Crea tu parrillada con French's. Usa esta salsa para marinar costillas, pollo y carne.</p>
+                        <p>La Nueva French's&reg; BBQ Classica contiene el rico sabor del tomate con un toque dulce y fuerte a la vez. Crea tu parrillada con French's. Usa esta salsa para marinar costillas, pollo y carne.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>

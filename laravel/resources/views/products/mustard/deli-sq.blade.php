@@ -13,7 +13,7 @@
                 <div class="right">
                     <div class="descripcion">
                         <h2>Mostaza <span>Deli</span></h2>
-                        <p>French’s te ofrece el sabor concentrado de la mostaza. Elaborada especialmente para los paladares más exigentes, la Mostaza Deli está preparada con la más fina selección de semillas y especias.</p>
+                        <p>French's&reg; te ofrece el sabor concentrado de la mostaza. Elaborada especialmente para los paladares más exigentes, la Mostaza Deli está preparada con la más fina selección de semillas y especias.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>

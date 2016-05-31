@@ -1,6 +1,6 @@
 @extends( 'layouts.layout' )
 
-@section( 'title', "French's Classic Yellow - Mostaza Clásica" )
+@section( 'title', "French's&reg; Classic Yellow - Mostaza Clásica" )
 
 @section( 'content' )
         <div class="cover-interior-b"></div>

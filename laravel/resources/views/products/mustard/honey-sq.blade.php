@@ -13,7 +13,7 @@
                 <div class="right">
                     <div class="descripcion">
                         <h2>Mostaza <span>Honey</span></h2>
-                        <p>Disfruta el original sabor agridulce de la Mostaza French's Honey, elaborada con finas semillas y un delicioso toque de miel.</p>
+                        <p>Disfruta el original sabor agridulce de la Mostaza French's&reg; Honey, elaborada con finas semillas y un delicioso toque de miel.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>

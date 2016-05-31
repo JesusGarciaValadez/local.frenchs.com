@@ -13,7 +13,7 @@
                 <div class="right">
                     <div class="descripcion">
                         <h2>Mostaza <span>Clásica en Frasco</span></h2>
-                        <p>La Mostaza Clásica French's con el mismo sabor e ingredientes de siempre, que la hacen única, ahora en frasco.</p>
+                        <p>La Mostaza Clásica French's&reg;  con el mismo sabor e ingredientes de siempre, que la hacen única, ahora en frasco.</p>
                     </div>
                     <div class="ingredientes">
                         <h3>Ingredientes</h3>

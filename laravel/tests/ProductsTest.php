@@ -19,18 +19,18 @@ class ProductsTest extends TestCase
          ->click( 'PRODUCTOS' )
          ->assertResponseOk()
          ->seePageIs( '/productos' )
-         ->see( "French's Classic Yellow - Mostaza Clásica" )
-         ->see( "French's Classic Yellow - Mostaza Clásica en frasco" )
-         ->see( "French's Mostaza Dijon" )
-         ->see( "French's Mostaza Deli" )
-         ->see( "Frenchs' Mostaza Honey - Sabor agridulce" )
-         ->see( "French's Worcestershire Sauce - Salsa inglesa" )
-         ->see( "Nueva French's BBQ Classic - Salsa BBQ Clásica" )
-         ->see( "Nueva French's BBQ Chipotle - Salsa BBQ sabor chipotle" );
+         ->see( "French's® Clásica Yellow - Mostaza Clásica" )
+         ->see( "French's® Clásica Yellow - Mostaza Clásica en frasco" )
+         ->see( "French's® Mostaza Dijon" )
+         ->see( "French's® Mostaza Deli" )
+         ->see( "French's® Mostaza Honey - Sabor agridulce" )
+         ->see( "French's® Worcestershire Sauce - Salsa inglesa" )
+         ->see( "Nueva French's® BBQ Classic - Salsa BBQ Clásica" )
+         ->see( "Nueva French's® BBQ Chipotle - Salsa BBQ - Sabor chipotle" );
   }
 
   /**
-   * Test Classic Mustard landing page avalability.
+   * Test Clásica Mustard landing page avalability.
    *
    * @return void
    */

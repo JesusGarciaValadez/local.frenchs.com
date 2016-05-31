@@ -31,8 +31,7 @@ class AboutTest extends TestCase
     $this->visit( '/' )
          ->click( 'SOBRE NOSOTROS' )
          ->seePageIs( '/sobre-nosotros' )
-         ->see( 'Descubre por qué<br><span>French’s</span> es la compañía<br>perfecta para tu mesa.' )
-         ->see( 'La Mostaza <span>French’s</span> se presentó al público en 1904' )
-         ->see( 'En 1974 se presenta el empaque de<br><span>French’s</span> para apretar la botella' );
+         ->see( "En 1974 se presenta el empaque de<br><span>French's®</span> para apretar la botella" )
+         ->see( "La Mostaza <span>French's®</span> se presentó al público en 1904" );
   }
 }

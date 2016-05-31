@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>@yield( 'title' ) | French's México</title>
+        <title>@yield( 'title' ) | French's&reg; México</title>
         <meta name="description" content="@yield( 'description' )">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
         {!! Html::meta( 'robots', 'INDEX,FOLLOW' ) !!}
@@ -66,7 +66,7 @@
                     </ul>
                 </nav>
                 <div class="derechos right">
-                    <p>© 2015  French's MX All rights reserved.</p>
+                    <p>© 2015  French's&reg; MX All rights reserved.</p>
                 </div>
             </div>
         </footer>
