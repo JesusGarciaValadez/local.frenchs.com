@@ -1,6 +1,6 @@
 <?php
 
-namespace frenchs\Exceptions;
+namespace Frenchs\Exceptions;
 
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;

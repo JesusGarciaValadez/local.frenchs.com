@@ -1,6 +1,6 @@
 <?php
 
-namespace frenchs\Providers;
+namespace Frenchs\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'frenchs\Events\SomeEvent' => [
-            'frenchs\Listeners\EventListener',
+        'Frenchs\Events\SomeEvent' => [
+            'Frenchs\Listeners\EventListener',
         ],
     ];
 

@@ -1,14 +1,14 @@
 <?php
 
-namespace frenchs\Http\Controllers;
+namespace Frenchs\Http\Controllers;
 
-use frenchs\Recipe;
-use frenchs\Category;
+use Frenchs\Recipe;
+use Frenchs\Category;
 
 use Illuminate\Http\Request;
 
-use frenchs\Http\Requests;
-use frenchs\Http\Controllers\Controller;
+use Frenchs\Http\Requests;
+use Frenchs\Http\Controllers\Controller;
 
 class RecipeController extends Controller
 {
@@ -171,7 +171,7 @@ class RecipeController extends Controller
       /*
        * Persist the new data into the database.
        */
-      $update = \frenchs\Recipe::where( 'id', $request[ 'id' ] )
+      $update = \Frenchs\Recipe::where( 'id', $request[ 'id' ] )
                                ->update( $recipe );
 
       /*
@@ -201,7 +201,7 @@ class RecipeController extends Controller
    */
   protected function _getRecipe ( Request $request )
   {
-    return \frenchs\Recipe::findOrFail( $request->id );
+    return \Frenchs\Recipe::findOrFail( $request->id );
   }
 
   /**
@@ -242,7 +242,7 @@ class RecipeController extends Controller
     /*
      * Obtaining categories information
      */
-    $categoriesSet  = \frenchs\Category::all();
+    $categoriesSet  = \Frenchs\Category::all();
 
     foreach ( $categoriesSet as $category )
     {

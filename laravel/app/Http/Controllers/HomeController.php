@@ -1,13 +1,13 @@
 <?php
 
-namespace frenchs\Http\Controllers;
+namespace Frenchs\Http\Controllers;
 
-use frenchs\Recipe;
+use Frenchs\Recipe;
 
 use Illuminate\Http\Request;
 
-use frenchs\Http\Requests;
-use frenchs\Http\Controllers\Controller;
+use Frenchs\Http\Requests;
+use Frenchs\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {

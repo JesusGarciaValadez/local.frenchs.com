@@ -1,6 +1,6 @@
 <?php
 
-namespace frenchs\Http\Middleware;
+namespace Frenchs\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

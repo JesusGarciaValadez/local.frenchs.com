@@ -1,6 +1,6 @@
 <?php
 
-namespace frenchs\Http\Middleware;
+namespace Frenchs\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

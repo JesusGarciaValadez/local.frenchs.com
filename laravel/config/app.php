@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        frenchs\Providers\AppServiceProvider::class,
-        frenchs\Providers\AuthServiceProvider::class,
-        frenchs\Providers\EventServiceProvider::class,
-        frenchs\Providers\RouteServiceProvider::class,
+        Frenchs\Providers\AppServiceProvider::class,
+        Frenchs\Providers\AuthServiceProvider::class,
+        Frenchs\Providers\EventServiceProvider::class,
+        Frenchs\Providers\RouteServiceProvider::class,
 
         /*
          * Custom Service Providers

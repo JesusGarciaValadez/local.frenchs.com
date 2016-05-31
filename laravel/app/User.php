@@ -1,6 +1,6 @@
 <?php
 
-namespace frenchs;
+namespace Frenchs;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

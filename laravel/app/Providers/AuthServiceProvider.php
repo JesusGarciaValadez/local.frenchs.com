@@ -1,6 +1,6 @@
 <?php
 
-namespace frenchs\Providers;
+namespace Frenchs\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'frenchs\Model' => 'frenchs\Policies\ModelPolicy',
+        'Frenchs\Model' => 'Frenchs\Policies\ModelPolicy',
     ];
 
     /**

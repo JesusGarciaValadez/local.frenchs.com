@@ -1,10 +1,10 @@
 <?php
 
-namespace frenchs\Http\Controllers\Auth;
+namespace Frenchs\Http\Controllers\Auth;
 
-use frenchs\User;
+use Frenchs\User;
 use Validator;
-use frenchs\Http\Controllers\Controller;
+use Frenchs\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
