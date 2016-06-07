@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use Frenchs\Http\Requests;
 use Frenchs\Http\Requests\UploadRecipeFormRequest;
+use Frenchs\Http\Requests\SearchRecipesFormRequest;
 use Frenchs\Http\Controllers\Controller;
 
 class RecipesController extends Controller
@@ -110,7 +111,7 @@ class RecipesController extends Controller
    * @param  Request $request The parameters of the request of the page.
    * @return String           JSON response with a message and code.
    */
-  public function search ( Request $request )
+  public function search ( SearchRecipesFormRequest $request )
   {
     $recipe   = $request->all();
 
@@ -160,50 +161,26 @@ class RecipesController extends Controller
       array_push( $this->_search, "ranking = '${recipe[ 'ranking' ]}'" );
     }
 
-    $validator = \Validator::make( $recipe, [
-      'name'              => 'sometimes|required|max:255',
-      'category_id'       => 'sometimes|required|exists:categories,id',
-      'preparation_time'  => 'sometimes|required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
-      'portions'          => 'sometimes|required|in:1,2,3,4,5,6',
-      'ranking'           => 'sometimes|required|in:1,2,3,4,5'
-    ], [
-      'same'    => 'The :attribute and :other must match.',
-      'size'    => 'The :attribute must be exactly :size.',
-      'between' => 'The :attribute must be between :min - :max.',
-      'in'      => 'The :attribute must be one of the following types: :values',
-    ] );
+    $search = implode( 'AND ', array_flatten( $this->_search ) );
+    $search = ( !empty( $search ) ) ? $search . " AND active = true" : "active = true";
 
-    if ( $validator->fails() )
+    if ( !empty( $search ) )
     {
-      return response()->json( [
-                                'response_message' => 'Validation fail',
-                                'response_code' => '0',
-                                'errors' => $validator->errors()->all()
-                               ] );
+      $recipes    = Recipe::whereRaw( $search )
+                           ->orderBy( 'created_at', 'desc' )
+                           ->get();
+
+      $categories = Category::all();
+
+      return response()->json( $recipes );
     }
     else
     {
-      $search = implode( 'AND ', array_flatten( $this->_search ) );
-      $search = ( !empty( $search ) ) ? $search . " AND active = true" : "active = true";
-
-      if ( !empty( $search ) )
-      {
-        $recipes    = Recipe::whereRaw( $search )
-                             ->orderBy( 'created_at', 'desc' )
-                             ->get();
-
-        $categories = Category::all();
-
-        return response()->json( $recipes );
-      }
-      else
-      {
-        return response()->json( [
-                                  'response_message' => 'Search fail',
-                                  'response_code' => '4',
-                                  'errors' => $validator->errors()->all()
-                                 ] );
-      }
+      return response()->json( [
+                                'response_message' => 'Search fail',
+                                'response_code' => '4',
+                                'errors' => $validator->errors()->all()
+                               ] );
     }
   }
 }
