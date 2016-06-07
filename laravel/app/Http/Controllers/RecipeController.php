@@ -8,7 +8,7 @@ use Frenchs\Category;
 use Illuminate\Http\Request;
 
 use Frenchs\Http\Requests;
-use Frenchs\Http\Requests\UploadRecipeFormRequest;
+use Frenchs\Http\Requests\UpdateRecipeFormRequest;
 use Frenchs\Http\Controllers\Controller;
 
 class RecipeController extends Controller
@@ -113,7 +113,7 @@ class RecipeController extends Controller
    * @param  Categories $categories Model of the categories of the recipes.
    * @return mixed                  Return the response if there's an error or the view with hiw parameters.
    */
-  public function updated ( UploadRecipeFormRequest $request )
+  public function updated ( UpdateRecipeFormRequest $request )
   {
     $this->_recipe      = $this->_getRecipe( $request );
     $this->_categories  = $this->_getCategories( );
