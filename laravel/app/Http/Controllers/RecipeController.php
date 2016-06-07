@@ -8,6 +8,7 @@ use Frenchs\Category;
 use Illuminate\Http\Request;
 
 use Frenchs\Http\Requests;
+use Frenchs\Http\Requests\UploadRecipeFormRequest;
 use Frenchs\Http\Controllers\Controller;
 
 class RecipeController extends Controller
@@ -112,7 +113,7 @@ class RecipeController extends Controller
    * @param  Categories $categories Model of the categories of the recipes.
    * @return mixed                  Return the response if there's an error or the view with hiw parameters.
    */
-  public function updated ( Request $request  )
+  public function updated ( UploadRecipeFormRequest $request )
   {
     $this->_recipe      = $this->_getRecipe( $request );
     $this->_categories  = $this->_getCategories( );
@@ -122,75 +123,33 @@ class RecipeController extends Controller
     $recipe[ 'id' ] = $this->_recipe[ 'id' ];
 
     /*
-     * Setting validation rules
+     * If there's a file, then uploading it.
      */
-    $validator = \Validator::make( $recipe, [
-      'name'                => 'required|max:255',
-      'photo_big'           => 'sometimes|image|mimes:png,jpeg',
-      'photo_small'         => 'sometimes|image|mimes:png,jpeg',
-      'category_id'         => 'required|exists:categories,id',
-      'portions'            => 'required|in:1,2,3,4,5,6',
-      'preparation_time'    => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
-      'cooking_time'        => 'required|in:5 min.,10 mins.,15 mins.,20 mins.,25 mins.,30 mins.',
-      'ingredients_desktop' => 'required|max:1500',
-      'ingredients_mobile'  => 'required|max:1500',
-      'preparation'         => 'required|max:1500',
-      'ranking'             => 'required|in:1,2,3,4,5',
-      'product_name'        => 'required|in:classic-sq,classic-sq-en-frasco,dijon,deli,honey,inglesa,bbq,bbq-chipotle',
-      'active'              => 'required'
-    ], [
-      'required'    => "El campo ':attribute' es obligatorio.",
-      'alpha'       => "El campo ':attribute' solo debe contener letras.",
-      'alpha_dash'  => "El campo ':attribute' solo debe contener letras, numeros y guiones bajos.",
-      'alpha_num'   => "El campo ':attribute' solo debe contener letras y numeros.",
-      'same'        => 'The :attribute and :other must match.',
-      'size'        => 'The :attribute must be exactly :size.',
-      'between'     => 'The :attribute must be between :min - :max.',
-      'in'          => 'The :attribute must be one of the following types: :values',
-    ] );
+    $recipe[ 'photo_big' ]    = ( $this->_movePhoto( $request, 'photo_big' ) ) ? $this->_recipe[ 'photo_big' ] : $request->old_photo_big;
+    $recipe[ 'photo_small' ]  = ( $this->_movePhoto( $request, 'photo_small' ) ) ? $this->_recipe[ 'photo_small' ] : $request->old_photo_small;
 
-    if ( $validator->fails() )
-    {
-      /*
-       * If validation fails, send response via JSON with an error code
-       */
-      return response()->json( [
-        'response_message'  => 'Validation fail',
-        'response_code'     => '0',
-        'errors'            => $validator->errors()->all(),
-        'recipe: '          => $recipe ] );
-    }
-    else
-    {
-      /*
-       * If there's a file, then uploading it.
-       */
-      $recipe[ 'photo_big' ]    = ( $this->_movePhoto( $request, 'photo_big' ) ) ? $this->_recipe[ 'photo_big' ] : $request->old_photo_big;
-      $recipe[ 'photo_small' ]  = ( $this->_movePhoto( $request, 'photo_small' ) ) ? $this->_recipe[ 'photo_small' ] : $request->old_photo_small;
+    /*
+     * Persist the new data into the database.
+     */
+    $update = \Frenchs\Recipe::where( 'id', $request[ 'id' ] )
+                             ->update( $recipe );
 
-      /*
-       * Persist the new data into the database.
-       */
-      $update = \Frenchs\Recipe::where( 'id', $request[ 'id' ] )
-                               ->update( $recipe );
+    /*
+     * Create a response for passing it into the view.
+     */
+    $recipe[ 'message' ]          = ( $update ) ? "Receta actualizada" : "Hubo un error al actualizar la receta. :/";
+    $recipe[ 'updated' ]          = ( $update ) ? true : false;
+    $recipe[ 'old_photo_big' ]    = $recipe[ 'photo_big' ];
+    $recipe[ 'old_photo_small' ]  = $recipe[ 'photo_small' ];
 
-      /*
-       * Create a response for passing it into the view.
-       */
-      $recipe[ 'message' ]          = ( $update ) ? "Receta actualizada" : "Hubo un error al actualizar la receta. :/";
-      $recipe[ 'updated' ]          = ( $update ) ? true : false;
-      $recipe[ 'old_photo_big' ]    = $recipe[ 'photo_big' ];
-      $recipe[ 'old_photo_small' ]  = $recipe[ 'photo_small' ];
-
-      /*
-       * Passing the recipe information, categories and domain url to the view.
-       */
-      return view( 'recipes.edit', [
-                   'recipe'     => $recipe,
-                   'categories' => $this->_categories,
-                   'domain'     => $this->_domain
+    /*
+     * Passing the recipe information, categories and domain url to the view.
+     */
+    return view( 'recipes.edit', [
+                 'recipe'     => $recipe,
+                 'categories' => $this->_categories,
+                 'domain'     => $this->_domain
                   ] );
-    }
   }
 
   /**
