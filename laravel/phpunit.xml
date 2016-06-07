@@ -23,20 +23,5 @@
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
-        <env name="DB_CONNECTION" value="mysql_test"/>
-        <env name="MAIL_DRIVER" value="smtp" />
-        <env name="MAIL_HOST" value="mailtrap.io" />
-        <env name="MAIL_PORT" value="2525" />
-        <env name="MAIL_USERNAME" value="fbff384bce320a" />
-        <env name="MAIL_PASSWORD" value="70361de026ac7a" />
-        <env name="MAIL_ENCRYPTION" value="tls" />
-        <env name="CONTACT_SENDER" value="contacto@frenchs.com.mx" />
-        <env name="CONTACT_APP_NAME" value="Formulario de contacto | French's" />
-        <env name="CONTACT_MAIL" value="jesus.garcia@lunave.com" />
-        <env name="CONTACT_NAME" value="Jesús" />
-        <env name="UPLOAD_APP_NAME" value="Han subido una nueva receta | French's" />
-        <env name="ADMIN_NAME" value="Jesús Antonio García Valadez"/>
-        <env name="ADMIN_EMAIL" value="jesus.garcia@lunave.com"/>
-        <env name="ADMIN_PASSWORD" value="_Lun4v3_"/>
     </php>
 </phpunit>
