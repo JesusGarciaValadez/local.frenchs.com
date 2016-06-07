@@ -27,8 +27,8 @@ class ContactController extends Controller
 
   /**
    * Receive the user's data from the contact form.
-   * @param  Request $request Parameters of the request of the page.
-   * @return String           JSON response with a message and code.
+   * @param  ContactFormRequest $request Parameters of the request of the page.
+   * @return String                      JSON response with a message and code.
    */
   public function send ( ContactFormRequest $request )
   {
