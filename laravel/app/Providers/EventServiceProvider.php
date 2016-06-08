@@ -16,6 +16,9 @@ class EventServiceProvider extends ServiceProvider
         'Frenchs\Events\SomeEvent' => [
             'Frenchs\Listeners\EventListener',
         ],
+        'Frenchs\Events\RecipeUploaded' => [
+            'Frenchs\Listeners\SendMailWhenRecipeUploaded'
+        ]
     ];
 
     /**

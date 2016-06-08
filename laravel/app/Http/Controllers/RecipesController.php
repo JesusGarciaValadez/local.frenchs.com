@@ -12,13 +12,11 @@ use Frenchs\Http\Requests\UploadRecipeFormRequest;
 use Frenchs\Http\Requests\SearchRecipesFormRequest;
 use Frenchs\Http\Controllers\Controller;
 
+use Event;
+use Frenchs\Events\RecipeUploaded;
+
 class RecipesController extends Controller
 {
-  /**
-   * Subject of the email to send if a user upload a recipe.
-   * @var String
-   */
-  protected $_subject;
   /**
    * Array to form a query string depends of the parameters received in the request.
    * @var array
@@ -52,34 +50,11 @@ class RecipesController extends Controller
     $recipe         = $request->all();
     unset( $recipe[ 'Enviar' ] );
 
-    $this->_subject = 'Han enviado una nueva receta.';
-
-    if ( $request->hasFile( 'photo_big' ) )
-    {
-      try
-      {
-        $file                   = $request->file( 'photo_big' );
-        $destinationPath        = public_path() . '/assets/images/recetas/';
-        $filename               = strtolower( $recipe[ 'photo_big' ]->getClientOriginalName() );
-        $uploadSuccess          = $file->move( $destinationPath, $filename );
-        $recipe[ 'photo_big' ]  = $filename;
-      }
-      catch ( Exception $e )
-      {
-        return response()->json( [
-                                  'response_message' => 'Error: File was not uploaded',
-                                  'response_code' => '3',
-                                  'Error: ' => $e->getError()
-                                ] );
-      }
-    }
-    else
-    {
-      return response()->json( [
-                                'response_message' => "Error: There's is not file to upload",
-                                'response_code' => '2'
-                              ] );
-    }
+    $file                   = $request->file( 'photo_big' );
+    $destinationPath        = public_path() . '/assets/images/recetas/';
+    $filename               = strtolower( $recipe[ 'photo_big' ]->getClientOriginalName() );
+    $uploadSuccess          = $file->move( $destinationPath, $filename );
+    $recipe[ 'photo_big' ]  = $filename;
 
     $recipe[ 'category_id' ]          = intval( $recipe[ 'category_id' ] );
     $recipe[ 'ingredients_desktop' ]  = $recipe[ 'ingredients' ];
@@ -93,12 +68,7 @@ class RecipesController extends Controller
     $recipe[ 'id' ] = Recipe::firstOrCreate( $recipe );
     $recipes        = Recipe::findOrFail( [ 'id' => $recipe[ 'id' ]->id ] );
 
-    \Mail::send( 'emails.upload', [ 'recipes' => $recipes ], function( $message )
-    {
-      $message->from( env( 'CONTACT_SENDER' ), env( 'UPLOAD_APP_NAME' ) );
-      $message->subject( $this->_subject );
-      $message->to( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
-    } );
+    Event::fire( new RecipeUploaded( $recipes ) );
 
     return response()->json( [
                               'response_message' => 'Success',
