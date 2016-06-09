@@ -8,14 +8,11 @@ use App\Http\Requests;
 use Frenchs\Http\Requests\ContactFormRequest;
 use Frenchs\Http\Controllers\Controller;
 
+use Event;
+use Frenchs\Events\ContactFormSended;
+
 class ContactController extends Controller
 {
-  /**
-   * Subject of the email sended when a user fills and send the contact form.
-   * @var string
-   */
-  protected $_subject = '';
-
   /**
    * Show the 'contacto' view.
    * @return View
@@ -34,14 +31,7 @@ class ContactController extends Controller
   {
     $data = $request->all();
 
-    $this->_subject = 'Formulario de contacto';
-
-    \Mail::send( 'emails.contact', [ 'contact' => $data ], function( $message )
-    {
-      $message->from( env( 'CONTACT_SENDER', 'forge' ), env( 'CONTACT_APP_NAME', 'forge' ) );
-      $message->subject( $this->_subject );
-      $message->to( env( 'CONTACT_MAIL', 'forge' ), env( 'CONTACT_NAME', 'forge' ) );
-    } );
+    Event::fire( new ContactFormSended( $data ) );
 
     return response()->json( [ 'response_message' => 'success', 'response_code' => '1' ] );
   }
