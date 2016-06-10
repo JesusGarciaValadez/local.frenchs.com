@@ -8,7 +8,7 @@
         <section class="recetas">
             <div class="title">
                 <div class="container">
-                    <h2>Descubre la variedad de recetas<br>que <span>French’s</span> tiene para ti.</h2>
+                    <h2>Descubre la variedad de recetas<br>que <span>French’s&reg;</span> tiene para ti.</h2>
                 </div>
             </div>
             <div class="filtro">

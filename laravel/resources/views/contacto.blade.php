@@ -9,7 +9,7 @@
 
             <div class="title">
                 <div class="container">
-                    <h2>En <span>French’s</span><br>nos complace mucho tu visita.</h2>
+                    <h2>En <span>French’s&reg;</span><br>nos complace mucho tu visita.</h2>
                     <p>Si tienes una gran idea, saludo o comentario,<br>compártelo con nosotros.</p>
                 </div>
             </div>

@@ -40,7 +40,7 @@
                         </div>
                         <div class="producto">
                             <a href="{{ route( 'honey' ) }}">{!! Html::image( 'assets/images/slider/s7-producto.png', "Frenchs' Mostaza Honey - Sabor agridulce" ) !!}</a>
-                            <p class="nombre">French's&reg; Mostaza Honey - Sabor agridulce</p>
+                            <p class="nombre">French's&reg; Mostaza Honey - Sabor Agridulce</p>
                             <div class="gramos">340g</div>
                         </div>
                     </div>
@@ -59,8 +59,8 @@
                             <div class="gramos">396g</div>
                         </div>
                         <div class="producto">
-                            <a href="{{ route( 'bbq-chipotle' ) }}">{!! Html::image( 'assets/images/slider/s10-producto.png', "Nueva French's&reg; BBQ Chipotle - Salsa BBQ - Sabor chipotle" ) !!}</a>
-                            <p class="nombre">Nueva French's&reg; BBQ Chipotle - Salsa BBQ - Sabor chipotle</p>
+                            <a href="{{ route( 'bbq-chipotle' ) }}">{!! Html::image( 'assets/images/slider/s10-producto.png', "Nueva French's&reg; BBQ Chipotle - Salsa BBQ - Sabor Chipotle" ) !!}</a>
+                            <p class="nombre">Nueva French's&reg; BBQ Chipotle - Salsa BBQ - Sabor Chipotle</p>
                             <div class="gramos">396g</div>
                         </div>
                     </div>
