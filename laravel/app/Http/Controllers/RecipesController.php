@@ -33,6 +33,8 @@ class RecipesController extends Controller
   public function index ( Request $request, Recipe $recipe, Category $category )
   {
     $recipes    = $recipe->where( 'active', true )
+                         ->with( 'category' )
+                         ->inRandomOrder()
                          ->paginate( 6 );
 
     $categories = $category->all();

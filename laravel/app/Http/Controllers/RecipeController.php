@@ -45,12 +45,10 @@ class RecipeController extends Controller
   {
     $recipe     = $recipe->findOrFail( $request->id );
     $recipes    = $recipe->where( 'active', '1' )
-                         ->orderBy( 'created_at' )->get();
-
-    if ( !$recipes->isEmpty() )
-    {
-      $recipes   = $recipes->random( $this->_number_of_recipes_to_show );
-    }
+                         ->with( 'category' )
+                         ->inRandomOrder()
+                         ->take( $this->_number_of_recipes_to_show )
+                         ->get();
 
     $categories = $category->all();
 

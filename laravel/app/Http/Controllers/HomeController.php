@@ -19,9 +19,9 @@ class HomeController extends Controller
   public function index ( Recipe $recipesSet )
   {
     $recipes    = $recipesSet->where( 'active', true )
-                             ->orderBy( 'created_at', 'desc' )
-                             ->get()
-                             ->random( 3 );
+                             ->inRandomOrder()
+                             ->take(3)
+                             ->get();
 
     return view( 'home', [ 'recipes' => $recipes ] );
   }
