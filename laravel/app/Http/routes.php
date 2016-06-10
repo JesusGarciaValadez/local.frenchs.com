@@ -50,6 +50,10 @@ Route::group( [ 'middleware' => [ 'web' ] ], function ()
 
   Route::auth();
 
+  Route::get( 'manager', [ 'as' => 'manageRecipes', 'middleware' => 'auth', 'uses' => 'Admin\ManagerController@index' ] );
+
+  Route::delete( 'manager/{id}', [ 'as' => 'deleteRecipes', 'middleware' => 'auth', 'uses' => 'Admin\ManagerController@destroy' ] );
+
   /*
   |--------------------------------------------------------------------------
   | Products group related
