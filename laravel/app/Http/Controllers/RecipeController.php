@@ -44,7 +44,7 @@ class RecipeController extends Controller
   public function index ( Request $request, Recipe $recipe, Category $category )
   {
     $recipe     = $recipe->findOrFail( $request->id );
-    $recipes    = $recipe->where( 'active', '1' )
+    $recipes    = Recipe::where( 'active', '1' )
                          ->with( 'category' )
                          ->inRandomOrder()
                          ->take( $this->_number_of_recipes_to_show )
@@ -114,8 +114,6 @@ class RecipeController extends Controller
   public function updated ( UpdateRecipeFormRequest $request )
   {
     $this->_recipe      = $this->_getRecipe( $request );
-    $this->_categories  = $this->_getCategories( );
-    $this->_domain      = $this->_getDomain( $request );
 
     $recipe         = $this->_setRecipeInfo( $request );
     $recipe[ 'id' ] = $this->_recipe[ 'id' ];
@@ -129,25 +127,21 @@ class RecipeController extends Controller
     /*
      * Persist the new data into the database.
      */
-    $update = \Frenchs\Recipe::where( 'id', $request[ 'id' ] )
-                             ->update( $recipe );
+    $update = Recipe::where( 'id', $request[ 'id' ] )
+                    ->update( $recipe );
 
     /*
      * Create a response for passing it into the view.
      */
-    $recipe[ 'message' ]          = ( $update ) ? "Receta actualizada" : "Hubo un error al actualizar la receta. :/";
-    $recipe[ 'updated' ]          = ( $update ) ? true : false;
-    $recipe[ 'old_photo_big' ]    = $recipe[ 'photo_big' ];
-    $recipe[ 'old_photo_small' ]  = $recipe[ 'photo_small' ];
+    $message        = ( $update ) ? "Receta actualizada" : "Hubo un error al actualizar la receta. :/";
+    $type           = ( $update ) ? "success" : "danger";
 
     /*
      * Passing the recipe information, categories and domain url to the view.
      */
-    return view( 'recipes.edit', [
-                 'recipe'     => $recipe,
-                 'categories' => $this->_categories,
-                 'domain'     => $this->_domain
-                  ] );
+    return \Redirect::route( 'manageRecipes' )
+                    ->withType( $type )
+                    ->withMessage( $message );
   }
 
   /**
@@ -158,7 +152,7 @@ class RecipeController extends Controller
    */
   protected function _getRecipe ( Request $request )
   {
-    return \Frenchs\Recipe::findOrFail( $request->id );
+    return Recipe::findOrFail( $request->id );
   }
 
   /**
@@ -199,7 +193,7 @@ class RecipeController extends Controller
     /*
      * Obtaining categories information
      */
-    $categoriesSet  = \Frenchs\Category::all();
+    $categoriesSet  = Category::all();
 
     foreach ( $categoriesSet as $category )
     {

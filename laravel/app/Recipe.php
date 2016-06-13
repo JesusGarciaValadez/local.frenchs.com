@@ -50,4 +50,9 @@ class Recipe extends Model
   {
     return $this->belongsTo( Category::class );
   }
+
+  public function getActiveAttribute ( $value )
+  {
+    return ( $value === 1 ) ? 'Si' : 'No';
+  }
 }

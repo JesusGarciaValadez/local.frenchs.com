@@ -28,6 +28,12 @@ class RecipeTest extends TestCase
     $this->assertEquals( 404, $response->status() );
   }
 
+  public function testManagerIsAccesible ()
+  {
+    $this->visit( '/manager' )
+         ->assertResponseOk();
+  }
+
   public function testEditRecipe ()
   {
     $user = factory( Frenchs\User::class )->create();
