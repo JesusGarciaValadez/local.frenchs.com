@@ -15,15 +15,15 @@ class RecipeTest extends TestCase
    */
   public function testChoripanRecipe ()
   {
-    $this->visit( '/receta/3' )
+    $this->visit( '/receta/choripan-con-mostaza-picante-y-cebollas-caramelizadas' )
          ->assertResponseOk()
-         ->seePageIs( '/receta/3' )
+         ->seePageIs( '/receta/choripan-con-mostaza-picante-y-cebollas-caramelizadas' )
          ->see( "Choripan <span>con mostaza picante y cebollas caramelizadas</span>" );
   }
 
   public function testChapataRecipe ()
   {
-    $response = $this->call( 'GET', '/receta/17' );
+    $response = $this->call( 'GET', '/receta/slug-de-prueba' );
 
     $this->assertEquals( 404, $response->status() );
   }

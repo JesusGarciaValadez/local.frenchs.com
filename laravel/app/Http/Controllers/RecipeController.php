@@ -41,9 +41,16 @@ class RecipeController extends Controller
    */
   public function index ( Request $request )
   {
-    $recipe     = Recipe::where( 'slug', $request->slug )
-                        ->get()
-                        ->first();
+    try
+    {
+      $recipe     = Recipe::where( 'slug', $request->slug )
+                          ->get()
+                          ->first();
+    }
+    catch( ModelNotFoundException $error )
+    {
+      abort( 404 );
+    }
 
     $recipes    = Recipe::where( 'active', '1' )
                          ->with( 'category' )
@@ -53,7 +60,7 @@ class RecipeController extends Controller
 
     $categories = Category::all();
 
-    if ( $recipe->active === "Si" )
+    if ( count( $recipe ) > 0 && $recipe->active === "Si" )
     {
       return view( 'detalle-receta', [
                    'recipe'     => $recipe,
@@ -63,7 +70,7 @@ class RecipeController extends Controller
     }
     else
     {
-      return redirect( '/recetas' );
+      abort( 404 );
     }
   }
 

@@ -18,8 +18,9 @@ class Recipe extends Model
   public function sluggable ()
   {
     return [
-      'title-slug' => [
-        'source' => 'name'
+      'slug' => [
+        'source'    => 'name',
+        'separator' => '-'
       ]
     ];
   }

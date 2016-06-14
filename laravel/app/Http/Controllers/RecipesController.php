@@ -15,6 +15,8 @@ use Frenchs\Http\Controllers\Controller;
 use Event;
 use Frenchs\Events\RecipeUploaded;
 
+use \Cviebrock\EloquentSluggable\Services\SlugService;
+
 class RecipesController extends Controller
 {
   /**
@@ -61,6 +63,8 @@ class RecipesController extends Controller
     $recipe[ 'category_id' ]          = intval( $recipe[ 'category_id' ] );
     $recipe[ 'ingredients_desktop' ]  = $recipe[ 'ingredients' ];
     $recipe[ 'ingredients_mobile' ]   = $recipe[ 'ingredients' ];
+
+    $recipe[ 'slug' ]                 = SlugService::createSlug( Recipe::class, 'slug', $request->name );
 
     unset( $recipe[ '_token' ] );
     unset( $recipe[ 'ingredients' ] );
