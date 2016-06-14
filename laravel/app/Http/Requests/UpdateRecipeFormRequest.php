@@ -36,7 +36,8 @@ class UpdateRecipeFormRequest extends Request
       'preparation'         => 'required|max:1500',
       'ranking'             => 'required|in:1,2,3,4,5',
       'product_name'        => 'required|in:classic-sq,classic-sq-en-frasco,dijon,deli,honey,inglesa,bbq,bbq-chipotle',
-      'active'              => 'required'
+      'active'              => 'required',
+      'slug'                => 'required'
     ];
   }
 }

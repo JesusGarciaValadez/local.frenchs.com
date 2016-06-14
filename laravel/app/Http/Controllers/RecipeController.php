@@ -94,6 +94,7 @@ class RecipeController extends Controller
     $recipe[ 'ranking' ]              = $this->_recipe[ 'ranking' ];
     $recipe[ 'product_name' ]         = $this->_recipe[ 'product_name' ];
     $recipe[ 'active' ]               = ( $this->_recipe[ 'active' ] ) ? 'checked' : '';
+    $recipe[ 'slug' ]                 = $this->_recipe[ 'slug' ];
 
     /*
      * Passing the recipe information, categories and domain url to the view

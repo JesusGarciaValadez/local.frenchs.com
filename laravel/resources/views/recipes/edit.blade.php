@@ -15,21 +15,45 @@
             <p class="bg-danger">{{$recipe[ 'message' ]}}</p>
           @endif
           </div>
-          {!! Form::open( [ 'url' => 'editar-receta/' . $recipe[ 'id' ], 'method' => 'PUT', 'class' => 'form-horizontal', 'files' => true ] ) !!}
+          {!! Form::open( [
+            'url'     => 'editar-receta/' . $recipe[ 'id' ],
+            'method'  => 'PUT',
+            'class'   => 'form-horizontal',
+            'files'   => true
+          ] ) !!}
 
             {!! Form::hidden( 'old_photo_big', $recipe[ 'old_photo_big' ] ) !!}
             {!! Form::hidden( 'old_photo_small', $recipe[ 'old_photo_small' ] ) !!}
             {!! Form::hidden( 'id', $recipe[ 'id' ] ) !!}
 
             <div class="form-group{{ $errors->has( 'name' ) ? ' has-error' : '' }}">
-              {!! Form::label( 'name', 'Nombre de la receta', [ 'class' => 'col-md-4 control-label' ] ) !!}
+              {!! Form::label( 'name', 'Nombre de la receta', [
+                'class' => 'col-md-4 control-label'
+              ] ) !!}
 
               <div class="col-md-6">
-                {!! Form::text( 'name', $recipe[ 'name' ], [ 'class' => 'form-control' ] ) !!}
+                {!! Form::text( 'name', $recipe[ 'name' ], [
+                  'class'     => 'form-control',
+                  'maxlenght' => '200'
+                ] ) !!}
 
                 @if ($errors->has('name'))
                   <span class="help-block">
                     <strong>{{ $errors->first('name') }}</strong>
+                  </span>
+                @endif
+              </div>
+            </div>
+
+            <div class="form-group{{ $errors->has( 'slug' ) ? ' has-error' : '' }}">
+              {!! Form::label( 'slug', 'URL friendly', [ 'class' => 'col-md-4 control-label' ] ) !!}
+
+              <div class="col-md-6">
+                {!! Form::text( 'slug', $recipe[ 'slug' ], [ 'class' => 'form-control' ] ) !!}
+
+                @if ($errors->has('slug'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('slug') }}</strong>
                   </span>
                 @endif
               </div>
