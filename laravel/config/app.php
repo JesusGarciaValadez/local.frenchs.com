@@ -162,6 +162,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Themsaid\MailPreview\MailPreviewServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class
     ],
 
     /*

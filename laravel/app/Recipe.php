@@ -4,8 +4,26 @@ namespace Frenchs;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Cviebrock\EloquentSluggable\Sluggable;
+
 class Recipe extends Model
 {
+  use Sluggable;
+
+  /**
+   * Return the sluggable configuration array for this model.
+   *
+   * @return array
+   */
+  public function sluggable ()
+  {
+    return [
+      'title-slug' => [
+        'source' => 'name'
+      ]
+    ];
+  }
+
   /**
    * The attributes that are mass assignable.
    *
@@ -26,7 +44,8 @@ class Recipe extends Model
     'preparation',
     'ranking',
     'product_name',
-    'active'
+    'active',
+    'slug'
   ];
 
   /**

@@ -1,4 +1,4 @@
-              <a href="{{ action( 'RecipeController@index', [ 'id' => $recipe->id ] ) }}" class="receta">
+              <a href="{{ route( 'recipeSlug', [ $recipe->slug ] ) }}" class="receta">
                 <p class="categoria {{ $class }}">{{ $recipe->category->name }}</p>
                 <div class="image">
                   {!! Html::image( 'assets/images/recetas/' . $recipe->photo_small, $recipe->name ) !!}

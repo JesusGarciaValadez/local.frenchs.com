@@ -55,6 +55,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "arroz-a-la-mostaza-picante-con-chistorra-y-nuez",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -104,6 +105,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "camarones-capeados-con-salsa-de-mostaza-picante-y-mandarina",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -145,6 +147,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "choripan-con-mostaza-picante-y-cebollas-caramelizadas",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -194,6 +197,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "pechuga-de-pollo-con-salsa-cremosa-de-mostaza-picante-y-hierbas",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -247,6 +251,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "rollos-de-pescado-con-salsa-de-perejil-y-mostaza-picante",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -285,6 +290,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "puntas-de-res-en-salsa-de-mostaza-picante",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -324,6 +330,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "ensalada-de-papa-huevo-y-salami-con-mostaza-picante",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -365,6 +372,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "pollo-a-la-crema-y-mostaza-picante",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -400,6 +408,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "fideos-integrales-con-vegetales-rostizados-y-mostaza-dulce",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -443,6 +452,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "cascaras-de-papa-con-pollo-a-la-mostaza-dulce",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -480,6 +490,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "alitas-con-paprika-y-mostaza-dulce",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -517,6 +528,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "lomo-a-la-con-mostaza-dulce",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -554,6 +566,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "chuletas-de-cerdo-gratinadas-con-mostaza-dulce",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -592,6 +605,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "chamorro-de-cerdo-a-la-mostaza-dulce",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -644,6 +658,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "ensalada-de-vegetales-frescos-y-pollo-con-vinagreta-de-mostaza-dulce",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
 
@@ -689,6 +704,7 @@ class RecipesTableSeeder extends Seeder
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
+      'slug'                => "chapata-de-camarones-a-la-parrilla-con-mostaza-dulce",
       'created_at'          => date( 'Y-m-d H:i:s' ),
     ] );
   }

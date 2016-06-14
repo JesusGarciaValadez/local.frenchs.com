@@ -32,7 +32,7 @@ Route::group( [ 'middleware' => [ 'web' ] ], function ()
 
   Route::get( 'productos', [ 'as' => 'products', 'uses' => 'ProductsController@index' ] );
 
-  Route::get( 'receta/{id}', [ 'as' => 'recipeID', 'uses' => 'RecipeController@index' ] );
+  Route::get( 'receta/{slug}', [ 'as' => 'recipeSlug', 'uses' => 'RecipeController@index' ] );
 
   Route::get( 'recetas', [ 'as' => 'recipes', 'uses' => 'RecipesController@index' ] );
 

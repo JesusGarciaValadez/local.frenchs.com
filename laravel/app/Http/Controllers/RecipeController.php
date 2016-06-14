@@ -37,22 +37,23 @@ class RecipeController extends Controller
   /**
    * Display the recipe information with some example recipes.
    * @param  Request  $request    The parameters of the request of the page.
-   * @param  Recipe   $recipes    Model of the recipes.
-   * @param  Category $categories Model of the categories of the recipes.
    * @return View                 View with the recipe information.
    */
-  public function index ( Request $request, Recipe $recipe, Category $category )
+  public function index ( Request $request )
   {
-    $recipe     = $recipe->findOrFail( $request->id );
+    $recipe     = Recipe::where( 'slug', $request->slug )
+                        ->get()
+                        ->first();
+
     $recipes    = Recipe::where( 'active', '1' )
                          ->with( 'category' )
                          ->inRandomOrder()
                          ->take( $this->_number_of_recipes_to_show )
                          ->get();
 
-    $categories = $category->all();
+    $categories = Category::all();
 
-    if ( $recipe->active )
+    if ( $recipe->active === "Si" )
     {
       return view( 'detalle-receta', [
                    'recipe'     => $recipe,
