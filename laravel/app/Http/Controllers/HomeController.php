@@ -16,12 +16,12 @@ class HomeController extends Controller
    * @param  Recipes $recipesSet Set of recipes from the database
    * @return View                View 'home' with a bunch of recipes as parameters
    */
-  public function index ( Recipe $recipesSet )
+  public function index ( )
   {
-    $recipes    = $recipesSet->where( 'active', true )
-                             ->inRandomOrder()
-                             ->take(3)
-                             ->get();
+    $recipes    = Recipe::where( 'active', true )
+                        ->inRandomOrder()
+                        ->take( 3 )
+                        ->get();
 
     return view( 'home', [ 'recipes' => $recipes ] );
   }

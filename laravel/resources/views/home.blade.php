@@ -84,7 +84,7 @@
                   <li class="pane pane{{$recipe->id}}">
                     <div class="img">{!! Html::image( 'assets/images/recetas/' . $recipe->photo_small, $recipe->name ) !!}</div>
                     <div class="nombre">
-                      <a href="{{ action( 'RecipeController@index', [ 'id' => $recipe->id ] ) }}" class="receta">
+                      <a href="{{ route( 'recipeSlug', [ $recipe->slug ] ) }}" class="receta">
                         {!! $recipe->name !!}
                       </a>
                     </div>
