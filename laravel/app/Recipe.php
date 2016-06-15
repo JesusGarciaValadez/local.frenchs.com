@@ -11,21 +11,6 @@ class Recipe extends Model
   use Sluggable;
 
   /**
-   * Return the sluggable configuration array for this model.
-   *
-   * @return array
-   */
-  public function sluggable ()
-  {
-    return [
-      'slug' => [
-        'source'    => 'name',
-        'separator' => '-'
-      ]
-    ];
-  }
-
-  /**
    * The attributes that are mass assignable.
    *
    * @var array
@@ -54,7 +39,7 @@ class Recipe extends Model
    *
    * @var array
    */
-  protected $guarded  = [ 'id', 'ingredients', 'created_at', 'updated_at' ];
+  protected $guarded  = [ 'id', 'created_at', 'updated_at' ];
 
   /**
    * The attributes that should be hidden for arrays.
@@ -74,5 +59,20 @@ class Recipe extends Model
   public function getActiveAttribute ( $value )
   {
     return ( $value === 1 ) ? 'Si' : 'No';
+  }
+
+  /**
+   * Return the sluggable configuration array for this model.
+   *
+   * @return array
+   */
+  public function sluggable ()
+  {
+    return [
+      'slug' => [
+        'source'    => 'name',
+        'separator' => '-'
+      ]
+    ];
   }
 }
