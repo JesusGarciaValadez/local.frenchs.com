@@ -28,9 +28,8 @@ class SendMailWhenContactSended
     {
         \Mail::send( 'emails.contact', [ 'contact' => $event->data ], function( $message )
         {
-          $message->from( env( 'CONTACT_SENDER', 'forge' ), env( 'CONTACT_APP_NAME', 'forge' ) );
           $message->subject( 'Formulario de contacto' );
-          $message->to( env( 'CONTACT_MAIL', 'forge' ), env( 'CONTACT_NAME', 'forge' ) );
+          $message->to( 'Stefano.Raimondi@lacostena.com.mx', "Stefano Raimondi" );
         } );
     }
 }

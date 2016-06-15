@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => [ 'address' => env( 'CONTACT_MAIL', 'forge' ), 'name' => env( 'CONTACT_NAME'. 'forge' ) ],
+    'from' => [ 'address' => 'contacto@frenchs.com.mx', 'name' => "Han enviado una nueva Receta | French's" ],
 
     /*
     |--------------------------------------------------------------------------
