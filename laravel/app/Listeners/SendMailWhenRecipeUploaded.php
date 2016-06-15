@@ -28,9 +28,9 @@ class SendMailWhenRecipeUploaded
     {
         \Mail::send( 'emails.upload', [ 'recipes' => $event->recipes ], function( $message )
         {
-          $message->from( env( 'CONTACT_SENDER' ), env( 'UPLOAD_APP_NAME' ) );
+          $message->from( env( 'CONTACT_SENDER', 'forge' ), env( 'CONTACT_APP_NAME', 'forge' ) );
           $message->subject( "Han enviado una nueva receta." );
-          $message->to( env( 'CONTACT_MAIL' ), env( 'CONTACT_NAME' ) );
+          $message->to( env( 'CONTACT_MAIL', 'forge' ), env( 'CONTACT_NAME', 'forge' ) );
         } );
     }
 }
