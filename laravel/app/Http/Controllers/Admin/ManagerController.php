@@ -40,7 +40,9 @@ class ManagerController extends Controller
     }
     else
     {
-      return \Redirect()->back();
+      return \Redirect()->back()
+                        ->withMessage( 'Receta eliminada' )
+                        ->withType( 'success' );
     }
   }
 }
