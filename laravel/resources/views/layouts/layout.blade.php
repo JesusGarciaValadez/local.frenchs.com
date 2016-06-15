@@ -18,14 +18,15 @@
         {!! Html::style( 'assets/plugins/bxslider/jquery.bxslider.css' ) !!}
         {!! Html::style( 'assets/plugins/drag-and-drop/jquery.ezdz.min.css' ) !!}
         {!! Html::style( 'assets/plugins/font-awesome/css/font-awesome.min.css' ) !!}
-        <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
-        <!--[if lt IE 9]>
-            {!! Html::script('assets/js/bootstrap.min.js') !!}
-            {!! Html::script('assets/js/bootstrap.min.js') !!}
-            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-        <![endif]-->
+        <script>
+            // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            // e.src='//www.google-analytics.com/analytics.js';
+            // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            // ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
     </head>
     <body>
     @section( 'header' )
@@ -73,59 +74,7 @@
         </footer>
     @show
 
-
-        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
-
-
-        {!! Html::script('assets/plugins/tinder/jquery.min.js') !!}
-        {!! Html::script('assets/plugins/tinder/jquery.transform2d.js') !!}
-        {!! Html::script('assets/plugins/tinder/jquery.jTinder.js') !!}
-        {!! Html::script('assets/plugins/bxslider/jquery.bxslider.min.js') !!}
-        {!! Html::script('assets/plugins/parallax/parallax.js') !!}
-        {!! Html::script('assets/plugins/drag-and-drop/jquery.ezdz.min.js') !!}
-        {!! Html::script('assets/js/main.js') !!}
-
-        <script>
-            $('.slider-cover').bxSlider({
-                mode: 'fade',
-                controls: false,
-                captions: true
-            });
-            $('.slider-acerca').bxSlider({
-                mode: 'fade',
-                controls: false,
-                captions: true
-            });
-            $('[type="file"]').ezdz({
-                text: 'SUBE TU FOTO',
-                validators: {
-                    maxWidth:  600,
-                    maxHeight: 600
-                },
-                reject: function(file, errors) {
-                    if (errors.mimeType) {
-                        alert(file.name + ' must be an image.');
-                    }
-
-                    if (errors.maxWidth) {
-                        alert(file.name + ' debe ser maximo de 600px de ancho ');
-                    }
-
-                    if (errors.maxHeight) {
-                        alert(file.name + ' debe ser maximo de 600px de altura ');
-                    }
-                }
-            });
-        </script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            // e.src='//www.google-analytics.com/analytics.js';
-            // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            // ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
+    @section( 'scripts' )
+    @show
     </body>
 </html>

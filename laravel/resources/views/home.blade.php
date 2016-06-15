@@ -120,3 +120,55 @@
           </div>
         </section>
 @endsection
+
+@section( 'scripts' )
+        @parent
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <!--[if lt IE 9]>
+            {!! Html::script('assets/js/bootstrap.min.js') !!}
+            {!! Html::script('assets/js/bootstrap.min.js') !!}
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+        {!! Html::script('assets/plugins/tinder/jquery.min.js') !!}
+        {!! Html::script('assets/plugins/tinder/jquery.transform2d.js') !!}
+        {!! Html::script('assets/plugins/tinder/jquery.jTinder.js') !!}
+        {!! Html::script('assets/plugins/bxslider/jquery.bxslider.min.js') !!}
+        {!! Html::script('assets/plugins/parallax/parallax.js') !!}
+        {!! Html::script('assets/plugins/drag-and-drop/jquery.ezdz.min.js') !!}
+        {!! Html::script('assets/js/main.js') !!}
+        <script>
+            $('.slider-cover').bxSlider({
+                mode: 'fade',
+                controls: false,
+                captions: true
+            });
+            $('.slider-acerca').bxSlider({
+                mode: 'fade',
+                controls: false,
+                captions: true
+            });
+            $('[type="file"]').ezdz({
+                text: 'SUBE TU FOTO',
+                validators: {
+                    maxWidth:  600,
+                    maxHeight: 600
+                },
+                reject: function(file, errors) {
+                    if (errors.mimeType) {
+                        alert(file.name + ' must be an image.');
+                    }
+
+                    if (errors.maxWidth) {
+                        alert(file.name + ' debe ser maximo de 600px de ancho ');
+                    }
+
+                    if (errors.maxHeight) {
+                        alert(file.name + ' debe ser maximo de 600px de altura ');
+                    }
+                }
+            });
+        </script>
+@endsection

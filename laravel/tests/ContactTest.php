@@ -27,7 +27,7 @@ class ContactTest extends TestCase
          ->type( 'Jesús Antonio García Valadez', 'name' )
          ->type( 'jesus.garcia@lunave.com', 'email' )
          ->type( 'Este es un mensaje de prueba', 'comments' )
-         ->press( 'SEND' )
+         ->press( 'ENVIAR' )
          ->seePageIs( '/contacto' )
          ->assertResponseOk();
   }
