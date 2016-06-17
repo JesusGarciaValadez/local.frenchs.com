@@ -173,6 +173,11 @@
             </div>
         </div>
         <script>
+            $("section.subir-receta  div a").on('click',function(e){
+                e.preventDefault();
+                $('.modal').fadeIn();
+                $('body').addClass('hidden');
+            });
             $('#btn_search').click( function ( ) {
                 enviar( );
             } );

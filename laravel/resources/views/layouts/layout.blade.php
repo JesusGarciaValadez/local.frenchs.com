@@ -9,6 +9,7 @@
         <title>@yield( 'title' ) | French's&reg; México</title>
         <meta name="description" content="@yield( 'description' )">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         {!! Html::meta( 'robots', 'INDEX,FOLLOW' ) !!}
 
         {!! Html::style( 'humans.txt', [ 'type' => 'text/plain', 'rel' => 'author' ] ) !!}
