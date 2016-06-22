@@ -75,20 +75,32 @@
 
             </div>
         </section>
-
+        <?php $contador=0;?>
         <section class="grid">
             <div class="container">
                 <div class="content-grid">
                     @foreach ( $recipes as $recipe )
-                      @include( 'partials.recipe', [
-                                'recipe' => $recipe,
-                                'class' => 'b1'
-                              ])
+
+                        <?php
+                            $contador=$contador+1; 
+                            if($contador <= 6)
+                                {?>
+                                    @include( 'partials.recipe', [
+                                        'recipe' => $recipe,
+                                        'class' => 'b1'
+                                      ])
+                                    <?php
+                                }else{?>
+                                    @include( 'partials.recipe', [
+                                        'recipe' => $recipe,
+                                        'class' => 'oculto'
+                                      ])
+                                    <?php 
+                                }?>
                     @endforeach
                 </div>
-                @if ( $recipes->hasMorePages() )
-                <a id="" href="#" class="btn-mas">Cargar más recetas</a>
-                @endif
+                
+                <a href="#" class="btn-mas">Cargar más recetas</a>
             </div>
         </section>
 
@@ -179,7 +191,13 @@
             </div>
         </div>
         <script>
-            
+            $('.oculto').parent().hide();
+            $(".btn-mas").click(function(){
+                event.preventDefault();
+                $('.oculto').addClass( "b1");
+                $('.oculto').parent().show();
+                $(".btn-mas").hide();
+            });
             $('#btn_search').click( function ( ) {
                 enviar( );
             } );
@@ -238,4 +256,7 @@
             };
         </script>
         <script src="/assets/js/main.js"></script>
+        <script>
+            $(""). val("");
+        </script>
 @endsection

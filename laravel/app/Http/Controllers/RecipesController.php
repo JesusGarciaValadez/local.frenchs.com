@@ -36,8 +36,7 @@ class RecipesController extends Controller
   {
     $recipes    = $recipe->where( 'active', true )
                          ->with( 'category' )
-                         ->inRandomOrder()
-                         ->paginate( 6 );
+                         ->paginate( 99);
 
     $categories = $category->all();
 
