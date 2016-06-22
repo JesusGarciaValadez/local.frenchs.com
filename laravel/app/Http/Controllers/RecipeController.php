@@ -32,7 +32,7 @@ class RecipeController extends Controller
    * Quantity of recipes to show in the recipes examples.
    * @var integer
    */
-  protected $_number_of_recipes_to_show = 6;
+  protected $_number_of_recipes_to_show = 99;
 
   /**
    * Display the recipe information with some example recipes.
@@ -54,7 +54,6 @@ class RecipeController extends Controller
 
     $recipes    = Recipe::where( 'active', '1' )
                          ->with( 'category' )
-                         ->inRandomOrder()
                          ->take( $this->_number_of_recipes_to_show )
                          ->get();
 

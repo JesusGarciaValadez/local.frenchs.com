@@ -90,14 +90,39 @@
                 <h2>Otras recetas</h2>
                 <p>que te interesaría preparar</p>
                 <div class="content-grid">
-                    @foreach( $recipes as $recipe )
-                        @include( 'partials.recipe', [
-                                  'recipe' => $recipe,
-                                  'class' => 'b2'
-                                ])
+                <?php $contador=0;?>
+
+                     @foreach ( $recipes as $recipe )
+
+                        <?php
+                            $contador=$contador+1; 
+                            if($contador <= 2)
+                                {?>
+                                    @include( 'partials.recipe', [
+                                        'recipe' => $recipe,
+                                        'class' => 'b2'
+                                      ])
+                                    <?php
+                                }else{?>
+                                    @include( 'partials.recipe', [
+                                        'recipe' => $recipe,
+                                        'class' => 'oculto'
+                                      ])
+                                    <?php 
+                                }?>
                     @endforeach
                 </div>
-                <a id="" href="#" class="btn-mas">Ver más recetas</a>
+                <a href="#" class="btn-mas">Cargar más recetas</a>
             </div>
         </section>
+
+        <script>
+            $('.oculto').parent().hide();
+            $(".btn-mas").click(function(){
+                event.preventDefault();
+                $('.oculto').addClass( "b1");
+                $('.oculto').parent().show();
+                $(".btn-mas").hide();
+            });
+        </script>
 @endsection
