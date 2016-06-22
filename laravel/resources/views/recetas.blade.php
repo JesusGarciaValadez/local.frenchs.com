@@ -17,7 +17,7 @@
                         <div class="buscar">
                             {!! Form::text( 'name', null, [ 'placeholder' => '(Ejemplo: Pollo)' ] ) !!}
                             {!! Html::link( '#', '' , [ 'id' => 'btn_search' ] ) !!}
-                            {!! Form::submit( 'Buscar', [ 'id' => 'btn_seach', 'name' => 'buscar' ] ) !!}
+                           
                         </div>
                         <div class="content-filtro">
                             <label>
@@ -66,7 +66,13 @@
                             </label>
                         </div>
                     {!! Form::close() !!}
+                    <center>
+                        <div id="error">
+                        
+                        </div>
+                    </center>
                 </div>
+
             </div>
         </section>
 
@@ -173,11 +179,7 @@
             </div>
         </div>
         <script>
-            $("section.subir-receta  div a").on('click',function(e){
-                e.preventDefault();
-                $('.modal').fadeIn();
-                $('body').addClass('hidden');
-            });
+            
             $('#btn_search').click( function ( ) {
                 enviar( );
             } );
@@ -195,8 +197,12 @@
                 rank        = $( "select[name='ranking']" ).val( ),
                 codigoHtml;
 
-                //Obtencion de resultados
-                $.get( "/buscar-recetas", {
+                if( !nombre || !categoria || !tiempo ||  !porciones ||  !rank ) {
+                    $("#error").html("");
+                    $("#error").html("Faltan campos por seleccionar");
+                }else{
+
+                    $.get( "/buscar-recetas", {
                     name:               nombre,
                     category_id:        categoria,
                     preparation_time:   tiempo,
@@ -209,6 +215,8 @@
                 } )
                 //Si es correcto
                 .done( function( response ) {
+                    $("#error").html("");
+                    $("#error").html("Resultados de busqueda");
                     $( ".receta" ).hide();
 
                     $.each( response, function( index, item ) {
@@ -223,6 +231,10 @@
                         $( ".content-grid" ).append( codigoHTML );
                     } );
                 } );
+                }
+
+                //Obtencion de resultados
+                
             };
         </script>
 @endsection
