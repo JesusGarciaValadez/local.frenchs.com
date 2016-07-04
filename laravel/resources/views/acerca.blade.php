@@ -20,7 +20,7 @@
                         <br><br>
                         Con esta invención, a la que llamaron French's&reg; Cream Salad Brand Mustard (aderezo de crema de mostaza para ensaladas), los hermanos French le dieron un nuevo impulso a la empresa de su padre.
                         <br><br>
-                        La French's&reg; Cream Salad Brand Mustard salió a la venta a un precio de 10 centavos, en frascos de nueve onzas, cuyo empaque incluía una palita de madera para servirla. Tomando en cuenta que la promoción del nuevo producto se hizo a través de la comunicación verbal, pues en ese tiempo no existían campañas publicitarias a nivel nacional, se puede decir que el nuevo aderezo se vendió solo.
+                        La French's&reg; Cream Salad Brand Mustard salió a la venta a un precio de $0.10 centavos, en frascos de nueve onzas, cuyo empaque incluía una palita de madera para servirla. Tomando en cuenta que la promoción del nuevo producto se hizo a través de la comunicación verbal, pues en ese tiempo no existían campañas publicitarias a nivel nacional, se puede decir que el nuevo aderezo se vendió solo.
                         <br><br>
                         Cuando surgieron las herramientas necesarias para promover sus productos en todo el país, en cinco años, los French lograron incrementar al doble sus ganancias (en 1921 obtuvieron $2.5 millones y en 1926, $5.3 millones), y con ello pusieron el nombre de los productos French's&reg; al frente del mercado de los sabores en Estados Unidos.
                         <br><br>
