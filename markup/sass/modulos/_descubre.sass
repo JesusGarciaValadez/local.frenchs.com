@@ -151,10 +151,37 @@
 					-o-transform: rotate(5deg)
 					-ms-transform: rotate(5deg)
 					transform: rotate(5deg)
-		
+
+		.finished
+			display: flex !important
+			display: inline-flex
+			flex-flow: row wrap
+			justify-content: flex-start
+			list-style: none
+			padding: 0
+			width: 100%
+			li
+				background: #fff
+				border-radius: 6px 6px
+				border: 1px solid #e1e1e1
+				transition: all 0.5s
+				height: auto
+				margin: 20px 14px
+				overflow: hidden
+				padding: 0px
+				text-decoration: none
+				width: 358px
+				.nombre a.receta
+					color: #676767
+					display: block
+					font-size: 1.429rem
+					line-height: 1.714rem
+					margin: 1.714rem 15px
+					text-align: left
+					text-decoration: none
 
 		/* Like & dislike badge images */
-			.like, #tinderslide .dislike 
+			.like, #tinderslide .dislike
 				background: url("../img/liked.png") no-repeat scroll 0 0
 				opacity: 0
 				height: 80px
