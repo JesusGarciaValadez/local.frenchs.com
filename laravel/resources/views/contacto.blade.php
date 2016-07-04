@@ -113,7 +113,10 @@
                           .then( function( response ) {
                             response = response.data;
                             if ( response.response_message === 'success' ) {
-                              this.message = "¡Muchas gracias por enviarnos tus comentarios!";
+                              this.newContact.name      = '';
+                              this.newContact.email     = '';
+                              this.newContact.comments  = '';
+                              this.message              = "¡Muchas gracias por enviarnos tus comentarios!";
                             }
                           } )
                           .catch( function( error ) {
