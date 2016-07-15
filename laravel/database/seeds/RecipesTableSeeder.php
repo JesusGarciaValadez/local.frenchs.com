@@ -34,7 +34,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>Sal al gusto.</li>
                                   <li>1 taza de chistorra frita y en pedazos de 2 cm.</li>
                                   <li>6 cucharadas de nuez picada.</li>
-                                  <li>4 cucharada de perejil picado.</li>
+                                  <li>4 cucharadas de perejil picado.</li>
                                 </ul>',
       'ingredients_mobile'  => '<ul>
                                   <li><span class="medida">1 1/2</span> tazas de arroz blanco.</li>
@@ -46,7 +46,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>Sal al gusto.</li>
                                   <li><span class="medida">1</span> taza de chistorra frita y en pedazos de 2 cm.</li>
                                   <li><span class="medida">6</span> cucharadas de nuez picada.</li>
-                                  <li><span class="medida">4</span> cucharada de perejil picado.</li>
+                                  <li><span class="medida">4</span> cucharadas de perejil picado.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Fr&iacute;e</span> el arroz en el aceite.</p>
                                 <p><span class="paso">Lic&uacute;a</span> la cebolla, el ajo, el agua y la <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></p>
@@ -99,7 +99,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">1/2</span> cucharadita de sal.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Revuelve</span> la harina, la f&eacute;cula, la c&uacute;rcuma, el polvo para hornear, la sal, el huevo y el agua hasta que obtengas una masa sin grumos. D&eacute;jala reposar 10 minutos.</p>
-                                <p><span class="paso">Pasa</span> los camarones por la mezcla anterior de maneta que queen cubiertos por completo. Fr&iacute; en el aceite caliente hasta que adquieran un color dorado. S&aacute;calos y ponlos a escurrir sobre papel absorbente.</p>
+                                <p><span class="paso">Pasa</span> los camarones por la mezcla anterior de manera que queden cubiertos por completo. Fr&iecute; en el aceite caliente hasta que adquieran un color dorado. S&aacute;calos y ponlos a escurrir sobre papel absorbente.</p>
                                 <p><span class="paso">Agrega</span> a la <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> el jugo de mandarina y la sal.</p>
                                 <p><span class="paso">Sirve</span> los camarones en un plato y b&aacute;&ntilde;alos con la salsa.</p>',
       'ranking'             => 5,
@@ -222,7 +222,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>4 piezas (100 g c/u) de filete de pescado blanco.</li>
                                   <li>2 cucharadas de cebolla blanca picada.</li>
                                   <li>2 cucharadas de mantequilla.</li>
-                                  <li>2 cucharadas de vinager blanco <span class="marca">La Coste&ntilde;a&reg;</span>.</li>
+                                  <li>2 cucharadas de vinagre blanco <span class="marca">La Coste&ntilde;a&reg;</span>.</li>
                                   <li>3/4 taza de agua.</li>
                                   <li>2 cucharadas <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li>2 cucharadas perejil picado.</li>
@@ -238,14 +238,14 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">4</span> piezas (100 g c/u) de filete de pescado blanco.</li>
                                   <li><span class="medida">2</span> cucharadas de cebolla blanca picada.</li>
                                   <li><span class="medida">2</span> cucharadas de mantequilla.</li>
-                                  <li><span class="medida">2</span> cucharadas de vinager blanco <span class="marca">La Coste&ntilde;a&reg;</span>.</li>
+                                  <li><span class="medida">2</span> cucharadas de vinagre blanco <span class="marca">La Coste&ntilde;a&reg;</span>.</li>
                                   <li><span class="medida">3/4</span> taza de agua.</li>
                                   <li><span class="medida">2</span> cucharadas <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
                                   <li><span class="medida">2</span> cucharadas perejil picado.</li>
                                   <li>Sal y pimienta al gusto.</li>
                                 </ul>',
-      'preparation'         => '<p><span class="paso">Saltea</span> los pimientos, la cebolla y la zanahoria en aceite de oliva por 3 minutos. Sazona con sal y pimienta al gusto..</p>
-                                <p><span class="paso">Extiende</span> los vegetales sobre los 4 filetes y enr&oacute;llalos. Hornea 10 minutos o hasta que est&eacute;n completamente cocidos..</p>
+      'preparation'         => '<p><span class="paso">Saltea</span> los pimientos, la cebolla y la zanahoria en aceite de oliva por 3 minutos. Sazona con sal y pimienta al gusto.</p>
+                                <p><span class="paso">Extiende</span> los vegetales sobre los 4 filetes y enr&oacute;llalos. Hornea 10 minutos o hasta que est&eacute;n completamente cocidos.</p>
                                 <p><span class="paso">Acitrona</span> la cebolla en mantequilla. Agrega el vinagre blanco y cocina por 2 minutos. Incorpora el agua, la <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> y el perejil. Hierve y sazona con sal y pimienta.</p>
                                 <p><span class="paso">Ba&ntilde;a</span> los filetes de pescado con la salsa.</p>',
       'ranking'             => 5,
@@ -311,7 +311,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>2 cucharadas de salami frito y picado.</li>
                                   <li>2 cucharadas de mayonesa <span class="marca">La Coste&ntilde;a&reg;</span>.</li>
                                   <li>1 cucharada de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
-                                  <li>1 cucharada de jugo de lim&oacute;.</li>
+                                  <li>1 cucharada de jugo de lim&oacute;n.</li>
                                   <li>Sal y pimienta al gusto.</li>
                                   <li>2 cucharadas de ceboll&iacute;n picado.</li>
                                 </ul>',
@@ -321,7 +321,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">2</span> cucharadas de salami frito y picado.</li>
                                   <li><span class="medida">2</span> cucharadas de mayonesa <span class="marca">La Coste&ntilde;a&reg;</span>.</li>
                                   <li><span class="medida">1</span> cucharada de <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></li>
-                                  <li><span class="medida">1</span> cucharada de jugo de lim&oacute;.</li>
+                                  <li><span class="medida">1</span> cucharada de jugo de lim&oacute;n.</li>
                                   <li>Sal y pimienta al gusto.</li>
                                   <li><span class="medida">2</span> cucharadas de ceboll&iacute;n picado.</li>
                                 </ul>',
@@ -404,7 +404,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medidas">4</span> cucharadas de <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Rostiza</span> los vegetales en la sartén.</p>
-                                <p><span class="paso">Agrega</span> el espagueti y la French&rsquo;s&reg; Mostaza Dulce.</p>',
+                                <p><span class="paso">Agrega</span> el espagueti y la <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>.</p>',
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
