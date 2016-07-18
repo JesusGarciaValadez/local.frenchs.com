@@ -99,7 +99,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">1/2</span> cucharadita de sal.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Revuelve</span> la harina, la f&eacute;cula, la c&uacute;rcuma, el polvo para hornear, la sal, el huevo y el agua hasta que obtengas una masa sin grumos. D&eacute;jala reposar 10 minutos.</p>
-                                <p><span class="paso">Pasa</span> los camarones por la mezcla anterior de maneta que queen cubiertos por completo. Fr&iacute; en el aceite caliente hasta que adquieran un color dorado. S&aacute;calos y ponlos a escurrir sobre papel absorbente.</p>
+                                <p><span class="paso">Pasa</span> los camarones por la mezcla anterior de maneta que queen cubiertos por completo. Fr&iacute;e en el aceite caliente hasta que adquieran un color dorado. S&aacute;calos y ponlos a escurrir sobre papel absorbente.</p>
                                 <p><span class="paso">Agrega</span> a la <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> el jugo de mandarina y la sal.</p>
                                 <p><span class="paso">Sirve</span> los camarones en un plato y b&aacute;&ntilde;alos con la salsa.</p>',
       'ranking'             => 5,
