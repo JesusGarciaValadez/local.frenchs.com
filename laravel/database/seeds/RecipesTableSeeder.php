@@ -49,7 +49,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">4</span> cucharadas de perejil picado.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Fr&iacute;e</span> el arroz en el aceite.</p>
-                                <p><span class="paso">Lic&uacute;a</span> la cebolla, el ajo, el agua y la <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></p>
+                                <p><span class="paso">Lic&uacute;a</span> la cebolla, el ajo, el agua y <span class="marca">French&rsquo;s&reg; Mostaza Picante.</span></p>
                                 <p><span class="paso">Vierte</span> la preparaci&oacute;n anterior en el arroz, agrega sal al gusto y ll&eacute;valo a ebullici&oacute;n. Cuando hierva, baja el fuego al m&iacute;nimo, pon la tapa y espera a que el agua se evapore por completo. Apaga la hornilla y, as&iacute; tapado, d&eacute;jalo reposar 10 minutos.</p>
                                 <p><span class="paso">Incorpora</span> la chistorra, la nuez y el perejil.</p>',
       'ranking'             => 5,
@@ -100,7 +100,7 @@ class RecipesTableSeeder extends Seeder
                                 </ul>',
       'preparation'         => '<p><span class="paso">Revuelve</span> la harina, la f&eacute;cula, la c&uacute;rcuma, el polvo para hornear, la sal, el huevo y el agua hasta que obtengas una masa sin grumos. D&eacute;jala reposar 10 minutos.</p>
                                 <p><span class="paso">Pasa</span> los camarones por la mezcla anterior de manera que queden cubiertos por completo. Fr&iacute;e en el aceite caliente hasta que adquieran un color dorado. S&aacute;calos y ponlos a escurrir sobre papel absorbente.</p>
-                                <p><span class="paso">Agrega</span> a la <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> el jugo de mandarina y la sal.</p>
+                                <p><span class="paso">Agrega</span> <span class="marca">French&rsquo;s&reg; Mostaza Picante</span>, el jugo de mandarina y la sal.</p>
                                 <p><span class="paso">Sirve</span> los camarones en un plato y b&aacute;&ntilde;alos con la salsa.</p>',
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
@@ -143,7 +143,7 @@ class RecipesTableSeeder extends Seeder
       'preparation'         => '<p><span class="paso">Derrite</span> la mantequilla en una sart&eacute;n, a fuego lento. Incorpora la cebolla y acitrona. Agrega el az&uacute;car y la sal. Mant&eacute;n la mezcla en la llama, sin dejar de revolver, hasta que la cebolla adquiera un color caramelo. Déjala enfriar.</p>
                                 <p><span class="paso">Asa</span> el chorizo a la parrilla hasta que est&eacute; completamente cocido.</p>
                                 <p><span class="paso">Corta</span> la baguete en 4 porciones y &aacute;brelas horizontalmente por la mitad. Unta el chimichurri en cada uno de los pedazos.</p>
-                                <p><span class="paso">Coloca</span> un trozo de chorizo en cada porci&oacute;n de pan y a&ntilde;&aacute;deles encima la <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> al gusto.</p>',
+                                <p><span class="paso">Coloca</span> un trozo de chorizo en cada porci&oacute;n de pan y a&ntilde;&aacute;deles encima <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> al gusto.</p>',
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
@@ -192,7 +192,7 @@ class RecipesTableSeeder extends Seeder
                                 </ul>',
       'preparation'         => '<p><span class="paso">Derrite</span> la mantequilla y acitrona la cebolla y el ajo. Incorpora la harina y cocina durante 2 minutos.</p>
                                 <p><span class="paso">Agrega</span> la leche y bate hasta obtener una mezcla sin grumos. Déjala hervir.</p>
-                                <p><span class="paso">A&ntilde;ade</span> la crema, la <span class="marca">French&rsquo;s&reg; Mostaza Picante</span>, el perejil, el ceboll&iacute;n, el tomillo, la sal y la pimienta.</p>
+                                <p><span class="paso">A&ntilde;ade</span> la crema, <span class="marca">French&rsquo;s&reg; Mostaza Picante</span>, el perejil, el ceboll&iacute;n, el tomillo, la sal y la pimienta.</p>
                                 <p><span class="paso">Sirve</span> las pechugas de pollo con la salsa.</p>',
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
@@ -246,7 +246,7 @@ class RecipesTableSeeder extends Seeder
                                 </ul>',
       'preparation'         => '<p><span class="paso">Saltea</span> los pimientos, la cebolla y la zanahoria en aceite de oliva por 3 minutos. Sazona con sal y pimienta al gusto.</p>
                                 <p><span class="paso">Extiende</span> los vegetales sobre los 4 filetes y enr&oacute;llalos. Hornea 10 minutos o hasta que est&eacute;n completamente cocidos.</p>
-                                <p><span class="paso">Acitrona</span> la cebolla en mantequilla. Agrega el vinagre blanco y cocina por 2 minutos. Incorpora el agua, la <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> y el perejil. Hierve y sazona con sal y pimienta.</p>
+                                <p><span class="paso">Acitrona</span> la cebolla en mantequilla. Agrega el vinagre blanco y cocina por 2 minutos. Incorpora el agua, <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> y el perejil. Hierve y sazona con sal y pimienta.</p>
                                 <p><span class="paso">Ba&ntilde;a</span> los filetes de pescado con la salsa.</p>',
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
@@ -286,7 +286,7 @@ class RecipesTableSeeder extends Seeder
                                 </ul>',
       'preparation'         => '<p><span class="paso">Salpimienta</span> las puntas de res y fr&iacute;elas en el aceite.</p>
                                 <p><span class="paso">Agrega</span> la cebolla y los pimientos, y saltea con la carne.</p>
-                                <p><span class="paso">Incorpora</span> la <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> y revuelve perfectamente.</p>',
+                                <p><span class="paso">Incorpora</span> <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> y revuelve perfectamente.</p>',
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
@@ -325,7 +325,7 @@ class RecipesTableSeeder extends Seeder
                                   <li>Sal y pimienta al gusto.</li>
                                   <li><span class="medida">2</span> cucharadas de ceboll&iacute;n picado.</li>
                                 </ul>',
-      'preparation'         => '<p><span class="paso">Corta</span> las papas en cuartos. Mezcla la papa, el huevo, el salami, la mayonesa, la <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> y el jugo de lim&oacute;n. Sazona con sal y pimienta.</p>
+      'preparation'         => '<p><span class="paso">Corta</span> las papas en cuartos. Mezcla la papa, el huevo, el salami, la mayonesa, <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> y el jugo de lim&oacute;n. Sazona con sal y pimienta.</p>
                                 <p><span class="paso">Sirve</span> y espolvorea encima el cebollín.</p>',
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
@@ -366,7 +366,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">2</span> cucharadas de cilantro picado.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Fr&iacute;e</span> el pollo en la mantequilla hasta que adquiera un color dorado. Ret&iacute;ralo del fuego.</p>
-                                <p><span class="paso">En la misma grasa</span>, acitrona la cebolla e incorpora la crema, la French&rsquo;s&reg; Mostaza Picante y el jugo de limón. Sazona con sal y pimienta.</p>
+                                <p><span class="paso">En la misma grasa</span>, acitrona la cebolla e incorpora la crema, <span class="marca">French&rsquo;s&reg; Mostaza Picante</span> y el jugo de limón. Sazona con sal y pimienta.</p>
                                 <p><span class="paso">Agrega</span> el pollo y cuece a fuego medio durante 5 minutos.</p>
                                 <p><span class="paso">Sirve</span> y espolvorea encima el cilantro.</p>',
       'ranking'             => 5,
@@ -404,7 +404,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medidas">4</span> cucharadas de <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Rostiza</span> los vegetales en la sartén.</p>
-                                <p><span class="paso">Agrega</span> el espagueti y la <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>.</p>',
+                                <p><span class="paso">Agrega</span> el espagueti y <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>.</p>',
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
@@ -485,8 +485,8 @@ class RecipesTableSeeder extends Seeder
                                 </ul>',
       'preparation'         => '<p><span class="paso">Espolvorea</span> las alitas con paprika y f&eacute;cula de ma&iacute;z hasta cubrirlas por completo.</p>
                                 <p><span class="paso">Fríelas</span> en el aceite caliente hasta que adquieran un color dorado. Esc&uacute;rrelas y colócalas en papel absorbente.</p>
-                                <p><span class="paso">Agrega</span> la <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span> y mezcla de manera que todo quede cubierto.</p>
-                                <p><span class="paso">Salpimenta</span> y sirve con la <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>.</p>',
+                                <p><span class="paso">Agrega</span> <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span> y mezcla de manera que todo quede cubierto.</p>
+                                <p><span class="paso">Salpimenta</span> y sirve con <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>.</p>',
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
       'active'              => true,
@@ -522,7 +522,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">2</span> cucharadas de aceite vegetal.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Salpimenta</span> el lomo.</p>
-                                <p><span class="paso">Licúa</span> el ajo, el vinagre y la <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>.</p>
+                                <p><span class="paso">Licúa</span> el ajo, el vinagre y <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>.</p>
                                 <p><span class="paso">Unta</span> las chuletas con la preparaci&oacute;n anterior y d&eacute;jalas marinar 5 minutos.</p>
                                 <p><span class="paso">Fr&iacute;</span> las chuletas en el aceite hasta que est&eacute;n doradas por ambos lados.</p>',
       'ranking'             => 5,
@@ -560,7 +560,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">4</span> cucharadas de <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Mezcla</span> el pan molido, la mayonesa, el ajo y el perejil.</p>
-                                <p><span class="paso">Unta</span> las chuletas con la <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span> por ambos lados.</p>
+                                <p><span class="paso">Unta</span> las chuletas con <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span> por ambos lados.</p>
                                 <p><span class="paso">Coloca</span> las chuletas en una charola para horno y c&uacute;brelas con la mezcla de pan molido.</p>
                                 <p><span class="paso">Hornea</span> hasta que el pan est&eacute; ligeramente dorado.</p>',
       'ranking'             => 5,
@@ -600,7 +600,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">1/2</span> taza de <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>.</li>
                                 </ul>',
       'preparation'         => '<p><span class="paso">Cuece</span> los chamorros en agua, con la cebolla, el ajo, el laurel y la sal, hasta que estén suaves.</p>
-                                <p><span class="paso">Barn&iacute;zalos</span> completamente con la <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span> y rost&iacute;zalos en el horno (precalentado) a 180º C durante 10 minutos.</p>
+                                <p><span class="paso">Barn&iacute;zalos</span> completamente con <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span> y rost&iacute;zalos en el horno (precalentado) a 180º C durante 10 minutos.</p>
                                 <p><span class="paso">Retíralos</span> del asador y &uacute;ntales m&aacute;s mostaza. M&eacute;telos de nuevo al fuego por 5 minutos o hasta que adquieran un color dorado.</p>',
       'ranking'             => 5,
       'product_name'        => 'classic-sq',
@@ -652,7 +652,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">1/4</span> taza de cilantro picado.</li>
                                   <li><span class="medida">2</span> tazas de pollo cocido y deshebrado.</li>
                                 </ul>',
-      'preparation'         => '<p><span class="paso">Licúa</span> la <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>, el agua, el vinagre, el az&uacute;car, el aceite y la pimienta.</p>
+      'preparation'         => '<p><span class="paso">Licúa</span> <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>, el agua, el vinagre, el az&uacute;car, el aceite y la pimienta.</p>
                                 <p><span class="paso">Mezcla</span> los vegetales y el cilantro con el pollo.</p>
                                 <p><span class="paso">Vierte</span> la vinagreta de mostaza sobre la ensalada.</p>',
       'ranking'             => 5,
@@ -697,7 +697,7 @@ class RecipesTableSeeder extends Seeder
                                   <li><span class="medida">1</span> pieza de aguacate.</li>
                                   <li><span class="medida">12</span> aros de cebolla morada.</li>
                                 </ul>',
-      'preparation'         => '<p><span class="paso">Revuelve</span> perfectamente el camar&oacute;n, la <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>, el aceite y el perejil. Deja reposar la mezcla durante 5 minutos.</p>
+      'preparation'         => '<p><span class="paso">Revuelve</span> perfectamente el camar&oacute;n, <span class="marca">French&rsquo;s&reg; Mostaza Dulce</span>, el aceite y el perejil. Deja reposar la mezcla durante 5 minutos.</p>
                                 <p><span class="paso">Corta</span> el pan horizontalmente por la mitad. Úntales mayonesa y ponlos a tostar.</p>
                                 <p><span class="paso">Asa</span> los camarones a la parilla hasta que est&eacute;n cocidos.</p>
                                 <p><span class="paso">Coloca</span> sobre la base del pan: la lechuga, los camarones, el jitomate, el aguacate y la cebolla, y tapa con la mitad correspondiente.</p>',
