@@ -15,10 +15,10 @@ class AboutTest extends TestCase
    */
   public function testAboutAvailability()
   {
-      $this->visit( '/' )
-           ->click( 'SOBRE NOSOTROS' )
-           ->assertResponseOk()
-           ->seePageIs( '/sobre-nosotros' );
+    $this->visit( '/' )
+         ->click( 'SOBRE NOSOTROS' )
+         ->assertResponseOk()
+         ->seePageIs( '/sobre-nosotros' );
   }
 
   /**

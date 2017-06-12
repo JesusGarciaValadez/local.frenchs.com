@@ -55,10 +55,10 @@
                             ] ) !!}
                         </div>
                         {!! Form::submit( 'ENVIAR', [
-                          'class'           => 'boton',
-                          'tabindex'        => '4',
-                          'aria-role'       => 'button',
-                          'v-on:click.prevent' => 'submitContact'
+                          'class'               => 'boton',
+                          'tabindex'            => '4',
+                          'aria-role'           => 'button',
+                          'v-on:click.prevent'  => 'submitContact'
                         ] ) !!}
                         <div class="alert" v-model.sync="message" v-if="send">@{{ message }}</div>
                     {!! Form::close() !!}
